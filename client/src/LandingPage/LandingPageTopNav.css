@@ -156,3 +156,45 @@ background-color: #091E3E;
 }
 
 
+.landingsecondheader {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: larger;
+    position: fixed;
+    top: 50px;
+    z-index: 1;
+    width: 100%;
+    font-weight: 400;
+  }
+  .landingpagemaindiv {
+  margin-top: 5%;
+  background-image: url("https://themewagon.github.io/startup2/img/carousel-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 85vh;
+}
+.landingpagemainseconddiv{
+    position: relative;
+    right: 10px;
+    top:150px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: larger;
+}
+.landingpagemainseconddiv2{
+    background-color: #FFFFFF;
+    color: rgb(6, 163, 218);
+}
+.landingpagemainseconddiv1{
+    background-color: #06A3DA;
+
+}
+.aboutusheading{
+    margin-top: 20%;
+    color: rgb(6, 163, 218);
+
+}
+.about2{
+    margin-top: 20%;
+
+}

@@ -5,8 +5,11 @@ import LandingPageTopNav from "./LandingPage/LandingPageTopNav";
 
 function App() {
   return (
-    <LandingPageTopNav/>
-
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<LandingPageTopNav/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
