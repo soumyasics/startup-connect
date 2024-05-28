@@ -1,0 +1,37 @@
+
+div#Entregtopcontent{
+    max-width: 267px;
+    margin-left: 550px;
+   
+    
+   
+}
+
+p.Registernow {
+font-family: Nunito;
+font-size: 18px;
+font-weight: 700;
+line-height: 24.55px;
+color: #00B0F0;
+text-align: center;
+
+}
+h1.Registertopcontent{
+
+font-family: Nunito;
+font-size: 24px;
+font-weight: 700;
+line-height: 32.74px;
+color: #0F2442;
+text-align: center;
+
+
+}
+hr.enthrline{
+height: 0px;
+width: 96px;
+border: 3px solid #06A3DA;
+text-align: center;
+margin-left: 90px;
+
+}

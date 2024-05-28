@@ -5,15 +5,16 @@ import LandingPageTopNav from "./LandingPage/LandingPageTopNav";
 
 import LoginPageMain from "./Entreprenuer/LoginPage/LoginPageMain";
 import Footer from "./components/Footer/Footer";
+import Entsignup from "./Entreprenuer/LoginPage/Signup/Entsignup";
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<LandingPageTopNav/>}/>
-   <Route path="/ent-loginpagemain" element={<LoginPageMain/>} />
+      <Route path="/" element={[<LandingPageTopNav/>,<Footer/>]}/>
+   <Route path="/ent-loginpagemain" element={[<LoginPageMain/>,<Footer/>]} />
+   <Route path="/entsignup" element={<Entsignup/>}/>
 
-      <Route path="/footer" element={<Footer/>}/>
 
     </Routes>
     </BrowserRouter>
