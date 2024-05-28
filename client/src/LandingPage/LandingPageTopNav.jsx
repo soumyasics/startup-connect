@@ -11,6 +11,9 @@ import img1 from "../assets/img1.png";
 import img2 from "../assets/img2.png";
 import img3 from "../assets/img3.png";
 import img4 from "../assets/img4.png";
+import Frame from "../assets/Frame 40.png";
+import img5 from "../assets/img5.png";
+import img6 from "../assets/img6.png";
 
 function LandingPageTopNav() {
   return (
@@ -74,9 +77,9 @@ function LandingPageTopNav() {
       <div>
         <div>
           <div className="landingsecondheader ">
-            <Navbar className="px-4 py-3">
+            <Navbar className="px-4">
               <Navbar.Brand href="#home " className="text-light">
-                {/* image */}
+                <img src={Frame}></img>
               </Navbar.Brand>
               <Navbar.Toggle />
               <Navbar.Collapse className="justify-content-end">
@@ -205,7 +208,6 @@ function LandingPageTopNav() {
             </p>
 
             <div className="row mt-5">
-
               <div className="col-6">
                 <div>
                   {" "}
@@ -216,6 +218,17 @@ function LandingPageTopNav() {
                   {" "}
                   <img src={img3}></img>
                   <span className="ms-3">Mentorship & Guidance</span>
+                </div>
+                <div className="row mt-5">
+                  <div className="col-3">
+                    {" "}
+                    <img src={img5}></img>
+                  </div>
+                  <div className="col-8">
+                    {" "}
+                    <span>Call to ask any question</span>
+                    <h6 className="text-info">+1234567789</h6>
+                  </div>
                 </div>
               </div>
 
@@ -231,12 +244,127 @@ function LandingPageTopNav() {
                   <span className="ms-3">Investment Tracking</span>
                 </div>
               </div>
-
             </div>
-
           </div>
           <div className="col-6 mt-5 pt-5">
-            <div className="about2"></div><img className="ms-4" src={img4}></img></div>
+            <div className="about2"></div>
+            <img className="ms-4" src={img4}></img>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <div className="  text-center">
+            <h4 className="  mt-5 pt-5 mainheadings"> WHY CHOOSE US</h4>
+            <h3>We Are Here to Grow Your </h3>
+            <h3>Business Exponentially</h3>
+            <hr
+              className="  mb-5 border border-3 border-info"
+              style={{ margin: "0 45%" }}
+            ></hr>
+          </div>
+          <div className="row">
+            <div className="col-4">
+              <img></img>
+              <h4>Startup Registration & Support</h4>
+              <p>
+                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam
+                dolor
+              </p>
+              <img className="mt-5"></img>
+              <h4>Mentorship & Guidance</h4>
+              <p>
+                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam
+                dolor
+              </p>
+            </div>
+            <div className="col-4">
+              <img src={img6}></img>
+            </div>
+            <div className="col-4">
+              <img></img>
+              <h4>Investment Tracking</h4>
+              <p>
+                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam
+                dolor
+              </p>
+              <img className="mt-5"></img>
+              <h4>24/7 Support</h4>
+              <p>
+                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam
+                dolor
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="  text-center">
+            <h4 className=" mt-5 pt-5 mainheadings ">OUR SERVICES</h4>
+            <h3>Bridging the Gap Between </h3>
+            <h3>Ideas and Success</h3>
+            <hr
+              className="mb-5 border border-3 border-info"
+              style={{ margin: "0 45%" }}
+            ></hr>
+          </div>
+          <div className="row text-center">
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Security and Privacy</h6>
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Analytics and Reporting</h6>
+
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Entrepreneur Guidance</h6>
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+          </div>
+
+          <div className="row text-center mt-5">
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Security and Privacy</h6>
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Analytics and Reporting</h6>
+
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Entrepreneur Guidance</h6>
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
