@@ -7,7 +7,7 @@ import Arrowlogo from "../../assets/arrowlogo.png"
 import Twiterlogo from "../../assets/twiterlogo.png"
 import Facebooklogo from "../..//assets/facebooklogo.png"
 import Linkedinlogo from "../../assets/linkedinlogo.png"
-import Instalogo from "../../assets/instalogo.png"
+import Instalogo from "../../assets/Group 19 (1).png"
 import Emaillogo from "../../assets/Vector (1).png"
 
 
@@ -35,20 +35,20 @@ function Footer() {
                                 <h1 className='secondcolumncontent text-center'>Get In Touch</h1>
                                 <hr className=' hrlinefirst'></hr>
                                 <div>
-                                    <div className='secondcolumnadress'>
+                                    <div className='secondcolumnadress '>
 
-                                        <div><img src={Adresslogo}/><span>123 Street, New York,USA</span></div>
-                                        <div><img src={Emaillogo}/><span className='mt-3'>info@example.com</span></div>
-                                        <div><img src={Phonelogo}/><span className='mt-3'>+012 345 67890</span></div>
-                                        <div >
-                                            <img src={Twiterlogo} />
-                                            <img src={Facebooklogo}/>
-                                            <img src={Linkedinlogo}/>
-                                            <img src={Instalogo}/>
+                                        <div><img src={Adresslogo} /><span>123 Street, New York,USA</span></div>
+                                        <div><img className='pt-1' src={Emaillogo} /><span>info@example.com</span></div>
+                                        <div><img className='pt-1' src={Phonelogo} /><span >+012 345 67890</span></div>
+                                        <div className='mt-2'>
+                                            <img className='me-1' src={Twiterlogo} />
+                                            <img className='me-1' src={Facebooklogo} />
+                                            <img src={Linkedinlogo} />
+                                            <img src={Instalogo} />
                                         </div>
-                                    
 
-                                        </div>
+
+                                    </div>
 
                                 </div>
                             </div>
@@ -105,7 +105,7 @@ function Footer() {
                 </div>
 
             </div>
-            
+
 
         </div>
     )
