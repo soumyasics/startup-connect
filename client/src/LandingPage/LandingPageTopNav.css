@@ -180,7 +180,7 @@ background-color: #091E3E;
     color: #FFFFFF;
     font-weight: 700;
     font-size: larger;
-}
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
 .landingpagemainseconddiv2{
     background-color: #FFFFFF;
     color: rgb(6, 163, 218);
@@ -196,5 +196,14 @@ background-color: #091E3E;
 }
 .about2{
     margin-top: 20%;
+
+}
+
+.minddlecard{
+    background-color:#EEF9FF;
+    ;
+}
+.mainheadings{
+    color: rgb(6, 163, 218);
 
 }
