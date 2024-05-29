@@ -16,7 +16,7 @@
 .ent-loginpage-content{
     width: 272px;
     height: 66px;
-    top: 247px;
+    top: 237px;
     left: 585px;
     gap: 0px;
     opacity: 0px;
@@ -26,44 +26,45 @@
     line-height: 32.74px;
     text-align: center;
     color: #0F2442;
-    display: contents;
+    display: inline;
 }
 .ent-loginpage-line{
-    width: 190px;
-    top: 80px;
-    left: 548px;
-    padding: 1px 7px 5px 7px;
+    width: 90px;
+    height: 0px;
+    top: 110px;
+    left: 598px;
+    border-bottom: 2px solid #00B0F0;
     gap: 0px;
     opacity: 0px;
-    background: #00B0F0;
     text-align: center;
-    display: block;
     position: absolute;
     
 }
 
 .ent-loginpage-img_div{
     width: 50%;
+    padding-top: 10px;
 }
 .ent-loginpage-img{
-    width: 635px;
-    height: 477px;
-    top: 400px;
-    left: 61px;
+    width: 575px;
+    height: 427px;
+    /* top: 400px; */
+    left: 61px; 
     gap: 0px;
     opacity: 0px;
+    position: absolute;
 
 }
 
 .ent-loginpage-loginform{
     width: 50%;
     height: Hug (128px)px;
-    top: 337px;
-    left: 788px;
-    gap: 22px;
+    top: 137px;
+    left: 638px;
+    gap: 2px;
     opacity: 0px;
     border-color: #EEF9FF;
-    position: absolute;
+    position: relative;
 
 }
 
@@ -78,12 +79,13 @@
     line-height: 24.55px;
     text-align: center;
     color: #555252;
+    display: block;
 
 }
 
 .ent-loginpage-email{
     width: 456px;
-    height: 53px;
+    height: 43px;
     gap: 0px;
     opacity: 0px;
     background: #EEF9FF;
@@ -102,25 +104,30 @@
     line-height: 24.55px;
     text-align: center;
     color: #555252;
+    display: block;
 
 }
 
 .ent-loginpage-password{
     width: 456px;
-    height: 53px;
+    height: 43px;
     gap: 0px;
     opacity: 0px;
     background: #EEF9FF;
     border: #EEF9FF;
     
 }
-.{
+.ent-loginpage-loginbtn{
     width: 456px;
-height: 51px;
-top: 688px;
-left: 788px;
-gap: 0px;
-opacity: 0px;
+    height: 45px;
+    top: 698px;
+    left: 788px;
+    margin-top: 10px;
+    gap: 0px;
+    opacity: 0px;
+    border: #ffffff;
+    color: #ffffff;
+    background: #00B0F0;
 
 }
 

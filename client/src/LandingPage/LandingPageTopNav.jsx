@@ -18,9 +18,9 @@ import img6 from "../assets/img6.png";
 function LandingPageTopNav() {
   return (
     <div>
-      <div>
+      <div  >
         <nav class="navbar NavTopBg ">
-          <div>
+          <div className="positionTonav">
             <svg
               id="TopNavLocationLogo"
               xmlns="http://www.w3.org/2000/svg"
