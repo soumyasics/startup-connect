@@ -1,0 +1,126 @@
+.ent-loginpage-loginhere{
+    width: 92px;
+    height: 25px;
+    top: 211px;
+    left: 674px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.55px;
+    text-align: center;
+    color: #00B0F0;
+    display: inline;
+}
+.ent-loginpage-content{
+    width: 272px;
+    height: 66px;
+    top: 247px;
+    left: 585px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Nunito;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.74px;
+    text-align: center;
+    color: #0F2442;
+    display: contents;
+}
+.ent-loginpage-line{
+    width: 190px;
+    top: 80px;
+    left: 548px;
+    padding: 1px 7px 5px 7px;
+    gap: 0px;
+    opacity: 0px;
+    background: #00B0F0;
+    text-align: center;
+    display: block;
+    position: absolute;
+    
+}
+
+.ent-loginpage-img_div{
+    width: 50%;
+}
+.ent-loginpage-img{
+    width: 635px;
+    height: 477px;
+    top: 400px;
+    left: 61px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+.ent-loginpage-loginform{
+    width: 50%;
+    height: Hug (128px)px;
+    top: 337px;
+    left: 788px;
+    gap: 22px;
+    opacity: 0px;
+    border-color: #EEF9FF;
+    position: absolute;
+
+}
+
+.ent-loginpage-email-label{
+    width: 86px;
+    height: 25px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.55px;
+    text-align: center;
+    color: #555252;
+
+}
+
+.ent-loginpage-email{
+    width: 456px;
+    height: 53px;
+    gap: 0px;
+    opacity: 0px;
+    background: #EEF9FF;
+    border: #EEF9FF;
+
+}
+
+.ent-loginpage-password-label{
+    width: 80px;
+    height: 25px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.55px;
+    text-align: center;
+    color: #555252;
+
+}
+
+.ent-loginpage-password{
+    width: 456px;
+    height: 53px;
+    gap: 0px;
+    opacity: 0px;
+    background: #EEF9FF;
+    border: #EEF9FF;
+    
+}
+.{
+    width: 456px;
+height: 51px;
+top: 688px;
+left: 788px;
+gap: 0px;
+opacity: 0px;
+
+}
+
