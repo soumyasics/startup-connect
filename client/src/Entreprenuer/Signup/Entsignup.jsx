@@ -16,7 +16,7 @@ function Entsignup() {
             </div>
             <div className='pt-3 dummy'>
                 <div class="row">
-                    <div class="col-4 p-4 ps-5 p-0">
+                    <div class="col-4 ps-4 p-0">
                         <div className='EntRegimage'>
                             <img src={Entbodyimage} alt='' />
                         </div>
@@ -45,7 +45,7 @@ function Entsignup() {
                                     <input className='Entreginput' type='text' placeholder='Address' />
                                 </div>
                                 <div class="input-group  pt-4"  >
-                                    <label id='Entsignuploadimage' class="input-group-text ps-5" for="inputGroupFile01">Your Image</label>
+                                    <label id='Entsignuploadimage' class="input-group-text ps-5 " for="inputGroupFile01">Your Image</label>
                                     <input type="file" id='Entsignuploadimage'  />
                                 </div>
 

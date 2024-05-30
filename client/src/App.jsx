@@ -9,6 +9,7 @@ import ForgotPassMain from "./Entreprenuer/ForgotPass/ForgotPassMain";
 
 import Entsignup from "./Entreprenuer/Signup/Entsignup";
 import Footer from "./components/Footer/Footer";
+import Enthomepage from "./Entreprenuer/Homepage/Enthomepage";
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
    <Route path="/entsignup" element={<Entsignup/>}/>
    <Route path="/ent-loginpagemain" element={<LoginPageMain/>} />
    <Route path="/ent-forgotpassmain" element={<ForgotPassMain/>}/>
+   <Route path="/enthomepage" element={<Enthomepage/>}/>
+
 
 
 
