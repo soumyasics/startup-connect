@@ -4,6 +4,11 @@ p.Registernow {
   font-weight: 700;
   line-height: 24.55px;
   color: #00b0f0;
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.55px;
+    color: #00B0F0;
 }
 h1.Registertopcontent {
   font-family: Nunito;
@@ -11,6 +16,13 @@ h1.Registertopcontent {
   font-weight: 700;
   line-height: 32.74px;
   color: #0f2442;
+}
+h1.Registertopcontent {
+    font-family: Nunito;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.74px;
+    color: #0F2442;
 }
 
 .Entinput {
@@ -32,8 +44,50 @@ h1.Registertopcontent {
   background: #06a3da;
   border: none;
   padding: 8px 122px;
+
+}
+.Entregbtn {
+
+    text-align: center;
+    background: #06A3DA;
+    border: none;
+    padding: 8px 122px;
 }
 
 .dummy .row {
-  --bs-gutter-x: 0;
+    --bs-gutter-x: 0;
+
+}
+
+
+.Entreginput {
+    padding: 17px 110px;
+    background-color: #EEF9FF;
+    color: #555252;
+    border: none;
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 400;
+
+    border: none;
+
+}
+
+#Entsignuploadimage {
+    background-color: #EEF9FF;
+    color: #555252;
+    text-align: left;
+    border: none;
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    padding: 15px 1px;
+
+}
+
+
+.EntRegimage {
+    width: 375px;
+    height: 578px;
 }
