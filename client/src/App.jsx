@@ -8,7 +8,7 @@ import ForgotPassMain from "./Entreprenuer/ForgotPass/ForgotPassMain";
 
 
 
-import Entsignup from "./Entreprenuer/LoginPage/Signup/Entsignup";
+import Entsignup from "./Entreprenuer/Signup/Entsignup";
 import Footer from "./components/Footer/Footer";
 
 

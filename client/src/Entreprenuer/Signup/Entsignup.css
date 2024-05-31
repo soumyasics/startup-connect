@@ -12,10 +12,7 @@ font-weight: 700;
 line-height: 32.74px;
 color: #0F2442;
 }
-div.Regimage{
-width: 450px;
-height: 578px;
-}
+
 
 .Entinput{
 width: 424px;
@@ -32,13 +29,15 @@ border: none;
     float: right;
 }
 .Entregbtn{
-width: 300px;
-height: 40px;
+
 text-align: center;
 background: #06A3DA;
 border: none;
+padding: 8px 122px;
 }
 
-
+.dummy .row{
+    --bs-gutter-x:0;
     
+}
 

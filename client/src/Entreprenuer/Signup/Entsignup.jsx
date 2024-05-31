@@ -1,6 +1,6 @@
 import React from 'react'
 import './Entsignup.css'
-import Entbodyimage from '../../../assets/Entregbodyimage.png'
+import Entbodyimage from '../../assets/Entregbodyimage.png'
 
 function Entsignup() {
     return (
@@ -14,11 +14,11 @@ function Entsignup() {
                 <h1 className='Registertopcontent' > of Innovation</h1>
                 <hr className='mb-5 border border-3 border-info' style={{ margin: "0 45%" }}></hr>
             </div>
-            <div className='pt-3'>
-                <div class="row p-0">
+            <div className='pt-3 dummy'>
+                <div class="row">
                     <div class="col ps-5 p-0">
-                        <div className='Regimage'>
-                            <img src={Entbodyimage} alt="" />
+                        <div>
+                            <img  src={Entbodyimage} alt=''/>
                         </div>
 
                     </div>
