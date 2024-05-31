@@ -26,24 +26,24 @@ function Entsignup() {
                         <div>
                             <div  >
                                 <div>
-                                    <input className='Entinput ps-3' type='text' placeholder='First Name' />
+                                    <input className='ent-signup-input ps-3' type='text' placeholder='First Name' />
                                 </div>
                                 <div className='pt-4'>
-                                    <input className='Entinput ps-3' type='text' placeholder='Company Name' />
+                                    <input className='ent-signup-input ps-3' type='text' placeholder='Company Name' />
                                 </div>
                                 <div className='pt-4'>
-                                    <input className='Entinput ps-3' type='text' placeholder='Industry Sector' />
+                                    <input className='ent-signup-input ps-3' type='text' placeholder='Industry Sector' />
                                 </div>
                                 <div className='pt-4'>
-                                    <input className='Entinput ps-3' type='email' placeholder='E-Mail ID' />
+                                    <input className='ent-signup-input ps-3' type='email' placeholder='E-Mail ID' />
                                 </div>
                                 <div className='pt-4'>
-                                    <input className='Entinput ps-3' type='number' placeholder='Contact Number' />
+                                    <input className='ent-signup-input ps-3' type='number' placeholder='Contact Number' />
                                 </div>
                                 <div className='pt-4'>
-                                    <input className='Entinput ps-3' type='text' placeholder='Address' />
+                                    <input className='ent-signup-input ps-3' type='text' placeholder='Address' />
                                 </div>
-                                <div className='Entinput mt-4 pt-3 ps-3'>
+                                <div className='ent-signup-input mt-4 pt-3 ps-3'>
                                     <input type='file'  id='chooseimage'/>Your Image
 
                                     
@@ -60,25 +60,25 @@ function Entsignup() {
                         <div >
                             <div  >
                                 <div>
-                                    <input className='Entinput ps-3' type='text' placeholder='Last Name' />
+                                    <input className='ent-signup-input ps-3' type='text' placeholder='Last Name' />
                                 </div>
                                 <div className='pt-4'>
-                                    <input className='Entinput ps-3' type='text' placeholder='Corporate Identification Number' />
+                                    <input className='ent-signup-input ps-3' type='text' placeholder='Corporate Identification Number' />
                                 </div>
                                 <div className='pt-4'>
-                                    <input className='Entinput ps-3' type='text' placeholder='Company Description' />
+                                    <input className='ent-signup-input ps-3' type='text' placeholder='Company Description' />
                                 </div>
                                 <div className='pt-4'>
-                                    <input className='Entinput ps-3' type='text' placeholder='Location' />
+                                    <input className='ent-signup-input ps-3' type='text' placeholder='Location' />
                                 </div>
                                 <div className='pt-4'>
-                                    <input className='Entinput ps-3' type='text' placeholder='Username' />
+                                    <input className='ent-signup-input ps-3' type='text' placeholder='Username' />
                                 </div>
                                 <div className='pt-4'>
-                                    <input className='Entinput ps-3' type='password' placeholder='Password' />
+                                    <input className='ent-signup-input ps-3' type='password' placeholder='Password' />
                                 </div>
                                 <div className='pt-4'>
-                                    <input className='Entinput ps-3' type='password' placeholder='Confirm Password' />
+                                    <input className='ent-signup-input ps-3' type='password' placeholder='Confirm Password' />
                                 </div>
 
 

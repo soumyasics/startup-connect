@@ -14,8 +14,7 @@ color: #0F2442;
 }
 
 
-.Entinput{
-width: 424px;
+.ent-signup-input{
 height: 53px;
 font-family: Nunito;
 font-size: 18px;
@@ -25,19 +24,20 @@ background: #EEF9FF;
 color: #555252;
 border: none;
 }
+
  #chooseimage{
     float: right;
 }
-.Entregbtn{
+/* .Entregbtn{
 
 text-align: center;
 background: #06A3DA;
 border: none;
 padding: 8px 122px;
-}
+} */
 
-.dummy .row{
+/* .dummy .row{
     --bs-gutter-x:0;
     
-}
-
+} */
+ 
