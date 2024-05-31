@@ -35,11 +35,11 @@ function Footer() {
                                 <h1 className='secondcolumncontent text-center'>Get In Touch</h1>
                                 <hr className=' hrlinefirst'></hr>
                                 <div>
-                                    <div className='secondcolumnadress '>
+                                    <div className='secondcolumnadress  '>
 
-                                        <div><img src={Adresslogo} /><span>123 Street, New York,USA</span></div>
-                                        <div><img className='pt-1' src={Emaillogo} /><span>info@example.com</span></div>
-                                        <div><img className='pt-1' src={Phonelogo} /><span >+012 345 67890</span></div>
+                                        <div ><img  src={Adresslogo} /><span>123 Street, New York,USA</span></div>
+                                        <div className='pt-2 '><img  src={Emaillogo} /><span >info@example.com</span></div>
+                                        <div className='pt-2'><img src={Phonelogo} /><span >+012 345 67890</span></div>
                                         <div className='mt-2'>
                                             <img className='me-1' src={Twiterlogo} />
                                             <img className='me-1' src={Facebooklogo} />
