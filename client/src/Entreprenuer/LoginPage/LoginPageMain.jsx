@@ -19,6 +19,7 @@ function LoginPageMain() {
       ...prevData,
       [name]:''
     }))
+    console.log(errors);
   }
 
   return (

@@ -13,7 +13,7 @@ function App() {
       <Route path="/" element={<LandingPageTopNav/>}/>
       <Route path="/footer" element={<Footer/>}/>
       <Route path="/ent-loginpagemain" element={<LoginPageMain/>} />
-   <Route path="/ent-forgotpassmain" element={<ForgotPassMain/>}/>
+      <Route path="/ent-forgotpassmain" element={<ForgotPassMain/>}/>
 
     </Routes>
     </BrowserRouter>
