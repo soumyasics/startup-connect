@@ -8,14 +8,13 @@ import ForgotPassMain from "./Entreprenuer/ForgotPass/ForgotPassMain";
 
 
 import Entsignup from "./Entreprenuer/Signup/Entsignup";
-import Footer from "./components/Footer/Footer";
 
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
-    <Route path="/" element={[<LandingPageTopNav/>,<Footer/>]}/>
+    <Route path="/" element={[<LandingPageTopNav/>]}/>
    <Route path="/entsignup" element={<Entsignup/>}/>
    <Route path="/ent-loginpagemain" element={<LoginPageMain/>} />
    <Route path="/ent-forgotpassmain" element={<ForgotPassMain/>}/>
