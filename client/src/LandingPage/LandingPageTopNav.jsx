@@ -194,9 +194,9 @@ function LandingPageTopNav() {
         </div>
       </div>
       <section className="container "   >
-        <div className="row">
-          <div className="col-6 mt-5 pt-5" >
-            <h3 className="aboutusheading mt-5 pt-5" id="About" >ABOUT US</h3>
+        <div className="row" id="aboutsection">
+          <div className="col-6 mt-5 pt-5" id="About">
+            <h3 className="aboutusheading"  >ABOUT US</h3>
             <h2>
               Empowering Entrepreneurs to <br></br>Innovate and Grow
             </h2>
@@ -207,7 +207,7 @@ function LandingPageTopNav() {
               tempor eirmod magna dolore erat amet
             </p>
 
-            <div className="row mt-5">
+            <div className="row ">
               <div className="col-6">
                 <div>
                   {" "}
