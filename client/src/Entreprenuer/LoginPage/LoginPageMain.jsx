@@ -102,8 +102,9 @@ function LoginPageMain() {
         />{errors.password && (
           <div className="text-danger errortext">{errors.password}</div>
         )}
-        <p> 
-          please register first <Link to="/entrepreneur/signup">Register</Link>
+        <p className="text-center mt-4"><Link to="/entrepreneur/fogot-password">Forgot password</Link></p>
+        <p className=""> 
+          please register first <Link  to="/entrepreneur/signup">Register</Link>
         </p>
         <button className="ent-loginpage-loginbtn" onClick={HandleClick}>
           Log In
