@@ -4,6 +4,7 @@ import Forgotpasswordimage from "../../assets/ForgotPassword.png";
 
 function ForgotPassMain() {
   return (
+    <>
     <div className="container">
       <div className="ent-forgotpass-forgotpassword">
         <p>Forgot Password</p>
@@ -28,6 +29,8 @@ function ForgotPassMain() {
         <button className="ent-forgotpass-cancelbtn">Cancel</button>
       </form>
     </div>
+    
+    </>
   );
 }
 
