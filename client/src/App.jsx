@@ -9,16 +9,23 @@ import ForgotPassMain from "./Entreprenuer/ForgotPass/ForgotPassMain";
 
 import Entsignup from "./Entreprenuer/Signup/Entsignup";
 
+{/* Invester */}
+
+import InvesterRegister from "./components/Invester/InvesterRegister";
+
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
-    <Route path="/" element={[<LandingPageTopNav/>]}/>
-   <Route path="/entsignup" element={<Entsignup/>}/>
-   <Route path="/ent-loginpagemain" element={<LoginPageMain/>} />
-   <Route path="/ent-forgotpassmain" element={<ForgotPassMain/>}/>
+      {/* Entreprenuer */}
+      <Route path="/ent-loginpagemain" element={<LoginPageMain/>} />
+      <Route path="/ent-forgotpassmain" element={<ForgotPassMain/>}/>
+      <Route path="/" element={[<LandingPageTopNav/>,<Footer/>]}/>
+      <Route path="/entsignup" element={<Entsignup/>}/>
 
+      {/* Invester */}
+      <Route path="inv-register" element={<InvesterRegister/>}/>
 
 
     </Routes>
