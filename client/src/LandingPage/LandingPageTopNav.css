@@ -135,14 +135,15 @@ a.Topnavemailadress {
   color: #ffffff;
   background-color: #091e3e;
 }
+div.sticky{
+  position: sticky;
+  top:-1%;
+}
 
 .landingsecondheader {
   background-color: rgb(255, 255, 255);
   color: black;
   font-size: larger;
-  position: sticky;
-  position: fixed;
-  top: 50px;
   z-index: 1;
   width: 100%;
   font-weight: 400;
@@ -170,8 +171,13 @@ a.Topnavemailadress {
 .landingpagemainseconddiv1 {
   background-color: #06a3da;
 }
+#aboutsection{
+  margin-top: 5%;
+  padding-top: 15%;
+}
 .aboutusheading {
-  margin-top: 20%;
+  padding-top: 10%;
+
   color: rgb(6, 163, 218);
 }
 .about2 {
@@ -183,4 +189,11 @@ a.Topnavemailadress {
 }
 .mainheadings {
   color: rgb(6, 163, 218);
+}
+.navbarstext{
+  color: rgb(6, 163, 218);
+text-decoration: none;
+}
+.landingtopheader{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
