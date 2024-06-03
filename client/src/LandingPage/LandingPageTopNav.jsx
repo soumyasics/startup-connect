@@ -21,7 +21,7 @@ function LandingPageTopNav() {
   const navigate = useNavigate();
 
   const navigateToLogin = () => {
-    navigate('/entrepreneur/login');
+    navigate("/entrepreneur/login");
   };
 
   return (
@@ -91,10 +91,18 @@ function LandingPageTopNav() {
               </Navbar.Brand>
               <Navbar.Toggle />
               <Navbar.Collapse className="justify-content-end">
-                <Navbar.Text className="px-5"><a href="#Home">Home</a></Navbar.Text>
-                <Navbar.Text className="px-5"><a href="#About">About Us</a></Navbar.Text>
-                <Navbar.Text className="px-5"><a href="#Services">Services</a></Navbar.Text>
-                <Navbar.Text className="px-5" onClick={navigateToLogin}>Sign In</Navbar.Text>
+                <Navbar.Text className="px-5">
+                  <a href="#Home">Home</a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5">
+                  <a href="#About">About Us</a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5">
+                  <a href="#Services">Services</a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5" onClick={navigateToLogin}>
+                  Sign In
+                </Navbar.Text>
               </Navbar.Collapse>
             </Navbar>
           </div>
@@ -145,7 +153,10 @@ function LandingPageTopNav() {
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev"
           >
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button
@@ -154,7 +165,10 @@ function LandingPageTopNav() {
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide="next"
           >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Next</span>
           </button>
         </div>
@@ -195,56 +209,11 @@ function LandingPageTopNav() {
             </div>
           </div>
         </div>
-        <div className="row landingpagemainseconddivpart2">
-          <div className="col-6">
-            <div>
-              <h1>
-                Helping Entrepreneurs Business World Wide <br />
-                Grow
-              </h1>
-            </div>
-          </div>
-          <div className="col-6">
-            <div>
-              <h5>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta dui, sit amet
-                faucibus purus. In lobortis quis augue sit amet vulputate. Sed gravida sollicitudin magna eu
-                tristique. Mauris vitae consequat mi.
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div className="row landingpagemainseconddivpart3">
-          <div className="col-4">
-            <div>
-              <img src={img4} alt="..." />
-              <h3>UI/UX Design</h3>
-              <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta dui, sit amet
-                faucibus purus. In lobortis quis augue sit amet vulputate.</h5>
-            </div>
-          </div>
-          <div className="col-4">
-            <div>
-              <img src={img5} alt="..." />
-              <h3>Business Analysis</h3>
-              <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta dui, sit amet
-                faucibus purus. In lobortis quis augue sit amet vulputate.</h5>
-            </div>
-          </div>
-          <div className="col-4">
-            <div>
-              <img src={img6} alt="..." />
-              <h3>Web Development</h3>
-              <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta dui, sit amet
-                faucibus purus. In lobortis quis augue sit amet vulputate.</h5>
-            </div>
-          </div>
-        </div>
       </div>
-      <section className="container "   >
+      <section className="container">
         <div className="row" id="aboutsection">
           <div className="col-6 mt-5 pt-5" id="About">
-            <h3 className="aboutusheading"  >ABOUT US</h3>
+            <h3 className="aboutusheading">ABOUT US</h3>
             <h2>
               Empowering Entrepreneurs to <br></br>Innovate and Grow
             </h2>
@@ -300,6 +269,7 @@ function LandingPageTopNav() {
           </div>
         </div>
       </section>
+
       <section>
         <div className="container mt-5 pt-5">
           <div className="  text-center">
@@ -347,7 +317,7 @@ function LandingPageTopNav() {
         </div>
       </section>
 
-      <section  id="Services" className="mt-5 pt-5">
+      <section id="Services" className="mt-5 pt-5">
         <div className="container">
           <div className="  text-center">
             <h4 className=" mt-5 pt-5 mainheadings ">OUR SERVICES</h4>
