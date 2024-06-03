@@ -74,8 +74,8 @@ function LandingPageTopNav() {
           </div>
         </nav>
       </div>
-      <div>
-        <div>
+      <div className="sticky">
+        <div className="landingtopheader">
           <div className="landingsecondheader ">
             <Navbar className="px-4">
               <Navbar.Brand href="#home " className="text-light">
@@ -83,16 +83,16 @@ function LandingPageTopNav() {
               </Navbar.Brand>
               <Navbar.Toggle />
               <Navbar.Collapse className="justify-content-end">
-                <Navbar.Text className="px-5">Home</Navbar.Text>
-                <Navbar.Text className="px-5">About Us</Navbar.Text>
-                <Navbar.Text className="px-5">Services</Navbar.Text>
+                <Navbar.Text className="px-5"><a href="#Home">Home</a></Navbar.Text>
+                <Navbar.Text className="px-5"><a href="#About">About Us</a></Navbar.Text>
+                <Navbar.Text className="px-5"><a href="#Services">Services</a></Navbar.Text>
                 <Navbar.Text className="px-5">Sign In</Navbar.Text>
               </Navbar.Collapse>
             </Navbar>
           </div>
         </div>
       </div>
-      <div className="landingpagemaindiv">
+      <div className="landingpagemaindiv" id="Home">
         <div id="carouselExampleIndicators" class="carousel slide">
           <div class="carousel-indicators">
             <button
@@ -193,10 +193,10 @@ function LandingPageTopNav() {
           </div>
         </div>
       </div>
-      <section className="container">
+      <section className="container "   >
         <div className="row">
-          <div className="col-6 mt-5 pt-5">
-            <h3 className="aboutusheading ">ABOUT US</h3>
+          <div className="col-6 mt-5 pt-5" >
+            <h3 className="aboutusheading mt-5 pt-5" id="About" >ABOUT US</h3>
             <h2>
               Empowering Entrepreneurs to <br></br>Innovate and Grow
             </h2>
@@ -253,7 +253,7 @@ function LandingPageTopNav() {
         </div>
       </section>
       <section>
-        <div className="container">
+        <div className="container mt-5 pt-5">
           <div className="  text-center">
             <h4 className="  mt-5 pt-5 mainheadings"> WHY CHOOSE US</h4>
             <h3>We Are Here to Grow Your </h3>
@@ -299,7 +299,7 @@ function LandingPageTopNav() {
         </div>
       </section>
 
-      <section>
+      <section  id="Services" className="mt-5 pt-5">
         <div className="container">
           <div className="  text-center">
             <h4 className=" mt-5 pt-5 mainheadings ">OUR SERVICES</h4>
