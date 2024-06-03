@@ -6,15 +6,15 @@ import LandingPageTopNav from "./LandingPage/LandingPageTopNav";
 import LoginPageMain from "./Entreprenuer/LoginPage/LoginPageMain";
 import ForgotPassMain from "./Entreprenuer/ForgotPass/ForgotPassMain";
 
-
 import Entsignup from "./Entreprenuer/Signup/Entsignup";
 import Footer from "./components/Footer/Footer";
+import { CommonNavbar } from "./components/commonNavbar/commonNavbar";
 
 function App() {
   return (
-    <BrowserRouter >
+    <BrowserRouter basename="strartup">
       <Routes>
-        <Route path="/" element={[<LandingPageTopNav />, <Footer />]} />
+        <Route path="/" element={<LandingPageTopNav />} />
         <Route path="/entrepreneur/signup" element={<Entsignup />} />
         <Route path="/entrepreneur/login" element={<LoginPageMain />} />
         <Route
@@ -22,6 +22,8 @@ function App() {
           element={<ForgotPassMain />}
         />
 
+        {/* common pages  */}
+        <Route path="navbar" element={<CommonNavbar />} />
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
       </Routes>
     </BrowserRouter>
