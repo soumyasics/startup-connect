@@ -43,7 +43,6 @@ h1.Registertopcontent {
   text-align: center;
   background: #06a3da;
   border: none;
-  padding: 8px 122px;
 }
 .Entregbtn {
   text-align: center;
@@ -81,13 +80,6 @@ h1.Registertopcontent {
 }
 
 .EntRegimage {
-<<<<<<< HEAD
   width: 375px;
-  height: 578px;
+  height: 338px;
 }
-=======
-    width: 375px;
-    height: 578px;
-}
-
->>>>>>> 62b2e909d769a49beb6d16b32b28bd71cbaee71a

@@ -2,10 +2,12 @@ const Entrepreneur = require("./entrepreneurSchema");
 const jwt = require("jsonwebtoken");
 const secret = "entrepreneur"; // Replace this with your own secret key
 const multer = require("multer");
+
 const storage = multer.diskStorage({
   destination: function (req, res, cb) {
     cb(null, "./upload");
   },
+
   filename: function (req, file, cb) {
     const uniquePrefix = "prefix-"; // Add your desired prefix here
     const originalname = file.originalname;
@@ -20,7 +22,7 @@ const storage = multer.diskStorage({
     cb(null, filename);
   },
 });
-const upload = multer({ storage: storage }).single("image");
+const upload = multer({ storage: storage }).single("file");
 
 // Register Entrepreneur
 const registerEntrepreneur = async (req, res) => {
