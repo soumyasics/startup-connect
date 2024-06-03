@@ -9,6 +9,7 @@ import Entsignup from "./Entreprenuer/Signup/Entsignup";
 import { CommonNavbar } from "./components/commonNavbar/commonNavbar";
 
 import InvesterRegister from "./components/Invester/InvesterRegister";
+import Enthomepage from "./Entreprenuer/Homepage/Enthomepage";
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
         {/* common pages  */}
         <Route path="navbar" element={<CommonNavbar />} />
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
+
+        <Route path="/Enthomepage"element={<Enthomepage/>} />
       </Routes>
     </BrowserRouter>
   );
