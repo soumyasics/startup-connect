@@ -262,16 +262,16 @@ function Entsignup() {
                     name="lname"
                   />
                 </div>
-                <div className="pt-4">
+                {/* <div className="pt-4">
                   <input
                     className="Entreginput"
                     type="text"
                     onChange={handleInputChange}
                     placeholder="Corporate Identification Number"
                   />
-                </div>
+                </div> */}
 
-                <div className="pt-4">
+                {/* <div className="pt-4">
                   <input
                     className="Entreginput"
                     onChange={handleInputChange}
@@ -279,23 +279,23 @@ function Entsignup() {
                     placeholder="Company Description"
 
                   />
-                </div>
-                <div className="pt-4">
+                </div> */}
+                {/* <div className="pt-4">
                   <input
                     className="Entinput ps-3"
                     type="text"
                     placeholder="Industry Sector"
                     onChange={handleInputChange}
                   />
-                </div>
-                <div className="pt-4">
+                </div> */}
+                {/* <div className="pt-4">
                   <input
                     className="Entreginput"
                     type="text"
                     onChange={handleInputChange}
                     placeholder="Username"
                   />
-                </div>
+                </div> */}
                 
                 <div className="pt-4">
                   <input
@@ -303,6 +303,8 @@ function Entsignup() {
                     type="password"
                     onChange={handleInputChange}
                     placeholder="Confirm Password"
+                    value={data.password}
+                    name="password"
                   />
                 </div>
               </div>

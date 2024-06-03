@@ -6,7 +6,6 @@ import LoginPageMain from "./Entreprenuer/LoginPage/LoginPageMain"
 import ForgotPassMain  from "./Entreprenuer/ForgotPass/ForgotPassMain"
 import Entsignup from "./Entreprenuer/Signup/Entsignup";
 
-import Footer from "./components/Footer/Footer";
 import { CommonNavbar } from "./components/commonNavbar/commonNavbar";
 
 import InvesterRegister from "./components/Invester/InvesterRegister";

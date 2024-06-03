@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import "./LoginPageMain.css"
 import Loginimage from '../../assets/Rectangle 10.png'
+import { Link } from 'react-router-dom';
+
 function LoginPageMain() {
 
   let formvalid=true;
@@ -23,7 +25,7 @@ function LoginPageMain() {
   }
 
   return (
-    <div className='container'>
+    <div className='container mt-5'>
       <div className="ent-loginpage-loginhere">
         <p>Login Here</p>
       </div>
@@ -39,6 +41,7 @@ function LoginPageMain() {
         <input type="email" name='email' onChange={change} className='ent-loginpage-email'/>
         <label className='ent-loginpage-password-label'>Password</label>
         <input type="password" name='password' onChange={change} className='ent-loginpage-password'/>
+        <p>please register first<Link to="/entrepreneur/signup">Register</Link></p>
         <button className='ent-loginpage-loginbtn'>Log In</button>
       </form>
     </div>
