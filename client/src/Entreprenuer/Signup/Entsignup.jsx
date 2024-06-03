@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Entsignup.css";
 import Entbodyimage from "../../assets/Entregbodyimage.png";
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../../BaseAPIs/AxiosInstance";
 
 function Entsignup() {
   const navigate = useNavigate();
@@ -39,6 +40,9 @@ function Entsignup() {
     setData({ ...data, [name]: files[0] });
     console.log(files);
   };
+
+  console.log(data,"kkk");
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -85,22 +89,22 @@ function Entsignup() {
       errors.gender = "gender is required";
     }
 
-    if (!data.shopownerpassword.trim()) {
+    if (!data.password.trim()) {
       formValid = false;
-      errors.shopownerpassword = "Password is required";
+      errors.password = "Password is required";
     } else if (
       !/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}/.test(
-        data.shopownerpassword
+        data.password
       )
     ) {
       formValid = false;
-      errors.shopownerpassword =
+      errors.password =
         "Password should be at least 6 characters long and contain at least one lowercase letter, one uppercase letter, one number, and one special character";
     }
 
     setErrors(errors);
 
-    // console.log(data.shoplisence);
+    console.log(data.image);
     if (
       data.fname &&
       data.lname &&
@@ -137,14 +141,14 @@ function Entsignup() {
           );
         }
         console.log("Response:", response);
-        alert("Waiting for Admin approval..");
-        setTimeout(() => {
-          navigate("/shopownerlogin");
-        }, 1500);
+        // alert("Waiting for Admin approval..");
+        // setTimeout(() => {
+        //   navigate("/shopownerlogin");
+        // }, 1500);
       } catch (error) {
-        console.error("Error:", error);
-        let msg = error?.response?.data?.message || "Error occurred";
-        alert(msg);
+        // console.error("Error:", error);
+        // let msg = error?.response?.data?.message || "Error occurred";
+        // alert(msg);
       }
     } else {
       // console.log("Form is not valid", formValid);
@@ -164,7 +168,7 @@ function Entsignup() {
       </div>
       <div className="pt-3 dummy">
         <div class="row">
-          <div class="col-4 p-4 ps-5 p-0">
+          <div class="col-4 p-4 ps-5 mb-5 pb-5">
             <div className="EntRegimage">
               <img src={Entbodyimage} alt="" />
             </div>
@@ -181,8 +185,11 @@ function Entsignup() {
                     value={data.fname}
                     name="fname"
                   />
+                  {errors.fname && (
+                <div className="text-danger errortext">{errors.fname}</div>
+              )}
                 </div>
-                <div className="pt-4">
+                {/* <div className="pt-4">
                   <input
                     className="Entreginput"
                     type="text"
@@ -191,15 +198,15 @@ function Entsignup() {
                     value={data.lname}
                     name="lname"
                   />
-                </div>
-                <div className="pt-4">
+                </div> */}
+                {/* <div className="pt-4">
                   <input
                     className="Entreginput"
                     type="text"
                     onChange={handleInputChange}
                     placeholder="Industry Sector"
                   />
-                </div>
+                </div> */}
                 <div className="pt-4">
                   <input
                     className="Entreginput"
@@ -208,7 +215,9 @@ function Entsignup() {
                     name="email"
                     onChange={handleInputChange}
                     placeholder="E-Mail ID"
-                  />
+                  />{errors.email && (
+                    <div className="text-danger errortext">{errors.email}</div>
+                  )}
                 </div>
                 <div className="pt-4">
                   <input
@@ -218,18 +227,23 @@ function Entsignup() {
                     name="contact"
                     onChange={handleInputChange}
                     placeholder="Contact Number"
-                  />
+                  />{errors.contact && (
+                    <div className="text-danger errortext">{errors.contact}</div>
+                  )}
                 </div>
                 <div className="pt-4">
                   <input
                     className="Entreginput"
-                    type="text"
-                    value={data.address}
-                    name="address"
+                    type="date"
+                    value={data.dob}
+                    name="dob"
                     onChange={handleInputChange}
-                    placeholder="Address"
-                  />
+                    placeholder="db"
+                  />{errors.dob && (
+                    <div className="text-danger errortext">{errors.dob}</div>
+                  )}
                 </div>
+                
                 <div class="input-group  pt-4">
                   <label
                     id="Entsignuploadimage"
@@ -239,7 +253,6 @@ function Entsignup() {
                     Your Image
                   </label>
                   <input
-                   value={data.image}
                    name="image"
                     type="file"
                     id="Entsignuploadimage"
@@ -260,7 +273,9 @@ function Entsignup() {
                     onChange={handleInputChange}
                     value={data.lname}
                     name="lname"
-                  />
+                  />{errors.lname && (
+                    <div className="text-danger errortext">{errors.lname}</div>
+                  )}
                 </div>
                 {/* <div className="pt-4">
                   <input
@@ -296,23 +311,49 @@ function Entsignup() {
                     placeholder="Username"
                   />
                 </div> */}
-                
+                <div className="pt-4">
+                  <input
+                    className="Entreginput"
+                    type="text"
+                    value={data.gender}
+                    name="gender"
+                    onChange={handleInputChange}
+                    placeholder="gender"
+                  />{errors.gender && (
+                    <div className="text-danger errortext">{errors.gender}</div>
+                  )}
+                </div>
                 <div className="pt-4">
                   <input
                     className="Entreginput"
                     type="password"
                     onChange={handleInputChange}
-                    placeholder="Confirm Password"
+                    placeholder="Password"
                     value={data.password}
                     name="password"
                   />
+                  {errors.password && (
+                    <div className="text-danger errortext">{errors.password}</div>
+                  )}
+                </div>
+                <div className="pt-4">
+                  <input
+                    className="Entreginput"
+                    type="text"
+                    value={data.address}
+                    name="address"
+                    onChange={handleInputChange}
+                    placeholder="Address"
+                  />{errors.address && (
+                    <div className="text-danger errortext">{errors.address}</div>
+                  )}
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="row p-0">
-          <div class="col-4 p-0"></div>
+        <div class="row ">
+          <div class="col-4"></div>
           <div class="col-8 text-center">
             <button className="Entregbtn" onClick={handleSubmit}>
               Register
