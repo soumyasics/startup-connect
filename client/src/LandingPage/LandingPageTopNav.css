@@ -135,14 +135,15 @@ a.Topnavemailadress {
   color: #ffffff;
   background-color: #091e3e;
 }
+div.sticky{
+  position: sticky;
+  top:-1%;
+}
 
 .landingsecondheader {
   background-color: rgb(255, 255, 255);
   color: black;
   font-size: larger;
-  position: sticky;
-  position: fixed;
-  top: 50px;
   z-index: 1;
   width: 100%;
   font-weight: 400;
