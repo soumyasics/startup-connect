@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import "./Entsignup.css";
 import Entbodyimage from "../../assets/Entregbodyimage.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
 
 function Entsignup() {
@@ -347,7 +347,9 @@ function Entsignup() {
                   />{errors.address && (
                     <div className="text-danger errortext">{errors.address}</div>
                   )}
-                </div>
+                </div> <b className="mt-4">Already registered please 
+              <Link to="/entrepreneur/login">Login</Link>
+            </b>
               </div>
             </div>
           </div>
@@ -355,6 +357,7 @@ function Entsignup() {
         <div class="row ">
           <div class="col-4"></div>
           <div class="col-8 text-center">
+           
             <button className="Entregbtn" onClick={handleSubmit}>
               Register
             </button>
