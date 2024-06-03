@@ -85,7 +85,7 @@ const viewEntrepreneurs = (req, res) => {
 
 // Update entrepreneur by ID
 const editEntrepreneurById = async (req, res) => {
-    const { fname, lname, email, dob, address, contact, image, gender, password } = req.body;
+    const { fname, lname, email, dob, address, contact, gender, password } = req.body;
 
     try {
         let existingEntrepreneur = await Entrepreneur.findOne({ contact });
@@ -105,7 +105,7 @@ const editEntrepreneurById = async (req, res) => {
             dob,
             address,
             contact,
-            image,
+            image:req.file,
             gender,
             password
         })
