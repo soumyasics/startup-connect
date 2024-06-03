@@ -26,6 +26,7 @@ function Entsignup() {
                         <div>
                             <div  >
 
+
                                 <div className='pt-4'>
                                     <input className='Entreginput' type='text' placeholder='First Name' />
                                 </div>
@@ -58,6 +59,7 @@ function Entsignup() {
                     <div class="col">
                         <div >
                             <div  >
+
                                 <div className='pt-4'>
                                     <input className='Entreginput' type='text' placeholder='Last Name' />
                                 </div>
@@ -79,6 +81,7 @@ function Entsignup() {
                                 </div>
                                 <div className='pt-4'>
                                     <input className='Entreginput' type='password' placeholder='Confirm Password' />
+
                                 </div>
 
 
