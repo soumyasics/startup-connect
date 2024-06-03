@@ -263,6 +263,9 @@ const createToken = (user) => {
 // Login
 const login = (req, res) => {
   const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({msg: "Email and password is required"})
+  }
 
   Entrepreneur.findOne({ email })
     .then((user) => {
