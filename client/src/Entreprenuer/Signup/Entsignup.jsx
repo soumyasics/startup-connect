@@ -151,11 +151,10 @@ function Entsignup() {
       // console.log("Data entered", data);
     }
   };
-
   return (
     <div className="mt-5">
       <div className="text-center">
-        <p className=" Registernow ">Register Now</p>
+        <p className="Registernow ">Register Now</p>
         <h1 className="Registertopcontent ">Access Your World</h1>
         <h1 className="Registertopcontent"> of Innovation</h1>
         <hr
@@ -250,7 +249,6 @@ function Entsignup() {
               </div>
             </div>
           </div>
-
           <div class="col">
             <div>
               <div>
@@ -279,14 +277,15 @@ function Entsignup() {
                     onChange={handleInputChange}
                     type="text"
                     placeholder="Company Description"
+
                   />
                 </div>
                 <div className="pt-4">
                   <input
-                    className="Entreginput"
+                    className="Entinput ps-3"
                     type="text"
+                    placeholder="Industry Sector"
                     onChange={handleInputChange}
-                    placeholder="Location"
                   />
                 </div>
                 <div className="pt-4">
@@ -297,13 +296,7 @@ function Entsignup() {
                     placeholder="Username"
                   />
                 </div>
-                <div className="pt-4">
-                  <input
-                    className="Entreginput"
-                    type="password"
-                    placeholder="Password"
-                  />
-                </div>
+                
                 <div className="pt-4">
                   <input
                     className="Entreginput"
