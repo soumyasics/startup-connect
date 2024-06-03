@@ -16,7 +16,8 @@ import img5 from "../assets/img5.png";
 import img6 from "../assets/img6.png";
 import Footer from "../components/Footer/Footer.jsx";
 import { useNavigate } from "react-router-dom";
-
+import location from '../assets/locationlogo.png'
+import Navemaillogo from '../assets/'
 function LandingPageTopNav() {
   const navigate = useNavigate();
 
@@ -29,19 +30,9 @@ function LandingPageTopNav() {
       <div>
         <nav className="navbar NavTopBg">
           <div className="positionTonav">
-            {/* <svg
-              id="TopNavLocationLogo"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              className="bi bi-geo-alt-fill"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-            </svg> */}
-            <a className="navbar-brand Topnavlocationaddress">
-              123 Street New York, USA
-            </a>
-            <svg
+            <img src={location} alt=""/>
+            <span> 123 Street New York, USA</span>
+          <svg
               id="Topnavphonelogo"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
