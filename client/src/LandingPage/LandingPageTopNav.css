@@ -171,8 +171,13 @@ div.sticky{
 .landingpagemainseconddiv1 {
   background-color: #06a3da;
 }
+#aboutsection{
+  margin-top: 5%;
+  padding-top: 15%;
+}
 .aboutusheading {
-  margin-top: 20%;
+  padding-top: 10%;
+
   color: rgb(6, 163, 218);
 }
 .about2 {

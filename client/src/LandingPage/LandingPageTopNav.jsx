@@ -241,6 +241,180 @@ function LandingPageTopNav() {
           </div>
         </div>
       </div>
+      <section className="container "   >
+        <div className="row" id="aboutsection">
+          <div className="col-6 mt-5 pt-5" id="About">
+            <h3 className="aboutusheading"  >ABOUT US</h3>
+            <h2>
+              Empowering Entrepreneurs to <br></br>Innovate and Grow
+            </h2>
+            <p className="mt-5">
+              Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor
+              sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem
+              et sit, sed stet no labore lorem sit. Sanctus clita duo justo et
+              tempor eirmod magna dolore erat amet
+            </p>
+
+            <div className="row ">
+              <div className="col-6">
+                <div>
+                  {" "}
+                  <img src={img3} className=""></img>
+                  <span className="ms-3">Startup Registration & Support</span>
+                </div>
+                <div className="mt-4">
+                  {" "}
+                  <img src={img3}></img>
+                  <span className="ms-3">Mentorship & Guidance</span>
+                </div>
+                <div className="row mt-5">
+                  <div className="col-3">
+                    {" "}
+                    <img src={img5}></img>
+                  </div>
+                  <div className="col-8">
+                    {" "}
+                    <span>Call to ask any question</span>
+                    <h6 className="text-info">+1234567789</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-6">
+                <div>
+                  {" "}
+                  <img src={img3} className=""></img>
+                  <span className="ms-3">24/7 Support</span>
+                </div>
+                <div className="mt-4">
+                  {" "}
+                  <img src={img3}></img>
+                  <span className="ms-3">Investment Tracking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-6 mt-5 pt-5">
+            <div className="about2"></div>
+            <img className="ms-4" src={img4}></img>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container mt-5 pt-5">
+          <div className="  text-center">
+            <h4 className="  mt-5 pt-5 mainheadings"> WHY CHOOSE US</h4>
+            <h3>We Are Here to Grow Your </h3>
+            <h3>Business Exponentially</h3>
+            <hr
+              className="  mb-5 border border-3 border-info"
+              style={{ margin: "0 45%" }}
+            ></hr>
+          </div>
+          <div className="row">
+            <div className="col-4">
+              <img></img>
+              <h4>Startup Registration & Support</h4>
+              <p>
+                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam
+                dolor
+              </p>
+              <img className="mt-5"></img>
+              <h4>Mentorship & Guidance</h4>
+              <p>
+                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam
+                dolor
+              </p>
+            </div>
+            <div className="col-4">
+              <img src={img6}></img>
+            </div>
+            <div className="col-4">
+              <img></img>
+              <h4>Investment Tracking</h4>
+              <p>
+                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam
+                dolor
+              </p>
+              <img className="mt-5"></img>
+              <h4>24/7 Support</h4>
+              <p>
+                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam
+                dolor
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section  id="Services" className="mt-5 pt-5">
+        <div className="container">
+          <div className="  text-center">
+            <h4 className=" mt-5 pt-5 mainheadings ">OUR SERVICES</h4>
+            <h3>Bridging the Gap Between </h3>
+            <h3>Ideas and Success</h3>
+            <hr
+              className="mb-5 border border-3 border-info"
+              style={{ margin: "0 45%" }}
+            ></hr>
+          </div>
+          <div className="row text-center">
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Security and Privacy</h6>
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Analytics and Reporting</h6>
+
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Entrepreneur Guidance</h6>
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+          </div>
+
+          <div className="row text-center mt-5">
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Security and Privacy</h6>
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Analytics and Reporting</h6>
+
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img></img>
+              <h6>Entrepreneur Guidance</h6>
+              <p>
+                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
+                ipsum dolore sed
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer />
     </>
   );
