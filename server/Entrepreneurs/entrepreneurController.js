@@ -267,11 +267,11 @@ const login = (req, res) => {
   Entrepreneur.findOne({ email })
     .then((user) => {
       if (!user) {
-        return res.status(405).json({ msg: "User not found" });
+        return res.status(404).json({ msg: "User not found" });
       }
 
       if (user.password !== password) {
-        return res.status(405).json({ msg: "Password Mismatch !!" });
+        return res.status(400).json({ msg: "Password Mismatch !!" });
       }
 
       const token = createToken(user);
