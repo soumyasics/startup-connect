@@ -190,3 +190,10 @@ div.sticky{
 .mainheadings {
   color: rgb(6, 163, 218);
 }
+.navbarstext{
+  color: rgb(6, 163, 218);
+text-decoration: none;
+}
+.landingtopheader{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

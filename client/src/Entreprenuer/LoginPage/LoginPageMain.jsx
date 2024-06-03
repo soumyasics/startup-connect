@@ -3,6 +3,7 @@ import "./LoginPageMain.css";
 import Loginimage from "../../assets/Rectangle 10.png";
 import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
+import Footer from "../../components/Footer/Footer";
 
 function LoginPageMain() {
   let formvalid = true;
@@ -70,6 +71,7 @@ function LoginPageMain() {
   };
 
   return (
+    <div>
     <div className="container mt-5">
       <div className="ent-loginpage-loginhere">
         <p>Login Here</p>
@@ -110,6 +112,9 @@ function LoginPageMain() {
           Log In
         </button>
       </form>
+    </div>
+     
+
     </div>
   );
 }
