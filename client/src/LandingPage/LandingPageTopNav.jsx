@@ -92,16 +92,16 @@ function LandingPageTopNav() {
               <Navbar.Toggle />
               <Navbar.Collapse className="justify-content-end">
                 <Navbar.Text className="px-5">
-                  <a href="#Home">Home</a>
+                  <a href="#Home" className="text-decoration-none" ><p className="navbarstext">Home</p></a>
                 </Navbar.Text>
                 <Navbar.Text className="px-5">
-                  <a href="#About">About Us</a>
+                  <a href="#About" className="text-decoration-none" ><p className="navbarstext">About Us</p></a>
                 </Navbar.Text>
                 <Navbar.Text className="px-5">
-                  <a href="#Services">Services</a>
+                  <a href="#Services" className="text-decoration-none" ><p className="navbarstext">Services</p></a>
                 </Navbar.Text>
                 <Navbar.Text className="px-5" onClick={navigateToLogin}>
-                  Sign In
+                <p className="navbarstext">Sign Up</p>
                 </Navbar.Text>
               </Navbar.Collapse>
             </Navbar>
@@ -197,7 +197,7 @@ function LandingPageTopNav() {
               </div>
             </div>
           </div>
-          <div className="col-4 landingpagemainseconddiv3 p-5">
+          <div className="col-4 landingpagemainseconddiv1 p-5">
             <div className="row">
               <div className="col-3">
                 <img src={img3} alt="Branches" />
