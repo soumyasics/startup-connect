@@ -15,7 +15,20 @@ import img4 from "../assets/img4.png";
 import Frame from "../assets/Frame 40.png";
 import img5 from "../assets/img5.png";
 import img6 from "../assets/img6.png";
+
+import why_choose_img1 from "../assets/why_choose_img1.png";
+import why_choose_img2 from "../assets/why_choose_img2.png";
+import why_choose_img3 from "../assets/why_choose_img3.png";
+import why_choose_img4 from "../assets/why_choose_img4.png";
+import our_service_img1 from "../assets/our_service_img1.png";
+import our_service_img2 from "../assets/our_service_img2.png";
+import our_service_img3 from "../assets/our_service_img3.png";
+import our_service_img4 from "../assets/our_service_img4.png";
+import our_service_img5 from "../assets/our_service_img5.png";
+import our_service_img6 from "../assets/our_service_img6.png";
+
 import img7 from "../assets/img7.png";
+
 import Footer from "../components/Footer/Footer.jsx";
 import { useNavigate } from "react-router-dom";
 import img8 from "../assets/img8.png";
@@ -170,30 +183,34 @@ function LandingPageTopNav() {
                 <img src={img1} alt="Happy Entrepreneurs" />
               </div>
               <div className="col-8">
-                <span>Happy Entrepreneurs</span>
-                <h4>12345</h4>
+                <span className="hero_span">Happy Entrepreneurs</span>
+                <h4 className="hero_h4_number">12345</h4>
               </div>
             </div>
           </div>
           <div className="col-4 landingpagemainseconddiv2 p-5">
             <div className="row">
               <div className="col-3">
-                <img src={img2} alt="Services Provide" />
+                <img src={img3} alt="Services Provide" />
               </div>
               <div className="col-8">
-                <span>Services Provide</span>
-                <h4>12345</h4>
+                <span className="hero_span">Services Provide</span>
+                <h4 className="hero_h4_number">12345</h4>
               </div>
             </div>
           </div>
           <div className="col-4 landingpagemainseconddiv1 p-5">
             <div className="row">
               <div className="col-3">
+
+                <img src={img2} alt="Branches" />
+
                 <img className="bg-light p-1 w-100" src={img7} alt="Branches" />
+
               </div>
               <div className="col-8">
-                <span>Branches</span>
-                <h4>12345</h4>
+                <span className="hero_span">Branches</span>
+                <h4 className="hero_h4_number">12345</h4>
               </div>
             </div>
           </div>
@@ -203,27 +220,25 @@ function LandingPageTopNav() {
         <div className="row" id="aboutsection">
           <div className="col-6 mt-5 pt-5" id="About">
             <h3 className="aboutusheading">ABOUT US</h3>
-            <h2>
+            <h2 className="aboutus_h2">
               Empowering Entrepreneurs to <br></br>Innovate and Grow
             </h2>
-            <p className="mt-5">
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor
-              sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem
-              et sit, sed stet no labore lorem sit. Sanctus clita duo justo et
-              tempor eirmod magna dolore erat amet
+            <p className="mt-5 aboutus_p">
+            At application, we are dedicated to empowering entrepreneurs to transform their innovative ideas into thriving businesses. Our mission is to provide comprehensive support and resources to help startups succeed in today's competitive landscape.
             </p>
 
-            <div className="row ">
-              <div className="col-6">
+            <div className="row pt-3">
+              <h4 className="range_of_service">We offer a wide range of services, including:</h4>
+              <div className="col-6 pt-2">
                 <div>
                   {" "}
-                  <img src={img3} className=""></img>
-                  <span className="ms-3">Startup Registration & Support</span>
+                  <img src={img3} className="range_of_service_img"></img>
+                  <span className="ms-1 range_of_service_span">Startup Registration & Support</span>
                 </div>
                 <div className="mt-4">
                   {" "}
-                  <img src={img3}></img>
-                  <span className="ms-3">Mentorship & Guidance</span>
+                  <img src={img3} className="range_of_service_img"></img>
+                  <span className="ms-3 range_of_service_span">Mentorship & Guidance</span>
                 </div>
                 <div className="row mt-5">
                   <div className="col-3">
@@ -232,29 +247,31 @@ function LandingPageTopNav() {
                   </div>
                   <div className="col-8">
                     {" "}
-                    <span>Call to ask any question</span>
+                    <span className="range_of_service_span">Call to ask any question</span>
                     <h6 className="text-info">+1234567789</h6>
                   </div>
                 </div>
               </div>
 
-              <div className="col-6">
+              <div className="col-6 pt-2">
                 <div>
                   {" "}
-                  <img src={img3} className=""></img>
-                  <span className="ms-3">24/7 Support</span>
+                  <img src={img3} className="range_of_service_img"></img>
+                  <span className="ms-3 range_of_service_span">24/7 Support</span>
                 </div>
                 <div className="mt-4">
                   {" "}
-                  <img src={img3}></img>
-                  <span className="ms-3">Investment Tracking</span>
+                  <img src={img3} className="range_of_service_img"></img>
+                  <span className="ms-3 range_of_service_span">Investment Tracking</span>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="col-6 mt-5 pt-5">
-            <div className="about2"></div>
-            <img className="ms-4" src={img4}></img>
+              
+            </div>  {/* ---row ending */}
+         
+          
+        </div>
+        <div className="col-6 mt-5">
+            <img className="about_img" src={img4}></img>
           </div>
         </div>
       </section>
@@ -263,14 +280,26 @@ function LandingPageTopNav() {
         <div className="container mt-5 pt-5">
           <div className="  text-center">
             <h4 className="  mt-5 pt-5 mainheadings"> WHY CHOOSE US</h4>
-            <h3>We Are Here to Grow Your </h3>
-            <h3>Business Exponentially</h3>
+            <h3 className="why_choose_sub_h3">We Are Here to Grow Your </h3>
+            <h3 className="why_choose_sub_h3">Business Exponentially</h3>
             <hr
               className="  mb-5 border border-3 border-info"
               style={{ margin: "0 45%" }}
             ></hr>
           </div>
           <div className="row">
+
+            <div className="col">
+              <img src={why_choose_img1} className="why_choose_img"></img>
+              <h4 className="why_choose_heading">Startup Registration & Support</h4>
+              <p className="why_choose_p">
+              Guiding you through the process of establishing and legally structuring your business.
+              </p>
+              <img className="mt-5 why_choose_img" src={why_choose_img3}></img>
+              <h4 className="why_choose_heading">Mentorship & Guidance</h4>
+              <p className="why_choose_p">
+              Connecting you with experienced mentors who offer valuable insights and advice to navigate the challenges of entrepreneurship.
+
             <div className="col-4">
               <img src={img8} className="bg-info p-3"></img>
               <h4>Startup Registration & Support</h4>
@@ -287,12 +316,25 @@ function LandingPageTopNav() {
               <p>
                 Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam
                 dolor
+
               </p>
             </div>
-            <div className="col-4">
+            <div className="col">
               <img src={img6}></img>
             </div>
-            <div className="col-4">
+
+            <div className="col">
+             <img src={why_choose_img2} className="why_choose_img"></img>
+              <h4 className="why_choose_heading">Investment Tracking</h4>
+              <p className="why_choose_p">
+              Helping you monitor and manage your investments to maximize growth and profitability.
+              </p>
+              <img className="mt-5 why_choose_img" src={why_choose_img4}></img>
+              <h4 className="why_choose_heading">24/7 Support</h4>
+              <p className="why_choose_p">
+              Providing round-the-clock assistance to ensure your startup's needs are met at any time.
+
+           <div className="col-4">
               <img src={img9} className="bg-info p-3"></img>
               <h4>Investment Tracking</h4>
               <p>
@@ -308,6 +350,7 @@ function LandingPageTopNav() {
               <p>
                 Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam
                 dolor
+
               </p>
             </div>
           </div>
@@ -318,14 +361,25 @@ function LandingPageTopNav() {
         <div className="container">
           <div className="  text-center">
             <h4 className=" mt-5 pt-5 mainheadings ">OUR SERVICES</h4>
-            <h3>Bridging the Gap Between </h3>
-            <h3>Ideas and Success</h3>
+            <h3 className="our_service_sub_h3">Bridging the Gap Between </h3>
+            <h3 className="our_service_sub_h3">Ideas and Success</h3>
             <hr
               className="mb-5 border border-3 border-info"
               style={{ margin: "0 45%" }}
             ></hr>
           </div>
           <div className="row text-center">
+
+            <div className="col p-5 m-5 minddlecard">
+              <img src={our_service_img1} className="our_service_img"></img>
+              <h6 className="our_service_heading">Security and Privacy</h6>
+              <p className="our_service_p">
+              We prioritize the safety and confidentiality of your data, ensuring robust security measures to protect your business.
+              </p>
+            </div>
+            <div className="col p-5 m-5 minddlecard">
+              <img src={our_service_img2} className="our_service_img" ></img>
+              <h6 className="our_service_heading">Analytics and Reporting</h6>
             <div className="col-3 p-5 m-5 minddlecard">
               <img
                 src={img12}
@@ -346,11 +400,18 @@ function LandingPageTopNav() {
               ></img>
               <h6>Analytics and Reporting</h6>
 
-              <p>
-                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
-                ipsum dolore sed
+
+              <p className="our_service_p">
+              Gain valuable insights with our comprehensive analytics and reporting tools, designed to drive informed decision-making.
               </p>
             </div>
+
+            <div className="col p-5 m-5 minddlecard">
+              <img src={our_service_img3} className="our_service_img"></img>
+              <h6 className="our_service_heading">Entrepreneur Guidance</h6>
+              <p className="our_service_p">
+              Receive expert guidance tailored to your unique entrepreneurial journey, helping you navigate challenges and seize opportunities.
+
             <div className="col-3 p-5 m-5 minddlecard">
               <img
                 src={img14}
@@ -361,11 +422,24 @@ function LandingPageTopNav() {
               <p>
                 Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
                 ipsum dolore sed
+
               </p>
             </div>
           </div>
 
           <div className="row text-center mt-5">
+
+            <div className="col p-5 m-5 minddlecard">
+              <img src={our_service_img6} className="our_service_img"></img>
+              <h6 className="our_service_heading">Direct Communication</h6>
+              <p className="our_service_p">
+              Maintain clear and effective communication channels, fostering seamless collaboration and efficient problem-solving.
+              </p>
+            </div>
+            <div className="col-3 p-5 m-5 minddlecard">
+              <img src={our_service_img5} className="our_service_img"></img>
+              <h6 className="our_service_heading">Investment Tracking</h6>
+
             <div className="col-3 p-5 m-5 minddlecard">
               <img
                 src={img15}
@@ -386,12 +460,18 @@ function LandingPageTopNav() {
               ></img>
               <h6>Analytics and Reporting</h6>
 
-              <p>
-                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
-                ipsum dolore sed
+
+              <p className="our_service_p">
+              Monitor and manage your investments with precision, optimizing your financial strategies for maximum growth.
               </p>
             </div>
             <div className="col-3 p-5 m-5 minddlecard">
+
+              <img src={our_service_img4} className="our_service_img"></img>
+              <h6 className="our_service_heading">Investment Opportunities</h6>
+              <p className="our_service_p">
+              Explore and capitalize on lucrative investment opportunities to fuel your business expansion and success.
+
               <img
                 src={img17}
                 className="bg-info p-3 mb-4"
@@ -401,6 +481,7 @@ function LandingPageTopNav() {
               <p>
                 Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
                 ipsum dolore sed
+
               </p>
             </div>
           </div>

@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 
-const investorSchema=mongoose.Schema({
+const investerSchema=mongoose.Schema({
     name:{
     type:String,
     required:true
@@ -48,6 +48,10 @@ const investorSchema=mongoose.Schema({
     identification_document:{
         type:Object,
         required:true
-}
+},
+    isActive:{
+        default:false,
+        type:Boolean
+    }
 });
-module.exports=mongoose.model('investor',investorSchema)
+module.exports=mongoose.model('invester',investerSchema)

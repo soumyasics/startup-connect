@@ -17,10 +17,7 @@ function App() {
         <Route path="/" element={<LandingPageTopNav />} />
         <Route path="/entrepreneur/signup" element={<Entsignup />} />
         <Route path="/entrepreneur/login" element={<LoginPageMain />} />
-        <Route
-          path="/entrepreneur/fogot-password"
-          element={<ForgotPassMain />}
-        />
+        <Route path="/entrepreneur/fogot-password"element={<ForgotPassMain />}/>
 
         {/* Invester */}
         <Route path="investor/signup" element={<InvesterRegister />} />
