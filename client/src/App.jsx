@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import LandingPageTopNav from "./LandingPage/LandingPageTopNav";
+import LandingPageTopNav from "./components/LandingPage/LandingPageTopNav";
 
 import LoginPageMain from "./Entreprenuer/LoginPage/LoginPageMain";
 import ForgotPassMain from "./Entreprenuer/ForgotPass/ForgotPassMain";
+import Footer from "./components/Footer/Footer";
 
 
 import Entsignup from "./Entreprenuer/Signup/Entsignup";

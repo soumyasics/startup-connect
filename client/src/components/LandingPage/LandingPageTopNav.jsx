@@ -7,13 +7,13 @@ import { CiInstagram } from "react-icons/ci";
 import { IoLogoYoutube } from "react-icons/io";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
-import img1 from "../assets/img1.png";
-import img2 from "../assets/img2.png";
-import img3 from "../assets/img3.png";
-import img4 from "../assets/img4.png";
-import Frame from "../assets/Frame 40.png";
-import img5 from "../assets/img5.png";
-import img6 from "../assets/img6.png";
+import img1 from "../../assets/img1.png";
+import img2 from "../../assets/img2.png";
+import img3 from "../../assets/img3.png";
+import img4 from "../../assets/img4.png";
+import Frame from "../../assets/Frame 40.png";
+import img5 from "../../assets/img5.png";
+import img6 from "../../assets/img6.png";
 
 function LandingPageTopNav() {
   return (
