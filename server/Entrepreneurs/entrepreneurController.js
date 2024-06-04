@@ -239,7 +239,8 @@ const createToken = (user) => {
 const login = (req, res) => {
     const { email, password } = req.body;
 
-    Entrepreneur.findOne({ email }).then(user => {
+    Entrepreneur.findOne({ email })
+    .then(user => {
         if (!user) {
             return res.status(405).json({ msg: 'User not found' });
         }
@@ -269,6 +270,7 @@ const requireAuth = (req, res, next) => {
     }
 
     jwt.verify(token, secret, (err, decodedToken) => {
+        console.log(err);
         if (err) {
             return res.status(401).json({ msg: 'Unauthorized', err: err });
         }

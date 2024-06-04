@@ -34,9 +34,10 @@
 }
 
 .inv-reg-btn{
-    width: 370px;
+    width: 374px;
     height: 53px;
     top: 967px;
+    border: #e8e8e8;
     left: 765px;
     color: #ffffff;
     background: #06A3DA;
@@ -98,7 +99,7 @@
   }
 
     /* profile */
-    .custum-file-upload {
+    .inv-reg-file-upload {
         height: 3px;
         width: 90px;
         margin-left: 280px;
@@ -117,7 +118,7 @@
 
       }
       
-      .custum-file-upload .icon {
+      .inv-reg-file-upload .icon {
         display: flex;
         position: absolute;
         width:70px;
@@ -126,12 +127,12 @@
         justify-content: center;
       }
       
-      .custum-file-upload .icon svg {
+      .inv-reg-file-upload .icon svg {
         height: 80px;
         fill: #e8e8e8;
       }
       
-      .custum-file-upload .text {
+      .inv-reg-file-upload .text {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -145,7 +146,12 @@
         color: #000000;
       }
       
-      .custum-file-upload input {
+      .inv-reg-file-upload input {
         display: none;
       }
+
+      /* **select */
+
+      
+      
   
