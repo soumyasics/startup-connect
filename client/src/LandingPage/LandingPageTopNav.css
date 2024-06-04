@@ -157,8 +157,11 @@ div.sticky{
 }
 .landingpagemainseconddiv {
   position: relative;
+
+  top: 150px;
   right: 10px;
   top: 20px;
+
   color: #ffffff;
   font-weight: 700;
   font-size: larger;
