@@ -1,27 +1,29 @@
 div.footerbg {
     background-color: #091E3E;
-
+    /* position: static; */
+    height: 233px;
 
 }
 
 div.firstcolumn {
     background-color: #06A3DA;
-
-    position: relative;
+    width: 350px;
+    height: 270px;
+    margin-left: 30px;
+    position: absolute;
 }
 
 div.firstcolumn::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 49px;
+    
+    
     background-color: #06A3DA;
-    left: 0;
+    position: absolute;
+   
 }
 
 img.startuplogo {
     padding-top: 30px;
-    padding-left: 60px;
+    padding-left: 30px;
 
 
 }
@@ -31,13 +33,18 @@ p.firstcolumnpara {
     padding-left: 30px;
     padding-top: 10px;
     text-align: justify;
-    /* width: 256px; */
+    width: 256px; 
     height: 85px;
     font-family: Inter;
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     color: #FFFFFF;
+}
+
+.secondcolumn{
+    position: relative;
+    margin-left: 360px;
 }
 
 h1.secondcolumncontent {
@@ -52,15 +59,13 @@ h1.secondcolumncontent {
 
 .secondcolumnadress {
 
-
-
     font-family: Inter;
     font-size: 14px;
     font-weight: 400;
     line-height: 16.94px;
     color: #FFFFFF;
-    text-align: left;
-    padding-left: 35px;
+    text-align: center;
+    /* padding-left: 35px; */
    
    
 }
@@ -69,21 +74,21 @@ h1.secondcolumncontent {
     width: 105px;
     height: 0px;
     border: 3px solid #06A3DA;
-    margin-left: 40px;
+    margin-left: 107px;
 }
 
 .hrlinesecond {
     width: 95px;
     height: 0px;
     border: 3px solid #06A3DA;
-    margin-left: 63px;
+    margin-left: 58px;
 }
 
 .hrlinethird {
     width: 110px;
     height: 0px;
     border: 3px solid #06A3DA;
-    margin-left: 55px;
+    margin-left: 48px;
 }
 
 .thirdcolumnadress {
@@ -93,7 +98,7 @@ h1.secondcolumncontent {
     font-weight: 400;
     line-height: 16.94px;
     color: #FFFFFF;
-    text-align: left;
+    text-align: justify;
     padding-left: 50px;
 
 
@@ -101,6 +106,7 @@ h1.secondcolumncontent {
 
 .footerbotomset {
     background-color: #061429;
+    
 }
 
 .botomcontent {

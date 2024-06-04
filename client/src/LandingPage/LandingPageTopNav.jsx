@@ -191,30 +191,30 @@ function LandingPageTopNav() {
                 <img src={img1} alt="Happy Entrepreneurs" />
               </div>
               <div className="col-8">
-                <span>Happy Entrepreneurs</span>
-                <h4>12345</h4>
+                <span className="hero_span">Happy Entrepreneurs</span>
+                <h4 className="hero_h4_number">12345</h4>
               </div>
             </div>
           </div>
           <div className="col-4 landingpagemainseconddiv2 p-5">
             <div className="row">
               <div className="col-3">
-                <img src={img2} alt="Services Provide" />
+                <img src={img3} alt="Services Provide" />
               </div>
               <div className="col-8">
-                <span>Services Provide</span>
-                <h4>12345</h4>
+                <span className="hero_span">Services Provide</span>
+                <h4 className="hero_h4_number">12345</h4>
               </div>
             </div>
           </div>
           <div className="col-4 landingpagemainseconddiv1 p-5">
             <div className="row">
               <div className="col-3">
-                <img src={img3} alt="Branches" />
+                <img src={img2} alt="Branches" />
               </div>
               <div className="col-8">
-                <span>Branches</span>
-                <h4>12345</h4>
+                <span className="hero_span">Branches</span>
+                <h4 className="hero_h4_number">12345</h4>
               </div>
             </div>
           </div>
@@ -231,13 +231,13 @@ function LandingPageTopNav() {
             At application, we are dedicated to empowering entrepreneurs to transform their innovative ideas into thriving businesses. Our mission is to provide comprehensive support and resources to help startups succeed in today's competitive landscape.
             </p>
 
-            <div className="row ">
+            <div className="row pt-3">
               <h4 className="range_of_service">We offer a wide range of services, including:</h4>
-              <div className="col-6">
+              <div className="col-6 pt-2">
                 <div>
                   {" "}
                   <img src={img3} className="range_of_service_img"></img>
-                  <span className="ms-3 range_of_service_span">Startup Registration & Support</span>
+                  <span className="ms-1 range_of_service_span">Startup Registration & Support</span>
                 </div>
                 <div className="mt-4">
                   {" "}
@@ -257,7 +257,7 @@ function LandingPageTopNav() {
                 </div>
               </div>
 
-              <div className="col-6">
+              <div className="col-6 pt-2">
                 <div>
                   {" "}
                   <img src={img3} className="range_of_service_img"></img>
@@ -269,13 +269,14 @@ function LandingPageTopNav() {
                   <span className="ms-3 range_of_service_span">Investment Tracking</span>
                 </div>
               </div>
-            </div>
+              
+            </div>  {/* ---row ending */}
          
-          <div className="col-6 pt-5">
-            
-            <img className="about_img " src={img4}></img>
-          </div>
+          
         </div>
+        <div className="col-6 mt-5">
+            <img className="about_img" src={img4}></img>
+          </div>
         </div>
       </section>
 

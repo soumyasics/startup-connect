@@ -171,6 +171,25 @@ div.sticky{
 .landingpagemainseconddiv1 {
   background-color: #06a3da;
 }
+
+.hero_span{
+  font-family: Nunito;
+font-size: 24px;
+font-weight: 800;
+line-height: 32.74px;
+text-align: center;
+
+}
+
+.hero_h4_number{
+  font-family: Nunito;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 49.1px;
+  text-align: left;
+  
+}
+
 #aboutsection{
   margin-top: 5%;
   padding-top: 15%;
@@ -196,9 +215,9 @@ div.sticky{
 
 .aboutus_p{
   font-family: Inter;
-  font-size: 15px;
+  font-size: 19px;
   font-weight: 400;
-  line-height: 16.94px;
+  line-height: 20.94px;
   text-align: justify;
   
 }
@@ -209,17 +228,14 @@ div.sticky{
 .about_img{
   width: 600px;
 height: 479px;
-top: 1074px;
-left: 720px;
-gap: 0px;
-opacity: 0px;
+margin-top: 100px;
 
 }
 
 .range_of_service{
   font-family: Inter;
   font-size: 19px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 21.78px;
   text-align: left;
   
