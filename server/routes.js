@@ -5,14 +5,10 @@ const investers=require('./Investors/investorController')
 //entrepreneurs
 router.post('/registerEntrepreneur',entrepreneurs.upload,entrepreneurs.registerEntrepreneur)
 router.post('/loginEntrepreneur',entrepreneurs.login)
-router.post('/re',entrepreneurs.requireAuth)
+router.post('/forgotPasswordEntrepreneur',entrepreneurs.forgotPassword)
 
-
-//investors
-router.post('/registerInvester',investers.upload,investers.registerInvester)
-router.post('/loginInvester',investers.loginInvester)
-router.post('/viewInvesters',investers.viewInvesters)
-
+// investor 
+router.post('/registerInvestor',investors.upload,investors.registerInvestor)
 
 
 module.exports=router
