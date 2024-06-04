@@ -82,7 +82,7 @@ function ForgotPassMain() {
         <div className="ent-forgotpass-content">
           <p>Recover Your Account</p>
         </div>
-        <div className="ent-forgotpass-line"></div>
+        {/* <div className="ent-forgotpass-line"></div> */}
         <div className="ent-forgotpass-img_div">
           <img className="ent-forgotpass-img" src={Forgotpasswordimage} />
         </div>
