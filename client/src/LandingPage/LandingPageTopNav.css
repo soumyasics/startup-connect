@@ -149,78 +149,42 @@ div.sticky{
   font-weight: 400;
 }
 .landingpagemaindiv {
+  /* margin-top: 5%; */
   background-image: url("https://themewagon.github.io/startup2/img/carousel-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  border-image: fill 0 linear-gradient(#0003,#000);
   height: 85vh;
 }
-
-.hero_text{
-  width: 520px;
-  height: 132px;
-  color: #ffffff;
-  position: absolute;
-  top: 352px;
-  left: 390px;
-  font-family: Inter;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 43.57px;
-  text-align: center;
-  background:rgba(255,255,255,0.1);
-    
-
-}
-
-.hero_contact_btn{
-  position: relative;
-  width: 134px;
-height: 46px;
-top: 34px;
-color: #ffffff;
-font-family: Inter;
-font-size: 24px;
-font-weight: 400;
-line-height: 29.05px;
-text-align: center;
-border: 1px solid #ffffff;
-background:rgba(255,255,255,0.1);
-
-}
-
 .landingpagemainseconddiv {
   position: relative;
+<<<<<<< HEAD
 
   top: 150px;
   right: 10px;
   top: 20px;
 
+=======
+  top: 150px;
+>>>>>>> parent of 4727899 (bijo_5.6.24_startup_landing1)
   color: #ffffff;
   font-weight: 700;
   font-size: larger;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.landingpagemainseconddiv1 {
+.landingpagemainseconddiv2 {
   background-color: #ffffff;
   color: rgb(6, 163, 218);
-  height: 170px;
 }
-.landingpagemainseconddiv2 {
+.landingpagemainseconddiv1 {
   background-color: #06a3da;
-  height: 170px;
-}
-.landingpagemainseconddiv3 {
-  background-color: #06a3da;
-  height: 170px;
 }
 
 .hero_span{
   font-family: Nunito;
-  font-size: 24px;
-  font-weight: 800;
-  line-height: 32.74px;
-  text-align: center;
+font-size: 24px;
+font-weight: 800;
+line-height: 32.74px;
+text-align: center;
 
 }
 
@@ -233,16 +197,10 @@ background:rgba(255,255,255,0.1);
   
 }
 
-.branches_img7{
-  background: #ffffff;
-  width: 63px;
-height: 63px;
-top: 805px;
-left: 970px;
-
-
+#aboutsection{
+  margin-top: 5%;
+  padding-top: 15%;
 }
-
 .aboutusheading {
   padding-top: 10%;
   font-family: Nunito;
@@ -333,7 +291,8 @@ opacity: 0px;
 .our_service_img{
   width: 64px;
   height: 64px;
-  margin-top: -20px;
+  top: 2802.25px;
+  left: 318px;
 
 }
 
@@ -357,10 +316,8 @@ opacity: 0px;
 }
 
 
-
 .minddlecard {
   background-color: #eef9ff;
-  max-height: 250px;
 }
 .mainheadings {
   color: rgb(6, 163, 218);
