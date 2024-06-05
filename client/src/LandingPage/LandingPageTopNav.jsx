@@ -15,7 +15,9 @@ import img4 from "../assets/img4.png";
 import Frame from "../assets/Frame 40.png";
 import img5 from "../assets/img5.png";
 import img6 from "../assets/img6.png";
+
 import img7 from "../assets/img7.png";
+
 import why_choose_img1 from "../assets/why_choose_img1.png";
 import why_choose_img2 from "../assets/why_choose_img2.png";
 import why_choose_img3 from "../assets/why_choose_img3.png";
@@ -142,12 +144,47 @@ function LandingPageTopNav() {
         </div>
       </div>
       <div className="landingpagemaindiv" id="Home">
+
         <div className="hero_text">
           "Turning Vision into Reality: Where Innovative Ideas Meet Relentless Execution"
         <div>
           <button className="hero_contact_btn">Contact Us</button>
         </div>
         </div>
+
+        <Carousel>
+          <Carousel.Item>
+            <img
+              src={carousel1}
+              id="carouselimg1"
+              class="d-block w-100"
+              alt="..."
+            />
+            <Carousel.Caption className="carouseltext">
+              {" "}
+              <h3 className="carouseltext1">
+                "Turning Vision into Reality:<h3></h3> Where Innovative Ideas
+                Meet<h3></h3>
+                Relentless Execution"
+              </h3>
+              {/* <Button variant="outline-light">Light</Button>{' '} */}
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              src={carousel2}
+              class="d-block w-100"
+              alt="..."
+              id="carouselimg1"
+            />
+            <Carousel.Caption className="carouseltext">
+              <h1 className="carouseltext2">
+                Creative & Innovative Digital Solution
+              </h1>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+
       </div>
       <div className="container landingpagemainseconddiv">
         <div className="row">
@@ -176,7 +213,15 @@ function LandingPageTopNav() {
           <div className="col-4 landingpagemainseconddiv3 p-5">
             <div className="row">
               <div className="col-3">
+
                 <img src={img7} className="branches_img7" alt="Branches"/>
+
+
+                <img src={img2} alt="Branches" />
+
+                <img className="bg-light p-1 w-100" src={img7} alt="Branches" />
+
+
               </div>
               <div className="col-8">
                 <span className="hero_span">Branches</span>
@@ -397,7 +442,12 @@ function LandingPageTopNav() {
             </div>
           </div>
 
+
           <div className="row text-center ">
+
+          <div className="row text-center mt-5">
+
+
             <div className="col p-5 m-5 minddlecard">
               <img src={our_service_img6} className="our_service_img"></img>
               <h6 className="our_service_heading">Direct Communication</h6>
@@ -434,7 +484,12 @@ function LandingPageTopNav() {
               Monitor and manage your investments with precision, optimizing your financial strategies for maximum growth.
               </p>
             </div>
+
             <div className="col p-5 m-5 minddlecard">
+
+            <div className="col-3 p-5 m-5 minddlecard">
+
+
               <img src={our_service_img4} className="our_service_img"></img>
               <h6 className="our_service_heading">Investment Opportunities</h6>
               <p className="our_service_p">
