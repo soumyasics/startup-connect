@@ -1,4 +1,4 @@
-import "../../LandingPage/LandingPageTopNav.css"
+import "../../components/LandingPage/LandingPageTopNav.css"
 import React from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
