@@ -14,6 +14,7 @@ import img4 from "../assets/img4.png";
 import Frame from "../assets/Frame 40.png";
 import img5 from "../assets/img5.png";
 import img6 from "../assets/img6.png";
+import img7 from "../assets/img7.png";
 import why_choose_img1 from "../assets/why_choose_img1.png";
 import why_choose_img2 from "../assets/why_choose_img2.png";
 import why_choose_img3 from "../assets/why_choose_img3.png";
@@ -119,76 +120,19 @@ function LandingPageTopNav() {
         </div>
       </div>
       <div className="landingpagemaindiv" id="Home">
-        <div id="carouselExampleIndicators" className="carousel slide">
-          <div className="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="0"
-              className="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-          </div>
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img
-                src="https://themewagon.github.io/startup2/img/carousel-1.jpg"
-                className="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div className="carousel-item">
-              <img src="..." className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-              <img src="..." className="d-block w-100" alt="..." />
-            </div>
-          </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
+        <div className="hero_text">
+          "Turning Vision into Reality: Where Innovative Ideas Meet Relentless Execution"
+        <div>
+          <button className="hero_contact_btn">Contact Us</button>
+        </div>
         </div>
       </div>
       <div className="container landingpagemainseconddiv">
         <div className="row">
-          <div className="col-4 landingpagemainseconddiv1 p-5">
+          <div className="col landingpagemainseconddiv2 p-5">
             <div className="row">
               <div className="col-3">
-                <img src={img1} alt="Happy Entrepreneurs" />
+                <img src={img1} alt="Happy Entrepreneurs"/>
               </div>
               <div className="col-8">
                 <span className="hero_span">Happy Entrepreneurs</span>
@@ -196,10 +140,10 @@ function LandingPageTopNav() {
               </div>
             </div>
           </div>
-          <div className="col-4 landingpagemainseconddiv2 p-5">
+          <div className="col-4 landingpagemainseconddiv1 p-5">
             <div className="row">
               <div className="col-3">
-                <img src={img3} alt="Services Provide" />
+                <img src={img2} alt="Services Provide"/>
               </div>
               <div className="col-8">
                 <span className="hero_span">Services Provide</span>
@@ -207,10 +151,10 @@ function LandingPageTopNav() {
               </div>
             </div>
           </div>
-          <div className="col-4 landingpagemainseconddiv1 p-5">
+          <div className="col-4 landingpagemainseconddiv3 p-5">
             <div className="row">
               <div className="col-3">
-                <img src={img2} alt="Branches" />
+                <img src={img7} className="branches_img7" alt="Branches"/>
               </div>
               <div className="col-8">
                 <span className="hero_span">Branches</span>
@@ -222,7 +166,7 @@ function LandingPageTopNav() {
       </div>
       <section className="container">
         <div className="row" id="aboutsection">
-          <div className="col-6 mt-5 pt-5" id="About">
+          <div className="col-6 " id="About">
             <h3 className="aboutusheading">ABOUT US</h3>
             <h2 className="aboutus_h2">
               Empowering Entrepreneurs to <br></br>Innovate and Grow
@@ -251,8 +195,8 @@ function LandingPageTopNav() {
                   </div>
                   <div className="col-8">
                     {" "}
-                    <span className="range_of_service_span">Call to ask any question</span>
-                    <h6 className="text-info">+1234567789</h6>
+                    <span className="range_of_service_span">Call to ask any question<h5 className="text-info ">+1234567789</h5></span>
+                    
                   </div>
                 </div>
               </div>
@@ -270,18 +214,18 @@ function LandingPageTopNav() {
                 </div>
               </div>
               
-            </div>  {/* ---row ending */}
+            </div> 
          
           
         </div>
-        <div className="col-6 mt-5">
+        <div className="col-6 ">
             <img className="about_img" src={img4}></img>
           </div>
         </div>
       </section>
 
       <section>
-        <div className="container mt-5 pt-5">
+        <div className="container ">
           <div className="  text-center">
             <h4 className="  mt-5 pt-5 mainheadings"> WHY CHOOSE US</h4>
             <h3 className="why_choose_sub_h3">We Are Here to Grow Your </h3>
@@ -323,10 +267,10 @@ function LandingPageTopNav() {
         </div>
       </section>
 
-      <section id="Services" className="mt-5 pt-5">
+      <section id="Services">
         <div className="container">
           <div className="  text-center">
-            <h4 className=" mt-5 pt-5 mainheadings ">OUR SERVICES</h4>
+            <h4 className=" mt-5  mainheadings ">OUR SERVICES</h4>
             <h3 className="our_service_sub_h3">Bridging the Gap Between </h3>
             <h3 className="our_service_sub_h3">Ideas and Success</h3>
             <hr
@@ -334,7 +278,7 @@ function LandingPageTopNav() {
               style={{ margin: "0 45%" }}
             ></hr>
           </div>
-          <div className="row text-center">
+          <div className="row text-center ">
             <div className="col p-5 m-5 minddlecard">
               <img src={our_service_img1} className="our_service_img"></img>
               <h6 className="our_service_heading">Security and Privacy</h6>
@@ -359,7 +303,7 @@ function LandingPageTopNav() {
             </div>
           </div>
 
-          <div className="row text-center mt-5">
+          <div className="row text-center ">
             <div className="col p-5 m-5 minddlecard">
               <img src={our_service_img6} className="our_service_img"></img>
               <h6 className="our_service_heading">Direct Communication</h6>
@@ -367,7 +311,7 @@ function LandingPageTopNav() {
               Maintain clear and effective communication channels, fostering seamless collaboration and efficient problem-solving.
               </p>
             </div>
-            <div className="col-3 p-5 m-5 minddlecard">
+            <div className="col p-5 m-5 minddlecard">
               <img src={our_service_img5} className="our_service_img"></img>
               <h6 className="our_service_heading">Investment Tracking</h6>
 
@@ -375,7 +319,7 @@ function LandingPageTopNav() {
               Monitor and manage your investments with precision, optimizing your financial strategies for maximum growth.
               </p>
             </div>
-            <div className="col-3 p-5 m-5 minddlecard">
+            <div className="col p-5 m-5 minddlecard">
               <img src={our_service_img4} className="our_service_img"></img>
               <h6 className="our_service_heading">Investment Opportunities</h6>
               <p className="our_service_p">

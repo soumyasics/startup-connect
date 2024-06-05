@@ -19,7 +19,7 @@ const upload = multer({storage:storage}).array("files");
 
 // Register Investor
 
-const registerInvester= async(req,res)=>{
+const registerInvestor= async(req,res)=>{
     try{
         const {
             name,
@@ -140,7 +140,7 @@ const loginInvester=(req,res)=>{
 };
 
 module.exports={
-    registerInvester,
+    registerInvestor,
     upload,
     loginInvester,
     viewInvesters,

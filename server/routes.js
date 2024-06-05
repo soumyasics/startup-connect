@@ -1,6 +1,6 @@
 const router=require('express').Router()
 const entrepreneurs=require('./Entrepreneurs/entrepreneurController')
-const investers=require('./Investors/investorController')
+const investors=require('./Investors/investorController')
 
 //entrepreneurs
 router.post('/registerEntrepreneur',entrepreneurs.upload,entrepreneurs.registerEntrepreneur)

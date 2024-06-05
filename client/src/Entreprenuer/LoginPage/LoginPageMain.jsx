@@ -82,9 +82,12 @@ function LoginPageMain() {
         </p>
       </div>
       <div className="ent-loginpage-line"></div>
-      <div className="ent-loginpage-img_div">
-        <img className="ent-loginpage-img" src={Loginimage} />
+      <div className="row">
+      <div className="col ent-loginpage-img_div">
+        <img className=" ent-loginpage-img" src={Loginimage} />
       </div>
+      <div className="col">
+
       <form className="ent-loginpage-loginform">
         <label className="ent-loginpage-email-label">Your Email</label>
         <input
@@ -104,14 +107,18 @@ function LoginPageMain() {
         />{errors.password && (
           <div className="text-danger errortext">{errors.password}</div>
         )}
-        <p className="text-center mt-4"><Link to="/entrepreneur/fogot-password">Forgot password</Link></p>
-        <p className=""> 
-          please register first <Link  to="/entrepreneur/signup">Register</Link>
-        </p>
+        <p className="text-center ent-forgotpass"><Link to="/entrepreneur/fogot-password">Forgot password</Link></p>
+        
         <button className="ent-loginpage-loginbtn" onClick={HandleClick}>
           Log In
         </button>
+        <p className="ent-register-new"> 
+          please register first <Link  to="/entrepreneur/signup">Register</Link>
+        </p>
       </form>
+      </div>
+      
+      </div>
     </div>
      
 
