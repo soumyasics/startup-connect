@@ -27,6 +27,8 @@ import our_service_img6 from "../assets/our_service_img6.png";
 import Footer from "../components/Footer/Footer.jsx";
 import { useNavigate } from "react-router-dom";
 
+
+
 function LandingPageTopNav() {
   const navigate = useNavigate();
 
@@ -39,15 +41,15 @@ function LandingPageTopNav() {
       <div>
         <nav className="navbar NavTopBg">
           <div className="positionTonav">
-            <svg
+            {/* <svg
               id="TopNavLocationLogo"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               className="bi bi-geo-alt-fill"
               viewBox="0 0 16 16"
-            >
-              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-            </svg>
+            > */}
+              {/* <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+            </svg> */}
             <a className="navbar-brand Topnavlocationaddress">
               123 Street New York, USA
             </a>
@@ -118,7 +120,7 @@ function LandingPageTopNav() {
           </div>
         </div>
       </div>
-      <div className="landingpagemaindiv" id="Home">
+     <div className="landingpagemaindiv" id="Home">
         <div id="carouselExampleIndicators" className="carousel slide">
           <div className="carousel-indicators">
             <button
@@ -183,7 +185,7 @@ function LandingPageTopNav() {
           </button>
         </div>
       </div>
-      <div className="container landingpagemainseconddiv">
+       <div className="container landingpagemainseconddiv">
         <div className="row">
           <div className="col-4 landingpagemainseconddiv1 p-5">
             <div className="row">
@@ -220,7 +222,7 @@ function LandingPageTopNav() {
           </div>
         </div>
       </div>
-      <section className="container">
+   <section className="container">
         <div className="row" id="aboutsection">
           <div className="col-6 mt-5 pt-5" id="About">
             <h3 className="aboutusheading">ABOUT US</h3>
@@ -270,7 +272,7 @@ function LandingPageTopNav() {
                 </div>
               </div>
               
-            </div>  {/ ---row ending /}
+            </div>  
          
           
         </div>
@@ -280,7 +282,7 @@ function LandingPageTopNav() {
         </div>
       </section>
 
-      <section>
+     <section>
         <div className="container mt-5 pt-5">
           <div className="  text-center">
             <h4 className="  mt-5 pt-5 mainheadings"> WHY CHOOSE US</h4>
@@ -385,7 +387,7 @@ function LandingPageTopNav() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer /> 
     </>
   );
 }
