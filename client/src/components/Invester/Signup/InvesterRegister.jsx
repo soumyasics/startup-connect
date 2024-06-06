@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import '../Invester/InvesterRegister.css'
-import InvestorRegImg from '../../assets/investor_register.png'
-
+import './InvesterRegister.css'
+import InvestorRegImg from '../../../assets/investor_register.png'
 function InvesterRegister() {
 const [prof,SetProf]=useState({profie:"Profile"})
   

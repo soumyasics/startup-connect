@@ -1,4 +1,4 @@
-const Invester =require('./investorSchema');
+const Investor =require('./investorSchema');
 const multer=require('multer');
 const jwt = require('jsonwebtoken');
 const secret = 'invester';
@@ -19,7 +19,7 @@ const upload = multer({storage:storage}).array("files");
 
 // Register Investor
 
-const registerInvester= async(req,res)=>{
+const registerInvestor= async(req,res)=>{
     try{
         const {
             name,
@@ -34,7 +34,7 @@ const registerInvester= async(req,res)=>{
             address,
         }=req.body;
 
-        const newInvester=new Invester({
+        const newInvestor=new Investor({
             name,
             email,
             contact,
@@ -49,21 +49,21 @@ const registerInvester= async(req,res)=>{
             identification_document:req.files[1],
         
         });
-        let existingInvester_email = await Invester.findOne({ email });
-        if (existingInvester_email) {
+        let existingInvestor_email = await Investor.findOne({ email });
+        if (existingInvestor_email) {
             return res.status(409).json({
                 msg: "Email Already Registered With Us !!",
                 data: null
             });
         }
-        let existingInvester_contact = await Invester.findOne({ contact });
-        if (existingInvester_contact){
+        let existingInvestor_contact = await Investor.findOne({ contact });
+        if (existingInvestor_contact){
             return res.status(409).json({
                 msg:"Contact Already Exists !!",
                 data: null
             })
         }
-        await newInvester.save()
+        await newInvestor.save()
         
         .then(data => {
             res.status(200).json({
@@ -82,9 +82,9 @@ const registerInvester= async(req,res)=>{
     }
 }
 
-// View all investers
-const viewInvesters = (req, res) => {
-    Invester.find()
+// View all investors
+const viewInvestors = (req, res) => {
+    Investor.find()
         .exec()
         .then(data => {
             if (data.length > 0) {
@@ -114,9 +114,9 @@ const createToken = (user) =>{
 
 // Login Investor 
 
-const loginInvester=(req,res)=>{
+const loginInvestor=(req,res)=>{
     const { email , password }=req.body
-    Invester.findOne({email})
+    Investor.findOne({email})
     .exec()
     .then(user=>{
         if(!user){
@@ -140,8 +140,8 @@ const loginInvester=(req,res)=>{
 };
 
 module.exports={
-    registerInvester,
+    registerInvestor,
     upload,
-    loginInvester,
-    viewInvesters,
+    loginInvestor,
+    viewInvestors,
 }

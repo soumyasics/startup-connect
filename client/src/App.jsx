@@ -1,15 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import PitchMyIdea from "./Entreprenuer/Pitch_My_Idea/PitchMyIdea";
-import LandingPageTopNav from "./LandingPage/LandingPageTopNav";
-
-import LoginPageMain from "./Entreprenuer/LoginPage/LoginPageMain"
-import ForgotPassMain  from "./Entreprenuer/ForgotPass/ForgotPassMain"
 import Entsignup from "./Entreprenuer/Signup/Entsignup";
+import PitchMyIdea from "./Entreprenuer/Pitch_My_Idea/PitchMyIdea";
+import LoginPageMain from "./Entreprenuer/LoginPage/LoginPageMain"
 
+import MentorRegister from "./components/Mentor/Signup/MentorRegister";
+import MentorLogin from "./components/Mentor/Login/MentorLogin";
+
+import LandingPageTopNav from "./LandingPage/LandingPageTopNav";
+import ForgotPassMain  from "./Entreprenuer/ForgotPass/ForgotPassMain"
 import { CommonNavbar } from "./components/commonNavbar/commonNavbar";
 
-import InvesterRegister from "./components/Invester/InvesterRegister";
+import InvesterRegister from "./components/Invester/Signup/InvesterRegister";
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
         
         
         <Route path="/investor/signup" element={<InvesterRegister/>}/>
+
+        <Route path="/mentor/signup" element={<MentorRegister/>}/>
+        <Route path="/mentor/login" element={<MentorLogin/>}/>
 
 
    

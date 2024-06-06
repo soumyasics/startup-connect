@@ -1,6 +1,5 @@
 div.footerbg {
     background-color: #091E3E;
-    /* position: static; */
     height: 233px;
 
 }
@@ -43,8 +42,7 @@ p.firstcolumnpara {
 }
 
 .secondcolumn{
-    position: relative;
-    margin-left: 360px;
+    margin-left: 430px;
 }
 
 h1.secondcolumncontent {
@@ -65,7 +63,6 @@ h1.secondcolumncontent {
     line-height: 16.94px;
     color: #FFFFFF;
     text-align: center;
-    /* padding-left: 35px; */
    
    
 }
@@ -106,7 +103,6 @@ h1.secondcolumncontent {
 
 .footerbotomset {
     background-color: #061429;
-    
 }
 
 .botomcontent {

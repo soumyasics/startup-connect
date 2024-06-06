@@ -1,49 +1,8 @@
-.ent-loginpage-loginhere{
-    width: 92px;
-    height: 25px;
-    left: 674px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: Nunito;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 24.55px;
-    text-align: center;
-    color: #00B0F0;
-    display: inline;
-}
-.ent-loginpage-content{
-    width: 272px;
-    height: 66px;
-    top: 237px;
-    left: 585px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: Nunito;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32.74px;
-    text-align: center;
-    color: #0F2442;
-    display: inline;
-}
-/* .ent-loginpage-line{
-    width: 90px;
-    height: 0px;
-    left: 598px;
-    border-bottom: 2px solid #00B0F0;
-    gap: 0px;
-    opacity: 0px;
-    text-align: center;
-    position: absolute;
-    
-} */
-
-.ent-loginpage-img_div{
+.mentor_login_img_div{
     width: 50%;
     padding-top: 10px;
 }
-.ent-loginpage-img{
+.mentor_login_img{
     width: 575px;
     height: 427px;
     left: 61px; 
@@ -53,7 +12,7 @@
 
 }
 
-.ent-loginpage-loginform{
+.mentor_loginform{
     width: 50%;
     height: Hug (128px)px;
     top: 137px;
@@ -65,7 +24,7 @@
 
 }
 
-.ent-loginpage-email-label{
+.mentor_login_email_label{
     width: 86px;
     height: 25px;
     gap: 0px;
@@ -80,7 +39,7 @@
 
 }
 
-.ent-loginpage-email{
+.mentor_login_email{
     width: 456px;
     height: 43px;
     gap: 0px;
@@ -90,7 +49,7 @@
 
 }
 
-.ent-loginpage-password-label{
+.mentor_login_password_label{
     width: 80px;
     height: 25px;
     gap: 0px;
@@ -105,7 +64,7 @@
 
 }
 
-.ent-loginpage-password{
+.mentor_login_password{
     width: 456px;
     height: 43px;
     gap: 0px;
@@ -114,7 +73,7 @@
     border: #EEF9FF;
     
 }
-.ent-loginpage-loginbtn{
+.mentor_login_loginbtn{
     width: 456px;
     height: 45px;
     top: 698px;
@@ -127,4 +86,3 @@
     background: #00B0F0;
 
 }
-

@@ -96,7 +96,7 @@ function PitchMyIdea() {
             </div>
         </div>
             <div className='pmi_btn_div'>
-                <button className='pmi_btn'>Register</button> 
+                <button className='pmi_btn'>Pitch My Idea</button> 
             </div>
     </section>
     <Footer/>
