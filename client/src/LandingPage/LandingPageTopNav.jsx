@@ -148,38 +148,7 @@ function LandingPageTopNav() {
         </div>
         </div>
 
-        {/* <Carousel>
-          <Carousel.Item>
-            <img
-              src={carousel1}
-              id="carouselimg1"
-              class="d-block w-100"
-              alt="..."
-            />
-            <Carousel.Caption className="carouseltext">
-              {" "}
-              <h3 className="carouseltext1">
-                "Turning Vision into Reality:<h3></h3> Where Innovative Ideas
-                Meet<h3></h3>
-                Relentless Execution"
-              </h3>
-              <Button variant="outline-light">Light</Button>{' '}
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              src={carousel2}
-              class="d-block w-100"
-              alt="..."
-              id="carouselimg1"
-            />
-            <Carousel.Caption className="carouseltext">
-              <h1 className="carouseltext2">
-                Creative & Innovative Digital Solution
-              </h1>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel> */}
+        
 
       </div>
       <div className="container landingpagemainseconddiv">
@@ -198,7 +167,7 @@ function LandingPageTopNav() {
           <div className="col-4 landingpagemainseconddiv2 p-5">
             <div className="row">
               <div className="col-3">
-                <img src={img3} alt="Services Provide" />
+                <img src={img2} alt="Services Provide" />
               </div>
               <div className="col-8">
                 <span className="hero_span">Services Provide</span>
@@ -209,7 +178,7 @@ function LandingPageTopNav() {
           <div className="col-4 landingpagemainseconddiv1 p-5">
             <div className="row">
               <div className="col-3">
-                <img src={img2} alt="Branches" />
+                <img src={img7} alt="Branches" className="branches_img"/>
               </div>
               <div className="col-8">
                 <span className="hero_span">Branches</span>
@@ -221,7 +190,7 @@ function LandingPageTopNav() {
       </div>
       <section className="container">
         <div className="row" id="aboutsection">
-          <div className="col-6 mt-5 pt-5" id="About">
+          <div className="col-6" id="About">
             <h3 className="aboutusheading">ABOUT US</h3>
             <h2 className="aboutus_h2">
               Empowering Entrepreneurs to <br></br>Innovate and Grow
@@ -269,7 +238,7 @@ function LandingPageTopNav() {
                 </div>
               </div>
               
-            </div>  {/* ---row ending */}
+            </div>  
          
           
         </div>
@@ -280,7 +249,7 @@ function LandingPageTopNav() {
       </section>
 
       <section>
-        <div className="container mt-5 pt-5">
+        <div className="container ">
           <div className="  text-center">
             <h4 className="  mt-5 pt-5 mainheadings"> WHY CHOOSE US</h4>
             <h3 className="why_choose_sub_h3">We Are Here to Grow Your </h3>
@@ -291,7 +260,6 @@ function LandingPageTopNav() {
             ></hr>
           </div>
           <div className="row">
-
             <div className="col">
               <img src={why_choose_img1} className="why_choose_img"></img>
                 <h4 className="why_choose_heading">Startup Registration & Support</h4>
@@ -303,28 +271,10 @@ function LandingPageTopNav() {
                   <p className="why_choose_p">
                     Connecting you with experienced mentors who offer valuable insights and advice to navigate the challenges of entrepreneurship.
                   </p>
-            <div className="col-4">
-              <img src={img8} className="bg-info p-3"></img>
-              <h4>Startup Registration & Support</h4>
-              <p>
-                Magna sea eos sit dolor, ipsum amet lorem diam dolor eos et diam
-                dolor
-              </p>
-              <img
-                src={img10}
-                className="bg-info py-4 px-3"
-                style={{ width: "65px" }}
-              ></img>
-              <h4>Mentorship & Guidance</h4>
-              <p>
-              Connecting you with experienced mentors who offer valuable insights and advice to navigate the challenges of entrepreneurship.
-
-              </p>
             </div>
             <div className="col">
               <img src={img6}></img>
             </div>
-
             <div className="col">
              <img src={why_choose_img2} className="why_choose_img"></img>
               <h4 className="why_choose_heading">Investment Tracking</h4>
@@ -335,31 +285,16 @@ function LandingPageTopNav() {
               <h4 className="why_choose_heading">24/7 Support</h4>
               <p className="why_choose_p">
               Providing round-the-clock assistance to ensure your startup's needs are met at any time.
-</p>
-           <div className="col-4">
-              <img src={img9} className="bg-info p-3"></img>
-              <h4>Investment Tracking</h4>
-              <p>
-              Helping you monitor and manage your investments to maximize growth and profitability.
-              </p>
-              <img
-                src={img11}
-                className="bg-info p-3"
-                style={{ width: "60px" }}
-              ></img>
-              <h4>24/7 Support</h4>
-              <p>
-              Providing round-the-clock assistance to ensure your startup's needs are met at any time.
-
-              </p>
+            </p>
+            </div>
             </div>
           </div>
-        </div>
-        </div>
-        </div>
+        
+        
+        
       </section>
 
-      <section id="Services" className="mt-5 pt-5">
+      <section id="Services">
         <div className="container">
           <div className="  text-center">
             <h4 className=" mt-5 pt-5 mainheadings ">OUR SERVICES</h4>
@@ -371,125 +306,59 @@ function LandingPageTopNav() {
             ></hr>
           </div>
           <div className="row text-center">
-            <div className="col p-5 m-5 minddlecard">
+            <div className="col p-5 m-5 our_service_card">
               <img src={our_service_img1} className="our_service_img"></img>
               <h6 className="our_service_heading">Security and Privacy</h6>
               <p className="our_service_p">
               We prioritize the safety and confidentiality of your data, ensuring robust security measures to protect your business.
               </p>
             </div>
-            <div className="col p-5 m-5 minddlecard">
+            <div className="col p-5 m-5 our_service_card">
               <img src={our_service_img2} className="our_service_img" ></img>
               <h6 className="our_service_heading">Analytics and Reporting</h6>
-            </div>
-            <div className="col-3 p-5 m-5 minddlecard">
-              <img
-                src={img12}
-                className="bg-info p-3 mb-4"
-                style={{ width: "65px" }}
-              ></img>
-              <h6>Security and Privacy</h6>
-              <p>
-                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
-                ipsum dolore sed
-              </p>
-            </div>
-            <div className="col-3 p-5 m-5 minddlecard">
-              <img
-                src={img13}
-                className="bg-info p-3 mb-4"
-                style={{ width: "65px" }}
-              ></img>
-              <h6>Analytics and Reporting</h6>
-
-
-              <p className="our_service_p">
+            <p className="our_service_p">
               Gain valuable insights with our comprehensive analytics and reporting tools, designed to drive informed decision-making.
               </p>
             </div>
 
-            <div className="col p-5 m-5 minddlecard">
+            <div className="col p-5 m-5 our_service_card">
               <img src={our_service_img3} className="our_service_img"></img>
               <h6 className="our_service_heading">Entrepreneur Guidance</h6>
               <p className="our_service_p">
               Receive expert guidance tailored to your unique entrepreneurial journey, helping you navigate challenges and seize opportunities.
               </p>
-            <div className="col-3 p-5 m-5 minddlecard">
-              <img
-                src={img14}
-                className="bg-info p-3 mb-4"
-                style={{ width: "65px" }}
-              ></img>
-              <h6>Entrepreneur Guidance</h6>
-              <p>
-                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
-                ipsum dolore sed
-
-              </p>
-            </div>
+          </div>
           </div>
 
-
-          <div className="row text-center mt-5">
-            <div className="col p-5 m-5 minddlecard">
+          <div className="row  text-center">
+            <div className="col p-5 m-5 our_service_card">
               <img src={our_service_img6} className="our_service_img"></img>
               <h6 className="our_service_heading">Direct Communication</h6>
               <p className="our_service_p">
               Maintain clear and effective communication channels, fostering seamless collaboration and efficient problem-solving.
               </p>
             </div>
-            <div className="col-3 p-5 m-5 minddlecard">
+            <div className="col-3 p-5 m-5 our_service_card">
               <img src={our_service_img5} className="our_service_img"></img>
               <h6 className="our_service_heading">Investment Tracking</h6>
-
-            <div className="col-3 p-5 m-5 minddlecard">
-              <img
-                src={img15}
-                className="bg-info p-3 mb-4"
-                style={{ width: "65px" }}
-              ></img>
-              <h6>Security and Privacy</h6>
-              <p>
-                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
-                ipsum dolore sed
-              </p>
-            </div>
-            <div className="col-3 p-5 m-5 minddlecard">
-              <img
-                src={img16}
-                className="bg-info p-3 mb-4"
-                style={{ width: "65px" }}
-              ></img>
-              <h6>Analytics and Reporting</h6>
-
-
               <p className="our_service_p">
               Monitor and manage your investments with precision, optimizing your financial strategies for maximum growth.
               </p>
             </div>
-            <div className="col-3 p-5 m-5 minddlecard">
+            
+            <div className="col-3 p-5 m-5 our_service_card">
               <img src={our_service_img4} className="our_service_img"></img>
               <h6 className="our_service_heading">Investment Opportunities</h6>
               <p className="our_service_p">
               Explore and capitalize on lucrative investment opportunities to fuel your business expansion and success.
               </p>
-              <img
-                src={img17}
-                className="bg-info p-3 mb-4"
-                style={{ width: "65px" }}
-              ></img>
-              <h6>Entrepreneur Guidance</h6>
-              <p>
-                Amet justo dolor lorem kasd amet magna sea stet eos vero lorem
-                ipsum dolore sed
-
-              </p>
+              
             </div>
-          </div>
+          
         </div>
         
       </div>
-      </div>
+      
       </section>
       <Footer />
     </>
