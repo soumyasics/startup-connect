@@ -48,3 +48,24 @@
     padding: 17px 10px 10px 17px;
     width: 530px;
   }
+
+  .pmi_btn_div{
+    align-items: center;
+    margin-left: 370px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+  }
+  .pmi_btn{
+    width: 374px;
+    height: 53px;
+    border: #e8e8e8;
+    left: 765px;
+    color: #ffffff;
+    background: #06A3DA;
+    
+
+
+}
+
+
+

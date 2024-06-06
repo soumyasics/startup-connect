@@ -3,6 +3,7 @@ import './PitchMyIdea.css'
 import { useNavigate } from "react-router-dom";
 import StartupLogo from "../../assets/Frame 40.png";
 import Navbar from "react-bootstrap/Navbar";
+import Footer from "../../components/Footer/Footer"
 
 
 
@@ -46,7 +47,7 @@ function PitchMyIdea() {
         </div>
     </div>
     <section className='container'>
-    <div className="  text-center">
+        <div className="text-center headr">
             <h4 className="  mt-3  pmi_mainheading"> CREATE YOUR STARTUP</h4>
             <h3 className="pmi_sub_h3">Your Journey to Success </h3>
             <h3 className="pmi_sub_h3">Starts Here</h3>
@@ -54,9 +55,9 @@ function PitchMyIdea() {
               className="  mb-4 border border-3 border-info"
               style={{ margin: "0 45%" }}
             ></hr>
-          </div>
+        </div>
         <div className='row'>
-            <div className='col'>
+            <div className='col column1'>
                 <label >My Company Name</label>
                     <input class="pmi_input" name="name"  placeholder="Name of the company" type="text"/>
                 <label className='mt-5'>To help</label>
@@ -72,7 +73,7 @@ function PitchMyIdea() {
                 <label className='mt-5'>To help us</label>
                     <input class="pmi_input" name="name"  placeholder="What you would do with the ask" type="text"/>
             </div>
-            <div className='col'>
+            <div className='col column2'>
                 <label>Is developing</label>
                     <select class="pmi_input"   name="name" placeholder="">
                     <option hidden="">Categories</option>
@@ -93,10 +94,12 @@ function PitchMyIdea() {
                 <label className='mt-5'>In exchange of</label>
                     <input class="pmi_input" name="name"  placeholder="Amount of equity offering" type="text"/>
             </div>
-            <button className='inv-reg-btn'>Register</button> 
-        
         </div>
+            <div className='pmi_btn_div'>
+                <button className='pmi_btn'>Register</button> 
+            </div>
     </section>
+    <Footer/>
     
     </>
   )
