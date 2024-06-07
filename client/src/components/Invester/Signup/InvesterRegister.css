@@ -122,7 +122,6 @@
         display: flex;
         position: absolute;
         width:70px;
-        /* margin-top: 10px; */
         align-items: center;
         justify-content: center;
       }
@@ -150,7 +149,7 @@
         display: none;
       }
 
-      /* **select */
+      
 
       
       

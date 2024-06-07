@@ -149,15 +149,50 @@ div.sticky{
   font-weight: 400;
 }
 .landingpagemaindiv {
-  
   background-image: url("https://themewagon.github.io/startup2/img/carousel-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 85vh;
+  border-image:fill 0 linear-gradient(#0003,#000)
 }
-.landingpagemainseconddiv {
+
+.hero_text{
   position: relative;
-  top: 150px;
+  width: 520px;
+  height: 132px;
+  color: #ffffff;
+  top: 202px;
+  left: 390px;
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43.57px;
+  text-align: center;
+  background:rgba(255,255,255,0.1);
+    
+}
+
+.hero_contact_btn{
+  width: 124px;
+  height: 56px;
+  color: #ffffff;
+  border:1px solid #ffffff;
+  margin-top: 24px;
+  left: 633px;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29.05px;
+  text-align: left;
+
+  background:rgba(255,255,255,0.1);
+
+}
+
+.landingpagemainseconddiv {
+  margin-top: -70px;
+  right: 10px;
+  top: 20px;
   color: #ffffff;
   font-weight: 700;
   font-size: larger;
@@ -169,6 +204,15 @@ div.sticky{
 }
 .landingpagemainseconddiv1 {
   background-color: #06a3da;
+}
+
+.branches_img{
+  width: 64px;
+  height: 64px;
+  top: 797px;
+  left: 961px;
+  background: #ffffff;
+  
 }
 
 .hero_span{
@@ -189,10 +233,7 @@ text-align: center;
   
 }
 
-#aboutsection{
-  margin-top: 5%;
-  padding-top: 15%;
-}
+
 .aboutusheading {
   padding-top: 10%;
   font-family: Nunito;
@@ -227,7 +268,6 @@ text-align: center;
 .about_img{
   width: 600px;
 height: 479px;
-margin-top: 100px;
 
 }
 
@@ -285,6 +325,7 @@ opacity: 0px;
   height: 64px;
   top: 2802.25px;
   left: 318px;
+  margin-top: -20px;
 
 }
 
@@ -308,8 +349,14 @@ opacity: 0px;
 }
 
 
-.minddlecard {
+.our_service_card {
   background-color: #eef9ff;
+  width: 480px;
+  max-height: 267px;
+
+  
+  
+
 }
 .mainheadings {
   color: rgb(6, 163, 218);
@@ -344,4 +391,23 @@ text-decoration: none;
 }
 .landingtopheader{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#carouselimg1{
+  width: 100%;
+  height:100vh
+}
+.carouseltext{
+  background-color: rgba(9, 30, 62, .7);
+ margin-bottom: 10%;
+ border-radius: 10px;
+
+}
+.carouseltext1{
+  /* padding: 20%; */
+  padding:10%;
+}
+.carouseltext2{
+  padding:13%;
+
 }

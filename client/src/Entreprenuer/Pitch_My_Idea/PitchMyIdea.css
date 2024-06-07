@@ -1,0 +1,73 @@
+
+  .pmi_navbar_white {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: medium;
+    z-index: 1;
+    width: 100%;
+    max-height: 70px;
+    font-weight: 400;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  }
+
+  .pmi_startup_logo{
+    width: 226px;
+    height: 55px;
+  }
+.pmi_sticky{
+    position: sticky;
+    top:-1%;
+}
+.pmi_mainheading {
+    color: rgb(6, 163, 218);
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.55px;
+    text-align: center;
+  
+  }
+  
+  .pmi_sub_h3{
+    font-family: Nunito;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.74px;
+    text-align: center;
+    
+  }
+
+  .pmi_input {
+    transition: outline 0.2s ease;
+    font-size: 1rem;
+    outline-color: var(--button-text);
+    outline: unset;
+    background: #EEF9FF;
+    border: 1px solid  #ffffff;
+    padding: 17px 10px 10px 17px;
+    width: 530px;
+  }
+
+  .pmi_btn_div{
+    align-items: center;
+    margin-left: 370px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+  }
+  .pmi_btn{
+    width: 374px;
+    height: 53px;
+    border: #e8e8e8;
+    left: 765px;
+    color: #ffffff;
+    background: #06A3DA;
+    box-shadow: 0px 4px 6.9px 0px #00000040;
+
+    
+
+
+}
+
+
+

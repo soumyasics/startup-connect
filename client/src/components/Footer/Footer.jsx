@@ -20,7 +20,7 @@ function Footer() {
             </div>
             <div className='footerbg '>
                 
-                <div class="row ps-5 pt-4">
+                <div class="row  pt-4">
                     
                     <div class="col-3 secondcolumn  ">
                         <div  >
