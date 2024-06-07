@@ -216,15 +216,15 @@ function Entsignup() {
           <div className='col-4'>
             <div class="">
             <label id="">First Name</label>
-              <input class="input-cal input-base" name="name" id="ent_input" placeholder="" type="text"/>
+              <input class="input-cal input-base" name="fname" id="ent_input" placeholder="" type="text"/>
             </div>
             <div class=" pt-2 ">
             <label id="">Company Name</label>
-              <input class="input-cal input-base" id="ent_input" name="email" placeholder="" type="text"/>
+              <input class="input-cal input-base" id="ent_input" name="company_name" placeholder="" type="text"/>
             </div>
             <div class=" pt-2">
             <label id="">Expertise Area</label>
-              <select class="input-cal input-base " id="ent_input"  name="industry_sector">
+              <select class="input-cal input-base " id="ent_input"  name="expertise_area">
                 <option hidden="">Expertise Area</option>
                 <option value="Technology">Technology</option>
                 <option value="E-commerce and Retail">E-commerce and Retail</option>
@@ -242,15 +242,15 @@ function Entsignup() {
             </div>
             <div class=" pt-2 ">
             <label id="">E-Mail ID</label>
-              <input class="input-cal input-base" id="ent_input" name="organization" placeholder="" type="text"/>
+              <input class="input-cal input-base" id="ent_input" name="email" placeholder="" type="text"/>
             </div>
             <div class=" pt-2 ">
             <label id="">Contact Number</label>
-              <input class="input-cal input-base" id="ent_input" name="password" placeholder="" type="text"/>
+              <input class="input-cal input-base" id="ent_input" name="contact" placeholder="" type="text"/>
             </div>
             <div class=" pt-2">
             <label id="">Address</label>
-              <input class="input-cal input-base" id="ent_input" name="confirm_password" placeholder="" type="text"/>
+              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="text"/>
             </div>
             <label id="">Your Image</label>
             <div class=" relative pt-4 ent_reg_profile ">
@@ -265,31 +265,31 @@ function Entsignup() {
           <div className='col-4'>
             <div class=" ">
             <label id="">Last Name</label>
-              <input class="input-cal input-base" id="ent_input" name="description" placeholder="" type="text"/>
+              <input class="input-cal input-base" id="ent_input" name="lname" placeholder="" type="text"/>
             </div>
             <div class=" pt-2">
             <label id="">Corporate Identification Number</label>
-              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="text"/>
+              <input class="input-cal input-base" id="ent_input" name="corporate_id_number" placeholder="" type="text"/>
             </div>
             <div class=" pt-2">
             <label id="">Company Description</label>
-              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="text"/>
+              <input class="input-cal input-base" id="ent_input" name="description" placeholder="" type="text"/>
             </div>
             <div class=" pt-2">
             <label id="">Location</label>
-               <input class="input-cal input-base" id="ent_input" name="description" placeholder="" type="text"/>
+               <input class="input-cal input-base" id="ent_input" name="location" placeholder="" type="text"/>
             </div>
             <div class=" pt-2">
             <label id="">Username</label>
-              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="text"/>
+              <input class="input-cal input-base" id="ent_input" name="username" placeholder="" type="text"/>
             </div>
             <div class=" pt-2">
             <label id="">Password</label>
-              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="password"/>
+              <input class="input-cal input-base" id="ent_input" name="password" placeholder="" type="password"/>
             </div>
             <div class="relative pt-2">
             <label id="">Confirm Password</label>
-              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="password"/>
+              <input class="input-cal input-base" id="ent_input" name="c_password" placeholder="" type="password"/>
             </div>
             <div class="relative pt-2 mx-5 mb-3">
               <button className='ent_reg_btn'>Register</button> 

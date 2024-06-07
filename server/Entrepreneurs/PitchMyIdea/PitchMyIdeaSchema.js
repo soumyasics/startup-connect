@@ -1,62 +1,69 @@
 const mongoose = require('mongoose')
 
 const pitch_my_ideaSchema = mongoose.Schema({
-    My_Company_Name: {
+    company_Name: {
       type: String,
       required: true,
     },
-    To_help: {
+    category: {
       type: String,
       required: true,
     },
-    With: {
+    audience: {
       type: String,
       required: true,
     },
-    Which_last_year_was_a: {
+    workingArea: {
       type: String,
       required: true,
     },
-    Competitor_2: {
+    domain: {
       type: String,
       required: true,
     },
-    Currently_we_have: {
+    market: {
       type: String,
       required: true,
     },
-    To_help_us: {
+    value: {
       type: String,
       required: true,
     },
-    Is_developing: {
+    competitor1: {
       type: String,
       required: true,
     },
-    To_solve: {
+    competitor2: {
         type: String,
         required: true,
     },
-    We_compete_in_the_growing:{
+    differentiator:{
         type: String,
         required: true,
     },
-    We_are_similar_to_competitor_1: {
+    currentStatus: {
         type: String,
         required: true,
     },
-    But_we:{
+    expectedHelpCategory:{
         type: String,
         required: true,
     },
-    We_are_looking_for: {
+    expectedHelp: {
         type: String,
         required: true,
     },
-    In_exchange_of: {
-        type: String,
+    equityAmount: {
+        type: Number,
         required: true,
-    }
+    },
+    IsActive: {
+      type: Boolean,
+      required: true,
+    },status: {
+      type: Boolean,
+      required: true,
+    },
   });
   module.exports = mongoose.model("pitch_my_idea", pitch_my_ideaSchema);
   
