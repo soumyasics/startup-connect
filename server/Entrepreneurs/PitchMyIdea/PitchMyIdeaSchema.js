@@ -1,7 +1,11 @@
 const mongoose = require('mongoose')
 
 const pitch_my_ideaSchema = mongoose.Schema({
-    company_Name: {
+    epId: {
+      type: String,
+      required: true,
+    }, 
+    companyName: {
       type: String,
       required: true,
     },
@@ -65,5 +69,5 @@ const pitch_my_ideaSchema = mongoose.Schema({
       required: true,
     },
   });
-  module.exports = mongoose.model("pitch_my_idea", pitch_my_ideaSchema);
+  module.exports = mongoose.model("pitch_my_idea_data", pitch_my_ideaSchema);
   
