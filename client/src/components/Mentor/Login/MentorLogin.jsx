@@ -1,27 +1,38 @@
 import React from 'react'
 import './MentorLogin.css'
+import StartupLogo from "../../../assets/startuplogo.png";
+
 import MentorLoginImg from '../../../assets/mentor_login_img.png'
 import { Link, useNavigate } from "react-router-dom";
+import Footer from '../../Footer/Footer';
+import Navbar from "react-bootstrap/Container"
 
 
 function MentorLogin() {
-  
+  const navigate = useNavigate();
+
+  const navigateToLogin = () => {
+    navigate("/mentor/login");
+  };
 
   return (
-    <div>
-    <div className="container ">
-    <div className="text-center headr">
-            <h4 className="  mt-3  pmi_mainheading"> MENTOR LOGIN</h4>
-            <h3 className="pmi_sub_h3">Your Journey to Success </h3>
-            <h3 className="pmi_sub_h3">Starts Here</h3>
+    <>
+    
+    <div className="container">
+      <div className="text-center headr">
+            <h4 className="  mt-3  mentor_mainheading"> MENTOR LOGIN</h4>
+            <h3 className="mentor_sub_h3">Your Journey to Success </h3>
+            <h3 className="mentor_sub_h3">Starts Here</h3>
             <hr
               className="  mb-4 border border-3 border-info"
               style={{ margin: "0 45%" }}
             ></hr>
         </div>
-      <div className="mentor_login_img_div">
-        <img className="mentor_login_img" src={MentorLoginImg} />
+        <div className='row px-4'>
+      <div className="col mentor_login_img_div">
+        <img className="mentor_login_img mb-4" src={MentorLoginImg} />
       </div>
+      <div className='col mt-5 px-5'>
       <form className="mentor_loginform">
         <label className="mentor_login_email_label">Your Email</label>
         <input
@@ -34,18 +45,21 @@ function MentorLogin() {
           name="password"
           className="mentor_login_password"
         />
-        <p className="text-center mt-4"><Link to="/entrepreneur/fogot-password">Forgot password</Link></p>
-        <p className=""> 
-          please register first <Link  to="/entrepreneur/signup">Register</Link>
-        </p>
+        <p className="text mt-2"><Link to="/entrepreneur/fogot-password">Forgot password</Link></p>
+        
         <button className="mentor_login_loginbtn" >
           Log In
         </button>
+        <p className="mt-3 "> 
+          please register first <Link  to="/entrepreneur/signup">Register</Link>
+        </p>
       </form>
+      </div>
+      </div>
     </div>
-     
+     <Footer/>
 
-    </div>
+    </>
   )
 }
 

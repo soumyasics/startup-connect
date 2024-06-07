@@ -1,26 +1,36 @@
 .mentor_login_img_div{
-    width: 50%;
+    /* width: 50%; */
     padding-top: 10px;
 }
 .mentor_login_img{
-    width: 575px;
-    height: 427px;
-    left: 61px; 
-    gap: 0px;
-    opacity: 0px;
-    position: absolute;
+    width: 505px;
+    height: 387px;
+    
 
 }
+.mentor_mainheading {
+    color: rgb(6, 163, 218);
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.55px;
+    text-align: center;
+  
+  }
 
+  .mentor_sub_h3{
+    font-family: Nunito;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.74px;
+    text-align: center;
+    
+  }
 .mentor_loginform{
-    width: 50%;
+    /* width:  50%; */
     height: Hug (128px)px;
-    top: 107px;
-    left: 630px;
     gap: 2px;
-    opacity: 0px;
     border-color: #EEF9FF;
-    position: relative;
 
 }
 

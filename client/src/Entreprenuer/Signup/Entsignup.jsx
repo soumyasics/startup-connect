@@ -3,9 +3,17 @@ import "./Entsignup.css";
 import Entbodyimage from "../../assets/Entregbodyimage.png";
 import { useNavigate,Link } from "react-router-dom";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "react-bootstrap/Navbar";
+import Frame from "../../assets/Frame 40.png";
+
+
 
 function Entsignup() {
   const navigate = useNavigate();
+  const navigateToLogin = () => {
+    navigate("/entrepreneur/login");
+  };
   const [data, setData] = useState({
     fname: "",
     lname: "",
@@ -156,175 +164,145 @@ function Entsignup() {
     }
   };
   return (
-    <div className="mt-5">
-      <div className="text-center">
-        <p className="Registernow ">Register Now</p>
-        <h1 className="Registertopcontent ">Access Your World</h1>
-        <h1 className="Registertopcontent"> of Innovation</h1>
-        <hr
-          className="mb-5 border border-3 border-info"
-          style={{ margin: "0 45%" }}
-        ></hr>
-      </div>
-      <div className="pt-3 dummy">
-        <div class="row">
-          <div class="col-4 p-4 ps-5 mb-5 pb-5">
-            <div className="EntRegimage">
-              <img src={Entbodyimage} alt="" />
-            </div>
-            <div className='pt-3 dummy'>
-                <div class="row">
-                    <div class="col-4 p-4 ps-5 p-0">
-                        <div className='EntRegimage'>
-                            <img src={Entbodyimage} alt='' />
-                        </div>
-
-                    </div>
-                    <div class="col ">
-                        <div>
-                            <div  >
-
-
-                                <div className='pt-4'>
-                                    <input className='Entreginput' type='text' placeholder='First Name' />
-                                </div>
-                                <div className='pt-4' >
-                                    <input className='Entreginput' type='text' placeholder='Company Name' />
-                                </div>
-                                <div className='pt-4' >
-                                    <input className='Entreginput' type='text' placeholder='Industry Sector' />
-                                </div>
-                                <div className='pt-4' >
-                                    <input className='Entreginput' type='email' placeholder='E-Mail ID' />
-                                </div>
-                                <div className='pt-4' >
-                                    <input className='Entreginput' type='number' placeholder='Contact Number' />
-                                </div>
-                                <div className='pt-4' >
-                                    <input className='Entreginput' type='text' placeholder='Address' />
-                                </div>
-                                <div class="input-group  pt-4"  >
-                                    <label id='Entsignuploadimage' class="input-group-text ps-5" for="inputGroupFile01">Your Image</label>
-                                    <input type="file" id='Entsignuploadimage'  />
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="col">
-                        <div >
-                            <div  >
-
-                                <div className='pt-4'>
-                                    <input className='Entreginput' type='text' placeholder='Last Name' />
-                                </div>
-                                <div className='pt-4'>
-                                    <input className='Entreginput' type='text' placeholder='Corporate Identification Number' />
-                                </div>
-
-                                <div className='pt-4'>
-                                    <input className='Entreginput' type='text' placeholder='Company Description' />
-                                </div>
-                                <div className='pt-4'>
-                                    <input className='Entreginput' type='text' placeholder='Location' />
-                                </div>
-                                <div className='pt-4'>
-                                    <input className='Entreginput' type='text' placeholder='Username' />
-                                </div>
-                                <div className='pt-4'>
-                                    <input className='Entreginput' type='password' placeholder='Password' />
-                                </div>
-                                <div className='pt-4'>
-                                    <input className='Entreginput' type='password' placeholder='Confirm Password' />
-
-                                </div>
-
-
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </div>
-                {/* <div className="pt-4">
-                  <input
-                    className="Entreginput"
-                    type="text"
-                    onChange={handleInputChange}
-                    placeholder="Corporate Identification Number"
-                  />
-                </div> */}
-
-                {/* <div className="pt-4">
-                  <input
-                    className="Entreginput"
-                    onChange={handleInputChange}
-                    type="text"
-                    placeholder="Company Description"
-
-                  />
-                </div> */}
-                {/* <div className="pt-4">
-                  <input
-                    className="Entinput ps-3"
-                    type="text"
-                    placeholder="Industry Sector"
-                    onChange={handleInputChange}
-                  />
-                </div> */}
-                {/* <div className="pt-4">
-                  <input
-                    className="Entreginput"
-                    type="text"
-                    onChange={handleInputChange}
-                    placeholder="Username"
-                  />
-                </div> */}
-                <div className="pt-4">
-                  <input
-                    className="Entreginput"
-                    type="text"
-                    value={data.gender}
-                    name="gender"
-                    onChange={handleInputChange}
-                    placeholder="gender"
-                  />{errors.gender && (
-                    <div className="text-danger errortext">{errors.gender}</div>
-                  )}
-                </div>
-                <div className="pt-4">
-                  <input
-                    className="Entreginput"
-                    type="password"
-                    onChange={handleInputChange}
-                    placeholder="Password"
-                    value={data.password}
-                    name="password"
-                  />
-                  {errors.password && (
-                    <div className="text-danger errortext">{errors.password}</div>
-                  )}
-                </div>
-
-            </div>
+    <>
+    <div className="sticky">
+        <div className="landingtopheader">
+          <div className="ent_secondheader">
+            <Navbar className="px-4">
+              <Navbar.Brand href="#home" className="text-light">
+                <img src={Frame} alt="Frame" />
+              </Navbar.Brand>
+              <Navbar.Toggle />
+              <Navbar.Collapse className="justify-content-end">
+                <Navbar.Text className="px-5">
+                  <a href="#Home" className="text-decoration-none">
+                    <p className="navbarstext">Home</p>
+                  </a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5">
+                  <a href="#About" className="text-decoration-none">
+                    <p className="navbarstext">About Us</p>
+                  </a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5">
+                  <a href="#Services" className="text-decoration-none">
+                    <p className="navbarstext">Services</p>
+                  </a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5" onClick={navigateToLogin}>
+                  <p className="navbarstext">Sign Up</p>
+                </Navbar.Text>
+              </Navbar.Collapse>
+            </Navbar>
           </div>
         </div>
-        <div class="row ">
-          <div class="col-4"></div>
-          <div class="col-8 text-center">
+      </div>
+    <div className="container">
+      <div className="text-center headr">
+          <h4 className="  mt-3  ent_mainheading">REGISTER NOW</h4>
+          <h3 className="ent_sub_h3">Access Your World </h3>
+          <h3 className="ent_sub_h3">of Innovation</h3>
+          <hr
+            className="  mb-4 border border-3 border-info"
+            style={{ margin: "0 45%" }}
+          ></hr>
+      </div>
+      <form>
+      <div className='row'>
+        <div className="col">
+          <img className='ent_reg_img' src={Entbodyimage}></img>
+        </div>
+        
+          <div className='col-4'>
+            <div class="">
+            <label id="">First Name</label>
+              <input class="input-cal input-base" name="fname" id="ent_input" placeholder="" type="text"/>
+            </div>
+            <div class=" pt-2 ">
+            <label id="">Company Name</label>
+              <input class="input-cal input-base" id="ent_input" name="company_name" placeholder="" type="text"/>
+            </div>
+            <div class=" pt-2">
+            <label id="">Expertise Area</label>
+              <select class="input-cal input-base " id="ent_input"  name="expertise_area">
+                <option hidden="">Expertise Area</option>
+                <option value="Technology">Technology</option>
+                <option value="E-commerce and Retail">E-commerce and Retail</option>
+                <option value="Health and Wellness">Health and Wellness</option>
+                <option value="Finance and Insurance">Finance and Insurance</option>
+                <option value="Education">Education</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Media and Entertainment">Media and Entertainment</option>
+                <option value="Transportation and Logistics">Transportation and Logistics</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Environmental and Energy">Environmental and Energy</option>
+                <option value="Consumer Services">Consumer Services</option>
+                <option value="Fashion and Lifestyle">Fashion and Lifestyle</option>
+              </select>
+            </div>
+            <div class=" pt-2 ">
+            <label id="">E-Mail ID</label>
+              <input class="input-cal input-base" id="ent_input" name="email" placeholder="" type="text"/>
+            </div>
+            <div class=" pt-2 ">
+            <label id="">Contact Number</label>
+              <input class="input-cal input-base" id="ent_input" name="contact" placeholder="" type="text"/>
+            </div>
+            <div class=" pt-2">
+            <label id="">Address</label>
+              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="text"/>
+            </div>
+            <label id="">Your Image</label>
+            <div class=" relative pt-4 ent_reg_profile ">
+              
+              <label for="file" class="ent_reg_file_upload">
+                <div class="icon">Upload</div>
+                <input id="file" type="file"  name="profile" />
+              </label>
+              
+            </div>
+          </div>
+          <div className='col-4'>
+            <div class=" ">
+            <label id="">Last Name</label>
+              <input class="input-cal input-base" id="ent_input" name="lname" placeholder="" type="text"/>
+            </div>
+            <div class=" pt-2">
+            <label id="">Corporate Identification Number</label>
+              <input class="input-cal input-base" id="ent_input" name="corporate_id_number" placeholder="" type="text"/>
+            </div>
+            <div class=" pt-2">
+            <label id="">Company Description</label>
+              <input class="input-cal input-base" id="ent_input" name="description" placeholder="" type="text"/>
+            </div>
+            <div class=" pt-2">
+            <label id="">Location</label>
+               <input class="input-cal input-base" id="ent_input" name="location" placeholder="" type="text"/>
+            </div>
+            <div class=" pt-2">
+            <label id="">Username</label>
+              <input class="input-cal input-base" id="ent_input" name="username" placeholder="" type="text"/>
+            </div>
+            <div class=" pt-2">
+            <label id="">Password</label>
+              <input class="input-cal input-base" id="ent_input" name="password" placeholder="" type="password"/>
+            </div>
+            <div class="relative pt-2">
+            <label id="">Confirm Password</label>
+              <input class="input-cal input-base" id="ent_input" name="c_password" placeholder="" type="password"/>
+            </div>
+            <div class="relative pt-2 mx-5 mb-3">
+              <button className='ent_reg_btn'>Register</button> 
+              </div>
+            </div>
            
-            <button className="Entregbtn" onClick={handleSubmit}>
-              Register
-            </button>
           </div>
-        </div>
-      </div>
+          </form>
+          
+        
     </div>
+    <Footer/>  
+    </>
   );
 }
 

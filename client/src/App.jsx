@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter basename="strartup">
       <Routes>
      <Route path="/" element={<LandingPageTopNav />} />
-        <Route path="/entrepreneur/signup" element={<Entsignup />} /> 
+        <Route path="/entrepreneur/signup" element={[<CommonNavbar/>,<Entsignup />]} /> 
         <Route path="/entrepreneur/login" element={<LoginPageMain />} />
         <Route path="/entrepreneur/fogot-password"element={<ForgotPassMain />}/>
         <Route path="/entrepreneur/pitch-my-idea"element={[<CommonNavbar/>,<PitchMyIdea />]}/>
@@ -26,14 +26,15 @@ function App() {
         
         <Route path="/investor/signup" element={<InvesterRegister/>}/>
 
-        <Route path="/mentor/signup" element={<MentorRegister/>}/>
-        <Route path="/mentor/login" element={<MentorLogin/>}/>
+        <Route path="/mentor/signup" element={[<CommonNavbar/>,<MentorRegister/>]}/>
+        <Route path="/mentor/login" element={[<CommonNavbar/>,<MentorLogin/>]}/>
 
 
    
 
        
-         <Route path="navbar" element={<CommonNavbar />} />
+         <Route path="commonnavbar" element={<CommonNavbar />} />
+
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
       </Routes>
     </BrowserRouter>
