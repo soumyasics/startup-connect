@@ -1,6 +1,7 @@
 import React from 'react'
 import './MentorLogin.css'
 import MentorLoginImg from '../../../assets/mentor_login_img.png'
+import { Link, useNavigate } from "react-router-dom";
 
 
 function MentorLogin() {
@@ -8,7 +9,7 @@ function MentorLogin() {
 
   return (
     <div>
-    <div className="container mt-5">
+    <div className="container ">
     <div className="text-center headr">
             <h4 className="  mt-3  pmi_mainheading"> MENTOR LOGIN</h4>
             <h3 className="pmi_sub_h3">Your Journey to Success </h3>
@@ -26,17 +27,13 @@ function MentorLogin() {
         <input
           type="email"
           name="email"
-          onChange={change}
           className="mentor_login_email"/>
         <label className="mentor_login_password_label">Password</label>
         <input
           type="password"
           name="password"
-          onChange={change}
           className="mentor_login_password"
-        />{errors.password && (
-          <div className="text-danger errortext">{errors.password}</div>
-        )}
+        />
         <p className="text-center mt-4"><Link to="/entrepreneur/fogot-password">Forgot password</Link></p>
         <p className=""> 
           please register first <Link  to="/entrepreneur/signup">Register</Link>
