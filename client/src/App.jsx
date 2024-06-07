@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter basename="strartup">
       <Routes>
      <Route path="/" element={<LandingPageTopNav />} />
-        <Route path="/entrepreneur/signup" element={<Entsignup />} /> 
+        <Route path="/entrepreneur/signup" element={[<CommonNavbar/>,<Entsignup />]} /> 
         <Route path="/entrepreneur/login" element={<LoginPageMain />} />
         <Route path="/entrepreneur/fogot-password"element={<ForgotPassMain />}/>
         <Route path="/entrepreneur/pitch-my-idea"element={[<CommonNavbar/>,<PitchMyIdea />]}/>

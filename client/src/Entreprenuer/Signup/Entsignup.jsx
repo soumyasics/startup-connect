@@ -3,9 +3,17 @@ import "./Entsignup.css";
 import Entbodyimage from "../../assets/Entregbodyimage.png";
 import { useNavigate,Link } from "react-router-dom";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "react-bootstrap/Navbar";
+import Frame from "../../assets/Frame 40.png";
+
+
 
 function Entsignup() {
   const navigate = useNavigate();
+  const navigateToLogin = () => {
+    navigate("/entrepreneur/login");
+  };
   const [data, setData] = useState({
     fname: "",
     lname: "",
@@ -156,6 +164,39 @@ function Entsignup() {
     }
   };
   return (
+    <>
+    <div className="sticky">
+        <div className="landingtopheader">
+          <div className="ent_secondheader">
+            <Navbar className="px-4">
+              <Navbar.Brand href="#home" className="text-light">
+                <img src={Frame} alt="Frame" />
+              </Navbar.Brand>
+              <Navbar.Toggle />
+              <Navbar.Collapse className="justify-content-end">
+                <Navbar.Text className="px-5">
+                  <a href="#Home" className="text-decoration-none">
+                    <p className="navbarstext">Home</p>
+                  </a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5">
+                  <a href="#About" className="text-decoration-none">
+                    <p className="navbarstext">About Us</p>
+                  </a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5">
+                  <a href="#Services" className="text-decoration-none">
+                    <p className="navbarstext">Services</p>
+                  </a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5" onClick={navigateToLogin}>
+                  <p className="navbarstext">Sign Up</p>
+                </Navbar.Text>
+              </Navbar.Collapse>
+            </Navbar>
+          </div>
+        </div>
+      </div>
     <div className="container">
       <div className="text-center headr">
           <h4 className="  mt-3  ent_mainheading">REGISTER NOW</h4>
@@ -173,15 +214,16 @@ function Entsignup() {
         </div>
         
           <div className='col-4'>
-            <div class="relative">
+            <div class="">
+            <label id="">First Name</label>
               <input class="input-cal input-base" name="name" id="ent_input" placeholder="" type="text"/>
-              <label id="label-input">First Name</label>
             </div>
-            <div class="relative pt-2 ">
+            <div class=" pt-2 ">
+            <label id="">Company Name</label>
               <input class="input-cal input-base" id="ent_input" name="email" placeholder="" type="text"/>
-              <label id="label-input">Company Name</label>
             </div>
-            <div class="relative pt-2">
+            <div class=" pt-2">
+            <label id="">Expertise Area</label>
               <select class="input-cal input-base " id="ent_input"  name="industry_sector">
                 <option hidden="">Expertise Area</option>
                 <option value="Technology">Technology</option>
@@ -198,54 +240,56 @@ function Entsignup() {
                 <option value="Fashion and Lifestyle">Fashion and Lifestyle</option>
               </select>
             </div>
-            <div class="relative pt-2 ">
+            <div class=" pt-2 ">
+            <label id="">E-Mail ID</label>
               <input class="input-cal input-base" id="ent_input" name="organization" placeholder="" type="text"/>
-              <label id="label-input">E-Mail ID</label>
             </div>
-            <div class="relative pt-2 ">
+            <div class=" pt-2 ">
+            <label id="">Contact Number</label>
               <input class="input-cal input-base" id="ent_input" name="password" placeholder="" type="text"/>
-              <label id="label-input">Contact Number</label>
             </div>
-            <div class="relative pt-2">
+            <div class=" pt-2">
+            <label id="">Address</label>
               <input class="input-cal input-base" id="ent_input" name="confirm_password" placeholder="" type="text"/>
-              <label id="label-input">Address</label>
             </div>
-            <div class="relative pt-4 ent_reg_profile ">
+            <label id="">Your Image</label>
+            <div class=" relative pt-4 ent_reg_profile ">
+              
               <label for="file" class="ent_reg_file_upload">
                 <div class="icon">Upload</div>
                 <input id="file" type="file"  name="profile" />
               </label>
-              <label id="label-input">Your Image</label>
+              
             </div>
           </div>
           <div className='col-4'>
-            <div class="relative ">
+            <div class=" ">
+            <label id="">Last Name</label>
               <input class="input-cal input-base" id="ent_input" name="description" placeholder="" type="text"/>
-              <label id="label-input">Last Name</label>
             </div>
-            <div class="relative pt-2">
+            <div class=" pt-2">
+            <label id="">Corporate Identification Number</label>
               <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="text"/>
-              <label id="label-input">Corporate Identification Number</label>
             </div>
-            <div class="relative pt-2">
+            <div class=" pt-2">
+            <label id="">Company Description</label>
               <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="text"/>
-              <label id="label-input">Company Description</label>
             </div>
-            <div class="relative pt-2">
+            <div class=" pt-2">
+            <label id="">Location</label>
                <input class="input-cal input-base" id="ent_input" name="description" placeholder="" type="text"/>
-              <label id="label-input">Location</label>
+            </div>
+            <div class=" pt-2">
+            <label id="">Username</label>
+              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="text"/>
+            </div>
+            <div class=" pt-2">
+            <label id="">Password</label>
+              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="password"/>
             </div>
             <div class="relative pt-2">
-              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="text"/>
-              <label id="label-input">Username</label>
-            </div>
-            <div class="relative pt-2">
-              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="text"/>
-              <label id="label-input">Password</label>
-            </div>
-            <div class="relative pt-2">
-              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="text"/>
-              <label id="label-input">Confirm Password</label>
+            <label id="">Confirm Password</label>
+              <input class="input-cal input-base" id="ent_input" name="address" placeholder="" type="password"/>
             </div>
             <div class="relative pt-2 mx-5 mb-3">
               <button className='ent_reg_btn'>Register</button> 
@@ -255,8 +299,10 @@ function Entsignup() {
           </div>
           </form>
           
-          
+        
     </div>
+    <Footer/>  
+    </>
   );
 }
 
