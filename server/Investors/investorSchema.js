@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 
-const investerSchema=mongoose.Schema({
+const investorSchema=mongoose.Schema({
     name:{
     type:String,
     required:true
@@ -54,4 +54,4 @@ const investerSchema=mongoose.Schema({
         type:Boolean
     }
 });
-module.exports=mongoose.model('invester',investerSchema)
+module.exports=mongoose.model('investor',investorSchema)
