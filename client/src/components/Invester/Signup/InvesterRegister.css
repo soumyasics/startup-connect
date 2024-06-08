@@ -29,13 +29,14 @@
 }
 
 .inv-reg-img{
-    max-height: 430px;
+  width: 330px;
+  height: 590px;
 }
 
 .inv-reg-btn{
     width: 374px;
-    height: 53px;
-    top: 967px;
+    height: 50px;
+    margin-top: 10px;
     border: #e8e8e8;
     left: 765px;
     color: #ffffff;
@@ -47,7 +48,6 @@
 .inv-reg-profile{
     width: 373px;
     height: 51px;
-    position: absolute;
     margin-top: 30px;
     background: #EEF9FF;
 }
@@ -95,11 +95,11 @@
   }
 
     /* profile */
-    .inv-reg-file-upload {
-        height: 3px;
-        width: 90px;
+    .int_reg_file_upload {
+        height: 13px;
+        width: 100px;
         margin-left: 280px;
-        margin-top: -20px;
+        margin-top: -30px;
         display: flex;
         flex-direction: column;
         align-items: space-between;
@@ -114,7 +114,7 @@
 
       }
       
-      .inv-reg-file-upload .icon {
+      .int_reg_file_upload .icon {
         display: flex;
         position: absolute;
         width:70px;
@@ -122,12 +122,12 @@
         justify-content: center;
       }
       
-      .inv-reg-file-upload .icon svg {
+      .int_reg_file_upload .icon svg {
         height: 80px;
         fill: #e8e8e8;
       }
       
-      .inv-reg-file-upload .text {
+      .int_reg_file_upload .text {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -141,9 +141,28 @@
         color: #000000;
       }
       
-      .inv-reg-file-upload input {
+      .int_reg_file_upload input {
         display: none;
       }
+
+      .inv_file_upload1{
+        margin-top: 33px;
+        height: 52px;
+        background: #EEF9FF;
+      }
+
+      .inv_file_upload2{
+        margin-top: 33px;
+        height: 52px;
+        background: #EEF9FF;
+      }
+
+      .int_reg_file_upload:focus{
+        color: #0399CF;
+      }
+     
+
+      
 
       
 

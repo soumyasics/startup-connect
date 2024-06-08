@@ -254,12 +254,10 @@ function Entsignup() {
             </div>
             <label id="">Your Image</label>
             <div class=" relative pt-4 ent_reg_profile ">
-              
               <label for="file" class="ent_reg_file_upload">
                 <div class="icon">Upload</div>
                 <input id="file" type="file"  name="profile" />
               </label>
-              
             </div>
           </div>
           <div className='col-4'>

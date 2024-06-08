@@ -51,7 +51,7 @@ function MentorLogin() {
           Log In
         </button>
         <p className="mt-3 "> 
-          please register first <Link  to="/entrepreneur/signup">Register</Link>
+          please register first <Link  to="/mentor/signup">Register</Link>
         </p>
       </form>
       </div>
