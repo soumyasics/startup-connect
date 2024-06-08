@@ -13,7 +13,7 @@ function MentorRegister() {
 
   const navigate = useNavigate();
   const navigateToLogin = () => {
-    navigate("/entrepreneur/login");
+    navigate("/mentor/login");
   };
   return (
     <>
@@ -43,7 +43,7 @@ function MentorRegister() {
                   </a>
                 </Navbar.Text>
                 <Navbar.Text className="px-5" onClick={navigateToLogin}>
-                  <p className="navbarstext">Sign Up</p>
+                  <a href='' className="text-decoration-none"><p className="navbarstext">Sign Up</p></a>
                 </Navbar.Text>
               </Navbar.Collapse>
             </Navbar>

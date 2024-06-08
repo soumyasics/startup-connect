@@ -4,8 +4,20 @@ import Loginimage from "../../assets/Rectangle 10.png";
 import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
 import Footer from "../../components/Footer/Footer";
+import Navbar from "react-bootstrap/Navbar";
+import Frame from "../../assets/Frame 40.png";
+
+
+
 
 function LoginPageMain() {
+
+  
+
+  const navigateToLogin = () => {
+    navigate("/entrepreneur/login");
+  };
+
   let formvalid = true;
 
   const [data, SetData] = useState({ email: "", password: "" });
@@ -71,51 +83,87 @@ function LoginPageMain() {
   };
 
   return (
-    <div>
-    <div className="container mt-5">
-      <div className="ent-loginpage-loginhere">
-        <p>Login Here</p>
+    <>
+
+<div className="sticky">
+        <div className="landingtopheader">
+          <div className="landingsecondheader">
+            <Navbar className="px-4">
+              <Navbar.Brand href="#home" className="text-light">
+                <img src={Frame} alt="Frame" />
+              </Navbar.Brand>
+              <Navbar.Toggle />
+              <Navbar.Collapse className="justify-content-end">
+                <Navbar.Text className="px-5">
+                  <a href="#Home" className="text-decoration-none">
+                    <p className="navbarstext">Home</p>
+                  </a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5">
+                  <a href="#About" className="text-decoration-none">
+                    <p className="navbarstext">About Us</p>
+                  </a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5">
+                  <a href="#Services" className="text-decoration-none">
+                    <p className="navbarstext">Services</p>
+                  </a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5" onClick={navigateToLogin}>
+                  <p className="navbarstext">Sign Up</p>
+                </Navbar.Text>
+              </Navbar.Collapse>
+            </Navbar>
+          </div>
+        </div>
       </div>
-      <div className="ent-loginpage-content">
-        <p>
-          Your Journey to Success <br></br>Starts Here
-        </p>
+    <div className="container">
+      <div className="text-center">
+            <h4 className="  mt-3  ent_mainheading">LOGIN HERE</h4>
+            <h3 className="ent_sub_h3">Your Journey to Success </h3>
+            <h3 className="ent_sub_h3">Starts Here</h3>
+            <hr
+              className="  mb-4 border border-3 border-info"
+              style={{ margin: "0 45%" }}
+            ></hr>
+        </div>
+        <div className='row px-4'>
+      <div className="col ent_loginpage_img_div">
+        <img className="ent_loginpage_img mb-4" src={Loginimage} />
       </div>
-      <div className="ent-loginpage-line"></div>
-      <div className="ent-loginpage-img_div">
-        <img className="ent-loginpage-img" src={Loginimage} />
-      </div>
-      <form className="ent-loginpage-loginform">
-        <label className="ent-loginpage-email-label">Your Email</label>
+      <div className='col mt-5 px-5'>
+      <form className="ent_loginform">
+        <label className="ent_loginpage_email_label">Your Email</label>
         <input
           type="email"
           name="email"
           onChange={change}
-          className="ent-loginpage-email"
+          className="ent_loginpage_email"
         />{errors.email && (
           <div className="text-danger errortext">{errors.email}</div>
         )}
-        <label className="ent-loginpage-password-label">Password</label>
+
+        <label className="ent_loginpage_password_label">Password</label>
         <input
           type="password"
           name="password"
-          onChange={change}
-          className="ent-loginpage-password"
-        />{errors.password && (
-          <div className="text-danger errortext">{errors.password}</div>
-        )}
-        <p className="text-center mt-4"><Link to="/entrepreneur/fogot-password">Forgot password</Link></p>
-        <p className=""> 
-          please register first <Link  to="/entrepreneur/signup">Register</Link>
-        </p>
-        <button className="ent-loginpage-loginbtn" onClick={HandleClick}>
+          className="ent_loginpage_password"
+        />
+        <p className="text mt-2"><Link to="/entrepreneur/fogot-password">Forgot password</Link></p>
+        
+        <button className="ent_login_loginbtn" >
           Log In
         </button>
+        <p className="mt-3 "> 
+          please register first <Link  to="/entrepreneur/signup">Register</Link>
+        </p>
       </form>
+      </div>
+      </div>
     </div>
      
-
-    </div>
+        <Footer/>
+    </>
   );
 }
 
