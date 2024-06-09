@@ -10,7 +10,7 @@ import { CommonNavbar } from "./components/commonNavbar/commonNavbar";
 
 import InvesterRegister from "./components/Invester/InvesterRegister";
 import Enthomepage from "./Entreprenuer/Homepage/Enthomepage";
-
+import Entprofile from "./Entreprenuer/Profile/Entprofile";
 function App() {
   return (
     <BrowserRouter basename="strartup">
@@ -31,6 +31,7 @@ function App() {
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
 
         <Route path="/Enthomepage"element={<Enthomepage/>} />
+        <Route path='/Entprofile'element={<Entprofile/>}/>
       </Routes>
     </BrowserRouter>
   );
