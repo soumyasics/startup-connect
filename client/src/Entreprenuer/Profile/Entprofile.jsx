@@ -1,6 +1,6 @@
 import React from 'react'
 import './Entprofile.css'
-// import i from '../../assets/'
+import profileimage from '../../assets/Ellipse 5.png'
 
 
 
@@ -15,7 +15,7 @@ function Entprofile() {
                 </div>
 
                 <div >
-                    <img  className='profile_round mt-5' src='' />
+                    <img  className='profile_round mt-5' src={profileimage} />
 
                 </div>
             </div>
