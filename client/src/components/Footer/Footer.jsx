@@ -14,24 +14,19 @@ import Emaillogo from "../../assets/Vector (1).png"
 function Footer() {
     return (
         <div>
+            <div class="firstcolumn ">
+                        <img className='startuplogo' src={startuplog} />
+                        <p className='firstcolumnpara '>we combine technical expertise with creative thinking to deliver innovative solutions that exceed our clients' expectations. We take a collaborative approach to every project, working closely with our clients to understand their unique goals and challenges and tailor our solutions to meet their specific needs.</p>
+            </div>
             <div className='footerbg '>
-                <div class="row ps-5">
-                    <div class="col-3 firstcolumn ">
-                        <div >
-                            <img className='startuplogo' src={startuplog} />
-
-                        </div>
-                        <div>
-                            <p className='firstcolumnpara'>Lorem diam sit erat dolor elitr et, diam
-                                lorem justo amet clita stet eos sit. Elitr
-                                dolor duo lorem, elitr clita ipsum sea.
-                                Diam amet erat lorem stet eos. Diam
-                                amet et kasd eos duo.</p>
-                        </div>
-                    </div>
-                    <div class="col-2 secondcolumn ms-5 ps-5">
+                <div className='foot'>
+               
+                <div class="row  pt-4 ">
+                    
+                    
+                    <div class="col-3 secondcolumn  ">
                         <div  >
-                            <div>
+                            <div className="text-center">
                                 <h1 className='secondcolumncontent text-center'>Get In Touch</h1>
                                 <hr className=' hrlinefirst'></hr>
                                 <div>
@@ -99,14 +94,18 @@ function Footer() {
 
                     </div>
                 </div>
-                <div className='footerbotomset p-0'>
-                    <p className='botomcontent'>All Rights Reserved. Designed by Studen</p>
+                
+                
+                
+
+            </div>
+            <div className='footerbotomset'>
+                    <p className='botomcontent'>All Rights Reserved. Designed by Student</p>
 
                 </div>
 
-            </div>
 
-
+        </div>
         </div>
     )
 }

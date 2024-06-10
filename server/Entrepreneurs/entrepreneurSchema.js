@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const entrepreneurSchema = mongoose.Schema({
+const entrepreneur_reg_Schema = mongoose.Schema({
   fname: {
     type: String,
     required: true,
@@ -38,4 +38,4 @@ const entrepreneurSchema = mongoose.Schema({
     required: true,
   },
 });
-module.exports = mongoose.model("entrepreneurs", entrepreneurSchema);
+module.exports = mongoose.model("entrepreneurs", entrepreneur_reg_Schema);

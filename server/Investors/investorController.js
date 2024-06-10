@@ -1,5 +1,7 @@
 const Investor =require('./investorSchema');
-const multer=require('multer')
+const multer=require('multer');
+const jwt = require('jsonwebtoken');
+const secret = 'invester';
 
 const storage=multer.diskStorage({
     destination:function(req,res,cb){
@@ -31,7 +33,7 @@ const registerInvestor= async(req,res)=>{
             description,
             address,
         }=req.body;
-        
+
         const newInvestor=new Investor({
             name,
             email,
@@ -80,7 +82,66 @@ const registerInvestor= async(req,res)=>{
     }
 }
 
+// View all investors
+const viewInvestors = (req, res) => {
+    Investor.find()
+        .exec()
+        .then(data => {
+            if (data.length > 0) {
+                res.status(200).json({
+                    msg: "Data obtained successfully",
+                    data: data
+                });
+            } else {
+                res.status(200).json({
+                    msg: "No Data obtained"
+                });
+            }
+        })
+        .catch(err => {
+            res.status(500).json({
+                msg: "Data not obtained",
+                Error: err
+            });
+        });
+};
+
+
+
+const createToken = (user) =>{
+    return jwt.sign({ userId: user.id }, secret, { expiresIn:'1hr' });
+}
+
+// Login Investor 
+
+const loginInvestor=(req,res)=>{
+    const { email , password }=req.body
+    Investor.findOne({email})
+    .exec()
+    .then(user=>{
+        if(!user){
+            return res.status(409).json({msg:'user not found'})
+        }else if(user.password!==password){
+            return res.status(409).json({msg:'Password Missmatch !!'})
+        }
+
+        const token = createToken(user)
+
+        res.status(200).json({
+            data:user,
+            token:token
+        });
+    })
+    .catch(err=>{
+        console.log(err);
+        return res.status(500).json({msg:'Something went wrong'})
+    });
+
+};
+
 module.exports={
     registerInvestor,
     upload,
+    loginInvestor,
+    viewInvestors,
 }

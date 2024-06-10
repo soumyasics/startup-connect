@@ -1,42 +1,42 @@
-.inv-reg-registernow{
-    font-family: Nunito;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 24.55px;
-    text-align: center;
-    color: #00B0F0;
-    /* display: inline; */
+
+
+
+.inv_mainheading {
+  color: rgb(6, 163, 218);
+  font-family: Nunito;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24.55px;
+  text-align: center;
+
 }
-.inv-reg-content{
-    font-family: Nunito;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32.74px;
-    text-align: center;
-    color: #0F2442;
-    display: inline;
+
+.inv_sub_h3{
+  font-family: Nunito;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32.74px;
+  text-align: center;
+  
 }
-.inv-reg-line{
-    width: 90px;
-    height: 0px;
-    top: 110px;
-    left: 598px;
-    border-bottom: 2px solid #00B0F0;
-    gap: 0px;
-    opacity: 0px;
-    text-align: center;
-    position: absolute;
-    
+
+
+.inv_hr_line{
+  width: 96px;
+  border: 2px solid #06A3DA;
+  margin-left: 510px;
 }
 
 .inv-reg-img{
-    max-height: 430px;
+  width: 330px;
+  height: 590px;
 }
 
 .inv-reg-btn{
-    width: 370px;
-    height: 53px;
-    top: 967px;
+    width: 417px;
+    height: 50px;
+    margin-top: 10px;
+    border: #e8e8e8;
     left: 765px;
     color: #ffffff;
     background: #06A3DA;
@@ -47,20 +47,16 @@
 .inv-reg-profile{
     width: 373px;
     height: 51px;
-    position: absolute;
-    margin-top: 10px;
+    margin-top: 30px;
     background: #EEF9FF;
-    /* border: 1px solid black; */
 }
 
 /* input */
 #label-input {
     transition: all 0.1s ease-in-out;
     color: #2c2c54;
-    position: absolute;
-    top: 30%;
     left: 18px;
-    transform: scale(0.95);
+    transform: scale(1);
     opacity: 1;
     pointer-events: none;
   }
@@ -98,11 +94,11 @@
   }
 
     /* profile */
-    .custum-file-upload {
-        height: 3px;
-        width: 90px;
+    .int_reg_file_upload {
+        height: 13px;
+        width: 100px;
         margin-left: 280px;
-        margin-top: -10px;
+        margin-top: -30px;
         display: flex;
         flex-direction: column;
         align-items: space-between;
@@ -117,21 +113,20 @@
 
       }
       
-      .custum-file-upload .icon {
+      .int_reg_file_upload .icon {
         display: flex;
         position: absolute;
         width:70px;
-        /* margin-top: 10px; */
         align-items: center;
         justify-content: center;
       }
       
-      .custum-file-upload .icon svg {
+      .int_reg_file_upload .icon svg {
         height: 80px;
         fill: #e8e8e8;
       }
       
-      .custum-file-upload .text {
+      .int_reg_file_upload .text {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -145,7 +140,31 @@
         color: #000000;
       }
       
-      .custum-file-upload input {
+      .int_reg_file_upload input {
         display: none;
       }
+
+      .inv_file_upload1{
+        margin-top: 33px;
+        height: 52px;
+        background: #EEF9FF;
+      }
+
+      .inv_file_upload2{
+        margin-top: 33px;
+        height: 52px;
+        background: #EEF9FF;
+      }
+
+      .int_reg_file_upload:focus{
+        color: #0399CF;
+      }
+     
+
+      
+
+      
+
+      
+      
   
