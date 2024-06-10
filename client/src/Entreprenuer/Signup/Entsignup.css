@@ -113,6 +113,11 @@
   display: none;
 }
 
+.EntRegimage {
+  width: 375px;
+  height: 338px;
+}
+
 
 .ent_reg_profile{
   width: 100%;
@@ -121,3 +126,4 @@
   margin-top: 10px;
   background: #EEF9FF;
 }
+

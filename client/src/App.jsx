@@ -11,12 +11,18 @@ import LandingPageTopNav from "./LandingPage/LandingPageTopNav";
 import ForgotPassMain  from "./Entreprenuer/ForgotPass/ForgotPassMain"
 import { CommonNavbar } from "./components/commonNavbar/commonNavbar";
 
+<<<<<<< sheik10
+import InvesterRegister from "./components/Invester/InvesterRegister";
+import Enthomepage from "./Entreprenuer/Homepage/Enthomepage";
+import Entprofile from "./Entreprenuer/Profile/Entprofile";
+=======
 import InvesterRegister from "./components/Invester/Signup/InvesterRegister";
 import InvestorLogin from "./components/Invester/Login/InvestorLogin";
 import Navbar_2 from "./components/commonNavbar/Navbar_2";
 import AboutUs from "./LandingPage/AboutUs/AboutUs";
 import Services from "./LandingPage/Services/Services";
 
+>>>>>>> main
 function App() {
   return (
     <BrowserRouter basename="strartup">
@@ -47,6 +53,9 @@ function App() {
 
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
+
+        <Route path="/Enthomepage"element={<Enthomepage/>} />
+        <Route path='/Entprofile'element={<Entprofile/>}/>
       </Routes>
     </BrowserRouter>
   );

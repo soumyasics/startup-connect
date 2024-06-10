@@ -41,7 +41,7 @@ const investorSchema=mongoose.Schema({
         type:String,
         required:true
 },
-    profile:{
+    image:{
         type:Object,
         required:true
 },

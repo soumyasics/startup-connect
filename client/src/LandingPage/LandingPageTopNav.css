@@ -1,5 +1,6 @@
 
 
+
 .landingpagemaindiv {
   background-image: url("../assets/landing_hero_img.jpg");
   background-repeat: no-repeat;
@@ -134,6 +135,7 @@ height: 479px;
   line-height: 21.78px;
   text-align: left;
   
+>>>>>>> main
 }
 
 .range_of_service_span{
