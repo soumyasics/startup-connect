@@ -1,7 +1,6 @@
 import React from 'react'
 import './MentorLogin.css'
-import StartupLogo from "../../../assets/startuplogo.png";
-
+import Frame from "../../../assets/Frame 40.png";
 import MentorLoginImg from '../../../assets/mentor_login_img.png'
 import { Link, useNavigate } from "react-router-dom";
 import Footer from '../../Footer/Footer';
@@ -10,14 +9,12 @@ import Navbar from "react-bootstrap/Container"
 
 function MentorLogin() {
   const navigate = useNavigate();
-
   const navigateToLogin = () => {
     navigate("/mentor/login");
   };
 
   return (
     <>
-    
     <div className="container">
       <div className="text-center headr">
             <h4 className="  mt-3  mentor_mainheading"> MENTOR LOGIN</h4>
@@ -51,7 +48,7 @@ function MentorLogin() {
           Log In
         </button>
         <p className="mt-3 "> 
-          please register first <Link  to="/entrepreneur/signup">Register</Link>
+          please register first <Link  to="/mentor/signup">Register</Link>
         </p>
       </form>
       </div>

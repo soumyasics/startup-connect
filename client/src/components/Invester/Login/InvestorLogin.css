@@ -1,11 +1,14 @@
-.ent_loginpage_img_div{
+.inv_login_img_div{
+    /* width: 50%; */
     padding-top: 10px;
 }
-.ent_loginpage_img{
+.inv_login_img{
     width: 505px;
     height: 387px;
+    
+
 }
-.ent_mainheading {
+.inv_mainheading {
     color: rgb(6, 163, 218);
     font-family: Nunito;
     font-size: 18px;
@@ -15,7 +18,7 @@
   
   }
 
-  .ent_sub_h3{
+  .inv_sub_h3{
     font-family: Nunito;
     font-size: 24px;
     font-weight: 700;
@@ -23,12 +26,14 @@
     text-align: center;
     
   }
-  .login_hr_line{
+
+  .inv_hr_line{
     width: 96px;
     border: 2px solid #06A3DA;
     margin-left: 600px;
   }
-.ent_loginform{
+  
+.inv_loginform{
     /* width:  50%; */
     height: Hug (128px)px;
     gap: 2px;
@@ -36,7 +41,7 @@
 
 }
 
-.ent_loginpage_email_label{
+.inv_login_email_label{
     width: 86px;
     height: 25px;
     gap: 0px;
@@ -51,7 +56,7 @@
 
 }
 
-.ent_loginpage_email{
+.inv_login_email{
     width: 456px;
     height: 43px;
     gap: 0px;
@@ -61,7 +66,7 @@
 
 }
 
-.ent_loginpage_password_label{
+.inv_login_password_label{
     width: 80px;
     height: 25px;
     gap: 0px;
@@ -76,7 +81,7 @@
 
 }
 
-.ent_loginpage_password{
+.inv_login_password{
     width: 456px;
     height: 43px;
     gap: 0px;
@@ -85,7 +90,7 @@
     border: #EEF9FF;
     
 }
-.ent_login_loginbtn{
+.inv_login_loginbtn{
     width: 456px;
     height: 45px;
     top: 698px;

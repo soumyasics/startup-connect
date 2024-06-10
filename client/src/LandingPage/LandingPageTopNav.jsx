@@ -40,7 +40,6 @@ import img14 from "../assets/img14.png";
 import img15 from "../assets/img15.png";
 import img16 from "../assets/img16.png";
 import img17 from "../assets/img17.png";
-import carousel1 from "../assets/carousel-1.jpg";
 import carousel2 from "../assets/carousel-2.jpg";
 import Button from "react-bootstrap/Button";
 function LandingPageTopNav() {
@@ -133,7 +132,7 @@ function LandingPageTopNav() {
                   </a>
                 </Navbar.Text>
                 <Navbar.Text className="px-5" onClick={navigateToLogin}>
-                  <p className="navbarstext">Sign In</p>
+                  <a href="" className="text-decoration-none"><p className="navbarstext">Sign Up</p></a>
                 </Navbar.Text>
               </Navbar.Collapse>
             </Navbar>
@@ -254,10 +253,7 @@ function LandingPageTopNav() {
             <h4 className="  mt-5 pt-5 mainheadings"> WHY CHOOSE US</h4>
             <h3 className="why_choose_sub_h3">We Are Here to Grow Your </h3>
             <h3 className="why_choose_sub_h3">Business Exponentially</h3>
-            <hr
-              className="  mb-5 border border-3 border-info"
-              style={{ margin: "0 45%" }}
-            ></hr>
+            <div className="  mb-5  hr_line "></div>
           </div>
           <div className="row">
             <div className="col">
@@ -300,10 +296,7 @@ function LandingPageTopNav() {
             <h4 className=" mt-5 pt-5 mainheadings ">OUR SERVICES</h4>
             <h3 className="our_service_sub_h3">Bridging the Gap Between </h3>
             <h3 className="our_service_sub_h3">Ideas and Success</h3>
-            <hr
-              className="mb-5 border border-3 border-info"
-              style={{ margin: "0 45%" }}
-            ></hr>
+            <div className="  mb-5  hr_line "></div>
           </div>
           <div className="row text-center">
             <div className="col p-5 m-5 our_service_card">
