@@ -55,7 +55,7 @@ function MentorRegister() {
             <h4 className="  mt-3  mentor_mainheading">MENTOR REGISTRATION</h4>
             <h3 className="mentor_sub_h3">Access Your World </h3>
             <h3 className="mentor_sub_h3">of Innovation</h3>
-            hr_line
+            <div className="  mb-5  mentor_hr_line "></div>
         </div>
         <div className='row'>
           <div className='col'>

@@ -23,6 +23,11 @@
     text-align: center;
     
   }
+  .login_hr_line{
+    width: 96px;
+    border: 2px solid #06A3DA;
+    margin-left: 600px;
+  }
 .ent_loginform{
     /* width:  50%; */
     height: Hug (128px)px;

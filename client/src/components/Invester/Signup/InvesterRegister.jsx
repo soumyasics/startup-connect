@@ -64,13 +64,11 @@ const navigate = useNavigate();
       </div>
     <div className='container'>
     <div className="text-center headr">
-          <h4 className="  mt-3  ent_mainheading">REGISTER NOW</h4>
-          <h3 className="ent_sub_h3">Access Your World </h3>
-          <h3 className="ent_sub_h3">of Innovation</h3>
-          <hr
-            className="mb-4 border border-3 border-info"
-            style={{ margin: "0 45%" }}
-          ></hr>
+          <h4 className="  mt-3  inv_mainheading">REGISTER NOW</h4>
+          <h3 className="inv_sub_h3">Access Your World </h3>
+          <h3 className="inv_sub_h3">of Innovation</h3>
+          <div className="  mb-5  inv_hr_line "></div>
+
       </div>
       
         <div className='row'>

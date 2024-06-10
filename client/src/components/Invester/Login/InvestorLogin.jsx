@@ -53,10 +53,8 @@ function InvestorLogin() {
             <h4 className="  mt-3  inv_mainheading"> INVESTOR LOGIN</h4>
             <h3 className="inv_sub_h3">Your Journey to Success </h3>
             <h3 className="inv_sub_h3">Starts Here</h3>
-            <hr
-              className="  mb-4 border border-3 border-info"
-              style={{ margin: "0 45%" }}
-            ></hr>
+            <div className="  mb-5  inv_hr_line "></div>
+
         </div>
         <div className='row px-4'>
       <div className="col inv_login_img_div">

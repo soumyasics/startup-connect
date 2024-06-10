@@ -1,31 +1,27 @@
-.inv-reg-registernow{
-    font-family: Nunito;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 24.55px;
-    text-align: center;
-    color: #00B0F0;
+.inv_mainheading {
+  color: rgb(6, 163, 218);
+  font-family: Nunito;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24.55px;
+  text-align: center;
+
 }
-.inv-reg-content{
-    font-family: Nunito;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32.74px;
-    text-align: center;
-    color: #0F2442;
-    display: inline;
+
+.inv_sub_h3{
+  font-family: Nunito;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32.74px;
+  text-align: center;
+  
 }
-.inv-reg-line{
-    width: 90px;
-    height: 0px;
-    top: 110px;
-    left: 598px;
-    border-bottom: 2px solid #00B0F0;
-    gap: 0px;
-    opacity: 0px;
-    text-align: center;
-    position: absolute;
-    
+
+
+.inv_hr_line{
+  width: 96px;
+  border: 2px solid #06A3DA;
+  margin-left: 600px;
 }
 
 .inv-reg-img{
@@ -34,7 +30,7 @@
 }
 
 .inv-reg-btn{
-    width: 374px;
+    width: 424px;
     height: 50px;
     margin-top: 10px;
     border: #e8e8e8;

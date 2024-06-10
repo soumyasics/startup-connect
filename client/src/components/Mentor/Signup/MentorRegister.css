@@ -15,6 +15,11 @@
     text-align: center;
     
 }
+.mentor_hr_line{
+  width: 96px;
+  border: 2px solid #06A3DA;
+  margin-left: 600px;
+}
 .mentor_reg_img{
   width: 330px;
   height: 500px;
