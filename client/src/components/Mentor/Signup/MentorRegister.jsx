@@ -55,10 +55,7 @@ function MentorRegister() {
             <h4 className="  mt-3  mentor_mainheading">MENTOR REGISTRATION</h4>
             <h3 className="mentor_sub_h3">Access Your World </h3>
             <h3 className="mentor_sub_h3">of Innovation</h3>
-            <hr
-              className="  mb-4 border border-3 border-info"
-              style={{ margin: "0 45%" }}
-            ></hr>
+            hr_line
         </div>
         <div className='row'>
           <div className='col'>

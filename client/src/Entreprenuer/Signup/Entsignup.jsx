@@ -202,10 +202,7 @@ function Entsignup() {
           <h4 className="  mt-3  ent_mainheading">REGISTER NOW</h4>
           <h3 className="ent_sub_h3">Access Your World </h3>
           <h3 className="ent_sub_h3">of Innovation</h3>
-          <hr
-            className="  mb-4 border border-3 border-info"
-            style={{ margin: "0 45%" }}
-          ></hr>
+          <div className="  mb-5  ent_hr_line "></div>
       </div>
       <form>
       <div className='row'>
