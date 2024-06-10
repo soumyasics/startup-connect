@@ -141,7 +141,7 @@ div.sticky{
 }
 
 .landingsecondheader {
-  background-color: rgb(255, 255, 255);
+  background:#ffffff;
   color: black;
   font-size: larger;
   z-index: 1;
@@ -149,7 +149,7 @@ div.sticky{
   font-weight: 400;
 }
 .landingpagemaindiv {
-  background-image: url("https://themewagon.github.io/startup2/img/carousel-1.jpg");
+  background-image: url("../assets/landing_hero_img.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 85vh;
@@ -157,18 +157,16 @@ div.sticky{
 }
 
 .hero_text{
-  position: relative;
-  width: 520px;
+  width: 620px;
   height: 132px;
   color: #ffffff;
-  top: 202px;
-  left: 390px;
+  padding-top: 202px;
+  margin-left: 350px;
   font-family: Inter;
   font-size: 36px;
   font-weight: 700;
   line-height: 43.57px;
   text-align: center;
-  background:rgba(255,255,255,0.1);
     
 }
 
@@ -269,6 +267,12 @@ text-align: center;
   width: 600px;
 height: 479px;
 
+}
+
+.hr_line{
+  width: 96px;
+  border: 2px solid #06A3DA;
+  margin-left: 600px;
 }
 
 .range_of_service{
