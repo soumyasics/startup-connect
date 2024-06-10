@@ -42,6 +42,7 @@ import img16 from "../assets/img16.png";
 import img17 from "../assets/img17.png";
 import carousel2 from "../assets/carousel-2.jpg";
 import Button from "react-bootstrap/Button";
+import Navbar_2 from "../components/commonNavbar/Navbar_2";
 function LandingPageTopNav() {
   const navigate = useNavigate();
 
@@ -107,38 +108,7 @@ function LandingPageTopNav() {
           </div>
         </nav>
       </div>
-      <div className="sticky">
-        <div className="landingtopheader">
-          <div className="landingsecondheader">
-            <Navbar className="px-4">
-              <Navbar.Brand href="#home" className="text-light">
-                <img src={Frame} alt="Frame" />
-              </Navbar.Brand>
-              <Navbar.Toggle />
-              <Navbar.Collapse className="justify-content-end">
-                <Navbar.Text className="px-5">
-                  <a href="#Home" className="text-decoration-none">
-                    <p className="navbarstext">Home</p>
-                  </a>
-                </Navbar.Text>
-                <Navbar.Text className="px-5">
-                  <a href="#About" className="text-decoration-none">
-                    <p className="navbarstext">About Us</p>
-                  </a>
-                </Navbar.Text>
-                <Navbar.Text className="px-5">
-                  <a href="#Services" className="text-decoration-none">
-                    <p className="navbarstext">Services</p>
-                  </a>
-                </Navbar.Text>
-                <Navbar.Text className="px-5" onClick={navigateToLogin}>
-                  <a href="" className="text-decoration-none"><p className="navbarstext">Sign Up</p></a>
-                </Navbar.Text>
-              </Navbar.Collapse>
-            </Navbar>
-          </div>
-        </div>
-      </div>
+      <Navbar_2/>
       <div className="landingpagemaindiv" id="Home">
         <div className="hero_text">
           "Turning Vision into Reality: Where Innovative Ideas Meet Relentless Execution"

@@ -135,19 +135,9 @@ a.Topnavemailadress {
   color: #ffffff;
   background-color: #091e3e;
 }
-div.sticky{
-  position: sticky;
-  top:-1%;
-}
 
-.landingsecondheader {
-  background:#ffffff;
-  color: black;
-  font-size: larger;
-  z-index: 1;
-  width: 100%;
-  font-weight: 400;
-}
+
+
 .landingpagemaindiv {
   background-image: url("../assets/landing_hero_img.jpg");
   background-repeat: no-repeat;
@@ -393,9 +383,7 @@ opacity: 0px;
   color: rgb(6, 163, 218);
 text-decoration: none;
 }
-.landingtopheader{
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+
 
 #carouselimg1{
   width: 100%;

@@ -13,6 +13,7 @@ import { CommonNavbar } from "./components/commonNavbar/commonNavbar";
 
 import InvesterRegister from "./components/Invester/Signup/InvesterRegister";
 import InvestorLogin from "./components/Invester/Login/InvestorLogin";
+import Navbar_2 from "./components/commonNavbar/Navbar_2";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
      <Route path="/" element={<LandingPageTopNav />} />
         <Route path="/entrepreneur/signup" element={[<CommonNavbar/>,<Entsignup />]} /> 
         <Route path="/entrepreneur/login" element={[<CommonNavbar/>,<LoginPageMain />]} />
-        <Route path="/entrepreneur/fogot-password"element={<ForgotPassMain />}/>
+        <Route path="/entrepreneur/fogot-password"element={[<CommonNavbar/>,<ForgotPassMain />]}/>
         <Route path="/entrepreneur/pitch-my-idea"element={[<CommonNavbar/>,<PitchMyIdea />]}/>
         
         
@@ -36,6 +37,8 @@ function App() {
 
        
          <Route path="commonnavbar" element={<CommonNavbar />} />
+         <Route path="/navbar2" element={<Navbar_2/>} />
+
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
       </Routes>

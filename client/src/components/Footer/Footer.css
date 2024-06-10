@@ -4,6 +4,10 @@ div.footerbg {
 
 }
 
+.footer_div2{
+    --bs-gutter-x: 0;
+}
+
 div.firstcolumn {
     background-color: #06A3DA;
     width: 350px;

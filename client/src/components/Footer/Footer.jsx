@@ -19,8 +19,8 @@ function Footer() {
                         <p className='firstcolumnpara'>we combine technical expertise with creative thinking to deliver innovative solutions that exceed our clients' expectations. We take a collaborative approach to every project, working closely with our clients to understand their unique goals and challenges and tailor our solutions to meet their specific needs.</p>
             </div>
             <div className='footerbg '>
-                
-                <div class="row  pt-4">
+               
+                <div class="row  pt-4 footer_div2">
                     
                     <div class="col-3 secondcolumn  ">
                         <div  >
@@ -92,6 +92,7 @@ function Footer() {
 
                     </div>
                 </div>
+                
                 
 
             </div>
