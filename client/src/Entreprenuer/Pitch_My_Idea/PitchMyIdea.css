@@ -37,6 +37,11 @@
     text-align: center;
     
   }
+  .pmi_hr_line{
+    width: 96px;
+    border: 2px solid #06A3DA;
+    margin-left: 510px;
+}
 
   .pmi_input {
     transition: outline 0.2s ease;

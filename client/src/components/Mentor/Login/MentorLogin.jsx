@@ -5,6 +5,7 @@ import MentorLoginImg from '../../../assets/mentor_login_img.png'
 import { Link, useNavigate } from "react-router-dom";
 import Footer from '../../Footer/Footer';
 import Navbar from "react-bootstrap/Container"
+import Navbar_2 from '../../commonNavbar/Navbar_2';
 
 
 function MentorLogin() {
@@ -15,15 +16,15 @@ function MentorLogin() {
 
   return (
     <>
+    <Navbar_2/>
+    
     <div className="container">
       <div className="text-center headr">
             <h4 className="  mt-3  mentor_mainheading"> MENTOR LOGIN</h4>
             <h3 className="mentor_sub_h3">Your Journey to Success </h3>
             <h3 className="mentor_sub_h3">Starts Here</h3>
-            <hr
-              className="  mb-4 border border-3 border-info"
-              style={{ margin: "0 45%" }}
-            ></hr>
+            <div className="  mb-5  mentor_hr_line"></div>
+
         </div>
         <div className='row px-4'>
       <div className="col mentor_login_img_div">

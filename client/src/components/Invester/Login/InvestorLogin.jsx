@@ -21,7 +21,7 @@ function InvestorLogin() {
             <div className="  mb-5  inv_hr_line "></div>
 
         </div>
-        <div className='row px-4'>
+        <div className='row px-2'>
       <div className="col inv_login_img_div">
         <img className="inv_login_img mb-4" src={InvesterLoginImg} />
       </div>

@@ -1,5 +1,4 @@
 .mentor_login_img_div{
-    /* width: 50%; */
     padding-top: 10px;
 }
 .mentor_login_img{
@@ -26,8 +25,12 @@
     text-align: center;
     
   }
+  .mentor_hr_line{
+    width: 96px;
+    border: 2px solid #06A3DA;
+    margin-left: 510px;
+}
 .mentor_loginform{
-    /* width:  50%; */
     height: Hug (128px)px;
     gap: 2px;
     border-color: #EEF9FF;

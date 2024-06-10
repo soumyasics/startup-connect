@@ -1,141 +1,3 @@
-nav.NavTopBg {
-  background-color: #091e3e;
-  height: 55px;
-}
-
-svg#TopNavLocationLogo {
-  width: 15px;
-  height: 14.73px;
-  top: 19.34px;
-  margin-left: 34px;
-  gap: 0px;
-  opacity: 0px;
-  color: #ffffff;
-}
-
-a.Topnavlocationaddress {
-  width: 222px;
-  height: 22px;
-  top: 17px;
-  margin-left: 5px;
-  gap: 0px;
-  opacity: 0px;
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.78px;
-  text-align: left;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-svg#Topnavphonelogo {
-  width: 20.25px;
-  height: 19.12px;
-  top: 2.25px;
-  margin-left: 34px;
-  gap: 0px;
-  opacity: 0px;
-
-  color: #ffffff;
-}
-
-a.Topnavconatctnumber {
-  width: 131px;
-  height: 22px;
-  top: 17px;
-  margin-left: 5px;
-  gap: 0px;
-  opacity: 0px;
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.78px;
-  text-align: left;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-svg#Topnavemaillogo {
-  width: 21px;
-  height: 20.63px;
-  top: 16.38px;
-  margin-left: 34px;
-  gap: 0px;
-  opacity: 0px;
-  color: #ffffff;
-}
-
-a.Topnavemailadress {
-  width: 172px;
-  height: 22px;
-  top: 17px;
-  margin-left: 5px;
-  gap: 0px;
-  opacity: 0px;
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.78px;
-  text-align: left;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-#Topnavtwiterlogo {
-  width: 32px;
-  height: 31.43px;
-  top: 10.8px;
-  margin-left: 400px;
-  gap: 0px;
-  opacity: 0px;
-  border: none;
-  color: #ffffff;
-}
-#Topnavfacebooklogo {
-  width: 32px;
-  height: 28px;
-  top: 11px;
-  margin-left: 10px;
-  gap: 0px;
-  border: 1px 0px 0px 0px;
-  opacity: 0px;
-
-  color: #ffffff;
-}
-#Topnavlilogo {
-  width: 35px;
-  height: 35px;
-  top: 11px;
-  margin-left: 10px;
-  gap: 0px;
-  border: 1px 0px 0px 0px;
-  opacity: 0px;
-  color: #ffffff;
-}
-#Topnavinstalogo {
-  width: 32px;
-  height: 32px;
-  top: 11px;
-  margin-left: 10px;
-  gap: 0px;
-  border: 1px 0px 0px 0px;
-  opacity: 0px;
-  color: #ffffff;
-}
-#Topnavyoutubelogo {
-  width: 32px;
-  height: 32px;
-  top: 11px;
-  margin-left: 10px;
-  gap: 0px;
-  border-radius: 5px 0px 0px 0px;
-  border: 1px 0px 0px 0px;
-  opacity: 0px;
-  color: #ffffff;
-  background-color: #091e3e;
-}
-
 
 
 .landingpagemaindiv {
@@ -150,8 +12,8 @@ a.Topnavemailadress {
   width: 620px;
   height: 132px;
   color: #ffffff;
-  padding-top: 202px;
-  margin-left: 350px;
+  padding-top: 222px;
+  margin-left: 390px;
   font-family: Inter;
   font-size: 36px;
   font-weight: 700;
@@ -189,16 +51,16 @@ a.Topnavemailadress {
 .landingpagemainseconddiv2 {
   background-color: #ffffff;
   color: rgb(6, 163, 218);
+  max-height: 143px;
 }
 .landingpagemainseconddiv1 {
   background-color: #06a3da;
+  max-height: 143px;
 }
 
 .branches_img{
   width: 64px;
   height: 64px;
-  top: 797px;
-  left: 961px;
   background: #ffffff;
   
 }
@@ -250,7 +112,7 @@ text-align: center;
   
 }
 .about2 {
-  margin-top: 20%;
+  margin-top: 30%;
 }
 
 .about_img{
@@ -262,7 +124,7 @@ height: 479px;
 .hr_line{
   width: 96px;
   border: 2px solid #06A3DA;
-  margin-left: 600px;
+  margin-left: 510px;
 }
 
 .range_of_service{

@@ -51,10 +51,8 @@ function PitchMyIdea() {
             <h4 className="  mt-3  pmi_mainheading"> CREATE YOUR STARTUP</h4>
             <h3 className="pmi_sub_h3">Your Journey to Success </h3>
             <h3 className="pmi_sub_h3">Starts Here</h3>
-            <hr
-              className="  mb-4 border border-3 border-info"
-              style={{ margin: "0 45%" }}
-            ></hr>
+            <div className="  mb-5  pmi_hr_line"></div>
+
         </div>
         <div className='row'>
             <div className='col column1'>

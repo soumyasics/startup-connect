@@ -14,12 +14,14 @@ import { CommonNavbar } from "./components/commonNavbar/commonNavbar";
 import InvesterRegister from "./components/Invester/Signup/InvesterRegister";
 import InvestorLogin from "./components/Invester/Login/InvestorLogin";
 import Navbar_2 from "./components/commonNavbar/Navbar_2";
+import AboutUs from "./LandingPage/AboutUs/AboutUs";
+import Services from "./LandingPage/Services/Services";
 
 function App() {
   return (
     <BrowserRouter basename="strartup">
       <Routes>
-     <Route path="/" element={<LandingPageTopNav />} />
+        <Route path="/" element={<LandingPageTopNav />} />
         <Route path="/entrepreneur/signup" element={[<CommonNavbar/>,<Entsignup />]} /> 
         <Route path="/entrepreneur/login" element={[<CommonNavbar/>,<LoginPageMain />]} />
         <Route path="/entrepreneur/fogot-password"element={[<CommonNavbar/>,<ForgotPassMain />]}/>
@@ -38,6 +40,10 @@ function App() {
        
          <Route path="commonnavbar" element={<CommonNavbar />} />
          <Route path="/navbar2" element={<Navbar_2/>} />
+         <Route path="/aboutus" element={<AboutUs/>}/>
+         <Route path="/services" element={<Services/>}/>
+
+
 
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />

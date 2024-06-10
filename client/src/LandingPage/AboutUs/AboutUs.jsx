@@ -1,14 +1,17 @@
 import React from 'react'
 import './AboutUs.css'
-import img3 from "../assets/img3.png";
-import img5 from "../assets/img5.png";
-import img4 from "../assets/img4.png";
+import img3 from "../../assets/img3.png";
+import img4 from "../../assets/img4.png";
+import img5 from "../../assets/img5.png";
+import Navbar_2 from '../../components/commonNavbar/Navbar_2';
+import Footer from '../../components/Footer/Footer';
 
 
 function AboutUs() {
   return (
     <>
-        <section className="container">
+    <Navbar_2/>
+        <section className="container mb-5">
         <div className="row" id="aboutsection">
           <div className="col-6" id="About">
             <h3 className="aboutusheading">ABOUT US</h3>
@@ -67,6 +70,7 @@ function AboutUs() {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   )
 }
