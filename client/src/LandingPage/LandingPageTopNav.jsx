@@ -133,7 +133,7 @@ function LandingPageTopNav() {
                   </a>
                 </Navbar.Text>
                 <Navbar.Text className="px-5" onClick={navigateToLogin}>
-                  <p className="navbarstext">Sign Up</p>
+                  <p className="navbarstext">Sign In</p>
                 </Navbar.Text>
               </Navbar.Collapse>
             </Navbar>
