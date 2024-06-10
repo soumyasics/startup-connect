@@ -1,53 +1,18 @@
 import React from 'react'
 import './InvestorLogin.css'
 import InvesterLoginImg from '../../../assets/investor_login.png'
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from '../../Footer/Footer';
-import Navbar from "react-bootstrap/Navbar";
-import Frame from "../../../assets/Frame 40.png";
+import Navbar_2 from '../../commonNavbar/Navbar_2';
 
 
 function InvestorLogin() {
 
-    const navigate = useNavigate();
-
-  const navigateToLogin = () => {
-    navigate("/entrepreneur/login");
-  };
+  
   return (
     <>
-    <div className="sticky">
-        <div className="landingtopheader">
-          <div className="landingsecondheader">
-            <Navbar className="px-4">
-              <Navbar.Brand href="#home" className="text-light">
-                <img src={Frame} alt="Frame" />
-              </Navbar.Brand>
-              <Navbar.Toggle />
-              <Navbar.Collapse className="justify-content-end">
-                <Navbar.Text className="px-5">
-                  <a href="#Home" className="text-decoration-none">
-                    <p className="navbarstext">Home</p>
-                  </a>
-                </Navbar.Text>
-                <Navbar.Text className="px-5">
-                  <a href="#About" className="text-decoration-none">
-                    <p className="navbarstext">About Us</p>
-                  </a>
-                </Navbar.Text>
-                <Navbar.Text className="px-5">
-                  <a href="#Services" className="text-decoration-none">
-                    <p className="navbarstext">Services</p>
-                  </a>
-                </Navbar.Text>
-                <Navbar.Text className="px-5" onClick={navigateToLogin}>
-                  <p className="navbarstext">Sign Up</p>
-                </Navbar.Text>
-              </Navbar.Collapse>
-            </Navbar>
-          </div>
-        </div>
-      </div>
+    
+      <Navbar_2/>
     <div className="container">
       <div className="text-center ">
             <h4 className="  mt-3  inv_mainheading"> INVESTOR LOGIN</h4>

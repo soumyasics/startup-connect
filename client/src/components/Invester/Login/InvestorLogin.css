@@ -1,12 +1,12 @@
+
+
 .inv_login_img_div{
-    /* width: 50%; */
     padding-top: 10px;
 }
 .inv_login_img{
-    width: 505px;
+    width: 555px;
     height: 387px;
-    
-
+    margin-left: 40px;
 }
 .inv_mainheading {
     color: rgb(6, 163, 218);
@@ -15,30 +15,26 @@
     font-weight: 700;
     line-height: 24.55px;
     text-align: center;
-  
-  }
-
-  .inv_sub_h3{
+}
+.inv_sub_h3{
     font-family: Nunito;
     font-size: 24px;
     font-weight: 700;
     line-height: 32.74px;
     text-align: center;
     
-  }
+}
 
-  .inv_hr_line{
+.inv_hr_line{
     width: 96px;
     border: 2px solid #06A3DA;
     margin-left: 600px;
-  }
-  
+}
+
 .inv_loginform{
-    /* width:  50%; */
-    height: Hug (128px)px;
+    margin-left: 50px;
     gap: 2px;
     border-color: #EEF9FF;
-
 }
 
 .inv_login_email_label{

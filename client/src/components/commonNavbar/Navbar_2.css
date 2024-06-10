@@ -1,0 +1,22 @@
+.nav_sticky{
+    position: sticky;
+    top:-1%;
+  }
+  
+  .nav_topheader{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  .nav_secondheader {
+    background:#ffffff;
+    color: black;
+    font-size: larger;
+    z-index: 1;
+    width: 100%;
+    font-weight: 400;
+    max-height: 70px;
+  }
+  
+  .nav_img{
+      margin-top: -5px;
+  }
