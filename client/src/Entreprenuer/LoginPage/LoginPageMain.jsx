@@ -117,7 +117,7 @@ function LoginPageMain() {
         />
         <p className="text mt-2"><Link to="/entrepreneur/fogot-password">Forgot password</Link></p>
         
-        <button className="ent_login_loginbtn" >
+        <button className="ent_login_loginbtn" onClick={HandleClick} >
           Log In
         </button>
         <p className="mt-3 "> 

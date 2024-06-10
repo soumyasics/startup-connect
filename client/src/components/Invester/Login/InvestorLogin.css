@@ -4,9 +4,9 @@
     padding-top: 10px;
 }
 .inv_login_img{
-    width: 555px;
+    width: 505px;
     height: 387px;
-    margin-left: 40px;
+    /* margin-left: 20px; */
 }
 .inv_mainheading {
     color: rgb(6, 163, 218);
@@ -28,11 +28,11 @@
 .inv_hr_line{
     width: 96px;
     border: 2px solid #06A3DA;
-    margin-left: 600px;
+    margin-left: 510px;
 }
 
 .inv_loginform{
-    margin-left: 50px;
+    margin-left: 30px;
     gap: 2px;
     border-color: #EEF9FF;
 }

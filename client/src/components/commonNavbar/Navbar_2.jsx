@@ -9,9 +9,20 @@ function Navbar_2() {
 
     const navigate = useNavigate();
 
+    const navigateToHome = () => {
+      navigate("/");
+    }
     const navigateToLogin = () => {
-    navigate("/investor/login");
-  };
+      navigate("/entrepreneur/login");
+    }
+    const navigateToAboutUs = () => {
+      navigate("/aboutus");
+    }
+    const navigateToServices = () => {
+      navigate("/services");
+    }
+
+  
   return (
     <>
     <div className="nav_sticky">
@@ -24,17 +35,17 @@ function Navbar_2() {
               <Navbar.Toggle />
               <Navbar.Collapse className="justify-content-end">
                 <Navbar.Text className="px-5">
-                  <a href="#Home" className="text-decoration-none">
+                  <a href="#Home" className="text-decoration-none" onClick={navigateToHome}>
                     <p className="navbarstext">Home</p>
                   </a>
                 </Navbar.Text>
-                <Navbar.Text className="px-5">
-                  <a href="#About" className="text-decoration-none">
+                <Navbar.Text className="px-5" onClick={navigateToAboutUs}>
+                  <a href="" className="text-decoration-none">
                     <p className="navbarstext">About Us</p>
                   </a>
                 </Navbar.Text>
-                <Navbar.Text className="px-5">
-                  <a href="#Services" className="text-decoration-none">
+                <Navbar.Text className="px-5" onClick={navigateToServices}>
+                  <a href="" className="text-decoration-none">
                     <p className="navbarstext">Services</p>
                   </a>
                 </Navbar.Text>

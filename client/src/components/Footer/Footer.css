@@ -4,15 +4,17 @@ div.footerbg {
 
 }
 
-.footer_div2{
-    --bs-gutter-x: 0;
+.foot .row{
+         --bs-gutter-x: 0; 
 }
 
 div.firstcolumn {
+    
     background-color: #06A3DA;
     width: 350px;
-    height: 270px;
+    height: 254px;
     margin-left: 30px;
+    padding-bottom: 12px;
     position: absolute;
 }
 
@@ -25,7 +27,7 @@ div.firstcolumn::after {
 }
 
 img.startuplogo {
-    padding-top: 30px;
+    padding-top: 20px;
     padding-left: 30px;
 
 
