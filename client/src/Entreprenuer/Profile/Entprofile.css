@@ -1,0 +1,40 @@
+.your_profile{
+font-family: Nunito;
+font-size: 18px;
+font-weight: 700;
+color: #00B0F0;
+}
+.profile_round{
+    border-radius: 50%;
+    width: 200px; 
+    height: 200px;
+    background-color:#D9D9D9;
+    object-fit: cover;
+    object-position: center;
+}
+.yourprofile_underline{
+    width: 96px;
+    border: 2px solid #06A3DA;
+    margin-left: 690px;
+    object-position: center;
+    
+   
+    
+}
+.profile-inputtag input {
+   
+    background-color: #EEF9FF;
+    color: #555252;
+    border: none;
+    width: 456px;
+    height: 53px;
+    padding-left: 40px;
+    font-family: minato;
+}
+.yourprofileupdate_btn{
+    background-color: #06A3DA;
+    color: #FFFFFF;
+    padding: 13px 170px;
+    border: none;
+
+}

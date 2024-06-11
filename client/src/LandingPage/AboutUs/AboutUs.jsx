@@ -5,11 +5,13 @@ import img4 from "../../assets/img4.png";
 import img5 from "../../assets/img5.png";
 import Navbar_2 from '../../components/commonNavbar/Navbar_2';
 import Footer from '../../components/Footer/Footer';
+import { CommonNavbar } from '../../components/commonNavbar/commonNavbar';
 
 
 function AboutUs() {
   return (
     <>
+    <CommonNavbar/>
     <Navbar_2/>
         <section className="container mb-5">
         <div className="row" id="aboutsection">

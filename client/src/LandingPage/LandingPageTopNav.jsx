@@ -1,12 +1,5 @@
 import React from "react";
 import "./LandingPageTopNav.css";
-import { AiFillTwitterCircle } from "react-icons/ai";
-import { FaFacebook } from "react-icons/fa";
-import { TiSocialLinkedinCircular } from "react-icons/ti";
-import { CiInstagram } from "react-icons/ci";
-import { IoLogoYoutube } from "react-icons/io";
-import Carousel  from "react-bootstrap/Carousel";
-import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import img1 from "../assets/img1.png";
 import img2 from "../assets/img2.png";
@@ -30,20 +23,16 @@ import img7 from "../assets/img7.png";
 
 import Footer from "../components/Footer/Footer.jsx";
 import { useNavigate } from "react-router-dom";
-import img8 from "../assets/img8.png";
-import img9 from "../assets/img9.png";
-import img10 from "../assets/img10.png";
-import img11 from "../assets/img11.png";
-import img12 from "../assets/img12.png";
-import img13 from "../assets/img13.png";
-import img14 from "../assets/img14.png";
-import img15 from "../assets/img15.png";
-import img16 from "../assets/img16.png";
-import img17 from "../assets/img17.png";
-import carousel2 from "../assets/carousel-2.jpg";
-import Button from "react-bootstrap/Button";
-import Navbar_2 from "../components/commonNavbar/Navbar_2";
+import location from '../assets/locationlogo.png'
+import Phonelogo from '../assets/Navphonelogo.png'
+import navemaillogo from '../assets/Navemaillogo.png'
+import twilogo from '../assets/Navtwilogo.png'
+import Navfacelogo from '../assets/Navfacelogo.png'
+import linkedlogo from '../assets/Navlinlogo.png'
+import youlogo from '../assets/Navyoulogo.png'
+import Nav from 'react-bootstrap/Nav';
 import { CommonNavbar } from "../components/commonNavbar/commonNavbar";
+import Navbar_2 from "../components/commonNavbar/Navbar_2";
 function LandingPageTopNav() {
   const navigate = useNavigate();
 
@@ -52,10 +41,42 @@ function LandingPageTopNav() {
   };
 
   return (
+
     <>
+
+            
+<CommonNavbar/>
+
+<Navbar_2/>
+
+
       
-      <CommonNavbar/>
-      <Navbar_2/>
+      {/* <div className="sticky">
+        <div className="landingtopheader">
+          <div className="landingsecondheader">
+            <Navbar className="px-4">
+              <Navbar.Brand href="#home" className="text-light">
+                <img src={Frame} alt="Frame" />
+              </Navbar.Brand>
+              <Navbar.Toggle />
+              <Navbar.Collapse className="justify-content-end">
+                <Navbar.Text className="px-5">
+                  <a href="#Home" className="text-decoration-none" ><p className="navbarstext">Home</p></a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5">
+                  <a href="#About" className="text-decoration-none" ><p className="navbarstext">About Us</p></a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5">
+                  <a href="#Services" className="text-decoration-none" ><p className="navbarstext">Services</p></a>
+                </Navbar.Text>
+                <Navbar.Text className="px-5" onClick={navigateToLogin}>
+                <p className="navbarstext">Sign Up</p>
+                </Navbar.Text>
+              </Navbar.Collapse>
+            </Navbar>
+          </div>
+        </div>
+      </div> */}
       <div className="landingpagemaindiv" id="Home">
         <div className="hero_text">
           "Turning Vision into Reality: Where Innovative Ideas Meet Relentless Execution"
@@ -276,3 +297,7 @@ function LandingPageTopNav() {
 }
 
 export default LandingPageTopNav;
+
+
+
+
