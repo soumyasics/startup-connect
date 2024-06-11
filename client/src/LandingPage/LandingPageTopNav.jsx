@@ -1,15 +1,5 @@
 import React from "react";
 import "./LandingPageTopNav.css";
-<<<<<<< sheik10
-=======
-import { AiFillTwitterCircle } from "react-icons/ai";
-import { FaFacebook } from "react-icons/fa";
-import { TiSocialLinkedinCircular } from "react-icons/ti";
-import { CiInstagram } from "react-icons/ci";
-import { IoLogoYoutube } from "react-icons/io";
-import Carousel  from "react-bootstrap/Carousel";
-import Container from "react-bootstrap/Container";
->>>>>>> main
 import Navbar from "react-bootstrap/Navbar";
 import img1 from "../assets/img1.png";
 import img2 from "../assets/img2.png";
@@ -33,7 +23,6 @@ import img7 from "../assets/img7.png";
 
 import Footer from "../components/Footer/Footer.jsx";
 import { useNavigate } from "react-router-dom";
-<<<<<<< sheik10
 import location from '../assets/locationlogo.png'
 import Phonelogo from '../assets/Navphonelogo.png'
 import navemaillogo from '../assets/Navemaillogo.png'
@@ -42,22 +31,8 @@ import Navfacelogo from '../assets/Navfacelogo.png'
 import linkedlogo from '../assets/Navlinlogo.png'
 import youlogo from '../assets/Navyoulogo.png'
 import Nav from 'react-bootstrap/Nav';
-=======
-import img8 from "../assets/img8.png";
-import img9 from "../assets/img9.png";
-import img10 from "../assets/img10.png";
-import img11 from "../assets/img11.png";
-import img12 from "../assets/img12.png";
-import img13 from "../assets/img13.png";
-import img14 from "../assets/img14.png";
-import img15 from "../assets/img15.png";
-import img16 from "../assets/img16.png";
-import img17 from "../assets/img17.png";
-import carousel2 from "../assets/carousel-2.jpg";
-import Button from "react-bootstrap/Button";
-import Navbar_2 from "../components/commonNavbar/Navbar_2";
 import { CommonNavbar } from "../components/commonNavbar/commonNavbar";
->>>>>>> main
+import Navbar_2 from "../components/commonNavbar/Navbar_2";
 function LandingPageTopNav() {
   const navigate = useNavigate();
 
@@ -68,67 +43,15 @@ function LandingPageTopNav() {
   return (
 
     <>
-<<<<<<< sheik10
 
             
-<Navbar className="NavTop-Bg">
-<div className='container-fluid'>
-    <Navbar.Brand className="ps-3">
-            <img src={location} alt=""/>
-            <span className="Landing_topnav_address ps-2"> 123 Street New York, USA</span>
-            <img className="ps-2" src={Phonelogo} alt=""/>
-            <span className="Landing_topnav_address ps-2">+012 345 6789</span>
-            <img  className="ps-2" src={navemaillogo} alt=""/>
-            <span className="Landing_topnav_address ps-2">Info@examplie.com</span>
+<CommonNavbar/>
 
-        
-    </Navbar.Brand>
-    <Nav className="">
-      <img className="pe-3" src={twilogo} alt=""/>
-      <img className="pe-3" src={Navfacelogo} alt=""/>
-      <img className="pe-3" src={linkedlogo} alt=""/>
-      <img className="pe-3" src={twilogo} alt=""/>
-      <img className="pe-3"src={youlogo} alt=""/>
+<Navbar_2/>
 
-          
-        
-        
-    </Nav>
-</div>
-</Navbar>
 
-      {/* <div>
-        <nav className="navbar NavTopBg">
-          <div className="container positionTonav">
-            <img src={location} alt=""/>
-            <span className="text-light"> 123 Street New York, USA</span>
-            <img  src={Phonelogo} alt=""/>
-            <span className="text-light">+012 345 6789</span>
-            <img  src={navemaillogo} alt=""/>
-            <span className="text-light">Info@examplie.com</span>
-
-            <img src={twilogo} alt=""/>
-
-          
-            <a>
-              <AiFillTwitterCircle id="Topnavtwiterlogo" />
-            </a>
-            <a>
-              <FaFacebook id="Topnavfacebooklogo" />
-            </a>
-            <a>
-              <TiSocialLinkedinCircular id="Topnavlilogo" />
-            </a>
-            <a>
-              <CiInstagram id="Topnavinstalogo" />
-            </a>
-            <a>
-              <IoLogoYoutube id="Topnavyoutubelogo" />
-            </a>
-          </div>
-        </nav>
-      </div> */}
-      <div className="sticky">
+      
+      {/* <div className="sticky">
         <div className="landingtopheader">
           <div className="landingsecondheader">
             <Navbar className="px-4">
@@ -153,12 +76,7 @@ function LandingPageTopNav() {
             </Navbar>
           </div>
         </div>
-      </div>
-=======
-      
-      <CommonNavbar/>
-      <Navbar_2/>
->>>>>>> main
+      </div> */}
       <div className="landingpagemaindiv" id="Home">
         <div className="hero_text">
           "Turning Vision into Reality: Where Innovative Ideas Meet Relentless Execution"
@@ -378,12 +296,8 @@ function LandingPageTopNav() {
   );
 }
 
-<<<<<<< sheik10
 export default LandingPageTopNav;
 
 
 
 
-=======
-export default LandingPageTopNav;
->>>>>>> main

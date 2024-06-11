@@ -8,11 +8,13 @@ import our_service_img5 from "../../assets/our_service_img5.png";
 import our_service_img6 from "../../assets/our_service_img6.png";
 import Navbar_2 from '../../components/commonNavbar/Navbar_2';
 import Footer from '../../components/Footer/Footer';
+import { CommonNavbar } from '../../components/commonNavbar/commonNavbar';
 
 
 function Services() {
   return (
     <>
+    <CommonNavbar/>
     <Navbar_2/>
     <section id="Services">
         <div className="container">
