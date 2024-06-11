@@ -28,23 +28,20 @@ function Footer() {
                         <div  >
                             <div className="text-center">
                                 <h1 className='secondcolumncontent text-center'>Get In Touch</h1>
-                                <hr className=' hrlinefirst'></hr>
+                                <div className=" mb-3 footer_hr_line1"></div>
                                 <div>
-                                    <div className='secondcolumnadress  '>
+                                <div className='secondcolumnadress  '>
 
-                                        <div ><img  src={Adresslogo} /><span>123 Street, New York,USA</span></div>
-                                        <div className='pt-2 '><img  src={Emaillogo} /><span >info@example.com</span></div>
-                                        <div className='pt-2'><img src={Phonelogo} /><span >+012 345 67890</span></div>
-                                        <div className='mt-2'>
-                                            <img className='me-1' src={Twiterlogo} />
-                                            <img className='me-1' src={Facebooklogo} />
-                                            <img src={Linkedinlogo} />
-                                            <img src={Instalogo} />
-                                        </div>
-
-
-                                    </div>
-
+<div ><img className='px-1'  src={Adresslogo} /><span>123 Street, New York,USA</span></div>
+<div className='pt-3'><img className='px-2' src={Emaillogo} /><span >info@example.com</span></div>
+<div className='pt-3'><img className='px-2' src={Phonelogo} /><span >+012 345 67890</span></div>
+<div className='mt-2 mx-2'>
+        <img className='me-1' src={Twiterlogo} />
+        <img className='me-1' src={Facebooklogo} />
+        <img className='' src={Linkedinlogo} />
+        <img className=''src={Instalogo} />
+    </div>
+</div>
                                 </div>
                             </div>
 
@@ -55,14 +52,16 @@ function Footer() {
                         <div  >
                             <div>
                                 <h1 className='secondcolumncontent text-center'>Quick Links</h1>
-                                <hr className=' hrlinesecond'></hr>
+                                <div className=" mb-3 footer_hr_line2"></div>
                                 <div>
                                     <div className='thirdcolumnadress'>
-
-                                        <div><img src={Arrowlogo} /><span  >Home</span></div>
-                                        <div>  <img src={Arrowlogo} /><span  >About Us</span></div>
-                                        <div> <img src={Arrowlogo} /><span  >Services</span></div>
-                                        <div>  <img src={Arrowlogo} /> <span >Sign In</span></div>
+                                        <ul className='footer-list'>
+                                            <li>Home</li>
+                                            <li>About Us</li>
+                                            <li>Services</li>
+                                            <li>Sign In</li>
+                                        </ul>
+            
                                     </div>
 
 
@@ -76,15 +75,16 @@ function Footer() {
                         <div  >
                             <div>
                                 <h1 className='secondcolumncontent text-center'>Popular Links</h1>
-                                <hr className=' hrlinethird'></hr>
+                                <div className=" mb-3 footer_hr_line3"></div>
                                 <div>
-                                    <div className='thirdcolumnadress '>
-
-                                        <div><img src={Arrowlogo} /><span  >Home</span></div>
-                                        <div>  <img src={Arrowlogo} /><span >About Us</span></div>
-                                        <div> <img src={Arrowlogo} /><span  >Services</span></div>
-                                        <div>  <img src={Arrowlogo} /> <span >Sign In</span></div>
-                                    </div>
+                                <div className='thirdcolumnadress'>
+                                        <ul className='footer-list'>
+                                            <li>Home</li>
+                                            <li>About Us</li>
+                                            <li>Services</li>
+                                            <li>Sign In</li>
+                                        </ul>
+                                </div>
 
 
                                 </div>

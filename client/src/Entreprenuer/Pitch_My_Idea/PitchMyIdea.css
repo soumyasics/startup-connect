@@ -1,24 +1,5 @@
 
-  .pmi_navbar_white {
-    background-color: rgb(255, 255, 255);
-    color: black;
-    font-size: medium;
-    z-index: 1;
-    width: 100%;
-    max-height: 70px;
-    font-weight: 400;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-  }
-
-  .pmi_startup_logo{
-    width: 226px;
-    height: 55px;
-  }
-.pmi_sticky{
-    position: sticky;
-    top:-1%;
-}
+  
 .pmi_mainheading {
     color: rgb(6, 163, 218);
     font-family: Nunito;
