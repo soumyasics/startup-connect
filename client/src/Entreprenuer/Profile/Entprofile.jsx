@@ -1,13 +1,19 @@
 import React from 'react'
 import './Entprofile.css'
 import profileimage from '../../assets/Ellipse 5.png'
+import Navbar_2 from '../../components/commonNavbar/Navbar_2'
+import { CommonNavbar } from '../../components/commonNavbar/commonNavbar'
+import Footer from '../../components/Footer/Footer'
 
 
 
 function Entprofile() {
     return (
-        <div>
-            <div className='text-center'>
+        
+        <>
+        <CommonNavbar/>
+        <Navbar_2/>
+            <div className='text-center mt-4'>
                 <div className='text-center' >
                     <h5 className='your_profile'>YOUR PROFILE</h5>
                     <h5>Keep Your Profile Updated!</h5>
@@ -20,7 +26,7 @@ function Entprofile() {
                 </div>
             </div>
 
-            <div class="container text-center mt-5">
+            <div class="container text-center mt-5 mb-4">
                 
                 <div class="row">
                     <div class="col-lg-6 profile-inputtag">
@@ -50,8 +56,8 @@ function Entprofile() {
             
 
 
-
-        </div>
+        <Footer/>
+        </>
     )
 }
 

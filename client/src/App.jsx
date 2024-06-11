@@ -17,7 +17,7 @@ import Navbar_2 from "./components/commonNavbar/Navbar_2";
 import AboutUs from "./LandingPage/AboutUs/AboutUs";
 import Services from "./LandingPage/Services/Services";
 import Enthomepage from "./Entreprenuer/Homepage/Enthomepage"
-import Entprofile from "./Entreprenuer/Homepage/Enthomepage"
+import Entprofile from "./Entreprenuer/Profile/Entprofile"
 
 function App() {
   return (
