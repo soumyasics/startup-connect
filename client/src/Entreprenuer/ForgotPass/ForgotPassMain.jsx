@@ -87,7 +87,7 @@ function ForgotPassMain() {
             <div className="  mb-5  ent_forgot_hr_line "></div>
 
         </div>
-        <div className='row px-4'>
+        <div className='row '>
       <div className="col ent_forgot_img_div">
         <img className="ent_forgot_img mb-4" src={Forgotpasswordimage} />
       </div>
