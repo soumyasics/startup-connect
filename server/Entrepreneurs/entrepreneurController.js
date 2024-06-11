@@ -22,24 +22,44 @@ const storage = multer.diskStorage({
     cb(null, filename);
   },
 });
-const upload = multer({ storage: storage }).single("file");
+const upload = multer({ storage: storage }).single("image");
 
 // Register Entrepreneur
 const registerEntrepreneur = async (req, res) => {
   try {
-    const { fname, lname, email, dob, address, contact, gender, password } =
+    const { 
+      fname,
+      lname,
+      company_name,
+      corporate_id_no,
+      industry_sector,
+      company_description,
+      email,
+      location,
+      contact,
+      username,
+      address,
+      password,
+      
+      
+     } =
       req.body;
 
     const newEntrepreneur = new Entrepreneur({
       fname,
       lname,
+      company_name,
+      corporate_id_no,
+      industry_sector,
+      company_description,
       email,
-      dob,
-      address,
+      location,
       contact,
-      image: req.file,
-      gender,
+      username,
+      address,
       password,
+      image:req.file
+      
     });
 
     let existingEntrepreneur = await Entrepreneur.findOne({ email });
@@ -97,14 +117,18 @@ const viewEntrepreneurs = (req, res) => {
 const editEntrepreneurById = async (req, res) => {
   const {
     fname,
-    lname,
-    email,
-    dob,
-    address,
-    contact,
-    image,
-    gender,
-    password,
+      lname,
+      company_name,
+      corporate_id_no,
+      industry_sector,
+      company_description,
+      email,
+      location,
+      contact,
+      username,
+      address,
+      password,
+      image,
   } = req.body;
 
   try {
@@ -124,13 +148,17 @@ const editEntrepreneurById = async (req, res) => {
     await Entrepreneur.findByIdAndUpdate(req.params.id, {
       fname,
       lname,
+      company_name,
+      corporate_id_no,
+      industry_sector,
+      company_description,
       email,
-      dob,
-      address,
+      location,
       contact,
-      image,
-      gender,
+      username,
+      address,
       password,
+      image,
     })
       .exec()
       .then((data) => {
