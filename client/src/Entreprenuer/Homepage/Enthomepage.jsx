@@ -1,31 +1,36 @@
 import React from 'react'
 import './Enthomepage.css'
 import homecolumnimage from '../../assets/unsplash_gMsnXqILjp4.png'
-import whitebox from '../../assets/whitebox.png'
-import bluebox from '../../assets/bluebox.png'
+import personimg from '../../assets/person.png'
+import handshakeimg from '../../assets/handshake.png'
 import smallarrow from '../../assets/smallarrow.png'
 import phonelogo from '../../assets/phone.png'
 import backphone from '../../assets/img5.png'
 import arrow from '../../assets/arrowlogo.png'
-import homefirstimage from'../../assets/ForgotPassword.png'
+import homepage_img from '../../assets/home_hero_img.png'
+import HomepageNavbar from '../../components/commonNavbar/HomepageNavbar'
+import { CommonNavbar } from '../../components/commonNavbar/commonNavbar'
+import Footer_2 from '../../components/Footer/Footer_2'
 
 function Enthomepage() {
     return (
-        <div>
+        <>
+            <CommonNavbar/>
+            <HomepageNavbar/>   
             <div className='Enthomebgimage'>
-                <img src={homefirstimage} />
+                <img className='homepg_img' src={homepage_img}/>
             </div>
 
 
-            <div class="container ps-5  mt-5">
+            <div class="container   mt-5 mb-3">
 
                 <div className="row">
                     <div className="col-lg-6">
                         <div class="card-data d-flex justify-content-between align-items-center">
                             <div class="info-card-outer">
                                 <div className="info-card-inner d-flex align-items-center gap-4">
-                                    <div class="info-icon d-flex justify-content-center align-items-center">
-                                        <img src={whitebox} alt="" />
+                                    <div class="info-icon1 d-flex justify-content-center align-items-center">
+                                        <img src={personimg} alt="" />
                                     </div>
                                     <div class="info-detail d-flex flex-column align-items-center ">
                                         <span>Top Mentors</span>
@@ -35,11 +40,11 @@ function Enthomepage() {
                             </div>
                             <div class="info-card-outer">
                                 <div className="info-card-inner with-white d-flex align-items-center gap-4">
-                                    <div class="info-icon d-flex justify-content-center align-items-center">
-                                        <img src={bluebox} alt="" />
+                                    <div class="info-icon2 d-flex justify-content-center align-items-center">
+                                        <img className='home_handshakeimg' src={handshakeimg} alt="" />
                                     </div>
                                     <div class="info-detail d-flex flex-column align-items-center ">
-                                        <span>Top Mentors</span>
+                                        <span>Top Investors</span>
                                         <span>12345</span>
                                     </div>
                                 </div>
@@ -49,15 +54,15 @@ function Enthomepage() {
                         <div className='d-flex justify-content-between  mt-4 '>
                             <div className='d-flex entsmallarowgap'>
                                 <div><img src={smallarrow} alt='' /></div>
-                                <h6>Reply within 24 hours</h6>
+                                <h6 className='home_reply24'>Reply within 24 hours</h6>
                             </div>
                             <div className='d-flex entsmallarowgap'>
                                 <div><img src={phonelogo} alt='' /></div>
-                                <h6>24 hrs telephone support</h6>
+                                <h6 className='home_24telephone'>24 hrs telephone support</h6>
                             </div>
                         </div>
 
-                        <div className='mt-4'>
+                        <div className='mt-4 homepg_content'>
                             <p>Entrepreneur is your ultimate resource for everything related to starting, growing,
                                 and managing your business. Whether you are a seasoned entrepreneur or just
                                 beginning your journey, our platform offers a wealth of information, tools,
@@ -96,8 +101,8 @@ function Enthomepage() {
 
 
 
-
-        </div>
+        <Footer_2/>
+        </>
     )
 }
 

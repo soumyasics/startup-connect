@@ -1,9 +1,9 @@
 import React from 'react'
 import './Entprofile.css'
 import profileimage from '../../assets/Ellipse 5.png'
-import Navbar_2 from '../../components/commonNavbar/Navbar_2'
 import { CommonNavbar } from '../../components/commonNavbar/commonNavbar'
-import Footer from '../../components/Footer/Footer'
+import HomepageNavbar from '../../components/commonNavbar/HomepageNavbar'
+import Footer_2 from '../../components/Footer/Footer_2'
 
 
 
@@ -12,7 +12,7 @@ function Entprofile() {
         
         <>
         <CommonNavbar/>
-        <Navbar_2/>
+        <HomepageNavbar/>
             <div className='text-center mt-4'>
                 <div className='text-center' >
                     <h5 className='your_profile'>YOUR PROFILE</h5>
@@ -45,18 +45,23 @@ function Entprofile() {
                         <input className='mt-4' type='text' placeholder='Company Description'></input>
                         <input className='mt-4' type='email' placeholder='Location'></input>
                         <input className='mt-4' type='number' placeholder='Username'></input>
-                        <input className='mt-4' type='file' placeholder='Address'></input>
-                    </div>
+                        <div className='ent_pro_file_upload1'>
+                            <label className='pt-3 px-1'>Profile</label>
+                            <label for="file" class="ent_pro_file_upload">
+                                <div class="icon">Upload</div>
+                                <input id="file" type="file"  name="profile" />
+                            </label>
+                        </div>
 
-                </div>
+                
                     <button className='yourprofileupdate_btn mt-5'>Update Profile</button>
-
+                    </div>
                
             </div>
             
+        </div>
 
-
-        <Footer/>
+        <Footer_2/>
         </>
     )
 }
