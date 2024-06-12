@@ -193,7 +193,7 @@ console.log("in if");
         
       } catch (error) {
         console.error("Error:", error);
-        let msg = error?.response?.data?.message || "Error occurred";
+        let msg = error?.response?.data?.msg || "Error occurred";
         alert(msg);
       }
     } else {
