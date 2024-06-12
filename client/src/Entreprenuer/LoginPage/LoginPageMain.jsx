@@ -12,10 +12,11 @@ import Frame from "../../assets/Frame 40.png";
 
 function LoginPageMain() {
 
-  
+  const navigate = useNavigate();
+
 
   const navigateToLogin = () => {
-    navigate("/entrepreneur/login");
+    navigate("/entrepreneur/signup");
   };
 
   let formvalid = true;
