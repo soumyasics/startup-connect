@@ -179,9 +179,11 @@ const editEntrepreneurById = async (req, res) => {
 
 // View entrepreneur by ID
 const viewEntrepreneurById = (req, res) => {
-  Entrepreneur.findById(req.params.id)
+  const ent_id=req.params.id
+  Entrepreneur.findById({_id:ent_id})
     .exec()
     .then((data) => {
+      console.log(data);
       res.status(200).json({
         msg: "Data obtained successfully",
         data: data,
@@ -298,17 +300,18 @@ const login = (req, res) => {
   Entrepreneur.findOne({ email })
     .then((user) => {
       if (!user) {
-        return res.status(404).json({ msg: "User not found" });
+        return res.json({ status:405,msg: "User not found" });
       }
 
       if (user.password !== password) {
-        return res.status(400).json({ msg: "Password Mismatch !!" });
+        return res.json({ status:405,msg: "Password Mismatch !!" });
       }
 
       const token = createToken(user);
 
-      res.status(200).json({
+      res.json({
         data: user,
+        status:200,
         token: token,
       });
     })

@@ -1,13 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Entprofile.css'
 import profileimage from '../../assets/Ellipse 5.png'
 import { CommonNavbar } from '../../components/commonNavbar/commonNavbar'
 import HomepageNavbar from '../../components/commonNavbar/HomepageNavbar'
 import Footer_2 from '../../components/Footer/Footer_2'
-
+import axiosInstance from '../../BaseAPIs/AxiosInstance'
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 function Entprofile() {
+    const [userDetails, setUserDetails] = useState({});
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (localStorage.getItem("Enterprenuertoken") == null && localStorage.getItem("Enterprenuer") == null) {
+          navigate("/");
+        }
+    }, [navigate]);
+
+      const id = localStorage.getItem('Enterprenuer');
+      console.log("eid",id);
+
+      useEffect(()=>{
+        axiosInstance.post(`/viewEntrepreneurById/${id}`)
+        .then ((res)=>{
+            console.log(res);
+            if (res.status === 200){
+                setUserDetails(res.data.data);
+            }
+        })
+        .catch((err)=>{
+            toast.error("Failed to fetch user details")
+        });
+      },[id]);
+      console.log(userDetails,"details");
+
     return (
         
         <>
@@ -30,21 +58,46 @@ function Entprofile() {
                 
                 <div class="row">
                     <div class="col-lg-6 profile-inputtag">
-                        <input type='text' placeholder='First Name'></input>
-                        <input className='mt-4' type='text' placeholder='Company Name'></input>
-                        <input className='mt-4' type='text' placeholder='Industry Sector'></input>
-                        <input className='mt-4' type='email' placeholder='E-Mail ID'></input>
-                        <input className='mt-4' type='number' placeholder='Contact Number'></input>
-                        <input className='mt-4' type='text' placeholder='Address'></input>
+                        <input 
+                        type='text' 
+                        placeholder='First Name'
+                        value={userDetails.fname}
+                        ></input>
+                        <input className='mt-4' 
+                        type='text' 
+                        placeholder='Company Name'
+                        value={userDetails.company_name}
+                        ></input>
+                        <input className='mt-4' 
+                        type='text' 
+                        placeholder='Industry Sector'
+                        ></input>
+                        <input className='mt-4' 
+                        type='email' 
+                        placeholder='E-Mail ID'
+                        ></input>
+                        <input className='mt-4' 
+                        type='number' 
+                        placeholder='Contact Number'
+                        ></input>
+                        <input className='mt-4' 
+                        type='text' 
+                        placeholder='Address'
+                        ></input>
 
 
                     </div>
                     <div class="col-lg-6 profile-inputtag">
-                        <input type='text' placeholder='Last Name'></input>
-                        <input className='mt-4' type='text' placeholder='Corporate Identification Number'></input>
+                        <input 
+                        type='text' 
+                        placeholder='Last Name'
+                        ></input>
+                        <input className='mt-4' 
+                        type='text' 
+                        placeholder='Corporate Identification Number'></input>
                         <input className='mt-4' type='text' placeholder='Company Description'></input>
-                        <input className='mt-4' type='email' placeholder='Location'></input>
-                        <input className='mt-4' type='number' placeholder='Username'></input>
+                        <input className='mt-4' type='text' placeholder='Location'></input>
+                        <input className='mt-4' type='text' placeholder='Username'></input>
                         <div className='ent_pro_file_upload1'>
                             <label className='pt-3 px-1'>Profile</label>
                             <label for="file" class="ent_pro_file_upload">
