@@ -1,3 +1,7 @@
+
+
+
+
 .mentor_mainheading {
     color: rgb(6, 163, 218);
     font-family: Nunito;
@@ -18,7 +22,7 @@
 .mentor_hr_line{
   width: 96px;
   border: 2px solid #06A3DA;
-  margin-left: 600px;
+  margin-left: 510px;
 }
 .mentor_reg_img{
   width: 330px;
@@ -37,7 +41,7 @@
   }
 
   .mentor_reg_btn{
-    width: 374px;
+    width: 414px;
     height: 49px;
     margin-top: 26px;
     border: #e8e8e8;

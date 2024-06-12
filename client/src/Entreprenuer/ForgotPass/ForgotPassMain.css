@@ -1,75 +1,43 @@
-.ent-forgotpass-forgotpassword{
-    width: 142px;
-    height: 25px;
-    top: 210px;
-    left: 653px;
-    gap: 0px;
-    opacity: 0px;
+.ent_forgot_mainheading {
+    color: rgb(6, 163, 218);
     font-family: Nunito;
     font-size: 18px;
     font-weight: 700;
     line-height: 24.55px;
     text-align: center;
-    color: #00B0F0;
-    display: inline;
-    
 }
-.ent-forgotpass-content{
-    width: 243px;
-    height: 33px;
-    top: 246px;
-    left: 602px;
-    gap: 0px;
-    opacity: 0px;
+.ent_forgot_sub_h3{
     font-family: Nunito;
     font-size: 24px;
     font-weight: 700;
     line-height: 32.74px;
     text-align: center;
-    color: #0F2442;
-    display: inline;
-
-}
-
-.ent-forgotpass-line{
-    width: 90px;
-    height: 0px;
-    top: 80px;
-    left: 598px;
-    border-bottom: 2px solid #00B0F0;
-    gap: 0px;
-    opacity: 0px;
-    text-align: center;
-    position: absolute;
-
-}
-
-.ent-forgotpass-img_div{
-    width: 50%;
-    padding-top: 20px;
-}
-
-.ent-forgotpass-img{
-    width: 555px;
-    height: 407px;
-    /* top: 384px; */
-    left: 61px;
-    gap: 0px;
-    opacity: 0px;
-    position: absolute
-
-}
-.ent-forgotpass-forgotpassform{
-    width: 50%;
-    height: 300px;
-    top: 77px;
-    left: 630px;
-    gap: 2px;
-    opacity: 0px;
-    position: relative;
     
 }
-.ent-forgotpass-email-label{
+
+.ent_forgot_hr_line{
+    width: 96px;
+    border: 2px solid #06A3DA;
+    margin-left: 510px;
+}
+
+.ent_forgot_img_div{
+    padding-top: 10px;
+}
+.ent_forgot_img{
+    width: 485px;
+    height: 387px;
+    margin-left: 40px;
+}
+
+
+.ent_forgot_form{
+    margin-left: 20px;
+    gap: 2px;
+    border-color: #EEF9FF;
+}
+
+.ent_forgot_email_label{
     width: 86px;
     height: 25px;
     gap: 0px;
@@ -81,21 +49,22 @@
     text-align: center;
     color: #555252;
     display: block;
+
 }
-.ent-forgotpass-email{
+
+.ent_forgot_email{
     width: 456px;
-    height: 53px;
+    height: 43px;
     gap: 0px;
     opacity: 0px;
     background: #EEF9FF;
     border: #EEF9FF;
 
 }
-.ent-forgotpass-newpassword-label{
-    width: 123px;
+
+.ent_forgot_password_label{
+    width: 80px;
     height: 25px;
-    top: 93px;
-    left: 32px;
     gap: 0px;
     opacity: 0px;
     font-family: Nunito;
@@ -104,75 +73,62 @@
     line-height: 24.55px;
     text-align: center;
     color: #555252;
+    display: block;
 
 }
-.ent-forgotpass-newpassword{
+
+.ent_forgot_password{
     width: 456px;
-    height: 53px;
-    top: 77px;
+    height: 43px;
     gap: 0px;
     opacity: 0px;
     background: #EEF9FF;
     border: #EEF9FF;
-}
-.ent-forgotpass-confirmpassword-label{
-    width: 148px;
-    height: 25px;
-    top: 170px;
-    left: 30px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: Nunito;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24.55px;
-    text-align: center;
-    color: #555252;
-        
-}
-.ent-forgotpass-confirmpassword{
-    width: 456px;
-    height: 53px;
-    top: 154px;
-    gap: 0px;
-    opacity: 0px;
-    background: #EEF9FF;
-    border: #EEF9FF;
-
-}
-.ent-forgotpass-resetbtn{
-    width: 202px;
-    height: 51px;
-    top: 231px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: Nunito;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 19.1px;
-    text-align: center;
-    border: #ffffff;
-    color: #ffffff;
-    background: #00B0F0;
-        
-}
-.ent-forgotpass-cancelbtn{
-    width: 202px;
-    height: 51px;
-    top: 231px;
-    left: 254px;
-    margin-top: 10px;
-    margin-left: 52px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: Nunito;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 19.1px;
-    text-align: center;
-    border: #ffffff;
-    color: #ffffff;
-    background: #00B0F0;
     
+}
+
+.ent_forgot_cpassword_label{
+    width: 180px;
+    height: 25px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.55px;
+    color: #555252;
+    display: block;
+
+}
+
+.ent_forgot_cpassword{
+    width: 456px;
+    height: 43px;
+    gap: 0px;
+    opacity: 0px;
+    background: #EEF9FF;
+    border: #EEF9FF;
+    
+}
+.ent_forgot_resetbtn{
+    width: 200px;
+    height: 45px;
+    left: 788px;
+    margin-top: 10px;
+    border: #ffffff;
+    color: #ffffff;
+    background: #00B0F0;
+
+}
+
+.ent_forgot_canclebtn{
+    width: 190px;
+    height: 45px;
+    top: 698px;
+    margin-top: 10px;
+    gap: 0px;
+    border: #ffffff;
+    color: #ffffff;
+    background: #00B0F0;
 
 }

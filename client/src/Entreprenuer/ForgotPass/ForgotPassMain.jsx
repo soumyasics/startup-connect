@@ -3,6 +3,10 @@ import "./ForgotPassMain.css";
 import Forgotpasswordimage from "../../assets/ForgotPassword.png";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
+import { Link } from "react-router-dom";
+import Navbar_2 from "../../components/commonNavbar/Navbar_2";
+import Footer from "../../components/Footer/Footer";
+
 
 function ForgotPassMain() {
   const [data, setData] = useState({
@@ -27,7 +31,9 @@ function ForgotPassMain() {
     });
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
-
+ const HandleCancel=()=>{
+  Navigate("/entrepreneur/login")
+ }
   const HandleClick = (e) => {
     e.preventDefault();
     console.log(data, "l");
@@ -38,6 +44,8 @@ function ForgotPassMain() {
       formValid = false;
       errors.email = "Email is required";
     }
+
+    
 
     const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,}$/;
     if (!data.password.trim()) {
@@ -75,59 +83,68 @@ function ForgotPassMain() {
 
   return (
     <>
-      <div className="container mt-5">
-        <div className="ent-forgotpass-forgotpassword ">
-          <p>Forgot Password</p>
+    <Navbar_2/>
+      <div className="container ">
+      <div className="text-center ">
+            <h4 className="  mt-3  ent_forgot_mainheading">FORGOT PASSWORD</h4>
+            <h3 className="ent_forgot_sub_h3">Recover Your Account </h3>
+            <div className="  mb-5  ent_forgot_hr_line "></div>
+
         </div>
-        <div className="ent-forgotpass-content">
-          <p>Recover Your Account</p>
-        </div>
-        {/* <div className="ent-forgotpass-line"></div> */}
-        <div className="ent-forgotpass-img_div">
-          <img className="ent-forgotpass-img" src={Forgotpasswordimage} />
-        </div>
-        <form className="ent-loginpage-loginform">
-          <label className="ent-loginpage-email-label">Your Email</label>
-          <input
-            type="email"
-            name="email"
-            onChange={handleInputChange}
-            className="ent-loginpage-email"
-          />
+        <div className='row '>
+      <div className="col ent_forgot_img_div">
+        <img className="ent_forgot_img mb-4" src={Forgotpasswordimage} />
+      </div>
+      <div className='col mt-5 px-5'>
+      <form className="ent_forgot_form">
+        <label className="ent_forgot_email_label">Your Email</label>
+        <input
+          type="email"
+          name="email"
+          onChange={handleInputChange}
+          className="ent_forgot_email"/>
           {errors.email && (
             <div className="text-danger errortext">{errors.email}</div>
           )}
-          <label className="ent-loginpage-password-label">Password</label>
-          <input
-            type="password"
-            name="password"
-            onChange={handleInputChange}
-            className="ent-loginpage-password"
-          />
-          {errors.password && (
+        <label className="ent_forgot_password_label">Password</label>
+        <input
+          type="password"
+          name="password"
+          onChange={handleInputChange}
+          className="ent_forgot_password"
+        />
+        {errors.password && (
             <div className="text-danger errortext">{errors.password}</div>
-          )}
-          <label className="ent-loginpage-password-label">
-            Confirm Password
-          </label>
-
-          <input
-            type="password"
-            name="confirmpassword"
-            onChange={handleInputChange}
-            className="ent-loginpage-password"
-          />
-          {errors.confirmpassword && (
+        )}
+        <label className="ent_forgot_cpassword_label">Confirm Password</label>
+        <input
+          type="password"
+          name="confirmpassword"
+          onChange={handleInputChange}
+          className="ent_forgot_cpassword"
+        />
+        {errors.confirmpassword && (
             <div className="text-danger errortext">
               {errors.confirmpassword}
             </div>
           )}
-
-          <button className="ent-loginpage-loginbtn" onClick={HandleClick}>
-            Log In
-          </button>
-        </form>
+        <div className="row">
+          <div className="col">
+        <button className="ent_forgot_resetbtn" type="submit" onClick={HandleClick} >
+          Reset Password
+        </button>
+        </div>
+        <div className="col">
+        <button className="ent_forgot_canclebtn" onClick={HandleCancel}  >
+          Cancel
+        </button>
+        </div>
+        </div>
+      </form>
       </div>
+      </div>
+      </div>
+      <Footer/>
     </>
   );
 }

@@ -2,54 +2,18 @@ import React, { useState } from 'react'
 import './MentorRegister.css'
 import MentorRegImg from '../../../assets/mentor_register_img.png'
 import Footer from '../../Footer/Footer'
-import Frame from "../../../assets/Frame 40.png";
-import { useNavigate } from "react-router-dom";
-import Navbar from "react-bootstrap/Navbar";
+import Navbar_2 from '../../commonNavbar/Navbar_2'
 
 
 
 
 function MentorRegister() {
 
-  const navigate = useNavigate();
-  const navigateToLogin = () => {
-    navigate("/mentor/login");
-  };
+  
   return (
     <>
+  <Navbar_2/>
 
-<div className="sticky">
-        <div className="landingtopheader">
-          <div className="landingsecondheader">
-            <Navbar className="px-4">
-              <Navbar.Brand href="#home" className="text-light">
-                <img src={Frame} alt="Frame" />
-              </Navbar.Brand>
-              <Navbar.Toggle />
-              <Navbar.Collapse className="justify-content-end">
-                <Navbar.Text className="px-5">
-                  <a href="#Home" className="text-decoration-none">
-                    <p className="navbarstext">Home</p>
-                  </a>
-                </Navbar.Text>
-                <Navbar.Text className="px-5">
-                  <a href="#About" className="text-decoration-none">
-                    <p className="navbarstext">About Us</p>
-                  </a>
-                </Navbar.Text>
-                <Navbar.Text className="px-5">
-                  <a href="#Services" className="text-decoration-none">
-                    <p className="navbarstext">Services</p>
-                  </a>
-                </Navbar.Text>
-                <Navbar.Text className="px-5" onClick={navigateToLogin}>
-                  <a href='' className="text-decoration-none"><p className="navbarstext">Sign Up</p></a>
-                </Navbar.Text>
-              </Navbar.Collapse>
-            </Navbar>
-          </div>
-        </div>
-      </div>
         <div className='container mb-5'>
         <div className="text-center headr">
             <h4 className="  mt-3  mentor_mainheading">MENTOR REGISTRATION</h4>

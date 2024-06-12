@@ -13,17 +13,24 @@ import { CommonNavbar } from "./components/commonNavbar/commonNavbar";
 
 import InvesterRegister from "./components/Invester/Signup/InvesterRegister";
 import InvestorLogin from "./components/Invester/Login/InvestorLogin";
+import Navbar_2 from "./components/commonNavbar/Navbar_2";
+import HomepageNavbar from "./components/commonNavbar/HomepageNavbar"
+import AboutUs from "./LandingPage/AboutUs/AboutUs";
+import Services from "./LandingPage/Services/Services";
+import Enthomepage from "./Entreprenuer/Homepage/Enthomepage"
+import Entprofile from "./Entreprenuer/Profile/Entprofile"
 
 function App() {
   return (
     <BrowserRouter basename="strartup">
       <Routes>
-     <Route path="/" element={<LandingPageTopNav />} />
+        <Route path="/" element={<LandingPageTopNav />} />
         <Route path="/entrepreneur/signup" element={[<CommonNavbar/>,<Entsignup />]} /> 
         <Route path="/entrepreneur/login" element={[<CommonNavbar/>,<LoginPageMain />]} />
-        <Route path="/entrepreneur/fogot-password"element={<ForgotPassMain />}/>
+        <Route path="/entrepreneur/fogot-password"element={[<CommonNavbar/>,<ForgotPassMain />]}/>
         <Route path="/entrepreneur/pitch-my-idea"element={[<CommonNavbar/>,<PitchMyIdea />]}/>
-        
+        <Route path="/entrepreneur/enthomepage"element={<Enthomepage/>} />
+        <Route path='/entrepreneur/entprofile'element={<Entprofile/>}/>
         
         <Route path="/investor/signup" element={[<CommonNavbar/>,<InvesterRegister/>]}/>
         <Route path="/investor/login" element={[<CommonNavbar/>,<InvestorLogin/>]}/>
@@ -36,8 +43,18 @@ function App() {
 
        
          <Route path="commonnavbar" element={<CommonNavbar />} />
+         <Route path="/navbar2" element={<Navbar_2/>} />
+         <Route path="/home_navbar" element={<HomepageNavbar/>}/>
+         <Route path="/aboutus" element={<AboutUs/>}/>
+         <Route path="/services" element={<Services/>}/>
+
+
+
+
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
+
+        
       </Routes>
     </BrowserRouter>
   );
