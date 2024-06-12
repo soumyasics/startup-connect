@@ -70,15 +70,15 @@ function Entsignup() {
 
     if (!data.fname.trim()) {
       formValid = false;
-      errors.fname = "fname is required";
+      errors.fname = "First Name is required";
     }
     if (!data.lname.trim()) {
       formValid = false;
-      errors.lname = "lname is required";
+      errors.lname = "Last Name is required";
     }
     if (!data.company_name.trim()) {
       formValid = false;
-      errors.company_name = "Company_name is required";
+      errors.company_name = "Company name is required";
     }
     if (!data.corporate_id_no.trim()) {
       formValid = false;
@@ -115,7 +115,7 @@ function Entsignup() {
     }
     if (!data.address.trim()) {
       formValid = false;
-      errors.address = "address is required";
+      errors.address = "Address is required";
     }
     if (!data.password.trim()) {
       formValid = false;
@@ -161,9 +161,9 @@ function Entsignup() {
 
     if (Object.keys(errors).length === 0 && formValid) {
       const formData = new FormData();
-
-      formData.append("fname", data.fname);
-      formData.append("lname", data.lname);
+console.log("in if");
+      formData.append("fname", "data.fname");
+      formData.append("lname", "data.lname");
       formData.append("company_name", data.company_name);
       formData.append("corporate_id_no", data.corporate_id_no);
       formData.append("industry_sector", data.industry_sector);
@@ -182,10 +182,14 @@ function Entsignup() {
         if (formData) {
           response = await axiosMultipartInstance.post(
             "/registerEntrepreneur",
-            formData
+            data
           );
         }
-        console.log("Response:", response);
+        console.log("Response:", response); 
+        if(response.status==200){
+          alert(response.data.msg)
+          navigate("/entrepreneur/login")
+        }
         
       } catch (error) {
         console.error("Error:", error);
@@ -227,6 +231,7 @@ function Entsignup() {
             <div class=" pt-2">
             <label id="">Industry Sector</label>
               <select class="input-cal input-base " id="ent_input" onChange={handleInputChange}  name="industry_sector">
+                <option value="">Select Industry Sector</option>
                 <option value="Technology">Technology</option>
                 <option value="E-commerce and Retail">E-commerce and Retail</option>
                 <option value="Health and Wellness">Health and Wellness</option>
@@ -274,7 +279,7 @@ function Entsignup() {
             </div>
             <div class=" pt-2">
             <label id="">Corporate Identification Number</label>
-              <input class="input-cal input-base" id="ent_input" name="corporate_id_no" onChange={handleInputChange} placeholder="" type="number"/>
+              <input class="input-cal input-base" id="ent_input" name="corporate_id_no" onChange={handleInputChange} placeholder="" type="text"/>
               {errors.corporate_id_no && (<div className="text-danger errortext">{errors.corporate_id_no}</div>)}
             </div>
             <div class=" pt-2">

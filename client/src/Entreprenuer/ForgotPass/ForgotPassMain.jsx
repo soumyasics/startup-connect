@@ -43,6 +43,8 @@ function ForgotPassMain() {
       errors.email = "Email is required";
     }
 
+    
+
     const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,}$/;
     if (!data.password.trim()) {
       formValid = false;
@@ -126,12 +128,12 @@ function ForgotPassMain() {
           )}
         <div className="row">
           <div className="col">
-        <button className="ent_forgot_resetbtn" onClick={HandleClick} >
+        <button className="ent_forgot_resetbtn" type="submit" onClick={HandleClick} >
           Reset Password
         </button>
         </div>
         <div className="col">
-        <button className="ent_forgot_canclebtn" onClick={HandleClick} >
+        <button className="ent_forgot_canclebtn" onClick={HandleClick}  >
           Cancel
         </button>
         </div>

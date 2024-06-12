@@ -10,8 +10,7 @@ import Navbar_2 from "../../components/commonNavbar/Navbar_2";
 
 
 function LoginPageMain() {
-
-  
+  const navigate = useNavigate();
 
   const navigateToLogin = () => {
     navigate("/entrepreneur/login");
@@ -21,6 +20,12 @@ function LoginPageMain() {
 
   const [data, SetData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({ email: "", password: "" });
+
+  const change = (e) => {
+    const { name, value } = e.target;
+    SetData({...data,[name]: value});
+  };
+  console.log(data,"first");
 
   const Navigate = useNavigate();
 
@@ -42,41 +47,38 @@ function LoginPageMain() {
 
     return "";
   };
-
-  const change = (b) => {
-    const { name, value } = b.target;
-    SetData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-
-    console.log(data);
-    setErrors((prevData) => ({
-      ...prevData,
-      [name]: "",
-    }));
-    console.log(errors);
-  };
-  const HandleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     let errors = {};
+    let formValid = true;
     errors.email = formValidating("Email", data.email);
     errors.password = formValidating("Password", data.password);
+    formValid=false;
     setErrors(errors);
 
-    if (!errors.email && !errors.password) {
-      axiosInstance
-        .post("/loginEntrepreneur", data)
-        .then((result) => {
-          const {  data, token } = result.data;
-          localStorage.setItem("Enterprenuer", data._id);
-          localStorage.setItem("Enterprenuertoken", token);
-          alert("Enterprenuer Login Successfuly");
+    if(data.email && data.password){
+      formValid=true;
+    }
 
-          Navigate("/");
+    if (!errors.email && !errors.password && formValid) {
+      console.log(data,"second");
+        axiosInstance.post("/loginEntrepreneur", data)
+        
+        .then((result) => {
+          if (result.data.status==200){
+            const {  data, token } = result.data;
+            localStorage.setItem("Enterprenuer", data._id);
+            localStorage.setItem("Enterprenuertoken", token);
+            console.log(data);
+            alert("Enterprenuer Login Successfuly");
+            Navigate("/entrepreneur/entprofile");
+          }
+          else{
+            alert(result.data.msg)
+          }
         })
         .catch((err) => {
-          alert(err.response.data.msg);
+          alert(err);
         });
     }
   };
@@ -98,7 +100,7 @@ function LoginPageMain() {
         <img className="ent_loginpage_img mb-4" src={Loginimage} />
       </div>
       <div className='col mt-5 px-5'>
-      <form className="ent_loginform">
+      <form className="ent_loginform" onSubmit={(e) => { handleSubmit(e);}}  >
         <label className="ent_loginpage_email_label">Your Email</label>
         <input
           type="email"
@@ -113,11 +115,14 @@ function LoginPageMain() {
         <input
           type="password"
           name="password"
+          onChange={change}
           className="ent_loginpage_password"
-        />
+        />{errors.password && (
+          <div className="text-danger errortext">{errors.password}</div>
+        )}
         <p className="text mt-2"><Link to="/entrepreneur/fogot-password">Forgot password</Link></p>
         
-        <button className="ent_login_loginbtn" onClick={HandleClick} >
+        <button className="ent_login_loginbtn" type="submit" >
           Log In
         </button>
         <p className="mt-3 "> 

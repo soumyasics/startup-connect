@@ -14,7 +14,7 @@ const entrepreneur_reg_Schema = mongoose.Schema({
     required: true,
   },
   corporate_id_no: {
-    type: Number,
+    type: String,
     required: true,
   },
   industry_sector: {
