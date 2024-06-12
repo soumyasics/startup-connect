@@ -31,7 +31,9 @@ function ForgotPassMain() {
     });
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
-
+ const HandleCancel=()=>{
+  Navigate("/entrepreneur/login")
+ }
   const HandleClick = (e) => {
     e.preventDefault();
     console.log(data, "l");
@@ -133,7 +135,7 @@ function ForgotPassMain() {
         </button>
         </div>
         <div className="col">
-        <button className="ent_forgot_canclebtn" onClick={HandleClick}  >
+        <button className="ent_forgot_canclebtn" onClick={HandleCancel}  >
           Cancel
         </button>
         </div>
