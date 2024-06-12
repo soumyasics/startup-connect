@@ -128,7 +128,7 @@ const editEntrepreneurById = async (req, res) => {
       username,
       address,
       password,
-      image,
+      
   } = req.body;
 
   try {
@@ -146,19 +146,18 @@ const editEntrepreneurById = async (req, res) => {
     }
 
     await Entrepreneur.findByIdAndUpdate(req.params.id, {
-      fname,
-      lname,
-      company_name,
-      corporate_id_no,
-      industry_sector,
-      company_description,
-      email,
-      location,
-      contact,
-      username,
-      address,
-      password,
-      image,
+      fname:fname,
+      lname:lname,
+      company_name:company_name,
+      corporate_id_no:corporate_id_no,
+      industry_sector:industry_sector,
+      company_description:company_description,
+      email:email,
+      location:location,
+      contact:contact,
+      username:username,
+      address:address,
+      password:password
     })
       .exec()
       .then((data) => {
@@ -183,7 +182,6 @@ const viewEntrepreneurById = (req, res) => {
   Entrepreneur.findById({_id:ent_id})
     .exec()
     .then((data) => {
-      console.log(data);
       res.status(200).json({
         msg: "Data obtained successfully",
         data: data,

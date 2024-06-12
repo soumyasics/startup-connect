@@ -35,6 +35,9 @@ function Entprofile() {
         });
       },[id]);
       console.log(userDetails,"details");
+      
+
+      
 
     return (
         
@@ -49,7 +52,7 @@ function Entprofile() {
                 </div>
 
                 <div >
-                    <img  className='profile_round mt-5' src={profileimage} />
+                    <img  className='profile_round mt-5' src="http://localhost:4040/{{userDetails.image}}"/>
 
                 </div>
             </div>
@@ -71,18 +74,22 @@ function Entprofile() {
                         <input className='mt-4' 
                         type='text' 
                         placeholder='Industry Sector'
+                        value={userDetails.industry_sector}
                         ></input>
                         <input className='mt-4' 
                         type='email' 
                         placeholder='E-Mail ID'
+                        value={userDetails.email}
                         ></input>
                         <input className='mt-4' 
                         type='number' 
                         placeholder='Contact Number'
+                        value={userDetails.contact}
                         ></input>
                         <input className='mt-4' 
                         type='text' 
                         placeholder='Address'
+                        value={userDetails.address}
                         ></input>
 
 
@@ -91,13 +98,28 @@ function Entprofile() {
                         <input 
                         type='text' 
                         placeholder='Last Name'
+                        value={userDetails.lname}
                         ></input>
                         <input className='mt-4' 
                         type='text' 
-                        placeholder='Corporate Identification Number'></input>
-                        <input className='mt-4' type='text' placeholder='Company Description'></input>
-                        <input className='mt-4' type='text' placeholder='Location'></input>
-                        <input className='mt-4' type='text' placeholder='Username'></input>
+                        placeholder='Corporate Identification Number'
+                        value={userDetails.corporate_id_no}
+                        ></input>
+                        <input className='mt-4' 
+                        type='text' 
+                        placeholder='Company Description'
+                        value={userDetails.company_description}
+                        ></input>
+                        <input className='mt-4' 
+                        type='text' 
+                        placeholder='Location'
+                        value={userDetails.location}
+                        ></input>
+                        <input className='mt-4' 
+                        type='text' 
+                        placeholder='Username'
+                        value={userDetails.username}
+                        ></input>
                         <div className='ent_pro_file_upload1'>
                             <label className='pt-3 px-1'>Profile</label>
                             <label for="file" class="ent_pro_file_upload">
