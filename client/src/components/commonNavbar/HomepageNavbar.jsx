@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Frame from "../../assets/Frame 40.png";
 import './HomepageNavbar.css'
+import { Link } from 'react-router-dom';
 
 function homepgNavbar() {
     const navigate = useNavigate();
@@ -25,6 +26,11 @@ function homepgNavbar() {
     const navigateToLogin = () => {
         navigate("/entrepreneur/login");
     };
+
+    const handleLogout = () => {
+        localStorage.clear();
+        navigate("/");
+      };
   return (
     <>
         <div className="home_nav_sticky">
@@ -36,22 +42,22 @@ function homepgNavbar() {
                         <Navbar.Toggle />
                         <Navbar.Collapse className="justify-content-end">
                             <Navbar.Text className="px-3" onClick={navigateToHome}>
-                            <a href="#Home" className="text-decoration-none" ><p className="navbarstext">Home</p></a>
+                            <Link href="#Home" className="text-decoration-none" ><p className="navbarstext">Home</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3" onClick={navigateToInvestors}>
-                            <a href="#Investors" className="text-decoration-none" ><p className="navbarstext">Investors</p></a>
+                            <Link href="#Investors" className="text-decoration-none" ><p className="navbarstext">Investors</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3" onClick={navigateToMentors}>
-                            <a href="#Mentors" className="text-decoration-none" ><p className="navbarstext">Mentors</p></a>
+                            <Link href="#Mentors" className="text-decoration-none" ><p className="navbarstext">Mentors</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3" onClick={navigateToStartUpPlan}>
-                            <a href="#StartUpPlan" className="text-decoration-none" ><p className="navbarstext">Startup Plan</p></a>
+                            <Link href="#StartUpPlan" className="text-decoration-none" ><p className="navbarstext">Startup Plan</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3" onClick={navigateToMyProfile}>
-                            <a href="#MyProfile" className="text-decoration-none" ><p className="navbarstext">My Profile</p></a>
+                            <Link href="#MyProfile" className="text-decoration-none" ><p className="navbarstext">My Profile</p></Link>
                             </Navbar.Text>
-                            <Navbar.Text className="px-3" onClick={navigateToLogin}>
-                            <a href="#Login" className="text-decoration-none" ><p className="navbarstext">Logout</p></a>
+                            <Navbar.Text className="px-3">
+                            <Link href="#Login" className="text-decoration-none" to={'/'} onClick={handleLogout} ><p className="navbarstext">Logout</p></Link>
                             </Navbar.Text>
                         </Navbar.Collapse>
                 </Navbar>
