@@ -40,9 +40,7 @@ const registerEntrepreneur = async (req, res) => {
       username,
       address,
       password,
-      
-      
-     } =
+    } =
       req.body;
 
     const newEntrepreneur = new Entrepreneur({
@@ -115,8 +113,26 @@ const viewEntrepreneurs = (req, res) => {
 
 // Update entrepreneur by ID
 const editEntrepreneurById = async (req, res) => {
-  const {
-    fname,
+  const entrepreneur = req.body;
+
+  try {
+    let existingEntrepreneur = await Entrepreneur.findOne({ contact });
+    let entrepreneurData = await Entrepreneur.findById({_id:req.params.id});
+    console.log("given",entrepreneurData.contact);
+    console.log("ex",existingEntrepreneur.contact);
+    if(entrepreneurData.contact!=req.body.contact){
+    if (
+      existingEntrepreneur.contact !== req.body.contact
+    ) {
+      return res.status(409).json({
+        msg: "Contact Number Already Registered With Us !!",
+        data: null,
+      });
+    }
+  }
+
+    await Entrepreneur.findByIdAndUpdate({ _id: req.params.id },{
+      fname,
       lname,
       company_name,
       corporate_id_no,
@@ -127,52 +143,28 @@ const editEntrepreneurById = async (req, res) => {
       contact,
       username,
       address,
-      password,
-      
-  } = req.body;
+      image:req.file,
 
-  try {
-    let existingEntrepreneur = await Entrepreneur.findOne({ contact });
-    let entrepreneurData = await Entrepreneur.findById(req.params.id);
-
-    if (
-      existingEntrepreneur &&
-      existingEntrepreneur.contact !== entrepreneurData.contact
-    ) {
-      return res.status(409).json({
-        msg: "Contact Number Already Registered With Us !!",
-        data: null,
-      });
-    }
-
-    await Entrepreneur.findByIdAndUpdate(req.params.id, {
-      fname:fname,
-      lname:lname,
-      company_name:company_name,
-      corporate_id_no:corporate_id_no,
-      industry_sector:industry_sector,
-      company_description:company_description,
-      email:email,
-      location:location,
-      contact:contact,
-      username:username,
-      address:address,
-      password:password
     })
       .exec()
       .then((data) => {
-        res.status(200).json({
+        res.json({
+          status:200,
           msg: "Updated successfully",
+          data:data
         });
       })
       .catch((err) => {
-        res.status(500).json({
+        res.json({
+          status:502,
           msg: "Data not Updated",
           Error: err,
         });
       });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.json({ 
+      status:500,
+      message: error.message });
   }
 };
 
