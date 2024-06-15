@@ -20,6 +20,7 @@ const upload = multer({storage:storage}).array("files");
 // Register Investor
 
 const registerInvestor= async(req,res)=>{
+    console.log("in Api");
     try{
         const {
             name,
@@ -72,12 +73,14 @@ const registerInvestor= async(req,res)=>{
             });
         })
         .catch(err => {
+            console.log(err);
             res.status(500).json({
                 msg: "Data not Inserted",
                 data: err
             });
         });
     }catch (error) {
+        console.log("err",error);
         res.status(500).json({ message: error.message });
     }
 }

@@ -72,7 +72,7 @@ function LoginPageMain() {
             localStorage.setItem("Enterprenuertoken", token);
             console.log(data);
             alert("Enterprenuer Login Successfuly");
-            Navigate("/entrepreneur/entprofile");
+            Navigate("/entrepreneur/enthomepage");
           }
           else{
             alert(result.data.msg)

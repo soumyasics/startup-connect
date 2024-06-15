@@ -52,7 +52,7 @@ function InvesterRegister() {
 
   const handleFileChange = (e) => {
     const { name, files } = e.target;
-    setInvestordata({ ...investordata, [name]: files[0]});
+    setInvestordata({ ...investordata,[name]: files[0]});
     console.log(files);
   };
   
@@ -158,7 +158,7 @@ function InvesterRegister() {
       formData.append("description", investordata.description);
       formData.append("address", investordata.address);      
       formData.append("files", investordata.profile);
-      formData.append("files", investordata.identification_document);
+      formData.append("files",investordata.identification_document);
       console.log(formData,"formData");
       try {
         var response;
@@ -291,11 +291,11 @@ function InvesterRegister() {
               </div>
             <div className='inv_file_upload2'>
             <label className='pt-3 px-1' placeholder=''>Upload Identification Document</label>
-            <label for="file" class="int_reg_file_upload">
+            <label for="file2" class="int_reg_file_upload">
                 <div class="icon">Upload</div>
-                <input id="file"  type="file"  name="identification_document" onChange={handleFileChange} />
+                <input id="file2"  type="file"  name="identification_document" onChange={handleFileChange} />
               </label>
-            
+             
             </div>
               <div class="relative pt-4">
               <button className='inv-reg-btn'>Register</button> 

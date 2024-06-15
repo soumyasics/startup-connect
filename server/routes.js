@@ -13,9 +13,11 @@ router.post('/loginEntrepreneur',entrepreneurs.login)
 router.post('/viewEntrepreneurById/:id',entrepreneurs.viewEntrepreneurById)
 router.post('/editEntrepreneurById/:id',entrepreneurs.upload,entrepreneurs.editEntrepreneurById)
 router.post('/forgotPasswordEntrepreneur',entrepreneurs.forgotPassword)
-router.post('/addCompany',pitch_my_idea.addCompany)
-router.post('/showActiveCompany',pitch_my_idea.showActiveCompany)
-router.post('/showNotActiveCompany',pitch_my_idea.showNotActiveCompany)
+router.post('/pitchMyIdeaAddCompany/:id',pitch_my_idea.addCompany)
+router.post('/pitchMyIdeaActiveCompany',pitch_my_idea.showActiveCompany)
+router.post('/pitchMyIdeaNotActiveCompany',pitch_my_idea.showNotActiveCompany)
+
+
 
 // investor 
 router.post('/registerInvestor',investors.upload,investors.registerInvestor)
