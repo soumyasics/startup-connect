@@ -25,7 +25,7 @@ const investorSchema=mongoose.Schema({
         type:String,
         required:true
 },
-    industry_sector:{
+    Investing_category:{
         type:String,
         required:true
 },
