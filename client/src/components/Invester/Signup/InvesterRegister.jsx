@@ -24,7 +24,7 @@ function InvesterRegister() {
     description: "",
     address: "",
     profile:"",
-    identification_document: "",
+    identification_document:"",
     
   });
 
@@ -52,9 +52,10 @@ function InvesterRegister() {
 
   const handleFileChange = (e) => {
     const { name, files } = e.target;
-    setInvestordata({ ...investordata, [name]: files[0],[name]:files[1] });
+    setInvestordata({ ...investordata,[name]: files[0]});
     console.log(files);
   };
+  
 
   console.log(investordata,"investor_data_1");
 
@@ -139,20 +140,32 @@ function InvesterRegister() {
     investordata.description &&
     investordata.address &&
     investordata.profile &&
-    investordata.identification_document 
+    investordata.identification_document
     ){
       formValid=true;
     }
 
     if (Object.keys(errors).length === 0 && formValid) {
-      
+      const formData = new FormData();
+      formData.append("name", investordata.name);
+      formData.append("email", investordata.email);
+      formData.append("contact", investordata.contact);
+      formData.append("organization", investordata.organization);
+      formData.append("nationality", investordata.nationality);
+      formData.append("password", investordata.password);
+      formData.append("investing_category", investordata.investing_category);
+      formData.append("occupation", investordata.occupation);
+      formData.append("description", investordata.description);
+      formData.append("address", investordata.address);      
+      formData.append("files", investordata.profile);
+      formData.append("files",investordata.identification_document);
+      console.log(formData,"formData");
       try {
-        console.log(investordata, "formdata");
         var response;
         if (investordata) {
           response = await axiosMultipartInstance.post(
             "/registerInvestor",
-            investordata
+            formData
           );
         }
         console.log("Response:", response); 
@@ -240,9 +253,9 @@ function InvesterRegister() {
             </div>
             <div className='col mb-5'>
               <div class="">
-              <label id="">Industry Sector</label>
+              <label id="">Investing Category</label>
                 <select class="input-cal input-base " id="input" onChange={handleInputChange}  name="investing_category">
-                  <option hidden="">Industry Sector</option>
+                  <option hidden="">Investing Category</option>
                   <option value="Abc">Abc</option>
                   <option value="Def">Def</option>
                   <option value="Ghi">Ghi</option>
@@ -278,11 +291,11 @@ function InvesterRegister() {
               </div>
             <div className='inv_file_upload2'>
             <label className='pt-3 px-1' placeholder=''>Upload Identification Document</label>
-            <label for="file" class="int_reg_file_upload">
+            <label for="file2" class="int_reg_file_upload">
                 <div class="icon">Upload</div>
-                <input id=""  type="file"  name="identification_document" onChange={handleFileChange} />
+                <input id="file2"  type="file"  name="identification_document" onChange={handleFileChange} />
               </label>
-            
+             
             </div>
               <div class="relative pt-4">
               <button className='inv-reg-btn'>Register</button> 

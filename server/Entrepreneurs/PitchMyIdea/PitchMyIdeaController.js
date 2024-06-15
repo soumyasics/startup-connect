@@ -6,7 +6,6 @@ const pitch_my_idea =require("./PitchMyIdeaSchema")
 const addCompany = async (req, res) => {
 try {
     const { 
-        epId,
         companyName,
         category,
         audience,
@@ -21,11 +20,12 @@ try {
         expectedHelpCategory,
         expectedHelp,
         equityAmount,
-        status
     } = req.body;
 
+    
+
     const newpitchMyIdea = new pitch_my_idea({
-        epId,
+        epId:req.params.id,
         companyName,
         category,
         audience,
@@ -41,7 +41,7 @@ try {
         expectedHelp,
         equityAmount,
         IsActive:false,
-        status
+        status:true,
        
     });
 
@@ -54,6 +54,7 @@ try {
       });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json({
         msg: "Data not Inserted",
         data: err,
