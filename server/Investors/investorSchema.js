@@ -25,7 +25,7 @@ const investorSchema=mongoose.Schema({
         type:String,
         required:true
 },
-    Investing_category:{
+    investing_category:{
         type:String,
         required:true
 },
@@ -41,7 +41,7 @@ const investorSchema=mongoose.Schema({
         type:String,
         required:true
 },
-    image:{
+    profile:{
         type:Object,
         required:true
 },
