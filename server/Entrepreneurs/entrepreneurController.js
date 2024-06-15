@@ -113,15 +113,30 @@ const viewEntrepreneurs = (req, res) => {
 
 // Update entrepreneur by ID
 const editEntrepreneurById = async (req, res) => {
+  const { 
+    fname,
+    lname,
+    company_name,
+    corporate_id_no,
+    industry_sector,
+    company_description,
+    email,
+    location,
+    contact,
+    username,
+    address,
+    password,
+  } =
+    req.body;
+
   const entrepreneur = req.body;
 
   try {
     let existingEntrepreneur = await Entrepreneur.findOne({ contact });
     let entrepreneurData = await Entrepreneur.findById({_id:req.params.id});
-    console.log("given",entrepreneurData.contact);
-    console.log("ex",existingEntrepreneur.contact);
+    
     if(entrepreneurData.contact!=req.body.contact){
-    if (
+    if (existingEntrepreneur&&
       existingEntrepreneur.contact !== req.body.contact
     ) {
       return res.status(409).json({
@@ -162,8 +177,10 @@ const editEntrepreneurById = async (req, res) => {
         });
       });
   } catch (error) {
+    console.log(error);
     res.json({ 
       status:500,
+
       message: error.message });
   }
 };
