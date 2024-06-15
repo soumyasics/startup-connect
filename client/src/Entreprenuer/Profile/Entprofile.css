@@ -31,6 +31,17 @@ color: #00B0F0;
     padding-left: 40px;
     font-family: minato;
 }
+
+.select_industry{
+  background-color: #EEF9FF;
+    color: #555252;
+    border: none;
+    width: 456px;
+    height: 53px;
+    padding-left: 40px;
+    font-family: minato;
+}
+
 .yourprofileupdate_btn{
     background-color: #06A3DA;
     color: #FFFFFF;

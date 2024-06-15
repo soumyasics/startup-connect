@@ -161,9 +161,8 @@ function Entsignup() {
 
     if (Object.keys(errors).length === 0 && formValid) {
       const formData = new FormData();
-console.log("in if");
-      formData.append("fname", "data.fname");
-      formData.append("lname", "data.lname");
+      formData.append("fname", data.fname);
+      formData.append("lname", data.lname);
       formData.append("company_name", data.company_name);
       formData.append("corporate_id_no", data.corporate_id_no);
       formData.append("industry_sector", data.industry_sector);

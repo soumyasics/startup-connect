@@ -67,6 +67,7 @@ function LoginPageMain() {
         .then((result) => {
           if (result.data.status==200){
             const {  data, token } = result.data;
+            console.log("data",data._id);
             localStorage.setItem("Enterprenuer", data._id);
             localStorage.setItem("Enterprenuertoken", token);
             console.log(data);

@@ -40,9 +40,7 @@ const registerEntrepreneur = async (req, res) => {
       username,
       address,
       password,
-      
-      
-     } =
+    } =
       req.body;
 
     const newEntrepreneur = new Entrepreneur({
@@ -115,37 +113,25 @@ const viewEntrepreneurs = (req, res) => {
 
 // Update entrepreneur by ID
 const editEntrepreneurById = async (req, res) => {
-  const {
-    fname,
-      lname,
-      company_name,
-      corporate_id_no,
-      industry_sector,
-      company_description,
-      email,
-      location,
-      contact,
-      username,
-      address,
-      password,
-      image,
-  } = req.body;
+  const entrepreneur = req.body;
 
   try {
     let existingEntrepreneur = await Entrepreneur.findOne({ contact });
-    let entrepreneurData = await Entrepreneur.findById(req.params.id);
-
+    let entrepreneurData = await Entrepreneur.findById({_id:req.params.id});
+    console.log("given",entrepreneurData.contact);
+    console.log("ex",existingEntrepreneur.contact);
+    if(entrepreneurData.contact!=req.body.contact){
     if (
-      existingEntrepreneur &&
-      existingEntrepreneur.contact !== entrepreneurData.contact
+      existingEntrepreneur.contact !== req.body.contact
     ) {
       return res.status(409).json({
         msg: "Contact Number Already Registered With Us !!",
         data: null,
       });
     }
+  }
 
-    await Entrepreneur.findByIdAndUpdate(req.params.id, {
+    await Entrepreneur.findByIdAndUpdate({ _id: req.params.id },{
       fname,
       lname,
       company_name,
@@ -157,23 +143,28 @@ const editEntrepreneurById = async (req, res) => {
       contact,
       username,
       address,
-      password,
-      image,
+      image:req.file,
+
     })
       .exec()
       .then((data) => {
-        res.status(200).json({
+        res.json({
+          status:200,
           msg: "Updated successfully",
+          data:data
         });
       })
       .catch((err) => {
-        res.status(500).json({
+        res.json({
+          status:502,
           msg: "Data not Updated",
           Error: err,
         });
       });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.json({ 
+      status:500,
+      message: error.message });
   }
 };
 
@@ -183,7 +174,6 @@ const viewEntrepreneurById = (req, res) => {
   Entrepreneur.findById({_id:ent_id})
     .exec()
     .then((data) => {
-      console.log(data);
       res.status(200).json({
         msg: "Data obtained successfully",
         data: data,
