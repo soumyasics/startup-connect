@@ -21,6 +21,8 @@ router.post('/pitchMyIdeaNotActiveCompany',pitch_my_idea.showNotActiveCompany)
 
 // investor 
 router.post('/registerInvestor',investors.upload,investors.registerInvestor)
+router.post('/loginInvestor',investors.loginInvestor)
+
 
 // mentor
 router.post('/registermentor',mentors.upload,mentors.mentorregister)

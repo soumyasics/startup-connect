@@ -123,15 +123,16 @@ const loginInvestor=(req,res)=>{
     .exec()
     .then(user=>{
         if(!user){
-            return res.status(409).json({msg:'user not found'})
+            return res.json({status:409,msg:'user not found'})
         }else if(user.password!==password){
-            return res.status(409).json({msg:'Password Missmatch !!'})
+            return res.json({status:409,msg:'Password Missmatch !!'})
         }
 
         const token = createToken(user)
 
-        res.status(200).json({
+        res.json({
             data:user,
+            status:200,
             token:token
         });
     })
