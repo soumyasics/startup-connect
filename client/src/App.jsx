@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Entsignup from "./Entreprenuer/Signup/Entsignup";
 import PitchMyIdea from "./Entreprenuer/Pitch_My_Idea/PitchMyIdea";
+import ViewStartUpPlan from "./Entreprenuer/ViewStartUpPlan/ViewStartUpPlan";
 import LoginPageMain from "./Entreprenuer/LoginPage/LoginPageMain"
 import Enthomepage from "./Entreprenuer/Homepage/Enthomepage"
 import Entprofile from "./Entreprenuer/Profile/Entprofile"
@@ -31,6 +32,7 @@ function App() {
         <Route path="/entrepreneur/login" element={[<CommonNavbar/>,<LoginPageMain />]} />
         <Route path="/entrepreneur/fogot-password"element={[<CommonNavbar/>,<ForgotPassMain />]}/>
         <Route path="/entrepreneur/pitch-my-idea"element={[<CommonNavbar/>,<PitchMyIdea />]}/>
+        <Route path="/entrepreneur/viewstartup_plan"element={<ViewStartUpPlan/>}/>
         <Route path="/entrepreneur/enthomepage"element={<Enthomepage/>} />
         <Route path='/entrepreneur/entprofile'element={<Entprofile/>}/>
         <Route path='/entrepreneur/viewinvestor' element={<ViewInvestors/>}/>
