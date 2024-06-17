@@ -115,8 +115,35 @@ const showNotActiveCompany=(req,res)=>{
       });
 }
 
+// View all Startup Plan
+const viewStartupPlan = (req, res) => {
+  pitch_my_idea.find()
+    .exec()
+    .then((data) => {
+      console.log(data);
+      if (data.length > 0) {
+        res.status(200).json({
+          msg: "Data obtained successfully",
+          data: data,
+        });
+      } else {
+        res.status(200).json({
+          msg: "No Data obtained",
+        });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "Data not obtained",
+        Error: err,
+      });
+    });
+};
+
 module.exports={
     addCompany,
     showActiveCompany,
-    showNotActiveCompany
+    showNotActiveCompany,
+    viewStartupPlan
 }

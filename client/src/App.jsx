@@ -2,23 +2,26 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Entsignup from "./Entreprenuer/Signup/Entsignup";
 import PitchMyIdea from "./Entreprenuer/Pitch_My_Idea/PitchMyIdea";
+import ViewStartUpPlan from "./Entreprenuer/ViewStartUpPlan/ViewStartUpPlan";
 import LoginPageMain from "./Entreprenuer/LoginPage/LoginPageMain"
+import Enthomepage from "./Entreprenuer/Homepage/Enthomepage"
+import Entprofile from "./Entreprenuer/Profile/Entprofile"
+import LandingPageTopNav from "./LandingPage/LandingPageTopNav";
+import ForgotPassMain  from "./Entreprenuer/ForgotPass/ForgotPassMain"
+import ViewInvestors from"./Entreprenuer/ViewInvestors/ViewInvestors";
 
 import MentorRegister from "./components/Mentor/Signup/MentorRegister";
 import MentorLogin from "./components/Mentor/Login/MentorLogin";
 
-import LandingPageTopNav from "./LandingPage/LandingPageTopNav";
-import ForgotPassMain  from "./Entreprenuer/ForgotPass/ForgotPassMain"
-import { CommonNavbar } from "./components/commonNavbar/commonNavbar";
-
 import InvesterRegister from "./components/Invester/Signup/InvesterRegister";
 import InvestorLogin from "./components/Invester/Login/InvestorLogin";
+
+import { CommonNavbar } from "./components/commonNavbar/commonNavbar";
 import Navbar_2 from "./components/commonNavbar/Navbar_2";
 import HomepageNavbar from "./components/commonNavbar/HomepageNavbar"
 import AboutUs from "./LandingPage/AboutUs/AboutUs";
 import Services from "./LandingPage/Services/Services";
-import Enthomepage from "./Entreprenuer/Homepage/Enthomepage"
-import Entprofile from "./Entreprenuer/Profile/Entprofile"
+
 
 function App() {
   return (
@@ -29,8 +32,10 @@ function App() {
         <Route path="/entrepreneur/login" element={[<CommonNavbar/>,<LoginPageMain />]} />
         <Route path="/entrepreneur/fogot-password"element={[<CommonNavbar/>,<ForgotPassMain />]}/>
         <Route path="/entrepreneur/pitch-my-idea"element={[<CommonNavbar/>,<PitchMyIdea />]}/>
+        <Route path="/entrepreneur/viewstartup_plan"element={<ViewStartUpPlan/>}/>
         <Route path="/entrepreneur/enthomepage"element={<Enthomepage/>} />
         <Route path='/entrepreneur/entprofile'element={<Entprofile/>}/>
+        <Route path='/entrepreneur/viewinvestor' element={<ViewInvestors/>}/>
         
         <Route path="/investor/signup" element={[<CommonNavbar/>,<InvesterRegister/>]}/>
         <Route path="/investor/login" element={[<CommonNavbar/>,<InvestorLogin/>]}/>
