@@ -79,6 +79,8 @@ function Entprofile() {
     useEffect(()=>{
         getData()
       },[id]);
+
+      
       const image=userDetails.image
       console.log(userDetails,"details");
       

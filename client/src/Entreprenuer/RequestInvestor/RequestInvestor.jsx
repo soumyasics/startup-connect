@@ -59,7 +59,7 @@ function RequestInvestor() {
               <div class="">
                 <h5 class="ent_invreq_fname">{data.name}</h5>
                 <h3 className='ent_invreq_name'>INVESTOR</h3>
-                <button className='ent_invreq_btn' onClick={()=>{navigateToInvestorView(data._id)}} >Request</button>
+                <button className='ent_invreq_btn' onClick={()=>navigateToInvestorView(data._id)} >Request</button>
               </div>
             </div>
           </div>

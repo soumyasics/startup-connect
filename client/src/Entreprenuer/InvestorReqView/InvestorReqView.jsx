@@ -52,9 +52,9 @@ function InvestorReqView() {
     <>
     <CommonNavbar/>
     <HomePageNavbar/>
-    <div className='container mb-3'>
+    <div className='container mb-3 mt-4' >
     <div className="text-center ">
-            <h4 className="  mt-3  ent_invreqview_mainheading">CREATE YOUR STARTUP</h4>
+            <h4 className="  mt-3  ent_invreqview_mainheading">{investorData.name}</h4>
             <h3 className="ent_invreqview_sub_h3">Your Ideas, Our Mission</h3>
             <div className="  mb-5  ent_invreqview_hr_line "></div>
     </div>
@@ -63,8 +63,8 @@ function InvestorReqView() {
             <div class="ent_invreqview_profile">
                 <div class="ent_invreqview_profile_pic_div">
                     {imgFile && <img  className='ent_invreqview_profile_pic ' src={imgFile} alt="profile_image" />}
-
                 </div>
+                <h3 className='ent_invreqview_fname'>{investorData.name}</h3>
             </div>
         </div>
         <div class="col">

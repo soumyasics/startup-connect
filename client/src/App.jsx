@@ -23,6 +23,7 @@ import AboutUs from "./LandingPage/AboutUs/AboutUs";
 import Services from "./LandingPage/Services/Services";
 import RequestInvestor from "./Entreprenuer/RequestInvestor/RequestInvestor";
 import InvestorReqView from "./Entreprenuer/InvestorReqView/InvestorReqView";
+import InvestorsView from "./Entreprenuer/InvestorsView/InvestorsView";
 
 
 function App() {
@@ -38,8 +39,11 @@ function App() {
         <Route path="/entrepreneur/enthomepage"element={<Enthomepage/>} />
         <Route path='/entrepreneur/entprofile'element={<Entprofile/>}/>
         <Route path='/entrepreneur/viewinvestor' element={<ViewInvestors/>}/>
+        <Route path='/entrepreneur/investorsview/:id' element={<InvestorsView/>}/>
         <Route path='/entrepreneur/requestinvestor' element={<RequestInvestor/>}/>
         <Route path='/entrepreneur/investorreqview/:id' element={<InvestorReqView/>}/>
+
+        
 
 
 

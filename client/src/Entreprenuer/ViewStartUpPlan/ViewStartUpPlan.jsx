@@ -6,6 +6,8 @@ import Footer from '../../components/Footer/Footer'
 import { useNavigate } from 'react-router-dom'
 import axiosInstance from '../../BaseAPIs/AxiosInstance'
 import { toast } from "react-toastify";
+import delbtn from '../../assets/del_btn.png'
+import editbtn from '../../assets/edit_btn.png'
 
 
 function ViewStartUpPlan() {
@@ -37,10 +39,27 @@ function ViewStartUpPlan() {
   });
   },[])
 
-//   const isDisabled=true;
-//     function edit_profile(){
-//       isDisabled=false
-//     };
+  
+
+const deleteStartUpPlan=(id)=>{
+  console.log("id",id);
+  axiosInstance.post(`/deleteStartupPlanById/${id}`)
+  
+  .then((res)=>{
+    if(res.status === 200){
+      alert("Data deleted Successfully")
+      window.location.reload(false)
+    }
+  })
+  .catch((err)=>{
+    console.log(err);
+    alert(err)
+  })
+}
+
+
+
+
   return (
     <>
     <CommonNavbar/>
@@ -63,7 +82,7 @@ function ViewStartUpPlan() {
                         <div class="col">
                             <div class="ent_viewsplan_profile">
                                 <tr className='ent_viewsplan_subhead'><th>Company Name:</th></tr>
-                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.companyName}/></td></tr> 
+                                <tr><td><input className='ent_viewsplan_value '  type="text" value={data1.companyName}/></td></tr> 
                                 <tr className='ent_viewsplan_subhead'><th>Is developing:</th></tr>
                                 <tr><td><input className='ent_viewsplan_value' type="text" value={data1.category}/></td></tr>
                                 <tr className='ent_viewsplan_subhead'><th>To help:</th></tr>
@@ -102,8 +121,11 @@ function ViewStartUpPlan() {
                                 <tr><td><input className='ent_viewsplan_value' type="text" value={data1.equityAmount}/></td></tr>
                                 <div className='ent_viewsplan_reqbtn_div'>
                                     <button className='ent_viewsplan_reqbtn' onClick={navigateToRequestInvestor}>Request an Investor</button>
-                                    <button className='ent_viewsplan_editbtn' > Edit</button>
-                                    <button className='ent_viewsplan_delbtn'>Del</button>
+                                    <button className='ent_viewsplan_editbtn'  > 
+                                    <img src={editbtn}/>
+                                    </button>
+                                    <button className='ent_viewsplan_delbtn' onClick={()=>deleteStartUpPlan(data1._id)}>
+                                      <img src={delbtn}/></button>
 
                                 </div>
                             </div>

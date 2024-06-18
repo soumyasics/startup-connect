@@ -141,9 +141,31 @@ const viewStartupPlan = (req, res) => {
     });
 };
 
+
+
+
+// Delete startupPlan by ID
+const deleteStartupPlanById = (req, res) => {
+  pitch_my_idea.findByIdAndDelete(req.params.id)
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data removed successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        msg: "No Data obtained",
+        Error: err,
+      });
+    });
+};
+
 module.exports={
     addCompany,
     showActiveCompany,
     showNotActiveCompany,
-    viewStartupPlan
+    viewStartupPlan,
+    deleteStartupPlanById,
 }
