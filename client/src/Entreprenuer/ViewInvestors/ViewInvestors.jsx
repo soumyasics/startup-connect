@@ -12,6 +12,10 @@ import { toast } from "react-toastify";
 function InvestorsView() {
   const navigate=useNavigate();
 
+  const navigateToInvestorView=(id)=>{
+    navigate(`/entrepreneur/investorsview/${id}`)
+  }
+
   const [investorData, setInvestordata]= useState({});
 
   useEffect(()=>{
@@ -54,10 +58,10 @@ function InvestorsView() {
           return(
             
           <div class="col">
-            <div class="ent_invview_profile">
+            <div class="ent_invview_profile " onClick={()=>navigateToInvestorView(data._id)}>
               <img src={`${imageUrl}/${data.profile.filename}`} class="ent_invview_profile_pic" alt="..."/>
               <div class="">
-                <h5 class="ent_invview_fname">{data.name}</h5>
+                <h5 class="ent_invview_fname" >{data.name}</h5>
                 <h3 className='ent_invview_name'>INVESTOR</h3>
               </div>
             </div>

@@ -12,7 +12,7 @@ function homepgNavbar() {
         navigate("/");
     };
     const navigateToInvestors = () => {
-        navigate("/investor/login");
+        navigate("/entrepreneur/viewinvestor");
     };
     const navigateToMentors = () => {
         navigate("/mentor/login");
