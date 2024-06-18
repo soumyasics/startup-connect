@@ -21,7 +21,7 @@ function homepgNavbar() {
         navigate("/entrepreneur/pitch-my-idea");
     };
     const navigateToViewStartUpPlan = () => {
-        navigate("/entrepreneur/pitch-my-idea");
+        navigate("/entrepreneur/viewstartup_plan");
     };
     const navigateToMyProfile = () => {
         navigate("/entrepreneur/entprofile");
@@ -61,7 +61,7 @@ function homepgNavbar() {
                                 </Navbar.Text>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <li><a class="dropdown-item" href="#"onClick={navigateToStartUpPlan}>Add New Plans</a></li>
-                                    <li><a class="dropdown-item" href="#"onClick={navigateToStartUpPlan}>View Plans</a></li>
+                                    <li><a class="dropdown-item" href="#"onClick={navigateToViewStartUpPlan}>View Plans</a></li>
                                     <li><a class="dropdown-item" href="#"onClick={navigateToInvestors}>My Investors</a></li>
                                     <li><a class="dropdown-item" href="#"onClick={navigateToInvestors}>Request Status</a></li>
                                 </ul>

@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import './ViewInvestors.css'
+import './RequestInvestor.css'
 import { CommonNavbar } from '../../components/commonNavbar/commonNavbar'
 import HomepageNavbar from '../../components/commonNavbar/HomepageNavbar'
 import Footer from '../../components/Footer/Footer'
 import { useNavigate } from 'react-router-dom'
 import axiosInstance from '../../BaseAPIs/AxiosInstance'
 import { imageUrl } from '../../ImageAPIs/Image_Urls'
-import { toast } from "react-toastify";
+function RequestInvestor() {
 
+    const navigate=useNavigate();
 
-function InvestorsView() {
-  const navigate=useNavigate();
+    
 
   const [investorData, setInvestordata]= useState({});
 
@@ -33,19 +33,19 @@ function InvestorsView() {
   });
   },[])
 
- 
 
-
-
+  const navigateToInvestorView = (id)=>{
+    navigate(`/entrepreneur/investorreqview/${id}`)
+  }
   return (
     <>
     <CommonNavbar/>
     <HomepageNavbar/>
-      <div className="container mb-4">
+    <div className="container mb-4">
         <div className="text-center ">
-            <h4 className="  mt-3  ent_invview_mainheading">TOP INVESTORS</h4>
-            <h3 className="ent_invview_sub_h3">Your Ideas, Our Mission</h3>
-            <div className="  mb-5  ent_invview_hr_line "></div>
+            <h4 className="  mt-3  ent_invreq_mainheading">TOP INVESTORS</h4>
+            <h3 className="ent_invreq_sub_h3">Your Ideas, Our Mission</h3>
+            <div className="  mb-5  ent_invreq_hr_line "></div>
         </div>
         <div class="row row-cols-1 row-cols-md-4 g-4">
           {console.log("datas",investorData)}
@@ -54,11 +54,12 @@ function InvestorsView() {
           return(
             
           <div class="col">
-            <div class="ent_invview_profile">
-              <img src={`${imageUrl}/${data.profile.filename}`} class="ent_invview_profile_pic" alt="..."/>
+            <div class="ent_invreq_profile">
+              <img src={`${imageUrl}/${data.profile.filename}`} class="ent_invreq_profile_pic" alt="..."/>
               <div class="">
-                <h5 class="ent_invview_fname">{data.name}</h5>
-                <h3 className='ent_invview_name'>INVESTOR</h3>
+                <h5 class="ent_invreq_fname">{data.name}</h5>
+                <h3 className='ent_invreq_name'>INVESTOR</h3>
+                <button className='ent_invreq_btn' onClick={()=>{navigateToInvestorView(data._id)}} >Request</button>
               </div>
             </div>
           </div>
@@ -66,15 +67,15 @@ function InvestorsView() {
           )
         })):(
         
-          <h1>ghghh</h1>
+          <h1>No Investors Found</h1>
         )
         } 
           
         </div>
       </div>
-      <Footer/>
+    <Footer/>
     </>
   )
-
 }
-export default InvestorsView
+
+export default RequestInvestor

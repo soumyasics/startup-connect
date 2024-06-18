@@ -5,10 +5,16 @@ import HomePageNavbar from '../../components/commonNavbar/HomepageNavbar'
 import Footer from '../../components/Footer/Footer'
 import { useNavigate } from 'react-router-dom'
 import axiosInstance from '../../BaseAPIs/AxiosInstance'
+import { toast } from "react-toastify";
+
 
 function ViewStartUpPlan() {
 
     const navigate=useNavigate();
+
+    const navigateToRequestInvestor = () => {
+      navigate("/entrepreneur/requestinvestor");
+    }
 
   const [data, setData]= useState({});
 
@@ -30,6 +36,11 @@ function ViewStartUpPlan() {
       toast.error("Failed to fetch user details")
   });
   },[])
+
+//   const isDisabled=true;
+//     function edit_profile(){
+//       isDisabled=false
+//     };
   return (
     <>
     <CommonNavbar/>
@@ -41,63 +52,69 @@ function ViewStartUpPlan() {
             <h3 className="ent_viewsplan_sub_h3"> where you are now</h3>
             <div className="  mb-5  ent_viewsplan_hr_line "></div>
         </div>
-        <div><h3>GreenTech Innovations:</h3></div>
 
         
-        
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-        
-            <div class="col">
-                <div class="ent_viewsplan_profile">
-                    <tr className='ent_viewsplan_subhead'><th>Company Name:</th></tr>
-                    <tr><td>GreenTech Innovations</td></tr> 
-                    <tr className='ent_viewsplan_subhead'><th>Is developing:</th></tr>
-                    <tr><td>GreenTech Innovations</td></tr>
-                    <tr className='ent_viewsplan_subhead'><th>To help:</th></tr>
-                    <tr><td>GreenTech Innovations</td></tr>
-                    <tr className='ent_viewsplan_subhead'><th>To solve:</th></tr>
-                    <tr><td>GreenTech Innovations</td></tr>
-                    <tr className='ent_viewsplan_subhead'><th>With:</th></tr>
-                    <tr><td>GreenTech Innovations</td></tr>
-            </div>
-                
-            </div>
-            <div class="col">
-                <div class="ent_viewsplan_profile">
-                    <tr className='ent_viewsplan_subhead'><th>We compete in the growing:</th></tr>
-                    <tr><td></td></tr>
-                    <tr className='ent_viewsplan_subhead'><th>Which last year was a:</th></tr>
-                    <tr><td></td></tr>
-                    <tr className='ent_viewsplan_subhead'><th>We are similar to competitor 1:</th></tr>
-                    <tr ><td></td></tr>
-                    <tr className='ent_viewsplan_subhead'><th>Competitor 2:</th></tr>
-                    <tr><td></td></tr>
-                    <tr className='ent_viewsplan_subhead'><th>But we:</th></tr>
-                    <tr><td></td></tr>
-                </div>
-                
-            </div>
-            <div class="col">
-                <div class="ent_viewsplan_profile">
-                    <tr className='ent_viewsplan_subhead'><th>Currently we have:</th></tr>
-                    <tr><td></td></tr>
-                    <tr className='ent_viewsplan_subhead'><th>We are looking for:</th></tr>
-                    <tr><td></td></tr>
-                    <tr className='ent_viewsplan_subhead'><th>To help us:</th></tr>
-                    <tr><td></td></tr>
-                    <tr className='ent_viewsplan_subhead'><th>In exchange for:</th></tr>
-                    <tr><td></td></tr>
-                    <div className='ent_viewsplan_reqbtn_div'>
-                        <button className='ent_viewsplan_reqbtn'>Request an Investor</button>
-                        <button className='ent_viewsplan_editbtn'> Edit</button>
-                        <button className='ent_viewsplan_delbtn'>Del</button>
+        {
+            (data.length)>0?((data).map((data1)=>{
+                return(
+                    <div><h3>{data1.companyName}:</h3>
 
+                    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+                        <div class="col">
+                            <div class="ent_viewsplan_profile">
+                                <tr className='ent_viewsplan_subhead'><th>Company Name:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.companyName}/></td></tr> 
+                                <tr className='ent_viewsplan_subhead'><th>Is developing:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.category}/></td></tr>
+                                <tr className='ent_viewsplan_subhead'><th>To help:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.audience}/></td></tr>
+                                <tr className='ent_viewsplan_subhead'><th>To solve:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.workingArea}/></td></tr>
+                                <tr className='ent_viewsplan_subhead'><th>With:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.domain}/></td></tr>
+                        </div>
+                            
+                        </div>
+                        <div class="col">
+                            <div class="ent_viewsplan_profile">
+                                <tr className='ent_viewsplan_subhead'><th>We compete in the growing:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.market}/></td></tr>
+                                <tr className='ent_viewsplan_subhead'><th>Which last year was a:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.value}/></td></tr>
+                                <tr className='ent_viewsplan_subhead'><th>We are similar to competitor 1:</th></tr>
+                                <tr ><td><input className='ent_viewsplan_value' type="text" value={data1.competitor1}/></td></tr>
+                                <tr className='ent_viewsplan_subhead'><th>Competitor 2:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.competitor2}/></td></tr>
+                                <tr className='ent_viewsplan_subhead'><th>But we:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.differentiator}/></td></tr>
+                            </div>
+                            
+                        </div>
+                        <div class="col">
+                            <div class="ent_viewsplan_profile">
+                                <tr className='ent_viewsplan_subhead'><th>Currently we have:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.currentStatus}/></td></tr>
+                                <tr className='ent_viewsplan_subhead'><th>We are looking for:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.expectedHelpCategory}/></td></tr>
+                                <tr className='ent_viewsplan_subhead'><th>To help us:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.expectedHelp}/></td></tr>
+                                <tr className='ent_viewsplan_subhead'><th>In exchange for:</th></tr>
+                                <tr><td><input className='ent_viewsplan_value' type="text" value={data1.equityAmount}/></td></tr>
+                                <div className='ent_viewsplan_reqbtn_div'>
+                                    <button className='ent_viewsplan_reqbtn' onClick={navigateToRequestInvestor}>Request an Investor</button>
+                                    <button className='ent_viewsplan_editbtn' > Edit</button>
+                                    <button className='ent_viewsplan_delbtn'>Del</button>
+
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
-                </div>
-                
-          </div>
+                    </div>
+                )
+            })):(<h1>abc</h1>)
         
-        </div>
+}
   
    </div>
     <Footer/>
