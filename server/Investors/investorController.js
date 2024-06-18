@@ -109,6 +109,26 @@ const viewInvestors = (req, res) => {
         });
 };
 
+// View investor by ID
+const viewInvestorById = (req, res) => {
+    Investor.findById(req.params.id)
+      .exec()
+      .then((data) => {
+        res.status(200).json({
+          msg: "Data obtained successfully",
+          data: data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json({
+          msg: "No Data obtained",
+          Error: err,
+        });
+      });
+  };
+  
+
 
 
 const createToken = (user) =>{
@@ -148,4 +168,5 @@ module.exports={
     upload,
     loginInvestor,
     viewInvestors,
+    viewInvestorById
 }

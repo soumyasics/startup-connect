@@ -21,6 +21,8 @@ import Navbar_2 from "./components/commonNavbar/Navbar_2";
 import HomepageNavbar from "./components/commonNavbar/HomepageNavbar"
 import AboutUs from "./LandingPage/AboutUs/AboutUs";
 import Services from "./LandingPage/Services/Services";
+import RequestInvestor from "./Entreprenuer/RequestInvestor/RequestInvestor";
+import InvestorReqView from "./Entreprenuer/InvestorReqView/InvestorReqView";
 
 
 function App() {
@@ -36,6 +38,11 @@ function App() {
         <Route path="/entrepreneur/enthomepage"element={<Enthomepage/>} />
         <Route path='/entrepreneur/entprofile'element={<Entprofile/>}/>
         <Route path='/entrepreneur/viewinvestor' element={<ViewInvestors/>}/>
+        <Route path='/entrepreneur/requestinvestor' element={<RequestInvestor/>}/>
+        <Route path='/entrepreneur/investorreqview/:id' element={<InvestorReqView/>}/>
+
+
+
         
         <Route path="/investor/signup" element={[<CommonNavbar/>,<InvesterRegister/>]}/>
         <Route path="/investor/login" element={[<CommonNavbar/>,<InvestorLogin/>]}/>

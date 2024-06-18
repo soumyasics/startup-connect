@@ -20,10 +20,13 @@ router.post('/viewStartupPlan',pitch_my_idea.viewStartupPlan)
 
 
 
+
 // investor 
 router.post('/registerInvestor',investors.upload,investors.registerInvestor)
 router.post('/loginInvestor',investors.loginInvestor)
 router.post('/viewInvestors',investors.viewInvestors)
+router.post('/viewInvestorById/:id',investors.viewInvestorById)
+
 
 
 // mentor
