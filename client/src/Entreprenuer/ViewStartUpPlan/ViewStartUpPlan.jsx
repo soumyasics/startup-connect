@@ -17,6 +17,9 @@ function ViewStartUpPlan() {
     const navigateToRequestInvestor = () => {
       navigate("/entrepreneur/requestinvestor");
     }
+    const navigateToEditStartUpPlan = (id) => {
+      navigate(`/entrepreneur/editstartup_plan/${id}`);
+    }
 
   const [data, setData]= useState({});
 
@@ -49,6 +52,7 @@ const deleteStartUpPlan=(id)=>{
     if(res.status === 200){
       alert("Data deleted Successfully")
       window.location.reload(false)
+      alert("One Data Deleted")
     }
   })
   .catch((err)=>{
@@ -122,7 +126,7 @@ const deleteStartUpPlan=(id)=>{
                                 <div className='ent_viewsplan_reqbtn_div'>
                                     <button className='ent_viewsplan_reqbtn' onClick={navigateToRequestInvestor}>Request an Investor</button>
                                     <button className='ent_viewsplan_editbtn'  > 
-                                    <img src={editbtn}/>
+                                    <img src={editbtn} onClick={()=>navigateToEditStartUpPlan(data1._id)}/>
                                     </button>
                                     <button className='ent_viewsplan_delbtn' onClick={()=>deleteStartUpPlan(data1._id)}>
                                       <img src={delbtn}/></button>
