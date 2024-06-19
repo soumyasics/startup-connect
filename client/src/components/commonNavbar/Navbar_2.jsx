@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from "react-bootstrap/Navbar";
 import Frame from "../../assets/Frame 40.png";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import './Navbar_2.css'
 
 
@@ -12,15 +13,23 @@ function Navbar_2() {
     const navigateToHome = () => {
       navigate("/");
     }
-    const navigateToLogin = () => {
-      navigate("/entrepreneur/login");
-    }
     const navigateToAboutUs = () => {
       navigate("/aboutus");
     }
     const navigateToServices = () => {
       navigate("/services");
     }
+    const navigateToEntLogin = () => {
+      navigate("/entrepreneur/login");
+    }
+    const navigateToInvLogin = () => {
+      navigate("/investor/login");
+    }
+    const navigateToMenLogin = () => {
+      navigate("/mentor/login");
+    }
+
+    
 
   
   return (
@@ -48,10 +57,17 @@ function Navbar_2() {
                   <a href="" className="text-decoration-none">
                     <p className="navbarstext">Services</p>
                   </a>
-                </Navbar.Text>
-                <Navbar.Text className="px-5" onClick={navigateToLogin}>
-                  <a href='' className="text-decoration-none"><p className="navbarstext">Sign In</p></a>    
-                </Navbar.Text>
+                  </Navbar.Text>
+                <Navbar.Text className="px-5" >
+                <div class="dropdown">
+                  <button class="dropbtn">Sign In</button>
+                  <div class="dropdown-content">
+                    <Navbar.Text  onClick={navigateToEntLogin}><a href="" >Entrepreneur</a></Navbar.Text>
+                    <Navbar.Text  onClick={navigateToInvLogin}><a href="">Investor</a></Navbar.Text>
+                    <Navbar.Text  onClick={navigateToMenLogin}><a href=''>Mentor</a></Navbar.Text>
+                  </div>
+                </div>
+                  </Navbar.Text>
               </Navbar.Collapse>
             </Navbar>
           </div>

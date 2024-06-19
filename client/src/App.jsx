@@ -24,6 +24,7 @@ import Services from "./LandingPage/Services/Services";
 import RequestInvestor from "./Entreprenuer/RequestInvestor/RequestInvestor";
 import InvestorReqView from "./Entreprenuer/InvestorReqView/InvestorReqView";
 import InvestorsView from "./Entreprenuer/InvestorsView/InvestorsView";
+import EditStartUpPlan from "./Entreprenuer/EditStartUpPlan/EditStartUpPlan";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/entrepreneur/fogot-password"element={[<CommonNavbar/>,<ForgotPassMain />]}/>
         <Route path="/entrepreneur/pitch-my-idea"element={[<CommonNavbar/>,<PitchMyIdea />]}/>
         <Route path="/entrepreneur/viewstartup_plan"element={<ViewStartUpPlan/>}/>
+        <Route path="/entrepreneur/editstartup_plan/:id"element={<EditStartUpPlan/>}/>
         <Route path="/entrepreneur/enthomepage"element={<Enthomepage/>} />
         <Route path='/entrepreneur/entprofile'element={<Entprofile/>}/>
         <Route path='/entrepreneur/viewinvestor' element={<ViewInvestors/>}/>

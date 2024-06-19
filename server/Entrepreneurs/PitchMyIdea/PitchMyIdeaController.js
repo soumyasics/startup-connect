@@ -141,7 +141,78 @@ const viewStartupPlan = (req, res) => {
     });
 };
 
+// View StartUpPlan by ID
+const viewStartUpPlanById = (req, res) => {
+  const pmi_id=req.params.id
+  pitch_my_idea.findById({_id:pmi_id})
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data obtained successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        msg: "No Data obtained",
+        Error: err,
+      });
+    });
+};
 
+// Update startupPlan by ID
+const editStartUpPlanById = async (req, res) => {
+  const { 
+        companyName,
+        category,
+        audience,
+        workingArea,
+        domain,
+        market,
+        value,
+        competitor1,
+        competitor2,
+        differentiator,
+        currentStatus,
+        expectedHelpCategory,
+        expectedHelp,
+        equityAmount,
+  } =
+    req.body;
+
+    await pitch_my_idea.findByIdAndUpdate({ _id: req.params.id },{
+        companyName,
+        category,
+        audience,
+        workingArea,
+        domain,
+        market,
+        value,
+        competitor1,
+        competitor2,
+        differentiator,
+        currentStatus,
+        expectedHelpCategory,
+        expectedHelp,
+        equityAmount,
+
+    })
+      .exec()
+      .then((data) => {
+        res.json({
+          status:200,
+          msg: "Updated successfully",
+          data:data
+        });
+      })
+      .catch((err) => {
+        res.json({
+          status:502,
+          msg: "Data not Updated",
+          Error: err,
+        });
+      });
+    };
 
 
 // Delete startupPlan by ID
@@ -167,5 +238,7 @@ module.exports={
     showActiveCompany,
     showNotActiveCompany,
     viewStartupPlan,
+    editStartUpPlanById,
+    viewStartUpPlanById,
     deleteStartupPlanById,
 }

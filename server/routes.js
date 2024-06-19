@@ -18,6 +18,9 @@ router.post('/pitchMyIdeaActiveCompany',pitch_my_idea.showActiveCompany)
 router.post('/pitchMyIdeaNotActiveCompany',pitch_my_idea.showNotActiveCompany)
 router.post('/viewStartupPlan',pitch_my_idea.viewStartupPlan)
 router.post('/deleteStartupPlanById/:id',pitch_my_idea.deleteStartupPlanById)
+router.post('/editStartupPlanById/:id',pitch_my_idea.editStartUpPlanById)
+router.post('/viewStartupPlanById/:id',pitch_my_idea.editStartUpPlanById)
+
 
 
 
