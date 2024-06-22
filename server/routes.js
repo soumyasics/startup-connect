@@ -3,6 +3,7 @@ const entrepreneurs=require('./Entrepreneurs/entrepreneurController')
 const investors=require('./Investors/investorController')
 
 const mentors=require('./Mentors/mentorController')
+const admin=require('./Admin/adminController')
 
 
 const pitch_my_idea=require('./Entrepreneurs/PitchMyIdea/PitchMyIdeaController')
@@ -32,11 +33,19 @@ router.post('/loginInvestor',investors.loginInvestor)
 router.post('/viewInvestors',investors.viewInvestors)
 router.post('/viewInvestorById/:id',investors.viewInvestorById)
 router.post('/editInvestorById/:id',investors.upload,investors.editInvestorById)
+router.post('/viewInvestorReqs',investors.viewInvestorReqs)
+router.post('/approveInvestorReqsById/:id',investors.approveInvestorReqsById)
+router.post('/activateInvestorById/:id',investors.activateInvestorById)
+router.post('/removeInvestorById/:id',investors.removeInvestorById)
+router.post('/deActivateInvestorById/:id',investors.deActivateInvestorById)
 
 
 
 // mentor
 router.post('/registermentor',mentors.upload,mentors.mentorregister)
 
+//Admin routes
+router.post('/loginAdmin',admin.loginAdmin)
+router.post('/forgotPassword',admin.forgotPassword)
 
 module.exports=router

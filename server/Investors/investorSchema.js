@@ -52,6 +52,10 @@ const investorSchema=mongoose.Schema({
     isActive:{
         default:false,
         type:Boolean
+    },
+    adminApproved:{
+        default:false,
+        type:Boolean
     }
 });
 module.exports=mongoose.model('investors',investorSchema)

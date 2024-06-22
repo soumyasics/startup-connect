@@ -87,7 +87,7 @@ const registerInvestor= async(req,res)=>{
 
 // View all investors
 const viewInvestors = (req, res) => {
-    Investor.find()
+    Investor.find({adminApproved:true})
         .exec()
         .then(data => {
             if (data.length > 0) {
@@ -131,6 +131,100 @@ const viewInvestorById = (req, res) => {
 
 
 
+// View investorReqs for Admin
+const viewInvestorReqs = (req, res) => {
+    Investor.find({adminApproved:false})
+      .exec()
+      .then((data) => {
+        res.status(200).json({
+          msg: "Data obtained successfully",
+          data: data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json({
+          msg: "No Data obtained",
+          Error: err,
+        });
+      });
+  };
+ 
+// approve investorReq by  Admin
+const approveInvestorReqsById = (req, res) => {
+    Investor.find({_id:req.params.id},{adminApproved:true,isActive:true})
+      .exec()
+      .then((data) => {
+        res.status(200).json({
+          msg: "Data obtained successfully",
+          data: data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json({
+          msg: "No Data obtained",
+          Error: err,
+        });
+      });
+  };
+  
+// approve investorReq by  Admin
+const removeInvestorById = (req, res) => {
+    Investor.findByIdAndDelete({_id:req.params.id})
+      .exec()
+      .then((data) => {
+        res.status(200).json({
+          msg: "Data removed successfully",
+          data: data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json({
+          msg: "No Data obtained",
+          Error: err,
+        });
+      });
+  };
+  
+// approve investorReq by  Admin
+const activateInvestorById = (req, res) => {
+    Investor.findByIdAndUpdate({_id:req.params.id},{isActive:true})
+      .exec()
+      .then((data) => {
+        res.status(200).json({
+          msg: "Data updated successfully",
+          data: data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json({
+          msg: "No Data obtained",
+          Error: err,
+        });
+      });
+  };
+  
+// approve investorReq by  Admin
+const deActivateInvestorById = (req, res) => {
+    Investor.findByIdAndUpdate({_id:req.params.id},{isActive:false})
+      .exec()
+      .then((data) => {
+        res.status(200).json({
+          msg: "Data updated successfully",
+          data: data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json({
+          msg: "No Data obtained",
+          Error: err,
+        });
+      });
+  };
 const createToken = (user) =>{
     return jwt.sign({ userId: user.id }, secret, { expiresIn:'1hr' });
 }
@@ -215,5 +309,11 @@ module.exports={
     loginInvestor,
     viewInvestors,
     viewInvestorById,
-    editInvestorById
+    editInvestorById,
+    viewInvestorReqs,
+    activateInvestorById,
+    removeInvestorById,
+    activateInvestorById,
+    deActivateInvestorById,
+    approveInvestorReqsById
 }
