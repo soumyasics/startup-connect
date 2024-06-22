@@ -62,7 +62,7 @@ function InvestorLogin() {
           localStorage.setItem("InvestorToken",token);
           console.log(data);
           alert("Investor Login Successfully");
-          navigate("/")
+          navigate("/investor/updateprofile")
         }
         else{
           alert(result.data.msg);

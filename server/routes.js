@@ -31,6 +31,7 @@ router.post('/registerInvestor',investors.upload,investors.registerInvestor)
 router.post('/loginInvestor',investors.loginInvestor)
 router.post('/viewInvestors',investors.viewInvestors)
 router.post('/viewInvestorById/:id',investors.viewInvestorById)
+router.post('/editInvestorById/:id',investors.upload,investors.editInvestorById)
 
 
 

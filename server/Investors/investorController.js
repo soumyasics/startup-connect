@@ -163,10 +163,57 @@ const loginInvestor=(req,res)=>{
 
 };
 
+// Update investor by ID
+const editInvestorById = (req, res) => {
+    const { 
+        name,
+        email,
+        contact,
+        organization,
+        nationality,
+        investing_category,
+        occupation,
+        description,
+        address,
+    } = req.body;
+  
+  Investor.findByIdAndUpdate(req.params.id,{
+        name,
+        email,
+        contact,
+        organization,
+        nationality,
+        investing_category,
+        occupation,
+        description,
+        address,
+        profile:req.files[0],
+        identification_document:req.files[1],
+        })
+        .exec()
+        .then((data) => {
+          res.json({
+            status:200,
+            msg: "Updated successfully",
+            data:data
+          });
+        })
+        .catch((err) => {
+            console.log(err);
+          res.json({
+            status:502,
+            msg: "Data not Updated",
+            Error: err,
+          });
+        });
+    
+  };
+
 module.exports={
     registerInvestor,
     upload,
     loginInvestor,
     viewInvestors,
-    viewInvestorById
+    viewInvestorById,
+    editInvestorById
 }

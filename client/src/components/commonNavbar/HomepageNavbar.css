@@ -22,7 +22,7 @@
   }
 
   
-  .dropdown:hover>.dropdown-menu {
+  .home_dropdown:hover>.dropdown-menu {
     display: block;
     margin-top: -23px;
     border-radius: 0%;
