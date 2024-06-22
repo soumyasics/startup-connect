@@ -53,7 +53,7 @@ function homepgNavbar() {
                             <Navbar.Text className="px-3" onClick={navigateToMentors}>
                             <Link href="#Mentors" className="text-decoration-none" ><p className="navbarstext">Mentors</p></Link>
                             </Navbar.Text>
-                            <div class="dropdown">
+                            <div class="home_dropdown">
                                 <Navbar.Text className="px-3" id="dropdownMenuButton"
                                     data-mdb-toggle="dropdown"
                                     aria-expanded="false" >

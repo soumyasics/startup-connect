@@ -54,4 +54,4 @@ const investorSchema=mongoose.Schema({
         type:Boolean
     }
 });
-module.exports=mongoose.model('investor',investorSchema)
+module.exports=mongoose.model('investors',investorSchema)

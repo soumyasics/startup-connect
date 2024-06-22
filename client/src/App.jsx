@@ -25,6 +25,7 @@ import RequestInvestor from "./Entreprenuer/RequestInvestor/RequestInvestor";
 import InvestorReqView from "./Entreprenuer/InvestorReqView/InvestorReqView";
 import InvestorsView from "./Entreprenuer/InvestorsView/InvestorsView";
 import EditStartUpPlan from "./Entreprenuer/EditStartUpPlan/EditStartUpPlan";
+import InvestorUpdateProfile from "./components/Invester/Profile/InvestorUpdateProfile";
 
 
 function App() {
@@ -52,6 +53,8 @@ function App() {
         
         <Route path="/investor/signup" element={[<CommonNavbar/>,<InvesterRegister/>]}/>
         <Route path="/investor/login" element={[<CommonNavbar/>,<InvestorLogin/>]}/>
+        <Route path="/investor/updateprofile" element={<InvestorUpdateProfile/>}/>
+
 
         <Route path="/mentor/signup" element={[<CommonNavbar/>,<MentorRegister/>]}/>
         <Route path="/mentor/login" element={[<CommonNavbar/>,<MentorLogin/>]}/>
