@@ -28,6 +28,8 @@ import EditStartUpPlan from "./Entreprenuer/EditStartUpPlan/EditStartUpPlan";
 import InvestorUpdateProfile from "./components/Invester/Profile/InvestorUpdateProfile";
 import AdminNavbar from "./components/Admin/AdminNavbar";
 import AdminDashbord from "./components/Admin/AdminDashbord";
+import AdminLogin from "./components/Admin/AdminLogin";
+import Adminforgot from "./components/Admin/Adminforgot";
 
 
 function App() {
@@ -76,7 +78,8 @@ function App() {
 
         
          <Route path="/admin_dashboard" element={[<AdminNavbar/>,<AdminDashbord/>]}/>
-
+         <Route path="/admin_login" element={<AdminLogin/>}/>
+         <Route path="/admin_forgot" element={<Adminforgot/>}/>
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
 
         

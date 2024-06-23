@@ -7,3 +7,15 @@
   color: rgb(255, 255, 255);
   padding: 1%;
 }
+.Adminloginmain{
+    background-color: rgba(243, 247, 250, 1);
+    height: 100vh;
+}
+.adminloginform{
+    margin: 5%;
+    background-color: rgb(255, 255, 255);
+    padding: 5%;
+}
+#adminlogininput{
+    background-color: rgba(238, 249, 255, 1);
+}
