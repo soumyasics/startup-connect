@@ -26,6 +26,8 @@ import InvestorReqView from "./Entreprenuer/InvestorReqView/InvestorReqView";
 import InvestorsView from "./Entreprenuer/InvestorsView/InvestorsView";
 import EditStartUpPlan from "./Entreprenuer/EditStartUpPlan/EditStartUpPlan";
 import InvestorUpdateProfile from "./components/Invester/Profile/InvestorUpdateProfile";
+import AdminNavbar from "./components/Admin/AdminNavbar";
+import AdminDashbord from "./components/Admin/AdminDashbord";
 
 
 function App() {
@@ -72,6 +74,8 @@ function App() {
 
 
 
+        
+         <Route path="/admin_dashboard" element={[<AdminNavbar/>,<AdminDashbord/>]}/>
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
 
