@@ -129,7 +129,24 @@ const viewInvestorById = (req, res) => {
   };
   
 
-
+// View investorReqs for Admin
+const viewLessInvestorReqs = (req, res) => {
+  Investor.find({adminApproved:false}).sort({_id: -1}).limit(5)
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data obtained successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "No Data obtained",
+        Error: err,
+      });
+    });
+};
 
 // View investorReqs for Admin
 const viewInvestorReqs = (req, res) => {
@@ -315,5 +332,6 @@ module.exports={
     removeInvestorById,
     activateInvestorById,
     deActivateInvestorById,
-    approveInvestorReqsById
+    approveInvestorReqsById,
+    viewLessInvestorReqs,
 }

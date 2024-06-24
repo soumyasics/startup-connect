@@ -5,7 +5,7 @@ import home3 from "../../assets/Group 56.png";
 import home4 from "../../assets/Vector.png";
 import "./Admin.css"
 import RecentIvesitors from './Investor/RecentIvesitors';
-import RecentMentors from "./RecentMentors";
+import RecentMentors from "./Mentor/RecentMentors";
 import AdminFooter from "./AdminFooter";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
 import { toast } from "react-toastify";

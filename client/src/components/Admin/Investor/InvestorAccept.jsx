@@ -47,13 +47,12 @@ function InvestorAccept() {
         console.log(res);
         if (res.status === 200){
           alert("Request Accepted")
-          
+          navigate("/admin_dashboard")
         }
       })
       .catch((err)=>{
           toast.error("Error")
       });
-      navigate("/admin_dashboard")
     }
 
     const rejectRequest=()=>{

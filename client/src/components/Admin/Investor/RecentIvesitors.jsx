@@ -21,7 +21,7 @@ function RecentIvesitors() {
   const [investorData, setInvestordata]= useState({});
 
   useEffect(()=>{
-    axiosInstance.post('/viewInvestorReqs')
+    axiosInstance.post('/viewlessinvestors')
     .then((res)=>{
       console.log(res,"res");
       if(res.status === 200){

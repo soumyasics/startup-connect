@@ -39,11 +39,13 @@ router.post('/approveInvestorReqsById/:id',investors.approveInvestorReqsById)
 router.post('/activateInvestorById/:id',investors.activateInvestorById)
 router.post('/removeInvestorById/:id',investors.removeInvestorById)
 router.post('/deActivateInvestorById/:id',investors.deActivateInvestorById)
+router.post('/viewlessinvestors',investors.viewLessInvestorReqs)
+
 
 
 
 // mentor
-router.post('/registermentor',mentors.upload,mentors.mentorregister)
+router.post('/registermentor',mentors.upload,mentors.registerMentor)
 
 //Admin routes
 router.post('/loginAdmin',admin.loginAdmin)
