@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import axiosInstance from '../../BaseAPIs/AxiosInstance';
-import AdminNavbar from './AdminNavbar'
+import axiosInstance from '../../../BaseAPIs/AxiosInstance';
+import AdminNavbar from '../AdminNavbar'
 import { toast } from "react-toastify";
-import { imageUrl } from '../../ImageAPIs/Image_Urls';
+import { imageUrl } from '../../../ImageAPIs/Image_Urls';
 import { Link } from 'react-router-dom';
-import arrow from "../../assets/arrowlogo.png";
-import eye from "../../assets/carbon_view-filled.png";
+import eye from "../../../assets/carbon_view-filled.png";
+import { useNavigate } from 'react-router-dom';
+import AdminFooter from '../AdminFooter';
 
-function RecentInvestorList() {
-
+function InvestorList() {
+    const navigate = useNavigate();
+    const navigateToInvestorView = (id)=>{
+        navigate(`/admin_dashboard/investor_accept/${id}`)
+      }
     const [investorData, setInvestordata]= useState({});
 
   useEffect(()=>{
@@ -41,7 +45,7 @@ function RecentInvestorList() {
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Investing Category</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Contact No</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Nationality</th>
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col"> Action</th>
+      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Action</th>
 
     </tr>
   </thead>
@@ -59,7 +63,7 @@ function RecentInvestorList() {
       <td>{data.investing_category}</td>
       <td>{data.contact}</td>
       <td>{data.nationality}</td>
-      <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> <Link>View Details</Link></td>
+      <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> <a href="" onClick={()=>navigateToInvestorView(data._id)}>View Details</a></td>
 
     </tr>
    )
@@ -74,8 +78,9 @@ function RecentInvestorList() {
 </table>
   
       </div>
+      <AdminFooter/>
     </>
   )
 }
 
-export default RecentInvestorList
+export default InvestorList

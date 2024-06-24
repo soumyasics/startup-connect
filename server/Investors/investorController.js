@@ -152,18 +152,18 @@ const viewInvestorReqs = (req, res) => {
  
 // approve investorReq by  Admin
 const approveInvestorReqsById = (req, res) => {
-    Investor.find({_id:req.params.id},{adminApproved:true,isActive:true})
+    Investor.findByIdAndUpdate({_id:req.params.id},{adminApproved:true,isActive:true})
       .exec()
       .then((data) => {
         res.status(200).json({
-          msg: "Data obtained successfully",
+          msg: "Data updated successfully",
           data: data,
         });
       })
       .catch((err) => {
         console.log(err);
         res.status(500).json({
-          msg: "No Data obtained",
+          msg: "No Data updated",
           Error: err,
         });
       });

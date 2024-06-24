@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import './RecentInvestors.css'
-import arrow from "../../assets/arrowlogo.png";
-import eye from "../../assets/carbon_view-filled.png";
+import axiosInstance from '../../../BaseAPIs/AxiosInstance';
+import AdminNavbar from '../AdminNavbar'
 import { toast } from "react-toastify";
-import axiosInstance from '../../BaseAPIs/AxiosInstance';
-import { imageUrl } from '../../ImageAPIs/Image_Urls';
+import { imageUrl } from '../../../ImageAPIs/Image_Urls';
 import { Link } from 'react-router-dom';
+import arrow from "../../../assets/arrowlogo.png";
+import eye from "../../../assets/carbon_view-filled.png";
 import { useNavigate } from 'react-router-dom';
+import AdminFooter from '../AdminFooter';
 
-
-function RecentIvesitors() {
-  const navigate = useNavigate();
-
-    const navigateToMoreInvestor = () => {
-        navigate("/admin_dashboard/recent_investor");
-    };
-  const [investorData, setInvestordata]= useState({});
+function RecentInvestorList() {
+    const navigate = useNavigate();
+    const navigateToInvestorView = (id)=>{
+        navigate(`/admin_dashboard/investor_accept/${id}`)
+      }
+    const [investorData, setInvestordata]= useState({});
 
   useEffect(()=>{
     axiosInstance.post('/viewInvestorReqs')
@@ -29,14 +28,16 @@ function RecentIvesitors() {
       toast.error("Failed to fetch user details")
   });
   },[])
-
   return (
-    <div>
-      <div className='mt-5'>
-      <p className='text-info'>View</p>
-      <div>
-      <h4>Recent Investors</h4>
-      <table className="table">
+    <>
+    <AdminNavbar/>
+    <div className='container'>
+    <div className="text-center ">
+          <h4 className="  mt-3  inv_mainheading">View All</h4>
+          <h3 className="inv_sub_h3">New Investors</h3>
+          <div className="  mb-5  inv_hr_line "></div>
+    </div>
+    <table className="table">
       
   <thead >
     <tr  >
@@ -63,13 +64,13 @@ function RecentIvesitors() {
       <td>{data.investing_category}</td>
       <td>{data.contact}</td>
       <td>{data.nationality}</td>
-      <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> <Link>View Details</Link></td>
+      <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> <a href="" onClick={()=>navigateToInvestorView(data._id)}>View Details</a></td>
 
     </tr>
    )
   })):(
   
-    <h1>ghghh</h1>
+    <h1>No Records</h1>
   )
   } 
   </tbody>
@@ -78,11 +79,9 @@ function RecentIvesitors() {
 </table>
   
       </div>
-      <p className='text-end text-info'><a href="" onClick={navigateToMoreInvestor} >View All</a> <img src={arrow}></img></p>
-
-      </div>
-    </div>
+      <AdminFooter/>
+    </>
   )
 }
 
-export default RecentIvesitors
+export default RecentInvestorList

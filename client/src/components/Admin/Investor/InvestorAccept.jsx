@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './InvestorAccept.css'
-import AdminFooter from './AdminFooter'
-import AdminNavbar from './AdminNavbar'
+import AdminFooter from '../AdminFooter'
+import AdminNavbar from '../AdminNavbar'
 import { useNavigate, useParams } from 'react-router-dom'
-import axiosInstance from '../../BaseAPIs/AxiosInstance'
-import { imageUrl } from '../../ImageAPIs/Image_Urls'
+import axiosInstance from '../../../BaseAPIs/AxiosInstance'
+import { imageUrl } from '../../../ImageAPIs/Image_Urls'
 import { toast } from "react-toastify";
 
 
@@ -38,6 +38,38 @@ function InvestorAccept() {
     useEffect (()=>{
         getData()
     },[id])
+
+    const navigate =useNavigate;
+
+    const acceptRequest=()=>{
+      axiosInstance.post(`/approveInvestorReqsById/${id}`)
+      .then ((res)=>{
+        console.log(res);
+        if (res.status === 200){
+          alert("Request Accepted")
+          
+        }
+      })
+      .catch((err)=>{
+          toast.error("Error")
+      });
+      navigate("/admin_dashboard")
+    }
+
+    const rejectRequest=()=>{
+      axiosInstance.post(`/removeInvestorById/${id}`)
+      .then ((res)=>{
+        console.log(res);
+        if (res.status === 200){
+          alert("Request Removed")
+          
+        }
+      })
+      .catch((err)=>{
+          toast.error("Error")
+      });
+      navigate("/admin_dashboard")
+    }
   return (
     <>
         <AdminNavbar/>
@@ -89,8 +121,8 @@ function InvestorAccept() {
                     <tr></tr>
                     <tr></tr>
                     <tr>
-                        <button className='ad_invaccept_btn'>Accept</button>
-                        <button className='ad_invaccept_cancelbtn'>Reject</button>
+                        <button className='ad_invaccept_btn' type='submit' onClick={acceptRequest}>Accept</button>
+                        <button className='ad_invaccept_cancelbtn' onClick={rejectRequest}>Reject</button>
                     </tr>
                     </table>
                 </div>
