@@ -2,6 +2,8 @@ import React from "react";
 import AdminLoginimg from "../../assets/Forgot password-rafiki (1) 1.png";
 import { Link } from "react-router-dom";
 function Adminforgot() {
+
+  
   return (
     <div className="">
       <div className="Adminloginmain p-5">
