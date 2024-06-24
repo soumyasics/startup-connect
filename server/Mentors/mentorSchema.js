@@ -11,12 +11,8 @@ const mentorSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    contactnumber: {
+    contact: {
         type: Number,
-        required: true
-    },
-    username: {
-        type: String,
         required: true
     },
     password: {
@@ -40,9 +36,13 @@ const mentorSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    image: {
+    profile: {
         type: Object,
         required: true
+    },
+    adminApproved:{
+        default:false,
+        type:Boolean
     }
 
 

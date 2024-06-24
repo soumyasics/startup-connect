@@ -1,4 +1,4 @@
-var mentorSchema=require('./mentorSchema')
+var Mentor=require('./mentorSchema')
 const multer=require('multer')
 
 const storage = multer.diskStorage({
@@ -10,60 +10,90 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage }).single("image");
+const upload = multer({ storage: storage }).single("profile");
 
 // Register mentors
 
-
-const mentorregister = async (req, res) => {
-  // Check if the email is already registered
-  let existingMentorEmail = await mentorSchema.findOne({ email: req.body.email });
-  if (existingMentorEmail) {
-      return res.status(409).json({
-          msg: "Email Already Registered With Us !!",
-          data: null
+const registerMentor= async(req,res)=>{
+  try{
+      const {
+          name,
+          email,
+          contact,
+          password,
+          expertise_area,
+          description,
+          subscription_amount,
+          demo_videolink,
+      }=req.body;
+        
+      const newMentor=new Mentor({
+        name,
+        email,
+        contact,
+        password,
+        expertise_area,
+        description,
+        subscription_amount,
+        demo_videolink,
+        profile:req.file,
+          
+      
       });
-  }
-
-  // Check if the contact number already exists
-  let existingMentorContact = await mentorSchema.findOne({ contactnumber: req.body.contactnumber });
-  if (existingMentorContact) {
-      return res.status(409).json({
-          msg: "Contact Already Exists !!",
-          data: null
-      });
-  }
-
-  // Create a new mentor instance
-  var mentor = new mentorSchema({
-      name: req.body.name,
-      email: req.body.email,
-      contactnumber: req.body.contactnumber,
-      username: req.body.username,
-      password: req.body.password,
-      expertise_area: req.body.expertise_area,
-      description: req.body.description,
-      subscription_amount: req.body.subscription_amount,
-      demo_videolink: req.body.demo_videolink,
-      image: req.file
-  });
-
-  // Save the mentor data
-  mentor.save()
-      .then((data) => {
-          res.json({
-              status: 200,
-              msg: "mentor data registered successfully",
+      let existingMentor_email = await Mentor.findOne({ email });
+      if (existingMentor_email) {
+          return res.status(409).json({
+              msg: "Email Already Registered With Us !!",
+              data: null
+          });
+      }
+      let existingMentor_contact = await Mentor.findOne({ contact });
+      if (existingMentor_contact){
+          return res.status(409).json({
+              msg:"Contact Already Exists !!",
+              data: null
+          })
+      }
+      await newMentor.save()
+      
+      .then(data => {
+          res.status(200).json({
+              msg: "Inserted successfully",
               data: data
           });
       })
-      .catch((err) => {
-          res.json({
-              status: 500,
-              msg: "data not registered",
+      .catch(err => {
+          console.log(err);
+          res.status(500).json({
+              msg: "Data not Inserted",
               data: err
           });
       });
+  }catch (error) {
+      console.log("err",error);
+      res.status(500).json({ message: error.message });
+  }
 }
 
-module.exports={mentorregister,upload}
+
+
+// View Less mentorReqs for Admin
+const viewLessMentorReqs = (req, res) => {
+  Mentor.find({adminApproved:false}).sort({_id: -1}).limit(5)
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data obtained successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "No Data obtained",
+        Error: err,
+      });
+    });
+};
+
+module.exports={registerMentor,upload}

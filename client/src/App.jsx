@@ -30,6 +30,12 @@ import AdminNavbar from "./components/Admin/AdminNavbar";
 import AdminDashbord from "./components/Admin/AdminDashbord";
 import AdminLogin from "./components/Admin/AdminLogin";
 import Adminforgot from "./components/Admin/Adminforgot";
+import RecentInvestorList from "./components/Admin/Investor/RecentInvestorList";
+import InvestorAccept from "./components/Admin/Investor/InvestorAccept";
+import InvestorList from "./components/Admin/Investor/InvestorList";
+import InvestorView from "./components/Admin/Investor/InvestorView";
+
+
 
 
 function App() {
@@ -80,6 +86,12 @@ function App() {
          <Route path="/admin_dashboard" element={[<AdminNavbar/>,<AdminDashbord/>]}/>
          <Route path="/admin_login" element={<AdminLogin/>}/>
          <Route path="/admin_forgot" element={<Adminforgot/>}/>
+         <Route path="/admin_dashboard/recent_investorlist" element={<RecentInvestorList/>}/>
+         <Route path="/admin_dashboard/investor_accept/:id" element={<InvestorAccept/>}/>
+         <Route path="/admin_dashboard/investorlist" element={<InvestorList/>}/>
+         <Route path="/admin_dashboard/viewinvestor/:id" element={<InvestorView/>}/>
+        
+
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
 
         

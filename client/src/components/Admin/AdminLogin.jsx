@@ -44,18 +44,18 @@ function AdminLogin() {
         }
     
         if(!errors.email && !errors.password && formValid){
-          axiosInstance.post("/loginInvestor",loginData)
+          axiosInstance.post("/loginAdmin",loginData)
     
           .then((result)=>{
             console.log(result,"fulldata");
             if(result.data.status == 200){
               const { data,token }=result.data;
               console.log("id",data._id);
-              localStorage.setItem("Investor",data._id);
-              localStorage.setItem("InvestorToken",token);
+              localStorage.setItem("Admin",data._id);
+              localStorage.setItem("AdminToken",token);
               console.log(data);
-              alert("Investor Login Successfully");
-              navigate("/investor/updateprofile")
+              alert("Admin Login Successfully");
+              navigate("/admin_dashboard")
             }
             else{
               alert(result.data.msg);
@@ -88,6 +88,8 @@ function AdminLogin() {
                     className="form-control"
                     id="adminlogininput"
                     aria-describedby="emailHelp"
+                    onChange={change}
+                    name="email"
                   ></input><div className="text-end pt-2"><Link className="text-decoration-none " to="/admin_forgot">Forgot password</Link></div>
 
                   <label for="exampleInputEmail1" className="form-label ">
@@ -98,6 +100,8 @@ function AdminLogin() {
                     className="form-control "
                     id="adminlogininput"
                     aria-describedby="emailHelp"
+                    onChange={change}
+                    name="password"
                   ></input>
                   
                 </div>
