@@ -60,6 +60,7 @@ function AdminLogin() {
     }
   };
 
+    
   return (
     <div className="Adminloginmain p-5">
       <div className="row container ">
@@ -76,7 +77,7 @@ function AdminLogin() {
               >
                 <div className="mb-3">
                   <div className="text-center ">Login to your account</div>
-                  <label for="exampleInputEmail1" className="form-label mt-5">
+                  <label  className="form-label mt-5">
                     Email
                   </label>
                   <input
@@ -95,7 +96,7 @@ function AdminLogin() {
                     </Link>
                   </div>
 
-                  <label for="exampleInputEmail1" className="form-label ">
+                  <label  className="form-label ">
                     Password
                   </label>
                   <input

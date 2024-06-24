@@ -11,6 +11,7 @@ const pitch_my_idea=require('./Entrepreneurs/PitchMyIdea/PitchMyIdeaController')
 //entrepreneurs
 router.post('/registerEntrepreneur',entrepreneurs.upload,entrepreneurs.registerEntrepreneur)
 router.post('/loginEntrepreneur',entrepreneurs.login)
+router.post('/viewEntrepreneurs',entrepreneurs.viewEntrepreneurs)
 router.post('/viewEntrepreneurById/:id',entrepreneurs.viewEntrepreneurById)
 router.post('/editEntrepreneurById/:id',entrepreneurs.upload,entrepreneurs.editEntrepreneurById)
 router.post('/forgotPasswordEntrepreneur',entrepreneurs.forgotPassword)
@@ -38,11 +39,13 @@ router.post('/approveInvestorReqsById/:id',investors.approveInvestorReqsById)
 router.post('/activateInvestorById/:id',investors.activateInvestorById)
 router.post('/removeInvestorById/:id',investors.removeInvestorById)
 router.post('/deActivateInvestorById/:id',investors.deActivateInvestorById)
+router.post('/viewlessinvestors',investors.viewLessInvestorReqs)
+
 
 
 
 // mentor
-router.post('/registermentor',mentors.upload,mentors.mentorregister)
+router.post('/registermentor',mentors.upload,mentors.registerMentor)
 
 //Admin routes
 router.post('/loginAdmin',admin.loginAdmin)

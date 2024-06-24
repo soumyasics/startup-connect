@@ -1,14 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import home1 from "../../assets/hugeicons_alms (1).png";
 import home2 from "../../assets/hugeicons_mentoring (1).png";
 import home3 from "../../assets/Group 56.png";
 import home4 from "../../assets/Vector.png";
 import "./Admin.css"
-import RecentIvesitors from "./RecentIvesitors";
-import RecentMentors from "./RecentMentors";
+import RecentIvesitors from './Investor/RecentIvesitors';
+import RecentMentors from "./Mentor/RecentMentors";
 import AdminFooter from "./AdminFooter";
+import axiosInstance from "../../BaseAPIs/AxiosInstance";
+import { toast } from "react-toastify";
 
 function AdminDashbord() {
+
+  const [investordata , setInvetordata]=useState()
+  const [entrepreneurdata, setEntrepreneurdata]=useState()
+  useEffect(()=>{
+    axiosInstance.post('/viewInvestors')
+    .then((res)=>{
+      console.log(res);
+      if (res.status == 200){
+        setInvetordata(res.data.data.length);
+
+      }
+  })
+  .catch((err)=>{
+      toast.error("Failed to fetch user details")
+  });
+  },[])
+
+  useEffect(()=>{
+    axiosInstance.post('/viewEntrepreneurs')
+    .then((res)=>{
+      console.log(res);
+      if (res.status == 200){
+        setEntrepreneurdata(res.data.data.length);
+      }
+  })
+  .catch((err)=>{
+      toast.error("Failed to fetch user details")
+  });
+  },[])
+
   return (
     <div>
     <div className="container mt-5">
@@ -23,7 +55,7 @@ function AdminDashbord() {
               Investors
               <div className="row mt-4">
                 <div className="col-6">
-                  <h3>123</h3>
+                  <h3>{investordata}</h3>
                 </div>
                 <div className="col-6 ">
                   <img className="w-25" src={home1}></img>
@@ -53,7 +85,7 @@ function AdminDashbord() {
               Entrepreneurs
               <div className="row mt-4">
                 <div className="col-6">
-                  <h3>123</h3>
+                  <h3>{entrepreneurdata}</h3>
                 </div>
                 <div className="col-6 ">
                   <img className="w-25" src={home3}></img>
