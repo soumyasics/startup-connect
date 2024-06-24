@@ -11,6 +11,7 @@ const pitch_my_idea=require('./Entrepreneurs/PitchMyIdea/PitchMyIdeaController')
 //entrepreneurs
 router.post('/registerEntrepreneur',entrepreneurs.upload,entrepreneurs.registerEntrepreneur)
 router.post('/loginEntrepreneur',entrepreneurs.login)
+router.post('/viewEntrepreneurs',entrepreneurs.viewEntrepreneurs)
 router.post('/viewEntrepreneurById/:id',entrepreneurs.viewEntrepreneurById)
 router.post('/editEntrepreneurById/:id',entrepreneurs.upload,entrepreneurs.editEntrepreneurById)
 router.post('/forgotPasswordEntrepreneur',entrepreneurs.forgotPassword)

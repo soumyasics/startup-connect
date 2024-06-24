@@ -172,7 +172,7 @@ const handleFileChange = (e) => {
         var response;
         if (investorDetails) {
           response = await axiosMultipartInstance.post(
-            `/editInvestorById${id}`,
+            `/editInvestorById/${id}`,
             investorDetails
           );
         }
