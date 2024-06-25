@@ -1,5 +1,7 @@
 var Mentor=require('./mentorSchema')
 const multer=require('multer')
+const jwt = require('jsonwebtoken');
+const secret = 'mentor';
 
 const storage = multer.diskStorage({
   destination: function (req, res, cb) {
@@ -73,6 +75,48 @@ const registerMentor= async(req,res)=>{
       res.status(500).json({ message: error.message });
   }
 }
+
+// Update mentor by ID
+const editMentorById = (req, res) => {
+  const { 
+    name,
+    email,
+    contact,
+    password,
+    expertise_area,
+    description,
+    subscription_amount,
+  } = req.body;
+
+Mentor.findByIdAndUpdate(req.params.id,{
+  name,
+  email,
+  contact,
+  password,
+  expertise_area,
+  description,
+  subscription_amount,
+  demo_videolink:req.files[0],
+  profile:req.files[1],
+      })
+      .exec()
+      .then((data) => {
+        res.json({
+          status:200,
+          msg: "Updated successfully",
+          data:data
+        });
+      })
+      .catch((err) => {
+          console.log(err);
+        res.json({
+          status:502,
+          msg: "Data not Updated",
+          Error: err,
+        });
+      });
+  
+};
 
 // View mentorReqs for Admin
 const viewMentorReqs = (req, res) => {
@@ -194,6 +238,56 @@ const removeMentorById = (req, res) => {
     });
 };
 
+const createToken = (user) =>{
+  return jwt.sign({ userId: user.id }, secret, { expiresIn:'1hr' });
+}
+
+// Login Mentor 
+
+const loginMentor=(req,res)=>{
+  const { email , password }=req.body
+  Mentor.findOne({email})
+  .exec()
+  .then(user=>{
+      if(!user){
+          return res.json({status:409,msg:'user not found'})
+      }else if(user.password!==password){
+          return res.json({status:409,msg:'Password Missmatch !!'})
+      }
+
+      const token = createToken(user)
+
+      res.json({
+          data:user,
+          status:200,
+          token:token
+      });
+  })
+  .catch(err=>{
+      console.log(err);
+      return res.status(500).json({msg:'Something went wrong'})
+  });
+
+};
+
+// Validate Token
+const requireAuth = (req, res, next) => {
+  const token = req.headers.authorization.split(" ")[1];
+
+  if (!token) {
+    return res.status(401).json({ msg: "Unauthorized" });
+  }
+
+  jwt.verify(token, secret, (err, decodedToken) => {
+    if (err) {
+      return res.status(401).json({ msg: "Unauthorized", err: err });
+    }
+
+    req.user = decodedToken.userId;
+    next();
+  });
+};
+
 module.exports={
   registerMentor,
   upload,
@@ -202,5 +296,8 @@ module.exports={
   viewMentors,
   viewMentorById,
   approveMentorReqsById,
-  removeMentorById
+  removeMentorById,
+  loginMentor,
+  requireAuth,
+  editMentorById
 }

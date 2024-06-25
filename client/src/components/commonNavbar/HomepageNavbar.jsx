@@ -12,10 +12,10 @@ function homepgNavbar() {
         navigate("/");
     };
     const navigateToInvestors = () => {
-        navigate("/entrepreneur/viewinvestor");
+        navigate("/entrepreneur/viewinvestors");
     };
     const navigateToMentors = () => {
-        navigate("/mentor/login");
+        navigate("/entrepreneur/viewmentors");
     };
     const navigateToStartUpPlan = () => {
         navigate("/entrepreneur/pitch-my-idea");

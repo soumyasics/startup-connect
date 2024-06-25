@@ -38,6 +38,9 @@ import RecentMentorList from "./components/Admin/Mentor/RecentMentorList";
 import MentorAccept from "./components/Admin/Mentor/MentorAccept";
 import MentorList from "./components/Admin/Mentor/MentorList";
 import MentorView from "./components/Admin/Mentor/MentorView";
+import MentorUpdateProfile from "./components/Mentor/Profile/MentorUpdateProfile";
+import ViewMentors from "./Entreprenuer/ViewMentors/ViewMentors";
+import MentorsView from "./Entreprenuer/MentorsView/MentorsView";
 
 
 
@@ -55,10 +58,14 @@ function App() {
         <Route path="/entrepreneur/editstartup_plan/:id"element={<EditStartUpPlan/>}/>
         <Route path="/entrepreneur/enthomepage"element={<Enthomepage/>} />
         <Route path='/entrepreneur/entprofile'element={<Entprofile/>}/>
-        <Route path='/entrepreneur/viewinvestor' element={<ViewInvestors/>}/>
+        <Route path='/entrepreneur/viewinvestors' element={<ViewInvestors/>}/>
         <Route path='/entrepreneur/investorsview/:id' element={<InvestorsView/>}/>
         <Route path='/entrepreneur/requestinvestor' element={<RequestInvestor/>}/>
         <Route path='/entrepreneur/investorreqview/:id' element={<InvestorReqView/>}/>
+
+        <Route path='/entrepreneur/viewmentors' element={<ViewMentors/>}/>
+        <Route path='/entrepreneur/mentorsview/:id' element={<MentorsView/>}/>
+
 
         
 
@@ -72,6 +79,8 @@ function App() {
 
         <Route path="/mentor/signup" element={[<CommonNavbar/>,<MentorRegister/>]}/>
         <Route path="/mentor/login" element={[<CommonNavbar/>,<MentorLogin/>]}/>
+        <Route path="/mentor/updateprofile" element={<MentorUpdateProfile/>}/>
+
 
 
    
