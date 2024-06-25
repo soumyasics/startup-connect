@@ -47,7 +47,7 @@ function MentorAccept() {
         getData()
     },[id])
 
-    const navigate =useNavigate;
+    const navigate =useNavigate();
 
     const acceptRequest=()=>{
       axiosInstance.post(`/approveMentorReqsById/${id}`)
@@ -69,13 +69,15 @@ function MentorAccept() {
         console.log(res);
         if (res.status === 200){
           alert("Request Removed")
+          navigate("/admin_dashboard")
+
           
         }
       })
       .catch((err)=>{
           toast.error("Error")
       });
-      navigate("/admin_dashboard")
+      
     }
   return (
     <>
