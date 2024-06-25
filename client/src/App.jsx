@@ -41,6 +41,8 @@ import MentorView from "./components/Admin/Mentor/MentorView";
 import MentorUpdateProfile from "./components/Mentor/Profile/MentorUpdateProfile";
 import ViewMentors from "./Entreprenuer/ViewMentors/ViewMentors";
 import MentorsView from "./Entreprenuer/MentorsView/MentorsView";
+import MentorNav from "./components/Mentor/MentorNav/MentorNav";
+import MentorHomePage from "./components/Mentor/Homepage/MentorHomePage";
 
 
 
@@ -80,6 +82,7 @@ function App() {
         <Route path="/mentor/signup" element={[<CommonNavbar/>,<MentorRegister/>]}/>
         <Route path="/mentor/login" element={[<CommonNavbar/>,<MentorLogin/>]}/>
         <Route path="/mentor/updateprofile" element={<MentorUpdateProfile/>}/>
+        <Route path="/mentor/homepage" element={<MentorHomePage/>}/>
 
 
 
@@ -88,6 +91,7 @@ function App() {
        
          <Route path="commonnavbar" element={<CommonNavbar />} />
          <Route path="/navbar2" element={<Navbar_2/>} />
+         <Route path="/mentor_nav" element={<MentorNav/>} />
          <Route path="/home_navbar" element={<HomepageNavbar/>}/>
          <Route path="/aboutus" element={<AboutUs/>}/>
          <Route path="/services" element={<Services/>}/>
