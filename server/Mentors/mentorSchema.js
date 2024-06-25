@@ -33,7 +33,7 @@ const mentorSchema = mongoose.Schema({
         required: true
     },
     demo_videolink: {
-        type: String,
+        type: Object,
         required: true
     },
     profile: {

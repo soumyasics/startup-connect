@@ -129,7 +129,7 @@ const viewInvestorById = (req, res) => {
   };
   
 
-// View investorReqs for Admin
+// View investorLessReqs for Admin
 const viewLessInvestorReqs = (req, res) => {
   Investor.find({adminApproved:false}).sort({_id: -1}).limit(5)
     .exec()
@@ -186,7 +186,7 @@ const approveInvestorReqsById = (req, res) => {
       });
   };
   
-// approve investorReq by  Admin
+// reject investorReq by  Admin
 const removeInvestorById = (req, res) => {
     Investor.findByIdAndDelete({_id:req.params.id})
       .exec()

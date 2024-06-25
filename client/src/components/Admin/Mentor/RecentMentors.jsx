@@ -9,20 +9,20 @@ import { useNavigate } from 'react-router-dom';
 function RecentMentors() {
   const navigate = useNavigate();
 
-    const navigateToMoreInvestor = () => {
-        navigate("/admin_dashboard/recent_investorlist");
+    const navigateToMoreMentor = () => {
+        navigate("/admin_dashboard/recent_mentorlist");
     };
-    const navigateToInvestorView = (id)=>{
-      navigate(`/admin_dashboard/investor_accept/${id}`)
+    const navigateToMentorView = (id)=>{
+      navigate(`/admin_dashboard/mentor_accept/${id}`)
     }
-  const [investorData, setInvestordata]= useState({});
+  const [mentorData, setMentorData]= useState({});
 
   useEffect(()=>{
-    axiosInstance.post('/viewlessinvestors')
+    axiosInstance.post('/viewlessmentors')
     .then((res)=>{
       console.log(res,"res");
       if(res.status === 200){
-        setInvestordata(res.data.data)
+        setMentorData(res.data.data)
       }
     })
     .catch((err)=>{
@@ -55,7 +55,7 @@ function RecentMentors() {
                   style={{ backgroundColor: "rgba(140, 220, 249, 1)" }}
                   scope="col"
                 >
-                  Investing Category
+                  Expertise Category
                 </th>
                 <th
                   style={{ backgroundColor: "rgba(140, 220, 249, 1)" }}
@@ -67,7 +67,7 @@ function RecentMentors() {
                   style={{ backgroundColor: "rgba(140, 220, 249, 1)" }}
                   scope="col"
                 >
-                  Nationality
+                  Subscription Amount
                 </th>
                 <th
                   style={{ backgroundColor: "rgba(140, 220, 249, 1)" }}
@@ -80,17 +80,17 @@ function RecentMentors() {
             </thead>
             <tbody>
             {
-        (investorData.length)>0?((investorData).map((data) => {
+        (mentorData.length)>0?((mentorData).map((data) => {
           return(
               <tr>
                 <th scope="row"><img src={`${imageUrl}/${data.profile.filename}`} 
       class="invviewadmin_profile_pic" alt="..."/>
         {data.name}</th>
                 <td>{data.email}</td>
-                <td>{data.investing_category}</td>
+                <td>{data.expertise_area}</td>
                 <td>{data.contact}</td>
-                <td>{data.nationality}</td>
-                <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> View Details
+                <td>{data.subscription_amount}</td>
+                <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img><a href="" onClick={()=>navigateToMentorView(data._id)} >View Details</a>  
                 </td>
               </tr>
               )
@@ -102,7 +102,7 @@ function RecentMentors() {
             </tbody>
           </table>
         </div>
-      </div>      <p style={{color:"rgba(52, 133, 208, 1)"}} className='text-end'>View All <img src={arrow}></img></p>
+      </div>      <p style={{color:"rgba(52, 133, 208, 1)"}} className='text-end'><a href="" onClick={navigateToMoreMentor} >View All</a> <img src={arrow}></img></p>
 
     </div>
   );

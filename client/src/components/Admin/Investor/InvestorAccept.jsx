@@ -39,14 +39,14 @@ function InvestorAccept() {
         getData()
     },[id])
 
-    const navigate =useNavigate;
+    const navigate =useNavigate();
 
     const acceptRequest=()=>{
       axiosInstance.post(`/approveInvestorReqsById/${id}`)
       .then ((res)=>{
         console.log(res);
         if (res.status === 200){
-          alert("Request Accepted")
+          alert("Accepted Successfully")
           navigate("/admin_dashboard")
         }
       })
@@ -61,6 +61,7 @@ function InvestorAccept() {
         console.log(res);
         if (res.status === 200){
           alert("Request Removed")
+          navigate("/admin_dashboard")
           
         }
       })

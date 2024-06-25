@@ -48,6 +48,7 @@ function InvestorReqView() {
     useEffect (()=>{
         getData()
     },[id])
+    
   return (
     <>
     <CommonNavbar/>
