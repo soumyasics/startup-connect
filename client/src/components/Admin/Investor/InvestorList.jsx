@@ -11,7 +11,7 @@ import AdminFooter from '../AdminFooter';
 function InvestorList() {
     const navigate = useNavigate();
     const navigateToInvestorView = (id)=>{
-        navigate(`/admin_dashboard/investor_accept/${id}`)
+        navigate(`/admin_dashboard/viewinvestor/${id}`)
       }
     const [investorData, setInvestordata]= useState({});
 

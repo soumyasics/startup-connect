@@ -45,7 +45,17 @@ router.post('/viewlessinvestors',investors.viewLessInvestorReqs)
 
 
 // mentor
-router.post('/registermentor',mentors.upload,mentors.registerMentor)
+router.post('/registerMentor',mentors.upload,mentors.registerMentor)
+router.post('/viewlessmentors',mentors.viewLessMentorReqs)
+router.post('/viewMentorsReqs',mentors.viewMentorReqs)
+router.post('/viewMentors',mentors.viewMentors)
+router.post('/viewMentorById/:id',mentors.viewMentorById)
+router.post('/approveMentorReqsById/:id',mentors.approveMentorReqsById)
+router.post('/removeMentorById/:id',mentors.removeMentorById)
+
+
+
+
 
 //Admin routes
 router.post('/loginAdmin',admin.loginAdmin)

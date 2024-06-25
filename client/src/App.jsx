@@ -34,6 +34,10 @@ import RecentInvestorList from "./components/Admin/Investor/RecentInvestorList";
 import InvestorAccept from "./components/Admin/Investor/InvestorAccept";
 import InvestorList from "./components/Admin/Investor/InvestorList";
 import InvestorView from "./components/Admin/Investor/InvestorView";
+import RecentMentorList from "./components/Admin/Mentor/RecentMentorList";
+import MentorAccept from "./components/Admin/Mentor/MentorAccept";
+import MentorList from "./components/Admin/Mentor/MentorList";
+import MentorView from "./components/Admin/Mentor/MentorView";
 
 
 
@@ -87,9 +91,14 @@ function App() {
          <Route path="/admin_login" element={<AdminLogin/>}/>
          <Route path="/admin_forgot" element={<Adminforgot/>}/>
          <Route path="/admin_dashboard/recent_investorlist" element={<RecentInvestorList/>}/>
+         <Route path="/admin_dashboard/recent_mentorlist" element={<RecentMentorList/>}/>
          <Route path="/admin_dashboard/investor_accept/:id" element={<InvestorAccept/>}/>
+         <Route path="/admin_dashboard/mentor_accept/:id" element={<MentorAccept/>}/>
          <Route path="/admin_dashboard/investorlist" element={<InvestorList/>}/>
+         <Route path="/admin_dashboard/mentorlist" element={<MentorList/>}/>
          <Route path="/admin_dashboard/viewinvestor/:id" element={<InvestorView/>}/>
+         <Route path="/admin_dashboard/viewmentor/:id" element={<MentorView/>}/>
+
         
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './RecentMentors.css'
 import axiosInstance from '../../../BaseAPIs/AxiosInstance';
 import AdminNavbar from '../AdminNavbar'
 import { toast } from "react-toastify";
@@ -9,12 +8,13 @@ import eye from "../../../assets/carbon_view-filled.png";
 import { useNavigate } from 'react-router-dom';
 import AdminFooter from '../AdminFooter';
 
-function RecentMentorList() {
+function MentorList() {
+
     const navigate = useNavigate();
     const navigateToMentorView = (id)=>{
-        navigate(`/admin_dashboard/mentor_accept/${id}`)
+        navigate(`/admin_dashboard/viewmentor/${id}`)
       }
-    const [mentorData, setMentorData]= useState({});
+    const [mentordata, setMentorData]= useState({});
 
   useEffect(()=>{
     axiosInstance.post('/viewMentorsReqs')
@@ -28,6 +28,7 @@ function RecentMentorList() {
       toast.error("Failed to fetch user details")
   });
   },[])
+
   return (
     <>
         <AdminNavbar/>
@@ -46,13 +47,13 @@ function RecentMentorList() {
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Expertise Category</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Contact No</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Subscription Amount</th>
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col"> Action</th>
+      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Action</th>
 
     </tr>
   </thead>
   <tbody>
   {
-        (mentorData.length)>0?((mentorData).map((data) => {
+        (mentordata.length)>0?((mentordata).map((data) => {
           return(
       
     <tr>
@@ -80,8 +81,9 @@ function RecentMentorList() {
   
       </div>
       <AdminFooter/>
+
     </>
   )
 }
 
-export default RecentMentorList
+export default MentorList

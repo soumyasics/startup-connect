@@ -14,6 +14,8 @@ function AdminDashbord() {
 
   const [investordata , setInvetordata]=useState()
   const [entrepreneurdata, setEntrepreneurdata]=useState()
+  const [mentordata, setMentordata]=useState()
+
   useEffect(()=>{
     axiosInstance.post('/viewInvestors')
     .then((res)=>{
@@ -34,6 +36,19 @@ function AdminDashbord() {
       console.log(res);
       if (res.status == 200){
         setEntrepreneurdata(res.data.data.length);
+      }
+  })
+  .catch((err)=>{
+      toast.error("Failed to fetch user details")
+  });
+  },[])
+
+  useEffect(()=>{
+    axiosInstance.post('/viewMentors')
+    .then((res)=>{
+      console.log(res);
+      if (res.status == 200){
+        setMentordata(res.data.data.length);
       }
   })
   .catch((err)=>{
@@ -70,7 +85,7 @@ function AdminDashbord() {
               Mentors
               <div className="row mt-4">
                 <div className="col-6">
-                  <h3>123</h3>
+                  <h3>{mentordata}</h3>
                 </div>
                 <div className="col-6 ">
                   <img className="w-25" src={home2}></img>
