@@ -44,6 +44,7 @@ import MentorsView from "./Entreprenuer/MentorsView/MentorsView";
 import MentorNav from "./components/Mentor/MentorNav/MentorNav";
 import MentorHomePage from "./components/Mentor/Homepage/MentorHomePage";
 import MentorPayment from "./components/Mentor/MentorPayment/MentorPayment";
+import MentorSubscribedList from "./Entreprenuer/MentorSubscribedList/MentorSubscribedList";
 
 
 
@@ -68,6 +69,9 @@ function App() {
 
         <Route path='/entrepreneur/viewmentors' element={<ViewMentors/>}/>
         <Route path='/entrepreneur/mentorsview/:id' element={<MentorsView/>}/>
+        <Route path='/entrepreneur/mentorsubscribedlist' element={<MentorSubscribedList/>}/>
+
+
 
 
         

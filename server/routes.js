@@ -54,6 +54,21 @@ router.post('/viewMentorById/:id',mentors.viewMentorById)
 router.post('/approveMentorReqsById/:id',mentors.approveMentorReqsById)
 router.post('/removeMentorById/:id',mentors.removeMentorById)
 router.post('/editMentorById/:id',mentors.upload,mentors.editMentorById)
+router.post('/mentorAddBlog',mentors.uploadblog,mentors.mentorAddBlog)
+router.post('/mentorViewBlog',mentors.mentorViewBlog)
+router.post('/mentorUpdateBlog/:id',mentors.uploadblog,mentors.mentorUpdateBlog)
+router.post('/mentorRemoveBlog/:id',mentors.mentorRemoveBlog)
+router.post('/mentorAddTutorial',mentors.uploadtutorial,mentors.mentorAddTutorial)
+router.post('/mentorViewTutorial',mentors.mentorViewTutorial)
+router.post('/mentorUpdateTutorial/:id',mentors.uploadtutorial,mentors.mentorUpdateTutorial)
+router.post('/mentorRemoveTutorial/:id',mentors.mentorRemoveTutorial)
+
+
+
+
+
+
+
 
 
 
