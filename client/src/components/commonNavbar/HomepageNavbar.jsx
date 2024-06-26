@@ -5,7 +5,7 @@ import Frame from "../../assets/Frame 40.png";
 import './HomepageNavbar.css'
 import { Link } from 'react-router-dom';
 
-function homepgNavbar() {
+function HomepageNavbar() {
     const navigate = useNavigate();
 
     const navigateToHome = () => {
@@ -82,4 +82,4 @@ function homepgNavbar() {
   )
 }
 
-export default homepgNavbar
+export default HomepageNavbar

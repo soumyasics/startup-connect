@@ -44,11 +44,13 @@ import MentorsView from "./Entreprenuer/MentorsView/MentorsView";
 import MentorNav from "./components/Mentor/MentorNav/MentorNav";
 import MentorHomePage from "./components/Mentor/Homepage/MentorHomePage";
 import MentorPayment from "./components/Mentor/MentorPayment/MentorPayment";
+import MentorSubscribedList from "./Entreprenuer/MentorSubscribedList/MentorSubscribedList";
 import MentorAddBlogs from "./components/Mentor/Blogs/MentorAddBlogs";
 import MentorViewBlogs from "./components/Mentor/Blogs/MentorViewBlogs";
 import MentorAddTutorials from "./components/Mentor/Tutorials/MentorAddTutorials";
 import MentorViewTutorials from "./components/Mentor/Tutorials/MentorViewTutorials";
 import MentorEditBlog from "./components/Mentor/Blogs/MentorEditBlog";
+import MentorEditTutorials from "./components/Mentor/Tutorials/MentorEditTutorials";
 
 
 
@@ -75,6 +77,9 @@ function App() {
 
         <Route path='/entrepreneur/viewmentors' element={<ViewMentors/>}/>
         <Route path='/entrepreneur/mentorsview/:id' element={<MentorsView/>}/>
+        <Route path='/entrepreneur/mentorsubscribedlist' element={<MentorSubscribedList/>}/>
+
+
 
 
         
@@ -101,6 +106,8 @@ function App() {
 
         <Route path="/mentor/addtutorials" element={<MentorAddTutorials/>}/>
         <Route path="/mentor/viewtutorials" element={<MentorViewTutorials/>}/>
+        <Route path="/mentor/edittutorials" element={<MentorEditTutorials/>}/>
+
 
 
    

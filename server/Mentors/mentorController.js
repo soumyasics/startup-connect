@@ -13,6 +13,9 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage }).array("files");
+const uploadblog=multer({storage:storage}).single("coverImage")
+const uploadtutorial=multer({storage:storage}).single("videolink")
+
 
 // Register mentors
 
@@ -28,7 +31,7 @@ const registerMentor= async(req,res)=>{
           subscription_amount,
       }=req.body;
         
-      const newMentor=new Mentor({
+      const newMentor=new Mentor.mentors({
         name,
         email,
         contact,
@@ -41,14 +44,14 @@ const registerMentor= async(req,res)=>{
         
       
       });
-      let existingMentor_email = await Mentor.findOne({ email });
+      let existingMentor_email = await Mentor.mentors.findOne({ email });
       if (existingMentor_email) {
           return res.status(409).json({
               msg: "Email Already Registered With Us !!",
               data: null
           });
       }
-      let existingMentor_contact = await Mentor.findOne({ contact });
+      let existingMentor_contact = await Mentor.mentors.findOne({ contact });
       if (existingMentor_contact){
           return res.status(409).json({
               msg:"Contact Already Exists !!",
@@ -88,7 +91,7 @@ const editMentorById = (req, res) => {
     subscription_amount,
   } = req.body;
 
-Mentor.findByIdAndUpdate(req.params.id,{
+Mentor.mentors.findByIdAndUpdate(req.params.id,{
   name,
   email,
   contact,
@@ -120,7 +123,7 @@ Mentor.findByIdAndUpdate(req.params.id,{
 
 // View mentorReqs for Admin
 const viewMentorReqs = (req, res) => {
-  Mentor.find({adminApproved:false})
+  Mentor.mentors.find({adminApproved:false})
     .exec()
     .then((data) => {
       res.status(200).json({
@@ -139,7 +142,7 @@ const viewMentorReqs = (req, res) => {
 
 // View Less mentorReqs for Admin
 const viewLessMentorReqs = (req, res) => {
-  Mentor.find({adminApproved:false}).sort({_id: -1}).limit(5)
+  Mentor.mentors.find({adminApproved:false}).sort({_id: -1}).limit(5)
     .exec()
     .then((data) => {
       res.status(200).json({
@@ -159,7 +162,7 @@ const viewLessMentorReqs = (req, res) => {
 // View all Mentors
 
 const viewMentors = (req, res) => {
-  Mentor.find({adminApproved:true})
+  Mentor.mentors.find({adminApproved:true})
       .exec()
       .then(data => {
           if (data.length > 0) {
@@ -183,7 +186,7 @@ const viewMentors = (req, res) => {
 
 // View mentor by ID
 const viewMentorById = (req, res) => {
-  Mentor.findById(req.params.id)
+  Mentor.mentors.findById(req.params.id)
     .exec()
     .then((data) => {
       res.status(200).json({
@@ -202,7 +205,7 @@ const viewMentorById = (req, res) => {
 
 // approve mentorReq by  Admin
 const approveMentorReqsById = (req, res) => {
-  Mentor.findByIdAndUpdate({_id:req.params.id},{adminApproved:true,isActive:true})
+  Mentor.mentors.findByIdAndUpdate({_id:req.params.id},{adminApproved:true,isActive:true})
     .exec()
     .then((data) => {
       res.status(200).json({
@@ -221,7 +224,7 @@ const approveMentorReqsById = (req, res) => {
 
 // reject mentorReq by  Admin
 const removeMentorById = (req, res) => {
-  Mentor.findByIdAndDelete({_id:req.params.id})
+  Mentor.mentors.findByIdAndDelete({_id:req.params.id})
     .exec()
     .then((data) => {
       res.status(200).json({
@@ -246,7 +249,7 @@ const createToken = (user) =>{
 
 const loginMentor=(req,res)=>{
   const { email , password }=req.body
-  Mentor.findOne({email})
+  Mentor.mentors.findOne({email})
   .exec()
   .then(user=>{
       if(!user){
@@ -288,6 +291,206 @@ const requireAuth = (req, res, next) => {
   });
 };
 
+// Add Blog
+
+const mentorAddBlog= async(req,res)=>{
+  try{
+    const{
+    blogName,
+    description,
+  }=req.body;
+  const newBlog=new Mentor.mentorBlog({
+    blogName,
+    description,
+    coverImage:req.file
+  })
+  await newBlog.save()
+    .then(data => {
+      res.status(200).json({
+          msg: "New Blog Created successfully",
+          data: data
+      });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            msg: "Data not Inserted",
+            data: err
+        });
+    });
+  }catch (error) {
+    console.log("err",error);
+    res.status(500).json({ message: error.message });
+  }
+}
+
+
+// View All Blog
+
+const mentorViewBlog=(req,res)=>{
+  Mentor.mentorBlog.find()
+  .then(data => {
+    res.status(200).json({
+        msg: "Data fetched successfully",
+        data: data
+    });
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json({
+          msg: "Data not obtained",
+          data: err
+      });
+  });
+}
+
+// Update Blog
+
+const mentorUpdateBlog = async(req,res)=>{
+  const {
+    blogName,
+    description,
+  }=req.body
+  await Mentor.mentorBlog.findByIdAndUpdate(req.params.id,
+    {
+      blogName,
+      description,
+      coverImage:req.file
+    })
+    .exec()
+    .then(data=>{
+      res.status(200).json({
+        msg:"Updated Successfully",
+        data:data 
+      })
+    })
+    .catch(err=>{
+      console.log(err);
+      res.status(500).json({
+        msg:"Not Updated",
+        Error:err
+      })
+    })
+}
+
+// Delete Blog By ID
+
+const mentorRemoveBlog=(req,res)=>{
+  Mentor.mentorBlog.findByIdAndDelete(req.params.id)
+  .exec()
+  .then(data=>{
+    res.status(200).json({
+      msg:"Deleted Successfully",
+      data:data
+    })
+  })
+  .catch(err=>{
+    res.status(500).json({
+      msg:"Something went Wrong",
+      Error:err
+    })
+  })
+}
+
+// Add Tutorial
+
+const mentorAddTutorial= async(req,res)=>{
+  try{
+    const{
+      title,
+      description,
+  }=req.body;
+  const newTutorial=new Mentor.mentorTutorial({
+    title,
+    description,
+    videolink:req.file
+  })
+  await newTutorial.save()
+    .then(data => {
+      res.status(200).json({
+          msg: "New Tutorial Created successfully",
+          data: data
+      });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            msg: "Data not Inserted",
+            data: err
+        });
+    });
+  }catch (error) {
+    console.log("err",error);
+    res.status(500).json({ message: error.message });
+  }
+}
+
+// View Tutorials
+
+const mentorViewTutorial=(req,res)=>{
+  Mentor.mentorTutorial.find()
+  .exec()
+  .then(data=>{
+    res.status(200).json({
+      msg:"Data Obtained Successfully",
+      data:data
+    })
+  })
+  .catch(err=>{
+    res.status(500).json({
+      msg:"Data not Obtained",
+      Error:err
+    })
+  })
+}
+
+// Update Tutorial
+
+const mentorUpdateTutorial=(req,res)=>{
+  const{
+    title,
+    description
+  }=req.body
+  Mentor.mentorTutorial.findByIdAndUpdate(req.params.id,{
+    title,
+    description,
+    videolink:req.file
+  })
+  .exec()
+  .then(data=>{
+    res.status(200).json({
+      msg:"Updated Successfully",
+      data:data
+    })
+  })
+  .catch(err=>{
+    res.status(500).json({
+      msg:"Not Updated",
+      Error:err
+    })
+  })
+}
+
+// Delete Tutorial 
+
+const mentorRemoveTutorial=(req,res)=>{
+  Mentor.mentorTutorial.findByIdAndDelete(req.params.id)
+  .exec()
+  .then(data=>{
+    res.status(200).json({
+      msg:"Deleted Successfully",
+      data:data
+    })
+  })
+  .catch(err=>{
+    res.status(500).json({
+      msg:"Something went Wrong",
+      Error:err
+    })
+  })
+}
+
+
 module.exports={
   registerMentor,
   upload,
@@ -299,5 +502,15 @@ module.exports={
   removeMentorById,
   loginMentor,
   requireAuth,
-  editMentorById
+  editMentorById,
+  mentorAddBlog,
+  uploadblog,
+  mentorViewBlog,
+  mentorUpdateBlog,
+  mentorRemoveBlog,
+  mentorAddTutorial,
+  uploadtutorial,
+  mentorViewTutorial,
+  mentorUpdateTutorial,
+  mentorRemoveTutorial  
 }

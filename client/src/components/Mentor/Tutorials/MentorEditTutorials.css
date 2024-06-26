@@ -1,4 +1,4 @@
-.mentor_editblog_main{
+.mentor_edittutorials_main{
     background-color: #D9F5FF;
     margin-bottom: 70px;
 }
@@ -44,4 +44,9 @@
 
 .mentor_editblog_secbtn{
     margin-left: 70px;
+}
+
+.mentor_viewtutorial_video{
+    height: 100%;
+    width: 100%;
 }
