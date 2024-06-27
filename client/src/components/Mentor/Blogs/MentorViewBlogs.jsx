@@ -1,25 +1,48 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './MentorViewBlogs.css'
 import { CommonNavbar } from '../../commonNavbar/commonNavbar'
 import MentorNav from '../MentorNav/MentorNav'
 import Footer_2 from '../../Footer/Footer_2'
-import blogimg from '../../../assets/blogimg.png'
+import { imageUrl } from '../../../ImageAPIs/Image_Urls';
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import axiosInstance from '../../../BaseAPIs/AxiosInstance'
 
-const blogs = [
-  {
-    title: "How to build a website",
-    content: "Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut magna lorem. Nonumy vero labore lorem sanctus rebum et lorem magna kasd, stet amet magna accusam consetetur eirmod. Kasd accusam sit ipsum sadipscing et at at sanctus et. Ipsum sit gubergren dolores et, consetetur justo invidunt at et aliquyam ut et vero clita. Diam sea sea no sed dolores diam nonumy, gubergren sit stet no diam kasd vero."
-  },
-  {
-    title: "Benefits of Responsive Design",
-    content: "Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut magna lorem. Nonumy vero labore lorem sanctus rebum et lorem magna kasd, stet amet magna accusam consetetur eirmod. Kasd accusam sit ipsum sadipscing et at at sanctus et. Ipsum sit gubergren dolores et, consetetur justo invidunt at et aliquyam ut et vero clita. Diam sea sea no sed dolores diam nonumy, gubergren sit stet no diam kasd vero."
-  },
-];
+
 
 function MentorViewBlogs() {
+
+  const [blogdata, setBlogData]=useState();
+
+  useEffect(()=>{
+    axiosInstance.post('/mentorViewBlog')
+    .then((res)=>{
+      console.log(res,"res");
+      if(res.status === 200){
+        setBlogData(res.data.data)
+      }
+    })
+    .catch((err)=>{
+      toast.error("Failed to fetch user details")
+  });
+  },[])
+
+  const removeMentorBlog=(id)=>{
+    axiosInstance.post(`/mentorRemoveBlog/${id}`)
+    .then((res)=>{
+      if(res.status === 200){
+        alert("Data deleted Successfully")
+        window.location.reload(false)
+        alert("One Data Deleted")
+      }
+    })
+    .catch((err)=>{
+      console.log(err);
+      alert(err)
+    })
+  }
+
   return (
     <>
       <CommonNavbar />
@@ -31,28 +54,34 @@ function MentorViewBlogs() {
       </div>
 
       <div className='container'>
-        {blogs.map((blog) => (
+      {
+        (blogdata.length)>0?((blogdata).map((data) => {
+          return(
           <div className='row mentor_viewblog_mainrow'>
             <div className='col-md-5 col-sm-12 mentor_viewblogs_fir_col'>
-              <img src={blogimg} className='img-fluid' alt='Blog' />
+              <img src={`${imageUrl}/${data.coverImage.filename}`} className='img-fluid mentorviewblog_coverimage' alt='Blog' />
             </div>
             <div className='col-md-7 col-sm-12 mentor_viewblogs_sec_col'>
               <div className='row montor_row_viwblog'>
                 <div className='col-7'>
-                  <p>{blog.title}</p>
+                  <p>{data.blogName}</p>
                 </div>
                 <div className='col-5'>
                   <FaRegCalendarAlt className='mentor-icon' /> 01/01/2024
                 </div>
               </div>
-              <label>{blog.content}</label>
+              <label>{data.description}</label>
               <div className='mentor_viewblog_button_div'>
                 <button className='menter_viewblog_btn'><FaEdit /> Edit</button>
-                <button className='menter_viewblog_btn mentor_addblog_secbtn'><RiDeleteBin5Fill /> Remove</button>
+                <button className='menter_viewblog_btn mentor_addblog_secbtn'
+                onClick={()=>removeMentorBlog(data._id)}
+                ><RiDeleteBin5Fill /> Remove</button>
               </div>
             </div>
           </div>
-        ))}
+        )
+      })):(<h3>No Records Required</h3>)
+      } 
       </div>
       <Footer_2 />
     </>

@@ -43,6 +43,13 @@
   padding-left: 50px;
 }
 
+.mentorviewblog_coverimage{
+  width: 488px;
+  height: 288px;
+  top: 401px;
+  left: 120px;
+}
+
 .mentor_viewblogs_sec_col label{
   font-family: 'Nunito' sans-serif;
   font-size: 15px;

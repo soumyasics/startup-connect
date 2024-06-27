@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './MentorViewTutorials.css'
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
@@ -7,19 +7,48 @@ import { CommonNavbar } from '../../commonNavbar/commonNavbar';
 import MentorNav from '../MentorNav/MentorNav';
 import Footer_2 from '../../Footer/Footer_2';
 import tutorialvideo from '../../../assets/tutorial-1.mp4'
-
-const tutorials = [
-    {
-      title: "How to build a website",
-      content: "Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut magna lorem. Nonumy vero labore lorem sanctus rebum et lorem magna kasd, stet amet magna accusam consetetur eirmod. Kasd accusam sit ipsum sadipscing et at at sanctus et. Ipsum sit gubergren dolores et, consetetur justo invidunt at et aliquyam ut et vero clita. Diam sea sea no sed dolores diam nonumy, gubergren sit stet no diam kasd vero."
-    },
-    {
-      title: "Benefits of Responsive Design",
-      content: "Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut magna lorem. Nonumy vero labore lorem sanctus rebum et lorem magna kasd, stet amet magna accusam consetetur eirmod. Kasd accusam sit ipsum sadipscing et at at sanctus et. Ipsum sit gubergren dolores et, consetetur justo invidunt at et aliquyam ut et vero clita. Diam sea sea no sed dolores diam nonumy, gubergren sit stet no diam kasd vero."
-    },
-  ];
+import axiosInstance from '../../../BaseAPIs/AxiosInstance';
+import { imageUrl } from '../../../ImageAPIs/Image_Urls';
 
 function MentorViewTutorials() {
+  const [tutorialdata, setTutorialData]=useState();
+  const [videoFile, setVideoFile] = useState("")
+
+
+  useEffect(()=>{
+    axiosInstance.post('/mentorViewTutorial')
+    .then((res)=>{
+      console.log(res,"res");
+      if(res.status === 200){
+        setTutorialData(res.data.data)
+      }
+    })
+    .catch((err)=>{
+      toast.error("Failed to fetch user details")
+  });
+  },[])
+
+  useEffect(() => {
+    if (tutorialdata.videolink?.filename) {
+
+        setVideoFile(`${imageUrl}/${tutorialdata.videolink.filename}`)
+    }
+}, [])
+
+  const removeMentorTutorial=(id)=>{
+    axiosInstance.post(`/mentorRemoveTutorial/${id}`)
+    .then((res)=>{
+      if(res.status === 200){
+        alert("Data deleted Successfully")
+        window.location.reload(false)
+        alert("One Data Deleted")
+      }
+    })
+    .catch((err)=>{
+      console.log(err);
+      alert(err)
+    })
+  }
   return (
     <>
       <CommonNavbar />
@@ -31,30 +60,40 @@ function MentorViewTutorials() {
       </div>
 
       <div className='container'>
-        {tutorials.map((blog) => (
+      {console.log("datas",tutorialdata)}
+         {
+        (tutorialdata.length)>0?((tutorialdata).map((data) => {
+          return(
           <div className='row mentor_viewtutorial_mainrow'>
             <div className='col-md-5 col-sm-12 mentor_viewtutorial_fir_col'>
-                <video className='img-fluid' controls>
-                    <source src={tutorialvideo} type='video/mp4' />
-                </video>           
+            { videoFile && 
+                    <video width="300" height="200" controls autostart autoPlay src={videoFile} type="video/mp4">
+                      
+                    </video>
+                    }     
             </div>
             <div className='col-md-7 col-sm-12 mentor_viewtutorial_sec_col'>
               <div className='row montor_row_viewtutorial'>
                 <div className='col-7'>
-                  <p>{blog.title}</p>
+                  <p>{data.title}</p>
                 </div>
                 <div className='col-5'>
                   <FaRegCalendarAlt className='mentor-icon' /> 01/01/2024
                 </div>
               </div>
-              <label>{blog.content}</label>
+              <label>{data.description}</label>
               <div className='mentor_viewtutorial_button_div'>
                 <button className='menter_viewtutorial_btn'><FaEdit /> Edit</button>
                 <button className='menter_viewtutorial_btn mentor_addblog_secbtn'><RiDeleteBin5Fill /> Remove</button>
               </div>
             </div>
           </div>
-        ))}
+        )
+      })):(
+      
+        <h1>No Investors Found</h1>
+      )
+      } 
       </div>
       <Footer_2 />
     </>

@@ -45,13 +45,14 @@ import MentorNav from "./components/Mentor/MentorNav/MentorNav";
 import MentorHomePage from "./components/Mentor/Homepage/MentorHomePage";
 import MentorPayment from "./components/Mentor/MentorPayment/MentorPayment";
 import MentorSubscribedList from "./Entreprenuer/MentorSubscribedList/MentorSubscribedList";
-// import MentorSubscribedList from "./Entreprenuer/MentorSubscribedList/MentorSubscribedList";
 import MentorAddBlogs from "./components/Mentor/Blogs/MentorAddBlogs";
 import MentorViewBlogs from "./components/Mentor/Blogs/MentorViewBlogs";
 import MentorAddTutorials from "./components/Mentor/Tutorials/MentorAddTutorials";
 import MentorViewTutorials from "./components/Mentor/Tutorials/MentorViewTutorials";
 import MentorEditBlog from "./components/Mentor/Blogs/MentorEditBlog";
 import MentorEditTutorials from "./components/Mentor/Tutorials/MentorEditTutorials";
+import InvestorNav from "./components/Invester/InvestorNav/InvestorNav";
+import ViewEntrepreneurReq from "./components/Invester/ViewEntrepreneurReq/ViewEntrepreneurReq";
 
 
 
@@ -94,6 +95,7 @@ function App() {
         <Route path="/investor/signup" element={[<CommonNavbar/>,<InvesterRegister/>]}/>
         <Route path="/investor/login" element={[<CommonNavbar/>,<InvestorLogin/>]}/>
         <Route path="/investor/updateprofile" element={<InvestorUpdateProfile/>}/>
+        <Route path="/investor/entrepreneur_req" element={<ViewEntrepreneurReq/>}/>
 
 
 
@@ -106,11 +108,11 @@ function App() {
 
         <Route path="/mentor/addblogs" element={<MentorAddBlogs/>}/>
         <Route path="/mentor/viewblogs" element={<MentorViewBlogs/>}/>
-        <Route path="/mentor/editblogs" element={<MentorEditBlog/>}/>
+        <Route path="/mentor/editblogs/:id" element={<MentorEditBlog/>}/>
 
         <Route path="/mentor/addtutorials" element={<MentorAddTutorials/>}/>
         <Route path="/mentor/viewtutorials" element={<MentorViewTutorials/>}/>
-        <Route path="/mentor/edittutorials" element={<MentorEditTutorials/>}/>
+        <Route path="/mentor/edittutorials/:id" element={<MentorEditTutorials/>}/>
 
 
 
@@ -120,6 +122,7 @@ function App() {
          <Route path="commonnavbar" element={<CommonNavbar />} />
          <Route path="/navbar2" element={<Navbar_2/>} />
          <Route path="/mentor_nav" element={<MentorNav/>} />
+         <Route path="/investor_nav" element={<InvestorNav/>} />
          <Route path="/home_navbar" element={<HomepageNavbar/>}/>
          <Route path="/aboutus" element={<AboutUs/>}/>
          <Route path="/services" element={<Services/>}/>
