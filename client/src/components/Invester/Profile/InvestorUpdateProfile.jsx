@@ -172,8 +172,8 @@ const handleFileChange = (e) => {
         var response;
         if (investorDetails) {
           response = await axiosMultipartInstance.post(
-            `/editInvestorById${id}`,
-            investorDetails
+            `/editInvestorById/${id}`,
+            formData
           );
         }
         console.log("Response:", response); 
@@ -344,14 +344,14 @@ const handleFileChange = (e) => {
                             <span className="text-danger">{errors.address}</span>
                           )}
                         
-                        <div className='inv_updateid_div_upload'>
+                        {/* <div className='inv_updateid_div_upload'>
             <label className='pt-3 inv_updateid_label' placeholder=''>Update Identification Document</label>
             <label for="id_doc" class="inv_updateid_upload">
                 <div class="icon">Upload</div>
                 <input id="id_doc"  type="file"  name="identification_document" onChange={handleFileChange}  />
               </label>
              
-            </div>
+            </div> */}
 
                 
                     <button className='yourprofileupdate_btn mt-5'>Update Profile</button>
