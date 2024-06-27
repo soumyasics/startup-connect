@@ -45,6 +45,12 @@ import MentorNav from "./components/Mentor/MentorNav/MentorNav";
 import MentorHomePage from "./components/Mentor/Homepage/MentorHomePage";
 import MentorPayment from "./components/Mentor/MentorPayment/MentorPayment";
 import MentorSubscribedList from "./Entreprenuer/MentorSubscribedList/MentorSubscribedList";
+import MentorAddBlogs from "./components/Mentor/Blogs/MentorAddBlogs";
+import MentorViewBlogs from "./components/Mentor/Blogs/MentorViewBlogs";
+import MentorAddTutorials from "./components/Mentor/Tutorials/MentorAddTutorials";
+import MentorViewTutorials from "./components/Mentor/Tutorials/MentorViewTutorials";
+import MentorEditBlog from "./components/Mentor/Blogs/MentorEditBlog";
+import MentorEditTutorials from "./components/Mentor/Tutorials/MentorEditTutorials";
 import InvestorNav from "./components/Invester/InvestorNav/InvestorNav";
 import ViewEntrepreneurReq from "./components/Invester/ViewEntrepreneurReq/ViewEntrepreneurReq";
 
@@ -55,6 +61,8 @@ function App() {
   return (
     <BrowserRouter basename="strartup">
       <Routes>
+
+        {/* Entrepreneur Routes */}
         <Route path="/" element={<LandingPageTopNav />} />
         <Route path="/entrepreneur/signup" element={[<CommonNavbar/>,<Entsignup />]} /> 
         <Route path="/entrepreneur/login" element={[<CommonNavbar/>,<LoginPageMain />]} />
@@ -74,31 +82,43 @@ function App() {
         <Route path='/entrepreneur/mentorsubscribedlist' element={<MentorSubscribedList/>}/>
 
 
+        <Route path='/entrepreneur/mentorsubscribedlist' element={<MentorSubscribedList/>}/>
+
+
 
 
         
 
 
 
-        
+        {/* Invester Routes */}
         <Route path="/investor/signup" element={[<CommonNavbar/>,<InvesterRegister/>]}/>
         <Route path="/investor/login" element={[<CommonNavbar/>,<InvestorLogin/>]}/>
         <Route path="/investor/updateprofile" element={<InvestorUpdateProfile/>}/>
         <Route path="/investor/entrepreneur_req" element={<ViewEntrepreneurReq/>}/>
 
 
+
+        {/* Mentor Routes */}
         <Route path="/mentor/signup" element={[<CommonNavbar/>,<MentorRegister/>]}/>
         <Route path="/mentor/login" element={[<CommonNavbar/>,<MentorLogin/>]}/>
         <Route path="/mentor/updateprofile" element={<MentorUpdateProfile/>}/>
         <Route path="/mentor/homepage" element={<MentorHomePage/>}/>
         <Route path="/mentor/payment" element={<MentorPayment/>}/>
 
+        <Route path="/mentor/addblogs" element={<MentorAddBlogs/>}/>
+        <Route path="/mentor/viewblogs" element={<MentorViewBlogs/>}/>
+        <Route path="/mentor/editblogs/:id" element={<MentorEditBlog/>}/>
+
+        <Route path="/mentor/addtutorials" element={<MentorAddTutorials/>}/>
+        <Route path="/mentor/viewtutorials" element={<MentorViewTutorials/>}/>
+        <Route path="/mentor/edittutorials/:id" element={<MentorEditTutorials/>}/>
 
 
 
    
 
-       
+       {/* Common Routes */}
          <Route path="commonnavbar" element={<CommonNavbar />} />
          <Route path="/navbar2" element={<Navbar_2/>} />
          <Route path="/mentor_nav" element={<MentorNav/>} />
@@ -110,7 +130,7 @@ function App() {
 
 
 
-        
+        {/* Admin Routes */}
          <Route path="/admin_dashboard" element={[<AdminNavbar/>,<AdminDashbord/>]}/>
          <Route path="/admin_login" element={<AdminLogin/>}/>
          <Route path="/admin_forgot" element={<Adminforgot/>}/>

@@ -344,6 +344,25 @@ const mentorViewBlog=(req,res)=>{
   });
 }
 
+// View mentorViewBlog by ID
+const mentorViewBlogById = (req, res) => {
+  Mentor.mentorBlog.findById(req.params.id)
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data obtained successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "No Data obtained",
+        Error: err,
+      });
+    });
+};
+
 // Update Blog
 
 const mentorUpdateBlog = async(req,res)=>{
@@ -444,6 +463,25 @@ const mentorViewTutorial=(req,res)=>{
   })
 }
 
+// View mentorViewTutorial by ID
+const mentorViewTutorialById = (req, res) => {
+  Mentor.mentorTutorial.findById(req.params.id)
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data obtained successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "No Data obtained",
+        Error: err,
+      });
+    });
+};
+
 // Update Tutorial
 
 const mentorUpdateTutorial=(req,res)=>{
@@ -506,11 +544,13 @@ module.exports={
   mentorAddBlog,
   uploadblog,
   mentorViewBlog,
+  mentorViewBlogById,
   mentorUpdateBlog,
   mentorRemoveBlog,
   mentorAddTutorial,
   uploadtutorial,
   mentorViewTutorial,
+  mentorViewTutorialById,
   mentorUpdateTutorial,
   mentorRemoveTutorial  
 }
