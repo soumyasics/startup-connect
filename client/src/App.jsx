@@ -45,6 +45,8 @@ import MentorNav from "./components/Mentor/MentorNav/MentorNav";
 import MentorHomePage from "./components/Mentor/Homepage/MentorHomePage";
 import MentorPayment from "./components/Mentor/MentorPayment/MentorPayment";
 import MentorSubscribedList from "./Entreprenuer/MentorSubscribedList/MentorSubscribedList";
+import InvestorNav from "./components/Invester/InvestorNav/InvestorNav";
+import ViewEntrepreneurReq from "./components/Invester/ViewEntrepreneurReq/ViewEntrepreneurReq";
 
 
 
@@ -82,6 +84,7 @@ function App() {
         <Route path="/investor/signup" element={[<CommonNavbar/>,<InvesterRegister/>]}/>
         <Route path="/investor/login" element={[<CommonNavbar/>,<InvestorLogin/>]}/>
         <Route path="/investor/updateprofile" element={<InvestorUpdateProfile/>}/>
+        <Route path="/investor/entrepreneur_req" element={<ViewEntrepreneurReq/>}/>
 
 
         <Route path="/mentor/signup" element={[<CommonNavbar/>,<MentorRegister/>]}/>
@@ -99,6 +102,7 @@ function App() {
          <Route path="commonnavbar" element={<CommonNavbar />} />
          <Route path="/navbar2" element={<Navbar_2/>} />
          <Route path="/mentor_nav" element={<MentorNav/>} />
+         <Route path="/investor_nav" element={<InvestorNav/>} />
          <Route path="/home_navbar" element={<HomepageNavbar/>}/>
          <Route path="/aboutus" element={<AboutUs/>}/>
          <Route path="/services" element={<Services/>}/>
