@@ -9,7 +9,7 @@ function HomepageNavbar() {
     const navigate = useNavigate();
 
     const navigateToHome = () => {
-        navigate("/");
+        navigate("/entrepreneur/enthomepage");
     };
     const navigateToInvestors = () => {
         navigate("/entrepreneur/viewinvestors");

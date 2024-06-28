@@ -70,7 +70,7 @@ function InvestorsView({url}) {
           )
         })):(
         
-          <h1>ghghh</h1>
+          <h4>No investors available</h4>
         )
         } 
           
