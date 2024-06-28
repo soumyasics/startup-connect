@@ -5,17 +5,17 @@ import Frame from "../../assets/Frame 40.png";
 import './HomepageNavbar.css'
 import { Link } from 'react-router-dom';
 
-function homepgNavbar() {
+function HomepageNavbar() {
     const navigate = useNavigate();
 
     const navigateToHome = () => {
         navigate("/");
     };
     const navigateToInvestors = () => {
-        navigate("/entrepreneur/viewinvestor");
+        navigate("/entrepreneur/viewinvestors");
     };
     const navigateToMentors = () => {
-        navigate("/mentor/login");
+        navigate("/entrepreneur/viewmentors");
     };
     const navigateToStartUpPlan = () => {
         navigate("/entrepreneur/pitch-my-idea");
@@ -82,4 +82,4 @@ function homepgNavbar() {
   )
 }
 
-export default homepgNavbar
+export default HomepageNavbar

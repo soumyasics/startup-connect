@@ -3,11 +3,164 @@ import './MentorRegister.css'
 import MentorRegImg from '../../../assets/mentor_register_img.png'
 import Footer from '../../Footer/Footer'
 import Navbar_2 from '../../commonNavbar/Navbar_2'
+import axiosMultipartInstance from '../../../BaseAPIs/AxiosMultipartInstance';
+import { useNavigate } from "react-router-dom";
 
 
 
 
 function MentorRegister() {
+  const navigate=useNavigate();
+
+  const [mentordata, setMentorData] = useState({
+        name:"",
+        email:"",
+        contact:"",
+        password:"",
+        confirm_password:"",
+        expertise_area:"",
+        description:"",
+        subscription_amount:"",
+        demo_videolink:"",
+        profile:"",
+    
+  });
+
+  const [errors, setErrors] = useState({
+        name:"",
+        email:"",
+        contact:"",
+        password:"",
+        confirm_password:"",
+        expertise_area:"",
+        description:"",
+        subscription_amount:"",
+        demo_videolink:"",
+        profile:"",
+    
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setMentorData({ ...mentordata, [name]: value });
+  };
+
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setMentorData({ ...mentordata,[name]: files[0]});
+    console.log(files);
+  };
+  
+
+  console.log(mentordata,"mentor_data_1");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let errors = {};
+
+    let formValid = true;
+
+    if (!mentordata.name.trim()) {
+      formValid = false;
+      errors.name = "Name is required";
+    }
+    if (!mentordata.email.trim()) {
+      formValid = false;
+      errors.email = "Email is required";
+    } else if (!mentordata.email.endsWith("@gmail.com")) {
+      formValid = false;
+      errors.email = "Email must be a valid Gmail address";
+    }
+    if (!mentordata.contact.trim()) {
+      formValid = false;
+      errors.contact = "Contact number is required";
+    } else if (mentordata.contact.length <=9) {
+      errors.contact = "Enter a valid 10-digit contact number";
+    }
+    if (!mentordata.password.trim()) {
+      formValid = false;
+      errors.password = "Password is required";
+    } else if (
+      !/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}/.test(
+        mentordata.password
+      )
+    ) {
+      formValid = false;
+      errors.password =
+        "Password should be at least 6 characters long and contain at least one lowercase letter, one uppercase letter, one number, and one special character";
+    }
+    if (!mentordata.confirm_password.trim()) {
+      formValid = false;
+      errors.confirm_password = "Re-Enter the password";
+    }else if(mentordata.password!==mentordata.confirm_password){
+      errors.confirm_password="Passwords must match"
+    }
+    if (!mentordata.expertise_area.trim()) {
+      formValid = false;
+      errors.expertise_area = "Expertise Area is required";
+    }
+    if (!mentordata.subscription_amount.trim()) {
+      formValid = false;
+      errors.subscription_amount = "Subscription Amount is required";
+    }
+    if (!mentordata.description.trim()) {
+      formValid = false;
+      errors.description = "Description is required";
+    }
+  
+  setErrors(errors);
+
+  if(
+    mentordata.name &&
+    mentordata.email &&
+    mentordata.contact &&
+    mentordata.password &&
+    mentordata.expertise_area &&
+    mentordata.description &&
+    mentordata.subscription_amount 
+    ){
+      formValid=true;
+    }
+
+    if (Object.keys(errors).length === 0 && formValid) {
+      const formData = new FormData();
+      formData.append("name", mentordata.name);
+      formData.append("email", mentordata.email);
+      formData.append("contact", mentordata.contact);
+      formData.append("password", mentordata.password);
+      formData.append("confirm_password", mentordata.confirm_password);
+      formData.append("expertise_area", mentordata.expertise_area);
+      formData.append("subscription_amount", mentordata.subscription_amount);
+      formData.append("description", mentordata.description);
+      formData.append("files", mentordata.demo_videolink);      
+      formData.append("files", mentordata.profile);
+      console.log(formData,"formData");
+      try {
+        var response;
+        if (mentordata) {
+          response = await axiosMultipartInstance.post(
+            "/registerMentor",
+            formData
+          );
+        }
+        console.log("Response:", response); 
+        if(response.status==200){
+          alert(response.data.msg)
+          navigate("/mentor/login")
+        }
+        
+      } catch (error) {
+        console.error("Error:", error);
+        let msg = error?.response?.data?.msg || "Error occurred";
+        alert(msg);
+      }
+    } else {
+      console.log("Form is not valid", formValid);
+      console.log("Data entered", mentordata);
+    }
+  }
+
 
   
   return (
@@ -21,6 +174,7 @@ function MentorRegister() {
             <h3 className="mentor_sub_h3">of Innovation</h3>
             <div className="  mb-5  mentor_hr_line "></div>
         </div>
+        <form onSubmit={(e) =>{handleSubmit(e);}}>
         <div className='row'>
           <div className='col'>
           <img className=' mentor_reg_img' src={MentorRegImg}></img>
@@ -30,67 +184,118 @@ function MentorRegister() {
           <div className='col'>
             <div class="">
             <label id="">Name</label>
-              <input class="input-cal input-base" name="name" id="mentor_input" placeholder="" type="text"/>
+              <input class="input-cal input-base" 
+              name="name" 
+              id="mentor_input" 
+              placeholder="" 
+              type="text"
+              onChange={handleInputChange} />
+              {errors.name && (<div className="text-danger errortext">{errors.name}</div>)}
+
             </div>
             
               <div class="pt-2 inv-reg-email">
               <label id="">E-mail ID</label>
-                <input class="input-cal input-base" id="mentor_input" name="email" placeholder="" type="text"/>
+                <input class="input-cal input-base" 
+                id="mentor_input" 
+                name="email" 
+                placeholder="" 
+                type="email"
+                onChange={handleInputChange}/>
+                {errors.email && (<div className="text-danger errortext">{errors.email}</div>)}
+
               </div>
               <div class=" pt-2 inv-reg-email">
               <label id="">Contact Number</label>
-                <input class="input-cal input-base" id="mentor_input" name="contact" placeholder="" type="text"/>
-              </div>
-              <div class=" pt-2 inv-reg-email">
-              <label id="">Username</label>
-                <input class="input-cal input-base" id="mentor_input" name="organization" placeholder="" type="text"/>
+                <input class="input-cal input-base" 
+                id="mentor_input" 
+                name="contact" 
+                placeholder="" 
+                type="text"
+                onChange={handleInputChange}/>
+                {errors.contact && (<div className="text-danger errortext">{errors.contact}</div>)}
+
               </div>
               <div class=" pt-2 inv-reg-email">
               <label id="">Password</label>
-                <input class="input-cal input-base" id="mentor_input" name="password" placeholder="" type="text"/>
+                <input class="input-cal input-base" 
+                id="mentor_input" 
+                name="password" 
+                placeholder="" 
+                type="password"
+                onChange={handleInputChange}/>
+                {errors.password && (<div className="text-danger errortext">{errors.password}</div>)}
+
               </div>
               <div class=" pt-2">
               <label id="">Confirm Password</label>
-                <input class="input-cal input-base" id="mentor_input" name="confirm_password" placeholder="" type="text"/>
+                <input class="input-cal input-base" 
+                id="mentor_input" 
+                name="confirm_password" 
+                placeholder=""
+                 type="password"
+                 onChange={handleInputChange}/>
+                {errors.confirm_password && (<div className="text-danger errortext">{errors.confirm_password}</div>)}
+
               </div>
             </div>
             <div className='col'>
               <div class="">
               <label id="">Expertise Area</label>
-                <select class="input-cal input-base " id="mentor_input"  name="industry_sector">
+                <select class="input-cal input-base " id="mentor_input" onChange={handleInputChange}  name="expertise_area">
                   <option hidden="">Expertise Area</option>
                   <option value="Abc">Abc</option>
                   <option value="Def">Def</option>
                   <option value="Ghi">Ghi</option>
                 </select>
-                
+                {errors.expertise_area && (<div className="text-danger errortext">{errors.expertise_area}</div>)}
+
               </div>
               <div class=" pt-2">
               <label id="">Description</label>
-                <input class="input-cal input-base" id="mentor_input" name="description" placeholder="" type="text"/>
+                <input class="input-cal input-base" 
+                id="mentor_input" 
+                name="description" 
+                placeholder="" 
+                type="text"
+                onChange={handleInputChange} />
+                {errors.description && (<div className="text-danger errortext">{errors.description}</div>)}
+
               </div>
               <div class=" pt-2">
               <label id="">Subscription Amount</label>
-                <input class="input-cal input-base" id="mentor_input" name="address" placeholder="" type="text"/>
-              </div>
-              <div class=" pt-2">
-              <label id="">Demo Video Link</label>
-                <input class="input-cal input-base" id="mentor_input" name="address" placeholder="" type="text"/>
+                <input class="input-cal input-base" 
+                id="mentor_input" 
+                name="subscription_amount" 
+                placeholder="" 
+                type="number"
+                onChange={handleInputChange} />
+                {errors.subscription_amount && (<div className="text-danger errortext">{errors.subscription_amount}</div>)}
+
               </div>
               <div class="men_file_upload1">
-              <label className='pt-3 px-1' id="">Profile</label>
-              <label for="file" class="men_reg_file_upload">
+              <label className='pt-3 px-1' id="">Demo Video </label>
+              <label for="demo_video" class="men_reg_file_upload">
                   <div class="icon">Upload</div>
-                  <input id="file" type="file"  name="profile" />
+                  <input id="demo_video" type="file"  name="demo_videolink" onChange={handleFileChange}  />
                 </label>
                 
               </div>
-              <div class="relative pt-2">
+              <div class="men_file_upload1">
+              <label className='pt-3 px-1' id="">Profile</label>
+              <label for="profile" class="men_reg_file_upload">
+                  <div class="icon">Upload</div>
+                  <input id="profile" type="file"  name="profile" onChange={handleFileChange}  />
+                </label>
+                
+              </div>
+              
+            </div>
+            <div class=" pt-2">
               <button className='mentor_reg_btn'>Register</button> 
               </div>
-            </div>
           </div>
-          
+          </form>
 
       </div>
     <Footer/>

@@ -11,12 +11,8 @@ const mentorSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    contactnumber: {
+    contact: {
         type: Number,
-        required: true
-    },
-    username: {
-        type: String,
         required: true
     },
     password: {
@@ -37,19 +33,57 @@ const mentorSchema = mongoose.Schema({
         required: true
     },
     demo_videolink: {
-        type: String,
-        required: true
-    },
-    image: {
         type: Object,
         required: true
+    },
+    profile: {
+        type: Object,
+        required: true
+    },
+    adminApproved:{
+        default:false,
+        type:Boolean
     }
-
-
-
-
-
-
-
 });
-module.exports = mongoose.model('mentors', mentorSchema)
+
+const mentorAddBlogSchema =mongoose.Schema({
+    blogName:{
+        type:String,
+        required:true
+    },
+    description:{
+        type:String,
+        required:true
+    },
+    coverImage:{
+        type:Object,
+        required:true
+    }
+    
+})
+
+const mentorAddTutorialSchema =mongoose.Schema({
+    title:{
+        type:String,
+        required:true
+    },
+    description:{
+        type:String,
+        required:true
+    },
+    videolink:{
+        type:Object,
+        required:true
+    }
+    
+})
+
+var mentors=mongoose.model('mentors',mentorSchema)
+var mentorBlog=mongoose.model('mentorAddBlog',mentorAddBlogSchema)
+var mentorTutorial=mongoose.model('mentorAddTutorial',mentorAddTutorialSchema)
+
+module.exports = {
+    mentors,
+    mentorBlog,
+    mentorTutorial
+}
