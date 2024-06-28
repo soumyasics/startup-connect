@@ -16,6 +16,7 @@ const storage=multer.diskStorage({
     },
 });
 const upload = multer({storage:storage}).array("files");
+const uploadSingle= multer({storage:storage}).single("profile");
 
 // Register Investor
 
@@ -298,8 +299,7 @@ const editInvestorById = (req, res) => {
         occupation,
         description,
         address,
-        profile:req.files[0],
-        identification_document:req.files[1],
+        profile:req.file,
         })
         .exec()
         .then((data) => {
@@ -333,5 +333,6 @@ module.exports={
     activateInvestorById,
     deActivateInvestorById,
     approveInvestorReqsById,
+    uploadSingle,
     viewLessInvestorReqs,
 }
