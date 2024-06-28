@@ -4,6 +4,7 @@ import Footer_2 from '../../Footer/Footer_2'
 import InvestorNav from '../InvestorNav/InvestorNav'
 
 function ViewEntreprenrueReqList() {
+
   return (
     <>
         <CommonNavbar/>
@@ -28,7 +29,9 @@ function ViewEntreprenrueReqList() {
     </tr>
   </thead>
   <tbody>
-  
+  {
+        (entData.length)>0?((entData).map((data) => {
+          return(
       
     <tr>
       <th scope="row">
@@ -36,13 +39,18 @@ function ViewEntreprenrueReqList() {
       class="invviewadmin_profile_pic" alt="..."/>
         {data.name}</th>
       <td>{data.email}</td>
-      <td>{data.investing_category}</td>
+      <td>{data.industry_sector}</td>
       <td>{data.contact}</td>
-      <td>{data.nationality}</td>
+      <td>{data.corporate_id_no}</td>
       <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> <a href="" onClick={()=>navigateToInvestorView(data._id)}>View Details</a></td>
 
     </tr>
-   
+   )
+  })):(
+  
+    <h1>No Records</h1>
+  )
+  } 
   </tbody>
 
   
