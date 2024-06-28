@@ -1,10 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { CommonNavbar } from '../../components/commonNavbar/commonNavbar'
 import HomepageNavbar from '../../components/commonNavbar/HomepageNavbar'
 import Footer_2 from '../../components/Footer/Footer_2'
 import eye from "../../assets/carbon_view-filled.png";
+import axiosInstance from '../../BaseAPIs/AxiosInstance';
+import { toast } from "react-toastify";
+import { imageUrl } from '../../ImageAPIs/Image_Urls';
+import { useNavigate } from 'react-router-dom';
+
 
 function MentorSubscribedList() {
+  const navigate = useNavigate();
+  const navigateToMentorView = (id)=>{
+      navigate(`/entrepreneur/mentorviewsubscribed/${id}`)
+    }
+  const [mentordata, setMentorData]= useState({});
+
+  useEffect(()=>{
+    axiosInstance.post('/viewMentorsReqs')
+    .then((res)=>{
+      console.log(res,"res");
+      if(res.status === 200){
+        setMentorData(res.data.data)
+      }
+    })
+    .catch((err)=>{
+      toast.error("Failed to fetch user details")
+  });
+  },[])
   return (
     <>
         <CommonNavbar/>
@@ -29,22 +52,30 @@ function MentorSubscribedList() {
     </tr>
   </thead>
   <tbody>
-  
+  {
+        (mentordata.length)>0?((mentordata).map((data) => {
+          return(
         
       
     <tr>
       <th scope="row">
-      <img 
+      <img src={`${imageUrl}/${data.profile.filename}`} 
+
       class="invviewadmin_profile_pic" alt="..."/>
-        </th>
-      <td>email</td>
-      <td>expertise_area</td>
-      <td>contact</td>
-      <td>subscription_amount</td>
-      <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> <a href="" >View Details</a></td>
+        {data.name}</th>
+      <td>{data.email}</td>
+      <td>{data.expertise_area}</td>
+      <td>{data.contact}</td>
+      <td>{data.subscription_amount}</td>
+      <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> <a href=""onClick={()=>navigateToMentorView(data._id)} >View Details</a></td>
 
     </tr>
-  
+  )
+})):(
+
+  <h1>No Records</h1>
+)
+} 
    
   </tbody>
 

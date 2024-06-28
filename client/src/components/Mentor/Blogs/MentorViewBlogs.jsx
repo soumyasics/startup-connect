@@ -13,7 +13,7 @@ import axiosInstance from '../../../BaseAPIs/AxiosInstance'
 
 function MentorViewBlogs() {
 
-  const [blogdata, setBlogData]=useState();
+  const [blogdata, setBlogData]=useState("");
 
   useEffect(()=>{
     axiosInstance.post('/mentorViewBlog')

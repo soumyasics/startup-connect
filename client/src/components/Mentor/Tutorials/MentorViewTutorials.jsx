@@ -11,7 +11,7 @@ import axiosInstance from '../../../BaseAPIs/AxiosInstance';
 import { imageUrl } from '../../../ImageAPIs/Image_Urls';
 
 function MentorViewTutorials() {
-  const [tutorialdata, setTutorialData]=useState();
+  const [tutorialdata, setTutorialData]=useState("");
   const [videoFile, setVideoFile] = useState("")
 
 
@@ -78,7 +78,7 @@ function MentorViewTutorials() {
                   <p>{data.title}</p>
                 </div>
                 <div className='col-5'>
-                  <FaRegCalendarAlt className='mentor-icon' /> 01/01/2024
+                  <FaRegCalendarAlt className='mentor-icon' /> {data.date}
                 </div>
               </div>
               <label>{data.description}</label>
