@@ -9,7 +9,7 @@ import { imageUrl } from '../../ImageAPIs/Image_Urls'
 import { toast } from "react-toastify";
 
 
-function InvestorsView() {
+function InvestorsView({url}) {
   const navigate=useNavigate();
 
   const navigateToInvestorView=(id)=>{
@@ -54,7 +54,7 @@ function InvestorsView() {
         <div class="row row-cols-1 row-cols-md-4 g-4">
           {console.log("datas",investorData)}
          {
-        (investorData.length)>0?((investorData).map((data) => {
+        (investorData?.length)>0?((investorData).map((data) => {
           return(
             
           <div class="col">

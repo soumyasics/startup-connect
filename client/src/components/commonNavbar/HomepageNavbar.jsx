@@ -14,6 +14,9 @@ function HomepageNavbar() {
     const navigateToInvestors = () => {
         navigate("/entrepreneur/viewinvestors");
     };
+    const navigateToRequestInvestors = () => {
+        navigate("/entrepreneur/requestinvestor");
+    };
     const navigateToMentors = () => {
         navigate("/entrepreneur/viewmentors");
     };
@@ -63,7 +66,7 @@ function HomepageNavbar() {
                                     <li><a class="dropdown-item" href="#"onClick={navigateToStartUpPlan}>Add New Plans</a></li>
                                     <li><a class="dropdown-item" href="#"onClick={navigateToViewStartUpPlan}>View Plans</a></li>
                                     <li><a class="dropdown-item" href="#"onClick={navigateToInvestors}>My Investors</a></li>
-                                    <li><a class="dropdown-item" href="#"onClick={navigateToInvestors}>Request Status</a></li>
+                                    <li><a class="dropdown-item" href="#"onClick={navigateToRequestInvestors}>Request Status</a></li>
                                 </ul>
                                 </div>
                             <Navbar.Text className="px-3" onClick={navigateToMyProfile}>

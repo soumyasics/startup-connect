@@ -160,6 +160,27 @@ const viewStartUpPlanById = (req, res) => {
     });
 };
 
+
+// View StartUpPlan by ID
+const viewStartUpPlanByEntrepId = (req, res) => {
+  const pmi_id=req.params.id
+  pitch_my_idea.find({epId:pmi_id})
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data obtained successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        msg: "No Data obtained",
+        Error: err,
+      });
+    });
+};
+
+
 // Update startupPlan by ID
 const editStartUpPlanById = async (req, res) => {
   const { 
@@ -241,4 +262,5 @@ module.exports={
     editStartUpPlanById,
     viewStartUpPlanById,
     deleteStartupPlanById,
+    viewStartUpPlanByEntrepId
 }
