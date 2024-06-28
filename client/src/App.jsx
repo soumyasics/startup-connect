@@ -56,6 +56,7 @@ import ViewEntrepreneurReq from "./components/Invester/ViewEntrepreneurReq/ViewE
 import MentorsViewSubscribed from "./Entreprenuer/MentorsViewSubscribed/MentorsViewSubscribed";
 import ViewTutorialList from "./Entreprenuer/MentorTutorial/ViewTutorialList/ViewTutorialList";
 import ViewTutorial from "./Entreprenuer/MentorTutorial/ViewTutorial/ViewTutorial";
+import ViewBlogList from "./Entreprenuer/MentorBlog/ViewBlogList/ViewBlogList";
 
 
 
@@ -119,6 +120,8 @@ function App() {
         <Route path='/entrepreneur/mentorviewsubscribed/:id' element={<MentorsViewSubscribed/>}/>
         <Route path='/entrepreneur/viewtutoriallist' element={<ViewTutorialList/>}/>
         <Route path='/entrepreneur/viewtutorial/:id' element={<ViewTutorial/>}/>
+        <Route path='/entrepreneur/viewbloglist' element={<ViewBlogList/>}/>
+
 
 
 
