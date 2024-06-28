@@ -57,6 +57,7 @@ import MentorsViewSubscribed from "./Entreprenuer/MentorsViewSubscribed/MentorsV
 import ViewTutorialList from "./Entreprenuer/MentorTutorial/ViewTutorialList/ViewTutorialList";
 import ViewTutorial from "./Entreprenuer/MentorTutorial/ViewTutorial/ViewTutorial";
 import ViewBlogList from "./Entreprenuer/MentorBlog/ViewBlogList/ViewBlogList";
+import InvestorHomePage from "./components/Invester/HomePage/InvestorHomePage";
 
 
 
@@ -148,6 +149,10 @@ function App() {
         <Route
           path="/investor/updateprofile"
           element={<InvestorUpdateProfile url={url} />}
+        />
+        <Route
+          path="/investor/homepage"
+          element={<InvestorHomePage url={url} />}
         />
         <Route
           path="/investor/entrepreneur_req"
