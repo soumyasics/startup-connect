@@ -58,6 +58,10 @@ const mentorAddBlogSchema =mongoose.Schema({
     coverImage:{
         type:Object,
         required:true
+    },
+    date:{
+        type:Date,
+        default:new Date()
     }
     
 })
@@ -74,6 +78,10 @@ const mentorAddTutorialSchema =mongoose.Schema({
     videolink:{
         type:Object,
         required:true
+    },
+    date:{
+        type:Date,
+        default:new Date()
     }
     
 })

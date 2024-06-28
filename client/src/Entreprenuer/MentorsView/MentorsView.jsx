@@ -1,11 +1,11 @@
 import React, { useEffect,useState } from 'react'
 import { CommonNavbar } from '../../components/commonNavbar/commonNavbar'
 import HomePageNavbar from '../../components/commonNavbar/HomepageNavbar'
-import Footer from '../../components/Footer/Footer'
 import { useNavigate, useParams } from 'react-router-dom'
 import axiosInstance from '../../BaseAPIs/AxiosInstance'
 import { imageUrl } from '../../ImageAPIs/Image_Urls'
 import { toast } from "react-toastify";
+import Footer_2 from '../../components/Footer/Footer_2'
 
 function MentorsView() {
     const navigate=useNavigate();
@@ -74,21 +74,24 @@ function MentorsView() {
                     <tr ><th className='ad_menaccept_head'>E-Mail</th></tr>
                     <tr><td>{mentordata.email}</td></tr>
                     <tr><th className='ad_menaccept_head'>Expertise Category</th></tr>
-                    <tr><td>{mentordata.investing_category}</td></tr>
+                    <tr><td>{mentordata.expertise_area}</td></tr>
                     <tr><th className='ad_menaccept_head'>Contact No</th></tr>
                     <tr><td>{mentordata.contact}</td></tr>
                     <tr><th className='ad_menaccept_head'>Subscription Amount</th></tr>
-                    <tr><td>{mentordata.occupation}</td></tr>
-                    <tr><th className='ad_menaccept_head'>Description</th></tr>
-                    <tr><td>{mentordata.nationality}</td></tr>
+                    <tr><td>{mentordata.subscription_amount}</td></tr>
+                    
                     </table>
                 </div>
             </div>
         </div>
         <div class="col">
+            
             <div class="ad_menaccept_profile">
+                
             <div class="ad_menaccept_details2">
                     <table class="ad_menaccept_gfg">
+                    <tr><th className='ad_menaccept_head'>Description</th></tr>
+                    <tr><td>{mentordata.description}</td></tr>
                     <tr ><th className='ad_menaccept_head'>Demo Video</th></tr>
                     <tr><td>
                     { videoFile && 
@@ -113,7 +116,7 @@ function MentorsView() {
         </div>
     </div>
     </div>
-    <Footer/>
+    <Footer_2/>
     </>
   )
 }

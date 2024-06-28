@@ -9,9 +9,13 @@ import Footer_2 from '../../Footer/Footer_2';
 import tutorialvideo from '../../../assets/tutorial-1.mp4'
 import axiosInstance from '../../../BaseAPIs/AxiosInstance';
 import { imageUrl } from '../../../ImageAPIs/Image_Urls';
+import { useNavigate } from 'react-router-dom';
 
 function MentorViewTutorials() {
-  const [tutorialdata, setTutorialData]=useState();
+  
+  const navigate=useNavigate();
+
+  const [tutorialdata, setTutorialData]=useState("");
   const [videoFile, setVideoFile] = useState("")
 
 
@@ -49,6 +53,10 @@ function MentorViewTutorials() {
       alert(err)
     })
   }
+
+  const navigateToEditTutorial=(id)=>{
+    navigate(`/mentor/edittutorials/${id}`)
+  }
   return (
     <>
       <CommonNavbar />
@@ -78,12 +86,12 @@ function MentorViewTutorials() {
                   <p>{data.title}</p>
                 </div>
                 <div className='col-5'>
-                  <FaRegCalendarAlt className='mentor-icon' /> 01/01/2024
+                  <FaRegCalendarAlt className='mentor-icon' /> {data.date}
                 </div>
               </div>
               <label>{data.description}</label>
               <div className='mentor_viewtutorial_button_div'>
-                <button className='menter_viewtutorial_btn'><FaEdit /> Edit</button>
+                <button className='menter_viewtutorial_btn' onClick={()=>navigateToEditTutorial(data._id)}><FaEdit /> Edit</button>
                 <button className='menter_viewtutorial_btn mentor_addblog_secbtn'><RiDeleteBin5Fill /> Remove</button>
               </div>
             </div>

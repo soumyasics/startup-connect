@@ -53,6 +53,12 @@ import MentorEditBlog from "./components/Mentor/Blogs/MentorEditBlog";
 import MentorEditTutorials from "./components/Mentor/Tutorials/MentorEditTutorials";
 import InvestorNav from "./components/Invester/InvestorNav/InvestorNav";
 import ViewEntrepreneurReq from "./components/Invester/ViewEntrepreneurReq/ViewEntrepreneurReq";
+import MentorsViewSubscribed from "./Entreprenuer/MentorsViewSubscribed/MentorsViewSubscribed";
+import ViewTutorialList from "./Entreprenuer/MentorTutorial/ViewTutorialList/ViewTutorialList";
+import ViewTutorial from "./Entreprenuer/MentorTutorial/ViewTutorial/ViewTutorial";
+
+
+
 
 function App() {
   const url = "http://localhost:4040";
@@ -107,17 +113,25 @@ function App() {
           element={<InvestorReqView />}
         />
 
-        <Route path="/entrepreneur/viewmentors" element={<ViewMentors />} />
-        <Route path="/entrepreneur/mentorsview/:id" element={<MentorsView />} />
-        <Route
-          path="/entrepreneur/mentorsubscribedlist"
-          element={<MentorSubscribedList />}
-        />
+        <Route path='/entrepreneur/viewmentors' element={<ViewMentors/>}/>
+        <Route path='/entrepreneur/mentorsview/:id' element={<MentorsView/>}/>
+        <Route path='/entrepreneur/mentorsubscribedlist' element={<MentorSubscribedList/>}/>
+        <Route path='/entrepreneur/mentorviewsubscribed/:id' element={<MentorsViewSubscribed/>}/>
+        <Route path='/entrepreneur/viewtutoriallist' element={<ViewTutorialList/>}/>
+        <Route path='/entrepreneur/viewtutorial/:id' element={<ViewTutorial/>}/>
 
-        <Route
-          path="/entrepreneur/mentorsubscribedlist"
-          element={<MentorSubscribedList />}
-        />
+
+
+
+
+        <Route path='/entrepreneur/mentorsubscribedlist' element={<MentorSubscribedList/>}/>
+
+
+
+
+        
+
+
 
         {/* Invester Routes */}
         <Route
