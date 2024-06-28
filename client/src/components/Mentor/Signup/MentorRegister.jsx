@@ -308,13 +308,14 @@ function MentorRegister() {
               
             </div>
             <div class=" pt-2">
-              <button className='mentor_reg_btn'>Register</button> 
+              <button className='mentor_reg_btn mb-5'>Register</button> 
               </div>
           </div>
           </form>
 
       </div>
-    <Footer/>
+      <div className='mt-5 pt-5'>    <Footer/>
+      </div>
     </>
   )
 }
