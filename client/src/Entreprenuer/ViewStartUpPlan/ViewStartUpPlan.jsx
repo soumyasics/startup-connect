@@ -30,7 +30,7 @@ function ViewStartUpPlan() {
   },[navigate]);
 
   useEffect(()=>{
-    axiosInstance.post('/viewStartupPlan')
+    axiosInstance.post('/viewStartUpPlanByEntrepId/'+localStorage.getItem("Enterprenuer"))
     .then((res)=>{
       console.log(res,"res");
       if(res.status === 200){
@@ -45,7 +45,7 @@ function ViewStartUpPlan() {
   
 
 const deleteStartUpPlan=(id)=>{
-  console.log("id",id);
+  // console.log("id",id);
   axiosInstance.post(`/deleteStartupPlanById/${id}`)
   
   .then((res)=>{
@@ -78,7 +78,7 @@ const deleteStartUpPlan=(id)=>{
 
         
         {
-            (data.length)>0?((data).map((data1)=>{
+            (data?.length)>0?((data).map((data1)=>{
                 return(
                     <div><h3>{data1.companyName}:</h3>
 

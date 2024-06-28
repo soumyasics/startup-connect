@@ -14,7 +14,7 @@ function ViewTutorial() {
     const [tutorialdata, setTutorialData]=useState("");
   const [videoFile, setVideoFile] = useState("")
 
-  const {id}=useParams()
+  const {id}=useParams();
 
   console.log(id);
     
@@ -38,7 +38,7 @@ function ViewTutorial() {
         
                 setVideoFile(`${imageUrl}/${tutorialdata.videolink.filename}`)
             }
-        }, [])
+        }, [tutorialdata.videolink])
   return (
     <>
     <CommonNavbar/>
@@ -51,7 +51,7 @@ function ViewTutorial() {
       <div className='container mb-5' style={{backgroundColor:"#EEF9FF"}}>
         <div className='row '>
             <div className='mentor_viewtutrl_video mt-5'>
-            { videoFile &&    <video src={videoFile} controls autoPlay width='700' >
+            { videoFile &&    <video src={videoFile} controls autoPlay width='700' type="video/mp4" >
 
                 </video> }
                 
