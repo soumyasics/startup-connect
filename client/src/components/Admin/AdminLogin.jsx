@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import AdminLoginimg from "../../assets/undraw_secure_login_pdn4 1.png";
 import Frame from "../../assets/Frame 40.png";
 import { Link, useNavigate } from "react-router-dom";
