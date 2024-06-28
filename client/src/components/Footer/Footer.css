@@ -159,3 +159,7 @@ ul.footer-list li::before {
 	background-repeat: no-repeat;
 	background-image: url("../../assets/arrowlogo.png");
 }
+
+.email_footer{
+    width:30px;
+}

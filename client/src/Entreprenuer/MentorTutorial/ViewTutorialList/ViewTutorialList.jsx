@@ -58,11 +58,11 @@ const navigateToTutorialView=(id)=>{
           return( 
           <div className='row mentor_viewtutorial_mainrow'>
             <div className='col-md-5 col-sm-12 mentor_viewtutorial_fir_col'>
-            { videoFile &&  
-                    <video width="300" height="200" src={videoFile}  controls  autoPlay typeof='video/mp4'  >
+              
+                    <video width="500" height="325" src={`${imageUrl}/${data.videolink.filename}`}  controls  autoPlay typeof='video/mp4'  >
                       
                     </video>
-                    }      
+                        
             </div>
             <div className='col-md-7 col-sm-12 mentor_viewtutorial_sec_col'>
               <div className='row montor_row_viewtutorial'>

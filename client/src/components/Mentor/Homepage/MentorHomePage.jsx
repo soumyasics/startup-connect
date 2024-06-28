@@ -9,6 +9,7 @@ import mentor_home_v2 from '../../../assets/mentor_home_v2.png'
 import mentor_home_v3 from '../../../assets/mentor_home_v3.png'
 import mentor_home_v4 from '../../../assets/mentor_home_v4.png'
 import Footer from '../../Footer/Footer'
+import Footer_2 from '../../Footer/Footer_2'
 
 
 function MentorHomePage() {
@@ -95,7 +96,7 @@ function MentorHomePage() {
             </div>
 
 
-    <Footer/>
+    <Footer_2/>
     </>
   )
 }

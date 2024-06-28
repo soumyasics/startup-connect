@@ -56,6 +56,9 @@ import ViewEntrepreneurReq from "./components/Invester/ViewEntrepreneurReq/ViewE
 import MentorsViewSubscribed from "./Entreprenuer/MentorsViewSubscribed/MentorsViewSubscribed";
 import ViewTutorialList from "./Entreprenuer/MentorTutorial/ViewTutorialList/ViewTutorialList";
 import ViewTutorial from "./Entreprenuer/MentorTutorial/ViewTutorial/ViewTutorial";
+import ViewBlogList from "./Entreprenuer/MentorBlog/ViewBlogList/ViewBlogList";
+import InvestorHomePage from "./components/Invester/HomePage/InvestorHomePage";
+import ViewEntreprenrueReqList from "./components/Invester/ViewEntrepreneurReqList/ViewEntreprenrueReqList";
 
 
 
@@ -119,6 +122,8 @@ function App() {
         <Route path='/entrepreneur/mentorviewsubscribed/:id' element={<MentorsViewSubscribed/>}/>
         <Route path='/entrepreneur/viewtutoriallist' element={<ViewTutorialList/>}/>
         <Route path='/entrepreneur/viewtutorial/:id' element={<ViewTutorial/>}/>
+        <Route path='/entrepreneur/viewbloglist' element={<ViewBlogList/>}/>
+
 
 
 
@@ -145,6 +150,14 @@ function App() {
         <Route
           path="/investor/updateprofile"
           element={<InvestorUpdateProfile url={url} />}
+        />
+        <Route
+          path="/investor/homepage"
+          element={<InvestorHomePage url={url} />}
+        />
+        <Route
+          path="/investor/entrepreneur_reqlist"
+          element={<ViewEntreprenrueReqList />}
         />
         <Route
           path="/investor/entrepreneur_req"
