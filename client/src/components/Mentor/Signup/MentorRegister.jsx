@@ -50,6 +50,8 @@ function MentorRegister() {
     setMentorData({ ...mentordata,[name]: files[0]});
     console.log(files);
   };
+
+  
   
 
   console.log(mentordata,"mentor_data_1");

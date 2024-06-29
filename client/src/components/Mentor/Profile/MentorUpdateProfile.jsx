@@ -9,9 +9,19 @@ import axiosInstance from '../../../BaseAPIs/AxiosInstance'
 import { imageUrl } from '../../../ImageAPIs/Image_Urls'
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import MentorNav from '../MentorNav/MentorNav'
 
 function MentorUpdateProfile() {
   const navigate=useNavigate();
+
+  useEffect(() => {
+    if (
+      localStorage.getItem("MentorToken") == null &&
+      localStorage.getItem("Mentor") == null
+    ) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   const [mentordata, setMentorData] = useState({
         name:"",
@@ -158,7 +168,7 @@ const handleFileChange = (e) => {
   return (
     <>
         <CommonNavbar/>
-        <Navbar_2/>
+        <MentorNav/>
         <div className='text-center mt-4'>
                 <div className='text-center' >
                     <h5 className='men_updateprofile_heading'>UPDATE YOUR PROFILE</h5>

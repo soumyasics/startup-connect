@@ -21,6 +21,11 @@ function MentorNav() {
     navigate("/mentor/addtutorials")
   }
 
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
+
   return (
     <>
         <div className="men_home_nav_sticky">
@@ -37,17 +42,39 @@ function MentorNav() {
                             <Navbar.Text className="px-3"  >
                             <Link href="#Investors" className="text-decoration-none" ><p className="navbarstext">Subscriptions</p></Link>
                             </Navbar.Text>
-                            <Navbar.Text className="px-3" onClick={navigateToAddTutorials} >
-                            <Link href="#Mentors" className="text-decoration-none"  ><p className="navbarstext">Tutorials</p></Link>
-                            </Navbar.Text>
+                            <div class="home_dropdown px-3">
+                                <Navbar.Text className="px-3" id="dropdownMenuButton"
+                                    data-mdb-toggle="dropdown"
+                                    aria-expanded="false" >
+                                    <Link href="#Investors" className="text-decoration-none" ><p className="navbarstext">Tutorials</p></Link>
+                                </Navbar.Text>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><Link to='/mentor/addtutorials' class="dropdown-item" >Add Tutorials</Link></li>
+                                    <li><Link to='/mentor/viewtutorials' class="dropdown-item" >View My Tutorials</Link></li>
+                                </ul>
+                                </div>
                             <Navbar.Text className="px-3" >
                             <Link href="#Mentors" className="text-decoration-none" ><p className="navbarstext">Chat</p></Link>
                             </Navbar.Text>
-                            <Navbar.Text className="px-3" onClick={navigateToAddBlogs}  >
-                            <Link href="#MyProfile" className="text-decoration-none" ><p className="navbarstext">Blogs</p></Link>
-                            </Navbar.Text>
+                            <div class="home_dropdown px-3">
+                                <Navbar.Text className="px-3" id="dropdownMenuButton"
+                                    data-mdb-toggle="dropdown"
+                                    aria-expanded="false" >
+                                    <Link href="#Investors" className="text-decoration-none" ><p className="navbarstext">Blogs</p></Link>
+                                </Navbar.Text>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><Link to='/mentor/addblogs' class="dropdown-item" >Add Blogs</Link></li>
+                                    <li><Link to='/mentor/viewblogs' class="dropdown-item" >View My Blogs</Link></li>
+                                </ul>
+                                </div>
                             <Navbar.Text className="px-3">
                             <Link href="#Login" className="text-decoration-none"   ><p className="navbarstext">Account Settings</p></Link>
+                            </Navbar.Text>
+                            <Navbar.Text className="px-3">
+                            <Link to='/mentor/updateprofile' className="text-decoration-none"   ><p className="navbarstext">My Profile</p></Link>
+                            </Navbar.Text>
+                            <Navbar.Text className="px-3" onClick={handleLogout}>
+                            <Link href="#Login" className="text-decoration-none"   ><p className="navbarstext">Logout</p></Link>
                             </Navbar.Text>
                             
                         </Navbar.Collapse>

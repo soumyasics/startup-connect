@@ -12,6 +12,19 @@ import { toast } from "react-toastify";
 import InvestorNav from "../InvestorNav/InvestorNav";
 
 function InvestorUpdateProfile({ url }) {
+
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    if (
+      localStorage.getItem("InvestorToken") == null &&
+      localStorage.getItem("Investor") == null
+    ) {
+      navigate("/");
+    }
+  }, [navigate]);
+
   const [investorDetails, setInvestorDetails] = useState({
     name: "",
     email: "",
@@ -40,7 +53,6 @@ function InvestorUpdateProfile({ url }) {
     identification_document: "",
   });
 
-  const navigate = useNavigate();
 
   const profile = investorDetails.profile;
   console.log(investorDetails, "details");
@@ -146,8 +158,7 @@ function InvestorUpdateProfile({ url }) {
       investorDetails.occupation &&
       investorDetails.description &&
       investorDetails.address &&
-      investorDetails.profile &&
-      investorDetails.identification_document
+      investorDetails.profile 
     ) {
       formValid = true;
     }
@@ -163,7 +174,8 @@ function InvestorUpdateProfile({ url }) {
       formData.append("occupation", investorDetails.occupation);
       formData.append("description", investorDetails.description);
       formData.append("address", investorDetails.address);
-      formData.append("files", investorDetails.profile);
+      formData.append("profile", investorDetails.profile);
+
 
       console.log(formData, "formData");
       try {
@@ -171,7 +183,7 @@ function InvestorUpdateProfile({ url }) {
         if (investorDetails) {
           response = await axiosMultipartInstance.post(
             `/editInvestorById/${id}`,
-            investorDetails
+            formData
           );
         }
         console.log("Response:", response);
@@ -256,18 +268,6 @@ function InvestorUpdateProfile({ url }) {
               {errors.email && (
                 <span className="text-danger">{errors.email}</span>
               )}
-
-              <input
-                className="mt-4"
-                type="text"
-                placeholder={investorDetails.contact}
-                value={investorDetails.contact}
-                name="contact"
-                onChange={handleChange}
-              ></input>
-              {errors.contact && (
-                <span className="text-danger">{errors.contact}</span>
-              )}
               <input
                 className="mt-4"
                 type="text"
@@ -279,6 +279,31 @@ function InvestorUpdateProfile({ url }) {
               {errors.organization && (
                 <span className="text-danger">{errors.organization}</span>
               )}
+              <input
+                className="mt-4"
+                type="text"
+                placeholder={investorDetails.nationality}
+                value={investorDetails.nationality}
+                name="nationality"
+                onChange={handleChange}
+              ></input>
+              {errors.nationality && (
+                <span className="text-danger">{errors.nationality}</span>
+              )}
+              <input
+                className="mt-4"
+                type="text"
+                placeholder={investorDetails.address}
+                value={investorDetails.address}
+                name="address"
+                onChange={handleChange}
+              ></input>
+              {errors.address && (
+                <span className="text-danger">{errors.address}</span>
+              )}
+
+              
+              
             </div>
             <div class="col-lg-6 profile-inputtag">
               <select
@@ -317,17 +342,19 @@ function InvestorUpdateProfile({ url }) {
               {errors.investing_category && (
                 <span className="text-danger">{errors.investing_category}</span>
               )}
+
               <input
                 className="mt-4"
                 type="text"
-                placeholder={investorDetails.nationality}
-                value={investorDetails.nationality}
-                name="nationality"
+                placeholder={investorDetails.contact}
+                value={investorDetails.contact}
+                name="contact"
                 onChange={handleChange}
               ></input>
-              {errors.nationality && (
-                <span className="text-danger">{errors.nationality}</span>
+              {errors.contact && (
+                <span className="text-danger">{errors.contact}</span>
               )}
+              
               <input
                 className="mt-4"
                 type="text"
@@ -350,22 +377,15 @@ function InvestorUpdateProfile({ url }) {
               {errors.description && (
                 <span className="text-danger">{errors.description}</span>
               )}
-              <input
-                className="mt-4"
-                type="text"
-                placeholder={investorDetails.address}
-                value={investorDetails.address}
-                name="address"
-                onChange={handleChange}
-              ></input>
-              {errors.address && (
-                <span className="text-danger">{errors.address}</span>
-              )}
-
-              <button className="yourprofileupdate_btn mt-5">
+              
+              <div className="mt-4">
+            <button className="yourprofileupdate_btn">
                 Update Profile
               </button>
+              </div>
+              
             </div>
+            
           </div>
         </form>
       </div>
