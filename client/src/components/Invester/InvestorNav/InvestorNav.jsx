@@ -13,10 +13,10 @@ function InvestorNav() {
                         <Navbar.Brand href="#home" className="text-light">
                             <img src={Frame} className="inv_home_nav_startup_logo" alt="StartupLogo" />
                         </Navbar.Brand>
-                        <Navbar.Toggle />
+                        <Navbar.Toggle/>
                         <Navbar.Collapse className="justify-content-end">
                             <Navbar.Text className="px-3" >
-                            <Link href="#Home" className="text-decoration-none" ><p className="navbarstext">Home</p></Link>
+                            <Link to='/investor/homepage' className="text-decoration-none" ><p className="navbarstext">Home</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3" >
                             <Link href="#Investors" className="text-decoration-none" ><p className="navbarstext">Startup Ideas</p></Link>
