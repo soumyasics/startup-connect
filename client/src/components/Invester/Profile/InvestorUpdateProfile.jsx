@@ -305,6 +305,7 @@ function InvestorUpdateProfile({ url }) {
               
               
             </div>
+            </div>
             <div class="col-lg-6 profile-inputtag">
               <select
                 className="inv_update_profile_industry_sector"
@@ -339,7 +340,7 @@ function InvestorUpdateProfile({ url }) {
                   Fashion and Lifestyle
                 </option>
               </select>
-<<<<<<< HEAD
+
                         {errors.investing_category  && (
                             <span className="text-danger">{errors.investing_category}</span>
                           )}
@@ -386,7 +387,7 @@ function InvestorUpdateProfile({ url }) {
               </label>
              
             </div> */}
-=======
+
               {errors.investing_category && (
                 <span className="text-danger">{errors.investing_category}</span>
               )}
