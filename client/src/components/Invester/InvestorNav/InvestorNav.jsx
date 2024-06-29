@@ -15,9 +15,9 @@ function InvestorNav() {
         <div className="inv_home_nav_sticky">
         <div className="inv_home_navbar_white">
                 <Navbar className="px-4">
-                        <Navbar.Brand href="#home" className="text-light">
+                        {/* <Navbar.Brand href="#home" className="text-light">
                             <img src={Frame} className="inv_home_nav_startup_logo" alt="StartupLogo" />
-                        </Navbar.Brand>
+                        </Navbar.Brand> */}
                         <Navbar.Toggle/>
                         <Navbar.Collapse className="justify-content-end">
                             <Navbar.Text className="px-3" >

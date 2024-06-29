@@ -3,6 +3,13 @@ div.footerbg {
     height: 233px;
 
 }
+.foot_softution_logo{
+    color: #FFFFFF;
+    margin-left: 32px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: 45px;
+    margin-top: 20px;
+}
 
 .foot .row{
          --bs-gutter-x: 0; 
