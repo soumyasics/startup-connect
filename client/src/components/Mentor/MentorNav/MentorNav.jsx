@@ -47,7 +47,7 @@ function MentorNav() {
                             <Link href="#MyProfile" className="text-decoration-none" ><p className="navbarstext">Blogs</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3">
-                            <Link href="#Login" className="text-decoration-none" to={'/'}  ><p className="navbarstext">Account Settings</p></Link>
+                            <Link href="#Login" className="text-decoration-none"   ><p className="navbarstext">Account Settings</p></Link>
                             </Navbar.Text>
                             
                         </Navbar.Collapse>

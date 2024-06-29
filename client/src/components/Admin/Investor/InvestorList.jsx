@@ -16,7 +16,7 @@ function InvestorList() {
     const [investorData, setInvestordata]= useState({});
 
   useEffect(()=>{
-    axiosInstance.post('/viewInvestorReqs')
+    axiosInstance.post('/viewInvestors')
     .then((res)=>{
       console.log(res,"res");
       if(res.status === 200){

@@ -8,6 +8,7 @@ import home_ent_img from '../../../assets/inv_home_ent.png'
 import home_startpl_img from '../../../assets/inv_home_startpl.png'
 import home_req_img from '../../../assets/inv_home_req.png'
 import home_img2 from '../../../assets/investor_home_side_img.png'
+import Investor_Footer from '../Investor_Footer/Investor_Footer'
 
 function InvestorHomePage() {
   return (
@@ -95,7 +96,7 @@ function InvestorHomePage() {
                 </div>
             </div>
         </section>
-        <Footer_2/>
+        <Investor_Footer/>
 
     </>
   )
