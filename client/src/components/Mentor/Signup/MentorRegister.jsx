@@ -244,9 +244,19 @@ function MentorRegister() {
               <label id="">Expertise Area</label>
                 <select class="input-cal input-base " id="mentor_input" onChange={handleInputChange}  name="expertise_area">
                   <option hidden="">Expertise Area</option>
-                  <option value="Abc">Abc</option>
-                  <option value="Def">Def</option>
-                  <option value="Ghi">Ghi</option>
+                <option value="Technology">Technology</option>
+                <option value="E-commerce and Retail">E-commerce and Retail</option>
+                <option value="Health and Wellness">Health and Wellness</option>
+                <option value="Finance and Insurance">Finance and Insurance</option>
+                <option value="Education">Education</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Media and Entertainment">Media and Entertainment</option>
+                <option value="Transportation and Logistics">Transportation and Logistics</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Environmental and Energy">Environmental and Energy</option>
+                <option value="Consumer Services">Consumer Services</option>
+                <option value="Fashion and Lifestyle">Fashion and Lifestyle</option>
+
                 </select>
                 {errors.expertise_area && (<div className="text-danger errortext">{errors.expertise_area}</div>)}
 

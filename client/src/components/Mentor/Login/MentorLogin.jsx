@@ -61,7 +61,7 @@ function MentorLogin() {
           localStorage.setItem("MentorToken",token);
           console.log(data);
           alert("Mentor Login Successfully");
-          navigate("/")
+          navigate("/mentor/homepage")
         }
         else{
           alert(result.data.msg);

@@ -1,92 +1,90 @@
-import React, { useEffect, useState } from 'react'
-import './InvestorUpdateProfile.css'
-import { CommonNavbar } from '../../commonNavbar/commonNavbar'
-import Navbar_2 from '../../commonNavbar/Navbar_2'
-import Footer_2 from '../../Footer/Footer_2'
-import inv_camera_icon from '../../../assets/inv_camera_icon.png'
-import axiosMultipartInstance from '../../../BaseAPIs/AxiosMultipartInstance'
-import axiosInstance from '../../../BaseAPIs/AxiosInstance'
-import { imageUrl } from '../../../ImageAPIs/Image_Urls'
+import React, { useEffect, useState } from "react";
+import "./InvestorUpdateProfile.css";
+import { CommonNavbar } from "../../commonNavbar/commonNavbar";
+import Navbar_2 from "../../commonNavbar/Navbar_2";
+import Footer_2 from "../../Footer/Footer_2";
+import inv_camera_icon from "../../../assets/inv_camera_icon.png";
+import axiosMultipartInstance from "../../../BaseAPIs/AxiosMultipartInstance";
+import axiosInstance from "../../../BaseAPIs/AxiosInstance";
+import { imageUrl } from "../../../ImageAPIs/Image_Urls";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import InvestorNav from "../InvestorNav/InvestorNav";
 
-function InvestorUpdateProfile() {
+function InvestorUpdateProfile({ url }) {
   const [investorDetails, setInvestorDetails] = useState({
     name: "",
     email: "",
-    contact:"",
-    organization:"",
-    nationality:"",
-    investing_category:"",
+    contact: "",
+    organization: "",
+    nationality: "",
+    investing_category: "",
     occupation: "",
     description: "",
     address: "",
-    profile:{filename:''},
-    identification_document:{filename:''},
-    
-    });
-    
-const [errors, setErrors] = useState({
-  name: "",
-  email: "",
-  contact:"",
-  organization:"",
-  nationality:"",
-  investing_category:"",
-  occupation: "",
-  description: "",
-  address: "",
-  profile: "",
-  identification_document: "",
+    profile: { filename: "" },
+    identification_document: { filename: "" },
+  });
+  console.log(url);
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    contact: "",
+    organization: "",
+    nationality: "",
+    investing_category: "",
+    occupation: "",
+    description: "",
+    address: "",
+    profile: "",
+    identification_document: "",
   });
 
+  const navigate = useNavigate();
 
-const navigate = useNavigate();
+  const profile = investorDetails.profile;
+  console.log(investorDetails, "details");
 
-const profile=investorDetails.profile
-      console.log(investorDetails,"details");
-    
+  const [imgFile, setImgFile] = useState("");
 
-const [imgFile, setImgFile] = useState("")
+  useEffect(() => {
+    if (investorDetails.profile?.filename) {
+      setImgFile(`${url}/${profile.filename}`);
+    }
+  }, [investorDetails.profile]);
 
-useEffect(() => {
-  if (investorDetails.profile?.filename) {
+  const id = localStorage.getItem("Investor");
+  console.log("Investor_id", id);
 
-      setImgFile(`${imageUrl}/${profile.filename}`)
-  }
-}, [investorDetails.profile])
-
-const id = localStorage.getItem('Investor');
-      console.log("Investor_id",id);
-
-function getData () {
-  axiosInstance.post(`/viewInvestorById/${id}`)
-  .then ((res)=>{
-      console.log(res);
-      if (res.status === 200){
+  function getData() {
+    axiosInstance
+      .post(`/viewInvestorById/${id}`)
+      .then((res) => {
+        console.log(res);
+        if (res.status === 200) {
           setInvestorDetails(res.data.data);
-      }
-  })
-  .catch((err)=>{
-      toast.error("Failed to fetch user details")
-  });
-}
-useEffect(()=>{
-  getData()
-},[id]);
+        }
+      })
+      .catch((err) => {
+        toast.error("Failed to fetch user details");
+      });
+  }
+  useEffect(() => {
+    getData();
+  }, [id]);
 
-const handleChange =  (e) => {
-  const { name, value } = e.target;
-  setInvestorDetails({ ...investorDetails, [name]: value });
-};
-console.log(investorDetails,"investorData");
-const handleFileChange = (e) => {
-  const { name, files } = e.target;
-  setInvestorDetails({ ...investorDetails, [name]: files[0] });
-  
-  console.log(files);
-};
-  console.log("use de", investorDetails)
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInvestorDetails({ ...investorDetails, [name]: value });
+  };
+  console.log(investorDetails, "investorData");
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setInvestorDetails({ ...investorDetails, [name]: files[0] });
+
+    console.log(files);
+  };
+  console.log("use de", investorDetails);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -135,23 +133,23 @@ const handleFileChange = (e) => {
       formValid = false;
       errors.address = "Address is required";
     }
-  
-  setErrors(errors);
-  
-  if(
-    investorDetails.name &&
-    investorDetails.email &&
-    investorDetails.contact &&
-    investorDetails.organization &&
-    investorDetails.nationality &&
-    investorDetails.investing_category &&
-    investorDetails.occupation &&
-    investorDetails.description &&
-    investorDetails.address &&
-    investorDetails.profile &&
-    investorDetails.identification_document
-    ){
-      formValid=true;
+
+    setErrors(errors);
+
+    if (
+      investorDetails.name &&
+      investorDetails.email &&
+      investorDetails.contact &&
+      investorDetails.organization &&
+      investorDetails.nationality &&
+      investorDetails.investing_category &&
+      investorDetails.occupation &&
+      investorDetails.description &&
+      investorDetails.address &&
+      investorDetails.profile &&
+      investorDetails.identification_document
+    ) {
+      formValid = true;
     }
     if (Object.keys(errors).length === 0 && formValid) {
       const formData = new FormData();
@@ -164,10 +162,10 @@ const handleFileChange = (e) => {
       formData.append("investing_category", investorDetails.investing_category);
       formData.append("occupation", investorDetails.occupation);
       formData.append("description", investorDetails.description);
-      formData.append("address", investorDetails.address);      
+      formData.append("address", investorDetails.address);
       formData.append("files", investorDetails.profile);
-      formData.append("files",investorDetails.identification_document);
-      console.log(formData,"formData");
+
+      console.log(formData, "formData");
       try {
         var response;
         if (investorDetails) {
@@ -176,12 +174,11 @@ const handleFileChange = (e) => {
             investorDetails
           );
         }
-        console.log("Response:", response); 
-        if(response.status==200){
-          alert(response.data.msg)
-          getData()
+        console.log("Response:", response);
+        if (response.status == 200) {
+          alert(response.data.msg);
+          getData();
         }
-        
       } catch (error) {
         console.log(error);
         console.error("Error:", error);
@@ -192,120 +189,132 @@ const handleFileChange = (e) => {
       console.log("Form is not valid", formValid);
       console.log("Data entered", investorDetails);
     }
-  }
+  };
 
   return (
     <>
-        <CommonNavbar/>
-        <Navbar_2/>
-        <div className='text-center mt-4'>
-                <div className='text-center' >
-                    <h5 className='inv_updateprofile_heading'>UPDATE YOUR PROFILE</h5>
-                    <h5>Your Journey to Success</h5>
-                    <h5>Starts Here</h5>
-                    <div className='inv_profile_underline mt-3'></div>
-                </div>
+      <CommonNavbar />
+      <InvestorNav />
+      <div className="text-center mt-4">
+        <div className="text-center">
+          <h5 className="inv_updateprofile_heading">UPDATE YOUR PROFILE</h5>
+          <h5>Your Journey to Success</h5>
+          <h5>Starts Here</h5>
+          <div className="inv_profile_underline mt-3"></div>
         </div>
-            <div class="container text-center mt-5 mb-4">
-            <form onSubmit={(e)=>{onSubmit(e);}} >
-            <div className=' mb-5'>
-            {imgFile && <img  className='inv_profile_round mt-1 mb-5' src={imgFile} alt="profile_image" />} 
+      </div>
+      <div class="container text-center mt-5 mb-4">
+        <form
+          onSubmit={(e) => {
+            onSubmit(e);
+          }}
+        >
+          <div className=" mb-5">
+            {imgFile && (
+              <img
+                className="inv_profile_round mt-1 mb-5"
+                src={imgFile}
+                alt="profile_image"
+              />
+            )}
+          </div>
+          <div className="mb-5">
+            <label for="profile" class="inv_profile_upload">
+              <div class="icon">
+                <img src={inv_camera_icon} />
+              </div>
+              <input
+                id="profile"
+                type="file"
+                name="profile"
+                onChange={handleFileChange}
+              />
+            </label>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 profile-inputtag">
+              <input
+                type="text"
+                placeholder={investorDetails.name}
+                value={investorDetails.name}
+                name="name"
+                onChange={handleChange}
+              ></input>
+              {errors.name && (
+                <span className="text-danger">{errors.name}</span>
+              )}
+
+              <input
+                className="mt-4"
+                type="email"
+                placeholder={investorDetails.email}
+                value={investorDetails.email}
+                name="email"
+                onChange={handleChange}
+              ></input>
+              {errors.email && (
+                <span className="text-danger">{errors.email}</span>
+              )}
+
+              <input
+                className="mt-4"
+                type="text"
+                placeholder={investorDetails.contact}
+                value={investorDetails.contact}
+                name="contact"
+                onChange={handleChange}
+              ></input>
+              {errors.contact && (
+                <span className="text-danger">{errors.contact}</span>
+              )}
+              <input
+                className="mt-4"
+                type="text"
+                placeholder={investorDetails.organization}
+                value={investorDetails.organization}
+                name="organization"
+                onChange={handleChange}
+              ></input>
+              {errors.organization && (
+                <span className="text-danger">{errors.organization}</span>
+              )}
             </div>
-                    <div className='mb-5' >
-                            <label for="profile" class="inv_profile_upload">
-                                <div class="icon">
-                                    <img src={inv_camera_icon}/>
-                                </div>
-                                <input id="profile" 
-                                type="file"  
-                                name="profile"
-                                onChange={handleFileChange}
-                                 />
-                                
-                            </label>
-                        </div>
-                        
-                <div class="row">
-                    <div class="col-lg-6 profile-inputtag">
-                        <input 
-                        type='text' 
-                        placeholder={investorDetails.name}
-                        value={investorDetails.name}
-                        name="name"
-                        onChange={handleChange}
-                        
-                        ></input>
-                        {errors.name  && (
-                            <span className="text-danger">{errors.name}</span>
-                          )}
-                        
-                         <input  className='mt-4'
-                        type='email' 
-                        placeholder={investorDetails.email}
-                        value={investorDetails.email}
-                        name="email"
-                        onChange={handleChange}
-                        
-                        ></input>
-                        {errors.email  && (
-                            <span className="text-danger">{errors.email}</span>
-                          )}
-                        
-                        <input className='mt-4' 
-                        type='text' 
-                        placeholder={investorDetails.contact}
-                        value={investorDetails.contact}
-                        name="contact"
-                        onChange={handleChange}
-                        
-                        ></input>
-                        {errors.contact  && (
-                            <span className="text-danger">{errors.contact}</span>
-                          )}
-                        <input className='mt-4' 
-                        type='text' 
-                        placeholder={investorDetails.organization}
-                        value={investorDetails.organization}
-                        name="organization"
-                        onChange={handleChange}
-                        
-                        ></input>
-                        {errors.organization  && (
-                            <span className="text-danger">{errors.organization}</span>
-                          )}
-                        <input className='mt-4' 
-                        type='text' 
-                        placeholder={investorDetails.nationality}
-                        value={investorDetails.nationality}
-                        name="nationality"
-                        onChange={handleChange}
-                        
-                        ></input>
-                        {errors.nationality  && (
-                            <span className="text-danger">{errors.nationality}</span>
-                          )}
-                    </div>
-                    <div class="col-lg-6 profile-inputtag">
-                    <select className='inv_update_profile_industry_sector'
-                        placeholder={investorDetails.investing_category}
-                        value={investorDetails.investing_category}
-                        name="investing_category"
-                        onChange={handleChange}
-                        >
+            <div class="col-lg-6 profile-inputtag">
+              <select
+                className="inv_update_profile_industry_sector"
+                placeholder={investorDetails.investing_category}
+                value={investorDetails.investing_category}
+                name="investing_category"
+                onChange={handleChange}
+              >
                 <option value="">Select Investing Category</option>
                 <option value="Technology">Technology</option>
-                <option value="E-commerce and Retail">E-commerce and Retail</option>
+                <option value="E-commerce and Retail">
+                  E-commerce and Retail
+                </option>
                 <option value="Health and Wellness">Health and Wellness</option>
-                <option value="Finance and Insurance">Finance and Insurance</option>
+                <option value="Finance and Insurance">
+                  Finance and Insurance
+                </option>
                 <option value="Education">Education</option>
                 <option value="Agriculture">Agriculture</option>
-                <option value="Media and Entertainment">Media and Entertainment</option>
-                <option value="Transportation and Logistics">Transportation and Logistics</option>
+                <option value="Media and Entertainment">
+                  Media and Entertainment
+                </option>
+                <option value="Transportation and Logistics">
+                  Transportation and Logistics
+                </option>
                 <option value="Real Estate">Real Estate</option>
-                <option value="Environmental and Energy">Environmental and Energy</option>
+                <option value="Environmental and Energy">
+                  Environmental and Energy
+                </option>
                 <option value="Consumer Services">Consumer Services</option>
-                <option value="Fashion and Lifestyle">Fashion and Lifestyle</option>
+                <option value="Fashion and Lifestyle">
+                  Fashion and Lifestyle
+                </option>
               </select>
+<<<<<<< HEAD
                         {errors.investing_category  && (
                             <span className="text-danger">{errors.investing_category}</span>
                           )}
@@ -352,18 +361,66 @@ const handleFileChange = (e) => {
               </label>
              
             </div> */}
+=======
+              {errors.investing_category && (
+                <span className="text-danger">{errors.investing_category}</span>
+              )}
+              <input
+                className="mt-4"
+                type="text"
+                placeholder={investorDetails.nationality}
+                value={investorDetails.nationality}
+                name="nationality"
+                onChange={handleChange}
+              ></input>
+              {errors.nationality && (
+                <span className="text-danger">{errors.nationality}</span>
+              )}
+              <input
+                className="mt-4"
+                type="text"
+                placeholder={investorDetails.occupation}
+                value={investorDetails.occupation}
+                name="occupation"
+                onChange={handleChange}
+              ></input>
+              {errors.occupation && (
+                <span className="text-danger">{errors.occupation}</span>
+              )}
+              <input
+                className="mt-4"
+                type="text"
+                placeholder={investorDetails.description}
+                value={investorDetails.description}
+                name="description"
+                onChange={handleChange}
+              ></input>
+              {errors.description && (
+                <span className="text-danger">{errors.description}</span>
+              )}
+              <input
+                className="mt-4"
+                type="text"
+                placeholder={investorDetails.address}
+                value={investorDetails.address}
+                name="address"
+                onChange={handleChange}
+              ></input>
+              {errors.address && (
+                <span className="text-danger">{errors.address}</span>
+              )}
+>>>>>>> 297f1ec3356dfd8a0273eef4a0c09a54fdce02f9
 
-                
-                    <button className='yourprofileupdate_btn mt-5'>Update Profile</button>
-                    </div>
-               
+              <button className="yourprofileupdate_btn mt-5">
+                Update Profile
+              </button>
             </div>
-            </form>
-            
-        </div>
-        <Footer_2/>
+          </div>
+        </form>
+      </div>
+      <Footer_2 />
     </>
-  )
+  );
 }
 
-export default InvestorUpdateProfile
+export default InvestorUpdateProfile;

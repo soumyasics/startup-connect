@@ -51,7 +51,7 @@ function ViewMentors() {
         <div class="row row-cols-1 row-cols-md-4 g-4">
           {console.log("datas",mentordata)}
          {
-        (mentordata.length)>0?((mentordata).map((data) => {
+        (mentordata?.length)>0?((mentordata).map((data) => {
           return(
             
           <div class="col">

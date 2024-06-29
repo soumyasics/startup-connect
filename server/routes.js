@@ -21,7 +21,8 @@ router.post('/pitchMyIdeaNotActiveCompany',pitch_my_idea.showNotActiveCompany)
 router.post('/viewStartupPlan',pitch_my_idea.viewStartupPlan)
 router.post('/deleteStartupPlanById/:id',pitch_my_idea.deleteStartupPlanById)
 router.post('/editStartupPlanById/:id',pitch_my_idea.editStartUpPlanById)
-router.post('/viewStartupPlanById/:id',pitch_my_idea.editStartUpPlanById)
+router.post('/viewStartupPlanById/:id',pitch_my_idea.viewStartUpPlanById)
+router.post('/viewStartUpPlanByEntrepId/:id',pitch_my_idea.viewStartUpPlanByEntrepId)
 
 
 
@@ -33,7 +34,7 @@ router.post('/registerInvestor',investors.upload,investors.registerInvestor)
 router.post('/loginInvestor',investors.loginInvestor)
 router.post('/viewInvestors',investors.viewInvestors)
 router.post('/viewInvestorById/:id',investors.viewInvestorById)
-router.post('/editInvestorById/:id',investors.upload,investors.editInvestorById)
+router.post('/editInvestorById/:id',investors.uploadSingle,investors.editInvestorById)
 router.post('/viewInvestorReqs',investors.viewInvestorReqs)
 router.post('/approveInvestorReqsById/:id',investors.approveInvestorReqsById)
 router.post('/activateInvestorById/:id',investors.activateInvestorById)
