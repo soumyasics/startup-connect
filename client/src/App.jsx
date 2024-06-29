@@ -103,6 +103,7 @@ function App() {
           element={<Entprofile url={url} />}
         />
         <Route path="/entrepreneur/viewinvestors" element={<ViewInvestors url={url}/>} />
+        <Route path="/entrepreneur/viewrestatu/:role" element={<ViewInvestors url={url}/>} />
         <Route
           path="/entrepreneur/investorsview/:id"
           element={<InvestorsView />}

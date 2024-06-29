@@ -5,47 +5,43 @@ const mongoose = require('mongoose');
 // Register a new Investor Request
 const reqInvestorById = async (req, res) => {
     const { investorId, entId } = req.body;
+    var response ={};
 
   await InvestorReqs.find({investorId:investorId,entId:entId}).exec()
   .then(data=>{
     if(data.length>0)
         {
-            return res.json({
-                status: 409,
-                msg: "You have already requested for this Investor",
-               
-            }); 
+            response.status = 409;
+            response.msg= "You have already requested for this Investor";
         }
   }).catch(err => {
-    return res.json({
-        status: 500,
-        msg: "data not obtained",
-        
-    });
-})
+    response.msg= "error";
+  })
     try {
-
-        const newInvestorReq = new InvestorReqs({
-            date:new Date(),
-            investorId,
-            entId
-        });
-
-        await newInvestorReq.save()
-            .then(data => {
-                return res.json({
-                    status: 200,
-                    msg: "Request created successfully",
-                    data: data
-                });
-            })
-            .catch(err => {
-                return res.json({
-                    status: 500,
-                    msg: "Request not created",
-                    data: err
-                });
+        if (response.status != 409) {
+            const newInvestorReq = new InvestorReqs({
+                date:new Date(),
+                investorId,
+                entId
             });
+    
+            await newInvestorReq.save()
+                .then(data => {
+                    response ={
+                        status: 200,
+                        msg: "Request created successfully",
+                        data: data
+                    };
+                })
+                .catch(err => {
+                    response = {
+                        status: 500,
+                        msg: "Request not created",
+                        data: err
+                    };
+                });
+        }
+        res.json(response);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -171,7 +167,6 @@ const deleteInvestorReqById = (req, res) => {
 // View Investor Request by ID
 const acceptInvestorReqByInvId = (req, res) => {
     InvestorReqs.findByIdAndUpdate({_id:req.params.id},{status:'accepted'})
-      
         .exec()
         .then(data => {
             if (data) {
@@ -253,7 +248,7 @@ const viewAcceptedReqsByInvId = (req, res) => {
 };
 // View Investor Request by ID
 const viewAcceptedReqsByEntId = (req, res) => {
-    InvestorReqs.find({entId:req.params.id},{status:'accepted'}).populate('investorId')
+    InvestorReqs.find({entId:req.params.id, status:'accepted'}).populate('investorId')
       
         .exec()
         .then(data => {
