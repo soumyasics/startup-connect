@@ -8,7 +8,7 @@ import Twiterlogo from "../../assets/twiterlogo.png";
 import Facebooklogo from "../..//assets/facebooklogo.png";
 import Linkedinlogo from "../../assets/linkedinlogo.png";
 import Instalogo from "../../assets/Group 19 (1).png";
-import Emaillogo from "../../assets/Vector (1).png";
+import Emaillogo from "../../assets/Vector.png";
 
 function Footer() {
   return (
@@ -40,7 +40,7 @@ function Footer() {
                         <span>123 Street, New York,USA</span>
                       </div>
                       <div className="pt-3">
-                        <img className="px-2" src={Emaillogo} />
+                        <img className="px-2 email_footer" src={Emaillogo} />
                         <span>info@example.com</span>
                       </div>
                       <div className="pt-3">

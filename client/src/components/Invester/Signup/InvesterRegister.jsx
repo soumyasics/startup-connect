@@ -17,7 +17,7 @@ function InvesterRegister() {
     nationality: "",
     password: "",
     confirm_password: "",
-    investing_category: "",
+    investing_category: "Technology",
     occupation: "",
     description: "",
     address: "",
@@ -120,7 +120,7 @@ function InvesterRegister() {
     } else if (investordata.password !== investordata.confirm_password) {
       errors.confirm_password = "Passwords must match";
     }
-    if (!investordata.investing_category.trim()) {
+    if (!investordata.investing_category==null) {
       formValid = false;
       console.log("3",formValid);
 
@@ -145,13 +145,7 @@ function InvesterRegister() {
       errors.address = "Address is required";
     }
 
-    if (!investordata.profile.trim()) {
-      formValid = false;
-      errors.profile = "profile image is required";
-    }if (!investordata.address.trim()) {
-      formValid = false;
-      errors.identification_document = "identification_document is required";
-    }
+    
     setErrors(errors);
 
     if (
@@ -345,8 +339,6 @@ function InvesterRegister() {
                   onChange={handleInputChange}
                   name="investing_category"
                 >
-                  <option hidden="">Investing Category</option>
-                  <option value="">Select Industry Sector</option>
                   <option value="Technology">Technology</option>
                   <option value="E-commerce and Retail">
                     E-commerce and Retail
@@ -374,9 +366,9 @@ function InvesterRegister() {
                     Fashion and Lifestyle
                   </option>
                 </select>
-                {errors.industry_sector && (
+                {errors.investing_category && (
                   <div className="text-danger errortext">
-                    {errors.industry_sector}
+                    {errors.investing_category}
                   </div>
                 )}
               </div>
@@ -458,7 +450,7 @@ function InvesterRegister() {
               {errors.identification_document && (
                   <div className="text-danger errortext">{errors.identification_document}</div>
                 )}
-              <div class="relative pt-4">
+              <div class=" pt-4">
                 <button className="inv-reg-btn">Register</button>
               </div>
             </div>

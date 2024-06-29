@@ -138,7 +138,7 @@ const deleteStartUpPlan=(id)=>{
                     </div>
                     </div>
                 )
-            })):(<h1>abc</h1>)
+            })):(<h3>No startup plans are available</h3>)
         
 }
   

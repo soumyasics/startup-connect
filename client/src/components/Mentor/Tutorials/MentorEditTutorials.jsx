@@ -16,7 +16,7 @@ function MentorEditTutorials() {
     const navigate = useNavigate();
 
     const navigateToBack =()=>{
-        navigate("/mentor")
+        navigate("/mentor/viewtutorials")
     }
 
     const [tutorialdata, setTutorialData]=useState({
@@ -68,7 +68,7 @@ function MentorEditTutorials() {
         const {name,files} =e.target;
         setTutorialData({...tutorialdata,[name]:files[0]});
     };
-    console.log(tutorialdata,"blogData");
+    console.log(tutorialdata,"tutorialData");
 
     const handleSubmit =async (e)=>{
         e.preventDefault();
@@ -140,7 +140,7 @@ function MentorEditTutorials() {
             <div className='row mentor_editblog_main'>
                 <div className='col-md-6 col-sm-12 mt-5 '>
                 { videoFile && 
-                    <video width="550" height="400" controls     src={videoFile} type="video/mp4"></video>
+                    <video width="550" height="400" controls autoPlay src={videoFile} type="video/mp4"></video>
                 }     
                    
                     </div>

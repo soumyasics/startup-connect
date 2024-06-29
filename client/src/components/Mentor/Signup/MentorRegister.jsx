@@ -108,6 +108,10 @@ function MentorRegister() {
       formValid = false;
       errors.description = "Description is required";
     }
+    if (!mentordata.profile==null){
+      formValid = false;
+      errors.profile = "Profile Image is required";
+    }
   
   setErrors(errors);
 
@@ -157,7 +161,7 @@ function MentorRegister() {
       }
     } else {
       console.log("Form is not valid", formValid);
-      console.log("Data entered", mentordata);
+      console.log("Please Fill All Data", mentordata);
     }
   }
 
@@ -243,7 +247,7 @@ function MentorRegister() {
               <div class="">
               <label id="">Expertise Area</label>
                 <select class="input-cal input-base " id="mentor_input" onChange={handleInputChange}  name="expertise_area">
-                  <option hidden="">Expertise Area</option>
+                  <option hidden="">Select</option>
                 <option value="Technology">Technology</option>
                 <option value="E-commerce and Retail">E-commerce and Retail</option>
                 <option value="Health and Wellness">Health and Wellness</option>
@@ -291,6 +295,8 @@ function MentorRegister() {
                 </label>
                 
               </div>
+              {errors.profile && (<div className="text-danger errortext">{errors.profile}</div>)}
+
               <div class="men_file_upload1">
               <label className='pt-3 px-1' id="">Profile</label>
               <label for="profile" class="men_reg_file_upload">
@@ -302,13 +308,14 @@ function MentorRegister() {
               
             </div>
             <div class=" pt-2">
-              <button className='mentor_reg_btn'>Register</button> 
+              <button className='mentor_reg_btn mb-5'>Register</button> 
               </div>
           </div>
           </form>
 
       </div>
-    <Footer/>
+      <div className='mt-5 pt-5'>    <Footer/>
+      </div>
     </>
   )
 }

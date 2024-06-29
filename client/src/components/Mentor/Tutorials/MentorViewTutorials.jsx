@@ -9,10 +9,14 @@ import Footer_2 from '../../Footer/Footer_2';
 import tutorialvideo from '../../../assets/tutorial-1.mp4'
 import axiosInstance from '../../../BaseAPIs/AxiosInstance';
 import { imageUrl } from '../../../ImageAPIs/Image_Urls';
+import { useNavigate } from 'react-router-dom';
 
 function MentorViewTutorials() {
-  const [tutorialdata, setTutorialData]=useState();
-  const [videoFile, setVideoFile] = useState("")
+  
+  const navigate=useNavigate();
+
+  const [tutorialdata, setTutorialData]=useState("");
+  const [videoFile, setVideoFile] = useState("");
 
 
   useEffect(()=>{
@@ -33,7 +37,7 @@ function MentorViewTutorials() {
 
         setVideoFile(`${imageUrl}/${tutorialdata.videolink.filename}`)
     }
-}, [])
+}, [tutorialdata.videolink])
 
   const removeMentorTutorial=(id)=>{
     axiosInstance.post(`/mentorRemoveTutorial/${id}`)
@@ -48,6 +52,10 @@ function MentorViewTutorials() {
       console.log(err);
       alert(err)
     })
+  }
+
+  const navigateToEditTutorial=(id)=>{
+    navigate(`/mentor/edittutorials/${id}`)
   }
   return (
     <>
@@ -66,11 +74,10 @@ function MentorViewTutorials() {
           return(
           <div className='row mentor_viewtutorial_mainrow'>
             <div className='col-md-5 col-sm-12 mentor_viewtutorial_fir_col'>
-            { videoFile && 
-                    <video width="300" height="200" controls autostart autoPlay src={videoFile} type="video/mp4">
-                      
-                    </video>
-                    }     
+
+                    
+                    <video width="500" height="305" controls autoPlay src={`${imageUrl}/${data.videolink.filename}`} type="video/mp4"></video>
+                
             </div>
             <div className='col-md-7 col-sm-12 mentor_viewtutorial_sec_col'>
               <div className='row montor_row_viewtutorial'>
@@ -78,13 +85,13 @@ function MentorViewTutorials() {
                   <p>{data.title}</p>
                 </div>
                 <div className='col-5'>
-                  <FaRegCalendarAlt className='mentor-icon' /> 01/01/2024
+                  <FaRegCalendarAlt className='mentor-icon' /> {data.date}
                 </div>
               </div>
               <label>{data.description}</label>
               <div className='mentor_viewtutorial_button_div'>
-                <button className='menter_viewtutorial_btn'><FaEdit /> Edit</button>
-                <button className='menter_viewtutorial_btn mentor_addblog_secbtn'><RiDeleteBin5Fill /> Remove</button>
+                <button className='menter_viewtutorial_btn' onClick={()=>navigateToEditTutorial(data._id)}><FaEdit /> Edit</button>
+                <button className='menter_viewtutorial_btn mentor_addblog_secbtn' onClick={()=>removeMentorTutorial(data._id)}><RiDeleteBin5Fill /> Remove</button>
               </div>
             </div>
           </div>
