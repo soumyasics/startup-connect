@@ -56,12 +56,16 @@ function MentorLogin() {
         console.log(result,"fulldata");
         if(result.data.status == 200){
           const { data,token }=result.data;
+          if(data.adminApproved === true){
           console.log("id",data._id);
           localStorage.setItem("Mentor",data._id);
           localStorage.setItem("MentorToken",token);
           console.log(data);
           alert("Mentor Login Successfully");
           navigate("/mentor/homepage")
+          }else{
+            alert("Admin Not approved")
+          }
         }
         else{
           alert(result.data.msg);
