@@ -301,11 +301,21 @@ function InvestorUpdateProfile({ url }) {
               {errors.address && (
                 <span className="text-danger">{errors.address}</span>
               )}
-
+              <input
+              className="mt-4"
+              type="text"
+              placeholder={investorDetails.description}
+              value={investorDetails.description}
+              name="description"
+              onChange={handleChange}
+            ></input>
+            {errors.description && (
+              <span className="text-danger">{errors.description}</span>
+            )}
               
               
             </div>
-            </div>
+            
             <div class="col-lg-6 profile-inputtag">
               <select
                 className="inv_update_profile_industry_sector"
@@ -415,24 +425,14 @@ function InvestorUpdateProfile({ url }) {
               {errors.occupation && (
                 <span className="text-danger">{errors.occupation}</span>
               )}
-              <input
-                className="mt-4"
-                type="text"
-                placeholder={investorDetails.description}
-                value={investorDetails.description}
-                name="description"
-                onChange={handleChange}
-              ></input>
-              {errors.description && (
-                <span className="text-danger">{errors.description}</span>
-              )}
+             
               
               <div className="mt-4">
             <button className="yourprofileupdate_btn">
                 Update Profile
               </button>
             </div>
-            
+            </div>
           </div>
         </form>
       </div>

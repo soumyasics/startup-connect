@@ -8,11 +8,16 @@ import axiosInstance from '../../BaseAPIs/AxiosInstance'
 import { imageUrl } from '../../ImageAPIs/Image_Urls'
 function RequestInvestor() {
 
-    const navigate=useNavigate();
 
-    
 
-  const [investorData, setInvestordata]= useState({});
+  const navigate=useNavigate();
+
+  const navigateToInvestorView=(id)=>{
+    navigate(`/entrepreneur/investorsview/${id}`)
+  }
+
+  const [investorData, setInvestordata]= useState([]);
+  const [id, setId]= useState(localStorage.getItem("Enterprenuer"));
 
   useEffect(()=>{
     if(localStorage.getItem("Enterprenuertoken")== null && localStorage.getItem("Enterprenuer") == null ){
@@ -21,45 +26,41 @@ function RequestInvestor() {
   },[navigate]);
 
   useEffect(()=>{
-    axiosInstance.post('/viewInvestors')
+    axiosInstance.post(`/viewAcceptedReqsByEntId/${id}`)
     .then((res)=>{
       console.log(res,"res");
-      if(res.status === 200){
-        setInvestordata(res.data.data)
+      var tempm = []
+      for (var i in res.data.data) {
+        tempm.push(res.data.data[i].investorId) 
       }
+        setInvestordata(tempm)
     })
     .catch((err)=>{
       toast.error("Failed to fetch user details")
   });
   },[])
 
-
-  const navigateToInvestorView = (id)=>{
-    navigate(`/entrepreneur/investorreqview/${id}`)
-  }
   return (
     <>
     <CommonNavbar/>
     <HomepageNavbar/>
-    <div className="container mb-4">
+      <div className="container mb-4" style={{minHeight:"80vh"}}>
         <div className="text-center ">
-            <h4 className="  mt-3  ent_invreq_mainheading">TOP INVESTORS</h4>
-            <h3 className="ent_invreq_sub_h3">Your Ideas, Our Mission</h3>
-            <div className="  mb-5  ent_invreq_hr_line "></div>
+            <h4 className="  mt-3  ent_invview_mainheading">TOP INVESTORS</h4>
+            <h3 className="ent_invview_sub_h3">Your Ideas, Our Mission</h3>
+            <div className="  mb-5  ent_invview_hr_line "></div>
         </div>
         <div class="row row-cols-1 row-cols-md-4 g-4">
-          {console.log("datas",investorData)}
          {
         (investorData?.length)>0?((investorData).map((data) => {
           return(
             
           <div class="col">
-            <div class="ent_invreq_profile">
-              <img src={`${imageUrl}/${data.profile.filename}`} class="ent_invreq_profile_pic" alt="..."/>
+            <div class="ent_invview_profile " onClick={()=>navigateToInvestorView(data._id)}>
+              <img src={`${imageUrl}/${data.profile.filename}`} class="ent_invview_profile_pic" alt="..."/>
               <div class="">
-                <h5 class="ent_invreq_fname">{data.name}</h5>
-                <h3 className='ent_invreq_name'>INVESTOR</h3>
-                <button className='ent_invreq_btn' onClick={()=>navigateToInvestorView(data._id)} >Request</button>
+                <h5 class="ent_invview_fname" >{data.name}</h5>
+                <h3 className='ent_invview_name'>INVESTOR</h3>
               </div>
             </div>
           </div>
@@ -67,13 +68,13 @@ function RequestInvestor() {
           )
         })):(
         
-          <h1>No Investors Found</h1>
+          <h4>No investors available</h4>
         )
         } 
           
         </div>
       </div>
-    <Footer/>
+      <Footer/>
     </>
   )
 }
