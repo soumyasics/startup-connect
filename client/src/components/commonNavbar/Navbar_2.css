@@ -2,6 +2,12 @@
     position: sticky;
     top:-1%;
   }
+
+  .softution_logo{
+    color:#06A3DA;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: 45px;
+  } 
   
   .nav_topheader{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
