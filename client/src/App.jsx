@@ -224,7 +224,8 @@ function App() {
           path="/admin_dashboard/investorlist"
           element={<InvestorList />}
         />
-        <Route path="/admin_dashboard/mentorlist" element={<MentorList />} />
+        <Route path="/admin_dashboard/mentorlist" 
+        element={<MentorList />} />
         <Route
           path="/admin_dashboard/viewinvestor/:id"
           element={<InvestorView />}

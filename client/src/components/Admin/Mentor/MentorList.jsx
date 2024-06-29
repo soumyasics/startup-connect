@@ -17,7 +17,7 @@ function MentorList() {
     const [mentordata, setMentorData]= useState({});
 
   useEffect(()=>{
-    axiosInstance.post('/viewMentorsReqs')
+    axiosInstance.post('/viewMentors')
     .then((res)=>{
       console.log(res,"res");
       if(res.status === 200){

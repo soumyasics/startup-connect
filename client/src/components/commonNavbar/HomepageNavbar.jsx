@@ -14,24 +14,14 @@ function HomepageNavbar() {
     const navigateToInvestors = () => {
         navigate("/entrepreneur/viewinvestors");
     };
-    const navigateToRequestInvestors = () => {
-        navigate("/entrepreneur/requestinvestor");
-    };
     const navigateToMentors = () => {
         navigate("/entrepreneur/viewmentors");
     };
-    const navigateToStartUpPlan = () => {
-        navigate("/entrepreneur/pitch-my-idea");
-    };
-    const navigateToViewStartUpPlan = () => {
-        navigate("/entrepreneur/viewstartup_plan");
-    };
+   
     const navigateToMyProfile = () => {
         navigate("/entrepreneur/entprofile");
     };
-    const navigateToLogin = () => {
-        navigate("/entrepreneur/login");
-    };
+    
 
     const handleLogout = () => {
         localStorage.clear();
@@ -63,10 +53,10 @@ function HomepageNavbar() {
                                     <Link href="#Investors" className="text-decoration-none" ><p className="navbarstext">Startup Plan</p></Link>
                                 </Navbar.Text>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#"onClick={navigateToStartUpPlan}>Add New Plans</a></li>
-                                    <li><a class="dropdown-item" href="#"onClick={navigateToViewStartUpPlan}>View Plans</a></li>
-                                    <li><a class="dropdown-item" href="#"onClick={navigateToInvestors}>My Investors</a></li>
-                                    <li><a class="dropdown-item" href="#"onClick={navigateToRequestInvestors}>Request Status</a></li>
+                                    <li><Link to='/entrepreneur/pitch-my-idea' class="dropdown-item" >Add New Plans</Link></li>
+                                    <li><Link to='/entrepreneur/viewstartup_plan' class="dropdown-item" >View Plans</Link></li>
+                                    <li><Link to='/entrepreneur/requestinvestor' class="dropdown-item" >My Investors</Link></li>
+                                    <li><Link to='' class="dropdown-item" >Request Status</Link></li>
                                 </ul>
                                 </div>
                             <Navbar.Text className="px-3" onClick={navigateToMyProfile}>

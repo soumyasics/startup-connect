@@ -108,10 +108,7 @@ function MentorRegister() {
       formValid = false;
       errors.description = "Description is required";
     }
-    if (!mentordata.profile==null){
-      formValid = false;
-      errors.profile = "Profile Image is required";
-    }
+    
   
   setErrors(errors);
 
@@ -295,7 +292,6 @@ function MentorRegister() {
                 </label>
                 
               </div>
-              {errors.profile && (<div className="text-danger errortext">{errors.profile}</div>)}
 
               <div class="men_file_upload1">
               <label className='pt-3 px-1' id="">Profile</label>

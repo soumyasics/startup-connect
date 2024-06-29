@@ -2,8 +2,10 @@ import React from 'react'
 import { CommonNavbar } from '../../commonNavbar/commonNavbar'
 import Footer_2 from '../../Footer/Footer_2'
 import InvestorNav from '../InvestorNav/InvestorNav'
+import eye from "../../../assets/carbon_view-filled.png";
 
 function ViewEntreprenrueReqList() {
+
   return (
     <>
         <CommonNavbar/>
@@ -28,21 +30,28 @@ function ViewEntreprenrueReqList() {
     </tr>
   </thead>
   <tbody>
-  
-      
+  {/* {
+        (entData.length)>0?((entData).map((data) => {
+          return(
+       */}
     <tr>
       <th scope="row">
-      <img src={`${imageUrl}/${data.profile.filename}`} 
-      class="invviewadmin_profile_pic" alt="..."/>
-        {data.name}</th>
-      <td>{data.email}</td>
-      <td>{data.investing_category}</td>
-      <td>{data.contact}</td>
-      <td>{data.nationality}</td>
+      {/* <img src={`${imageUrl}/${data.profile.filename}`}  */}
+      {/* class="invviewadmin_profile_pic" alt="..."/> */}
+      name</th>
+      <td>email</td>
+      <td>industry_sector</td>
+      <td>contact</td>
+      <td>corporate_id_no</td>
       <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> <a href="" onClick={()=>navigateToInvestorView(data._id)}>View Details</a></td>
 
     </tr>
-   
+   {/* )
+  })):(
+  
+    <h1>No Records</h1>
+  )
+  }  */}
   </tbody>
 
   

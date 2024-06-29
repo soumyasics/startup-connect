@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './RecentInvestors.css'
 import axiosInstance from '../../../BaseAPIs/AxiosInstance';
 import AdminNavbar from '../AdminNavbar'
 import { toast } from "react-toastify";
@@ -31,7 +32,7 @@ function RecentInvestorList() {
   return (
     <>
     <AdminNavbar/>
-    <div className='container'>
+    <div className='container recent_invlist_con'>
     <div className="text-center ">
           <h4 className="  mt-3  inv_mainheading">View All</h4>
           <h3 className="inv_sub_h3">New Investors</h3>
