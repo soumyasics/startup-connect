@@ -50,7 +50,7 @@ function RequestInvestor() {
         <div class="row row-cols-1 row-cols-md-4 g-4">
           {console.log("datas",investorData)}
          {
-        (investorData.length)>0?((investorData).map((data) => {
+        (investorData?.length)>0?((investorData).map((data) => {
           return(
             
           <div class="col">

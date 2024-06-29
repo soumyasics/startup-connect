@@ -98,7 +98,8 @@ const viewInvestors = (req, res) => {
                 });
             } else {
                 res.status(200).json({
-                    msg: "No Data obtained"
+                    msg: "No Data obtained",
+                    data: []
                 });
             }
         })

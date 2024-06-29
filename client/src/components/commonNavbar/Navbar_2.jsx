@@ -43,28 +43,28 @@ function Navbar_2() {
               </Navbar.Brand>
               <Navbar.Toggle />
               <Navbar.Collapse className="justify-content-end">
-                <Navbar.Text className="px-5">
-                  <a href="#Home" className="text-decoration-none" onClick={navigateToHome}>
+                <Navbar.Text className="px-5" onClick={navigateToHome}>
+                  <Link  className="text-decoration-none" >
                     <p className="navbarstext">Home</p>
-                  </a>
+                  </Link>
                 </Navbar.Text>
                 <Navbar.Text className="px-5" onClick={navigateToAboutUs}>
-                  <a href="" className="text-decoration-none">
+                  <Link className="text-decoration-none">
                     <p className="navbarstext">About Us</p>
-                  </a>
+                  </Link>
                 </Navbar.Text>
                 <Navbar.Text className="px-5" onClick={navigateToServices}>
-                  <a href="" className="text-decoration-none">
+                  <Link className="text-decoration-none">
                     <p className="navbarstext">Services</p>
-                  </a>
+                  </Link>
                   </Navbar.Text>
                 <Navbar.Text className="px-5" >
                 <div class="dropdown">
                   <button class="dropbtn">Sign In</button>
                   <div class="dropdown-content">
-                    <Navbar.Text  onClick={navigateToEntLogin}><a href="" >Entrepreneur</a></Navbar.Text>
-                    <Navbar.Text  onClick={navigateToInvLogin}><a href="">Investor</a></Navbar.Text>
-                    <Navbar.Text  onClick={navigateToMenLogin}><a href=''>Mentor</a></Navbar.Text>
+                    <Navbar.Text  onClick={navigateToEntLogin}><Link>Entrepreneur</Link></Navbar.Text>
+                    <Navbar.Text  onClick={navigateToInvLogin}><Link>Investor</Link></Navbar.Text>
+                    <Navbar.Text  onClick={navigateToMenLogin}><Link>Mentor</Link></Navbar.Text>
                   </div>
                 </div>
                   </Navbar.Text>

@@ -56,13 +56,18 @@ function InvestorLogin() {
       .then((result)=>{
         console.log(result,"fulldata");
         if(result.data.status == 200){
+          console.log("status 200");
           const { data,token }=result.data;
+          if(data.isActive === true && data.adminApproved === true){
           console.log("id",data._id);
           localStorage.setItem("Investor",data._id);
           localStorage.setItem("InvestorToken",token);
           console.log(data);
           alert("Investor Login Successfully");
           navigate("/investor/homepage")
+          }else{
+            alert("Admin Not approved")
+          }
         }
         else{
           alert(result.data.msg);
