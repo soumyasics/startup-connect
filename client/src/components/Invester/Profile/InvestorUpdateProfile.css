@@ -43,10 +43,11 @@
     .yourprofileupdate_btn{
         background-color: #06A3DA;
         color: #FFFFFF;
-        padding: 13px 170px;
         border: none;
-        margin-left: -50px;
-        width: 456px;
+        max-width: 456px;
+        text-align: center;
+        /* margin-top: 25px; */
+        margin-left:   0px;
     
     }
     
@@ -104,8 +105,8 @@
     .inv_updateid_upload {
         height: 13px;
         width: 100px;
-        margin-left: 350px;
-        margin-top: -30px;
+        margin-left: 330px;
+        margin-top: -45px;
         display: flex;
         flex-direction: column;
         align-items: space-between;
@@ -163,4 +164,14 @@
       }
       .inv_updateid_label{
         margin-right: 150px;
+      }
+
+      .inv_id_update_file_upload2{
+        margin-top: 26px;
+        margin-left: 45px;
+        text-align: left;
+        padding-left: 10px;
+        max-width: 455px;
+        height: 52px;
+        background: #EEF9FF;
       }

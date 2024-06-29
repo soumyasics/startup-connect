@@ -22,4 +22,17 @@
   }
 
   
+  .home_dropdown:hover>.dropdown-menu {
+    display: block;
+    margin-top: -23px;
+    border-radius: 0%;
+  }
   
+  .dropdown>.dropdown-toggle:active {
+      pointer-events: none;
+      
+  }
+  .dropdown-item:hover>.li{
+    background-color: #00B0F0;
+    color:#fff
+  }
