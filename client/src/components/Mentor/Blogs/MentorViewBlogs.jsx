@@ -8,10 +8,17 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import axiosInstance from '../../../BaseAPIs/AxiosInstance'
+import { useNavigate } from 'react-router-dom'
 
 
 
 function MentorViewBlogs() {
+
+  const navigate=useNavigate();
+
+  const navigateToeditBlog=(id)=>{
+    navigate(`/mentor/editblogs/${id}`)
+  }
 
   const [blogdata, setBlogData]=useState("");
 
@@ -72,7 +79,7 @@ function MentorViewBlogs() {
               </div>
               <label>{data.description}</label>
               <div className='mentor_viewblog_button_div'>
-                <button className='menter_viewblog_btn'><FaEdit /> Edit</button>
+                <button className='menter_viewblog_btn' onClick={()=>{navigateToeditBlog(data._id)}}><FaEdit /> Edit</button>
                 <button className='menter_viewblog_btn mentor_addblog_secbtn'
                 onClick={()=>removeMentorBlog(data._id)}
                 ><RiDeleteBin5Fill /> Remove</button>
