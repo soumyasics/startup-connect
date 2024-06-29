@@ -64,30 +64,42 @@ function InvesterRegister() {
     if (!investordata.name.trim()) {
       formValid = false;
       errors.name = "Name is required";
+
     }
     if (!investordata.email.trim()) {
       formValid = false;
       errors.email = "Email is required";
+      console.log("p",formValid);
     } else if (!investordata.email.endsWith("@gmail.com")) {
       formValid = false;
       errors.email = "Email must be a valid Gmail address";
+      console.log("i",formValid);
+
     }
     if (!investordata.contact.trim()) {
       formValid = false;
+      console.log("t",formValid);
+
       errors.contact = "Contact number is required";
     } else if (investordata.contact.length <= 9) {
       errors.contact = "Enter a valid 10-digit contact number";
     }
     if (!investordata.organization.trim()) {
       formValid = false;
+      console.log("tx",formValid);
+
       errors.organization = "Organization is required";
     }
     if (!investordata.nationality.trim()) {
       formValid = false;
+      console.log("ty",formValid);
+
       errors.nationality = "Nationality name is required";
     }
     if (!investordata.password.trim()) {
       formValid = false;
+      console.log("z",formValid);
+
       errors.password = "Password is required";
     } else if (
       !/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}/.test(
@@ -95,29 +107,41 @@ function InvesterRegister() {
       )
     ) {
       formValid = false;
+      console.log("z1",formValid);
+
       errors.password =
         "Password should be at least 6 characters long and contain at least one lowercase letter, one uppercase letter, one number, and one special character";
     }
     if (!investordata.confirm_password.trim()) {
       formValid = false;
+      console.log("z2",formValid);
+
       errors.confirm_password = "Company description is required";
     } else if (investordata.password !== investordata.confirm_password) {
       errors.confirm_password = "Passwords must match";
     }
     if (!investordata.investing_category==null) {
       formValid = false;
+      console.log("3",formValid);
+
       errors.Investing_category = "Investing Category is required";
     }
     if (!investordata.occupation.trim()) {
       formValid = false;
+      console.log("z4",formValid);
+
       errors.occupation = "Occupation is required";
     }
     if (!investordata.description.trim()) {
       formValid = false;
+      console.log("z5",formValid);
+
       errors.description = "Description is required";
     }
     if (!investordata.address.trim()) {
       formValid = false;
+      console.log("z6",formValid);
+
       errors.address = "Address is required";
     }
 

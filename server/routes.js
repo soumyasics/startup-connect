@@ -7,6 +7,7 @@ const admin=require('./Admin/adminController')
 
 
 const pitch_my_idea=require('./Entrepreneurs/PitchMyIdea/PitchMyIdeaController')
+const InvestorReqs=require('./EntInvestorReqs/entInvestorReqController')
 
 //entrepreneurs
 router.post('/registerEntrepreneur',entrepreneurs.upload,entrepreneurs.registerEntrepreneur)
@@ -41,6 +42,7 @@ router.post('/activateInvestorById/:id',investors.activateInvestorById)
 router.post('/removeInvestorById/:id',investors.removeInvestorById)
 router.post('/deActivateInvestorById/:id',investors.deActivateInvestorById)
 router.post('/viewlessinvestors',investors.viewLessInvestorReqs)
+router.post('/viewInvestorByCategory/:category',investors.viewInvestorByCategory)
 
 
 
@@ -82,5 +84,17 @@ router.post('/mentorRemoveTutorial/:id',mentors.mentorRemoveTutorial)
 //Admin routes
 router.post('/loginAdmin',admin.loginAdmin)
 router.post('/forgotPassword',admin.forgotPassword)
+
+
+//investor Reqs
+router.post('/reqInvestorById',InvestorReqs.reqInvestorById)
+router.post('/viewInvestorReqById/:id',InvestorReqs.viewInvestorReqById)
+router.post('/deleteInvestorReqById/:id',InvestorReqs.deleteInvestorReqById)
+router.post('/viewInvestorReqByEntId/:id',InvestorReqs.viewInvestorReqByEntId)
+router.post('/viewAcceptedReqsByInvId/:id',InvestorReqs.viewAcceptedReqsByInvId)
+router.post('/viewInvestorReqByInvId/:id',InvestorReqs.viewInvestorReqByInvId)
+router.post('/viewAcceptedReqsByEntId/:id',InvestorReqs.viewAcceptedReqsByEntId)
+router.post('/acceptInvestorReqByInvId/:id',InvestorReqs.acceptInvestorReqByInvId)
+router.post('/rejectInvestorReqById/:id',InvestorReqs.rejectInvestorReqById)
 
 module.exports=router
