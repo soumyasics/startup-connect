@@ -6,7 +6,6 @@
     opacity: 0px;    
     background: #EEF9FF;
     border-right: 1px solid #00000040;
-    /* box-shadow: 0px 4px 12.4px 0px #00000026; */
     text-align: left;
     padding-left: 50px;
     padding-top: 50px;
@@ -36,5 +35,31 @@
     border: none;
     background: #EEF9FF;
 
+
+}
+
+.invview_ent_viewsplan_btn{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:15px;
+    margin-top: 110px;
+}
+
+.invview_ent_viewsplan_acptbtn{
+    background: #3AAB46;
+    color: #fff;
+    width: 123px;
+    height: 41px;
+    border: none;
+
+
+}
+
+.invview_ent_viewsplan_rjtbtn{
+    background: #D9190D;
+    color: #fff;
+    width: 123px;
+    height: 41px;
+    border: none;
 
 }

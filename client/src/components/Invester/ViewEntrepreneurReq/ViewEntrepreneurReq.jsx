@@ -108,9 +108,10 @@ function ViewEntrepreneurReq() {
                                 <tr><td><input className='invview_ent_viewsplan_value' type="text" /></td></tr>
                                 <tr className='invview_ent_viewsplan_subhead'><th>In exchange for:</th></tr>
                                 <tr><td><input className='invview_ent_viewsplan_value' type="text" /></td></tr>
-                                <div className='invview_ent_viewsplan_subhead'>
+                                <div className='invview_ent_viewsplan_btn'>
                                     
-
+                                    <button className='invview_ent_viewsplan_acptbtn'>Accept</button>
+                                    <button className='invview_ent_viewsplan_rjtbtn'>Reject</button>
                                 </div>
                             </div>
                             
