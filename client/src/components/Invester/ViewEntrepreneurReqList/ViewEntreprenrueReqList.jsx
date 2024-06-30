@@ -6,9 +6,8 @@ import eye from "../../../assets/carbon_view-filled.png";
 import axiosInstance from "../../../BaseAPIs/AxiosInstance";
 import { useNavigate } from "react-router-dom";
 function ViewEntreprenrueReqList() {
-
   const [entData, setentData] = useState([]);
-const navigate=useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     axiosInstance
@@ -24,10 +23,9 @@ const navigate=useNavigate()
       });
   }, []);
 
-  const navigateToInvestorView=()=>{
-    navigate("/investor/entrepreneur_req")
-  }
-
+  const navigateToInvestorView = () => {
+    navigate("/investor/entrepreneur_req");
+  };
 
   return (
     <>
