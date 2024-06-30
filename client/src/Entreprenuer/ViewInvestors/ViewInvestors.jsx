@@ -39,6 +39,7 @@ function InvestorsView({ url }) {
       .catch((err) => {
         toast.error("Failed to fetch user details");
       });
+      
     axiosInstance
       .post(`/viewInvestorReqByEntId/${localStorage.getItem("Enterprenuer")}`)
       .then((res) => {

@@ -303,7 +303,8 @@ const mentorAddBlog= async(req,res)=>{
   const newBlog=new Mentor.mentorBlog({
     blogName,
     description,
-    coverImage:req.file
+    coverImage:req.file,
+    mentorId:req.params.id
   })
   await newBlog.save()
     .then(data => {
@@ -439,7 +440,9 @@ const mentorAddTutorial= async(req,res)=>{
   const newTutorial=new Mentor.mentorTutorial({
     title,
     description,
-    videolink:req.file
+    videolink:req.file,
+    mentorId:req.params.id
+
   })
   await newTutorial.save()
     .then(data => {
