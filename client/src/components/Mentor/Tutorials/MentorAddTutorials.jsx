@@ -70,7 +70,7 @@ function MentorAddTutorials() {
             var response;
             if(formData){
                 response= await axiosMultipartInstance.post(
-                    "/mentorAddTutorial",formData
+                    "/mentorAddTutorial/"+localStorage.getItem("Mentor"),formData
                 );
             }
             console.log("Response",response);

@@ -70,7 +70,7 @@ function MentorAddBlogs() {
             var response;
             if(formData){
                 response= await axiosMultipartInstance.post(
-                    "/mentorAddBlog",formData
+                    "/mentorAddBlog/"+localStorage.getItem("Mentor"),formData
                 );
             }
             console.log("Response",response);
