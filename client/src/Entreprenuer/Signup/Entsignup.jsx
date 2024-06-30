@@ -47,15 +47,25 @@ function Entsignup() {
     c_password: "",
   });
 
+  const [error , setError]=useState(null)
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    const { name, files } = e.target;
-    setData({ ...data, [name]: files[0] });
-    console.log(files);
+  
+
+  const handleFileChange = (image) => {
+    if(!image.name.match(/\.(jpg|jpeg|png|gif)$/)){
+      const error="Only JPG JPEG PNG GIF images upload";
+      setError(error);
+      return
+    }
+    setError(null)
+    console.log(image,"image");
+    setData({...data,image});
+
   };
 
   console.log(data,"kkk");
@@ -134,6 +144,11 @@ function Entsignup() {
       errors.c_password = "Company description is required";
     }else if(data.password!==data.c_password){
       errors.c_password="Passwords must match"
+    }
+
+    if(!data.image){
+      formValid=false;
+      errors.image="Profile Pic Required"
     }
 
     
@@ -262,12 +277,14 @@ function Entsignup() {
               {errors.address && (<div className="text-danger errortext">{errors.address}</div>)}
             </div>
             <label id="">Your Image</label>
-            <div class=" relative pt-4 ent_reg_profile ">
+            <div class="  pt-4 ent_reg_profile ">
               <label for="file" class="ent_reg_file_upload">
                 <div class="icon">Upload</div>
-                <input id="file" type="file"  name="image" onChange={handleFileChange} />
+                <input id="file" type="file"  name="image" onChange={(event)=>{handleFileChange(event.target.files[0])}} />
               </label>
-              {errors.image && (<div className="text-danger errortext">{errors.image}</div>)}
+              {error && (<div className="text-danger errortext">{error}</div>)}
+              {errors.image && (<div className="text-danger errortext mt-2">{errors.image}</div>)}
+
             </div>
           </div>
           <div className='col-4'>
@@ -301,12 +318,12 @@ function Entsignup() {
               <input class="input-cal input-base" id="ent_input" name="password" onChange={handleInputChange} placeholder="" type="password"/>
               {errors.password && (<div className="text-danger errortext">{errors.password}</div>)}
             </div>
-            <div class="relative pt-2">
+            <div class=" pt-2">
             <label id="">Confirm Password</label>
               <input class="input-cal input-base" id="ent_input" name="c_password" onChange={handleInputChange} placeholder="" type="password"/>
               {errors.c_password && (<div className="text-danger errortext">{errors.c_password}</div>)}
             </div>
-            <div class="relative pt-2 mx-5 mb-3">
+            <div class=" pt-2 mx-5 mb-3">
               <button className='ent_reg_btn' type="submit" >Register</button> 
               </div>
             </div>
