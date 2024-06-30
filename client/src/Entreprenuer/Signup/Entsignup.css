@@ -122,9 +122,9 @@
 
 
 .ent_reg_profile{
-  width: 100%;
+  width: 355px;
   height: 51px;
-  position: absolute;
+  /* position: absolute; */
   margin-top: 10px;
   background: #EEF9FF;
 }
