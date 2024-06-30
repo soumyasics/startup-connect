@@ -4,6 +4,7 @@ const investors=require('./Investors/investorController')
 
 const mentors=require('./Mentors/mentorController')
 const admin=require('./Admin/adminController')
+const chat=require('./Chats/chatController')
 
 
 const pitch_my_idea=require('./Entrepreneurs/PitchMyIdea/PitchMyIdeaController')
@@ -109,5 +110,11 @@ router.post('/viewInvestorReqByInvId/:id',InvestorReqs.viewInvestorReqByInvId)
 router.post('/viewAcceptedReqsByEntId/:id',InvestorReqs.viewAcceptedReqsByEntId)
 router.post('/acceptInvestorReqByInvId/:id',InvestorReqs.acceptInvestorReqByInvId)
 router.post('/rejectInvestorReqById/:id',InvestorReqs.rejectInvestorReqById)
+router.post('/viewInvestorReqByPlanId/:id',InvestorReqs.viewInvestorReqByPlanId)
+
+
+//chat
+router.post('/chatting',chat.chatting)
+router.post('/viewChatMsgs',chat.viewChatMsgs)
 
 module.exports=router
