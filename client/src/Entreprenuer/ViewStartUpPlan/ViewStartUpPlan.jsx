@@ -15,7 +15,7 @@ function ViewStartUpPlan() {
     const navigate=useNavigate();
 
     const navigateToRequestInvestor = () => {
-      navigate("/entrepreneur/requestinvestor");
+      navigate("/entrepreneur/viewinvestors");
     }
     const navigateToEditStartUpPlan = (id) => {
       navigate(`/entrepreneur/editstartup_plan/${id}`);

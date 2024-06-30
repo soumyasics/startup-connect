@@ -46,12 +46,12 @@ function BlogList() {
   return (
     <>
         <AdminNavbar/>
-        <div className="text-center headr">
+        <div className="text-center headr" >
             <h4 className="mt-3 ad_mentor_viewblog_mainheading">OUR BLOGS</h4>
             <h3 className="ad_mentor_viewblog_sub_h3">Share Your Ideas</h3>
             <div className="mb-5 ad_mentor_viewblog_hr_line"></div>
         </div>
-        <div className='container'>
+        <div className='container ' style={{minHeight:"60vh"}}>
       {
         (blogdata.length)>0?((blogdata).map((data) => {
           return(

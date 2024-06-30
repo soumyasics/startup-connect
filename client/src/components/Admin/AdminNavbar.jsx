@@ -38,43 +38,43 @@ function AdminNavbar() {
             </Link>
             <Link
               to="/admin_dashboard"
-              className=" text-dark text-decoration-none mx-4"
+              className=" text-dark text-decoration-none mx-5"
             >
               <img src={home1}></img> Events
             </Link>
             <Link
-              to="/admin_dashboard/viewentrepreneur"
-              className=" text-dark text-decoration-none mx-4"
+              to="/admin_dashboard/viewentrepreneurlist"
+              className=" text-dark text-decoration-none mx-5"
             >
               <img src={home6}></img> Entrepreneurs
             </Link>
             <Link
               to="/admin_dashboard/investorlist"
-              className=" text-dark text-decoration-none mx-4"
+              className=" text-dark text-decoration-none mx-5"
             >
               <img src={home3}></img> Investors
             </Link>
             <Link
               to="/admin_dashboard/mentorlist"
-              className=" text-dark text-decoration-none mx-4"
+              className=" text-dark text-decoration-none mx-5"
             >
               <img src={home5}></img> Mentors
             </Link>
-            <Link
+            {/* <Link
               to="/admin_dashboard"
               className=" text-dark text-decoration-none mx-4"
             >
               <img src={home4}></img> Complaints
-            </Link>
+            </Link> */}
             <Link
               to="/admin_dashboard/viewbloglist"
-              className=" text-dark text-decoration-none mx-4"
+              className=" text-dark text-decoration-none mx-5"
             >
               <img src={home2}></img> Blogs
             </Link>
             <a
               onClick={AdminLogout}
-              className=" text-dark text-decoration-none mx-4"
+              className=" text-dark text-decoration-none mx-5"
             >
               <img src={home7}></img> Logout
             </a>
