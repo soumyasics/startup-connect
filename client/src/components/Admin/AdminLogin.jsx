@@ -67,7 +67,8 @@ function AdminLogin() {
         <div className="col">
           <div>
             <div className="text-center">
-              <img src={Frame}></img>
+          {/*<img className="nav_img" src={Frame} alt="Frame" />*/}
+          <h1 className='softution_logo'>Softution</h1>
             </div>
             <div className="adminloginform">
               <form

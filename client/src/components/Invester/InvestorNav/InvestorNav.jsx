@@ -18,6 +18,7 @@ function InvestorNav() {
                         {/* <Navbar.Brand href="#home" className="text-light">
                             <img src={Frame} className="inv_home_nav_startup_logo" alt="StartupLogo" />
                         </Navbar.Brand> */}
+                        <h1 className='softution_logo'>Softution</h1>
                         <Navbar.Toggle/>
                         <Navbar.Collapse className="justify-content-end">
                             <Navbar.Text className="px-3" >
