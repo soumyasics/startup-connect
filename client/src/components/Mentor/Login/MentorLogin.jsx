@@ -112,7 +112,7 @@ function MentorLogin() {
           className="mentor_login_password"
         />          {errors.password &&(<div className='text-danger errortext'>{errors.password}</div>)}
 
-        <p className="text mt-2"><Link to="/entrepreneur/fogot-password">Forgot password</Link></p>
+        <p className="text mt-2"><Link to="/mentor/forgot">Forgot password</Link></p>
         
         <button className="mentor_login_loginbtn" >
           Log In
