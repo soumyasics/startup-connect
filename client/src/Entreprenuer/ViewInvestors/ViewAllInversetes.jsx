@@ -14,6 +14,10 @@ function ViewAllInversetes() {
     const [investorData, setInvestordata] = useState([]);
   
     useEffect(() => {
+      
+  const navigateToInvestersView=(id)=>{
+    navigate(`/entrepreneur/mentorsview/${id}`)
+  }
       if (
         localStorage.getItem("Enterprenuertoken") == null &&
         localStorage.getItem("Enterprenuer") == null
@@ -58,7 +62,7 @@ function ViewAllInversetes() {
           investorData.map((data) => {
             return (
               <div class="col">
-                <div class="ent_invreq_profile">
+                <div class="ent_invreq_profile" onClick={()=>navigateToInvestorView(data._id)}>
                   <img
                     src={`${imageUrl}/${data.profile.filename}`}
                     class="ent_invreq_profile_pic"

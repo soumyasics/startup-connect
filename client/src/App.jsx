@@ -259,8 +259,10 @@ function App() {
           element={<EntrepreneurList />}
         />
         <Route path="/admin_dashboard/viewbloglist" element={<BlogList />} />
-        <Route path="/entrepreneur/viewallinvester" element={<ViewAllInversetes />} />
-
+        <Route
+          path="/entrepreneur/viewallinvester"
+          element={<ViewAllInversetes />}
+        />
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
       </Routes>

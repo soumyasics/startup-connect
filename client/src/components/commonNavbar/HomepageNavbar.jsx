@@ -41,9 +41,9 @@ function HomepageNavbar() {
                             <Navbar.Text className="px-3" onClick={navigateToHome}>
                             <Link href="#Home" className="text-decoration-none" ><p className="navbarstext">Home</p></Link>
                             </Navbar.Text>
-                            {/* <Navbar.Text className="px-3" onClick={navigateToInvestors}>
+                            <Navbar.Text className="px-3" onClick={navigateToInvestors}>
                             <Link href="#Investors" className="text-decoration-none" ><p className="navbarstext">Investors</p></Link>
-                            </Navbar.Text> */}
+                            </Navbar.Text>
                             <Navbar.Text className="px-3" onClick={navigateToMentors}>
                             <Link href="#Mentors" className="text-decoration-none" ><p className="navbarstext">Mentors</p></Link>
                             </Navbar.Text>
