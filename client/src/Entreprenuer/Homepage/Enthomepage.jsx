@@ -18,7 +18,7 @@ function Enthomepage() {
             <CommonNavbar/>
             <HomepageNavbar/>   
             <div className='Enthomebgimage'>
-                <img className='homepg_img' src={homepage_img}/>
+                <img className='new_homepg_img w-100 h-100 object-fit-cover' src={homepage_img}/>
             </div>
 
 

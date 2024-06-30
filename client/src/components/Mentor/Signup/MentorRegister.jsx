@@ -45,11 +45,35 @@ function MentorRegister() {
     setMentorData({ ...mentordata, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    const { name, files } = e.target;
-    setMentorData({ ...mentordata,[name]: files[0]});
-    console.log(files);
+  
+
+  const [error , setError]=useState(null)
+  const [errorVideo , setErrorVideo]=useState(null)
+
+
+
+  const handleFileChange = (profile) => {
+    if(!profile.name.match(/\.(jpg|jpeg|png|gif)$/)){
+      const error="Only upload JPG JPEG PNG GIF file type ";
+      setError(error);
+      return
+    }
+    setError(null)
+    setMentorData({...mentordata,profile});
+
   };
+
+  const handleFileVideoChange = (demo_videolink) => {
+    if(!demo_videolink.name.match(/\.(mp4|mov|wmv|avi)$/)){
+      const error="Only upload MP4 MOV WMV AVI file type ";
+      setErrorVideo(error);
+      return
+    }
+    setErrorVideo(null)
+    setMentorData({...mentordata,demo_videolink});
+
+  };
+
 
   
   
@@ -109,6 +133,15 @@ function MentorRegister() {
     if (!mentordata.description.trim()) {
       formValid = false;
       errors.description = "Description is required";
+    }
+
+    if(!mentordata.profile){
+      formValid=false;
+      errors.profile="Profile Pic Required"
+    }
+    if(!mentordata.demo_videolink){
+      formValid=false;
+      errors.profile="Demo Video Required"
     }
     
   
@@ -290,19 +323,24 @@ function MentorRegister() {
               <label className='pt-3 px-1' id="">Demo Video </label>
               <label for="demo_video" class="men_reg_file_upload">
                   <div class="icon">Upload</div>
-                  <input id="demo_video" type="file"  name="demo_videolink" onChange={handleFileChange}  />
+                  <input id="demo_video" type="file"  name="demo_videolink" onChange={(event)=>{handleFileVideoChange(event.target.files[0])}}  />
                 </label>
                 
               </div>
+              {errors.profile && (<div className="text-danger errortext">{errors.profile}</div>)}
+              {errorVideo && (<div className="text-danger errortext">{errorVideo}</div>)}
 
               <div class="men_file_upload1">
               <label className='pt-3 px-1' id="">Profile</label>
               <label for="profile" class="men_reg_file_upload">
                   <div class="icon">Upload</div>
-                  <input id="profile" type="file"  name="profile" onChange={handleFileChange}  />
+                  <input id="profile" type="file"  name="profile" onChange={(event)=>{handleFileChange(event.target.files[0])}}  />
                 </label>
                 
               </div>
+              {errors.profile && (<div className="text-danger errortext">{errors.profile}</div>)}
+              {error && (<div className="text-danger errortext">{error}</div>)}
+
               
             </div>
             <div class=" pt-2">

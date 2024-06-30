@@ -46,11 +46,33 @@ function InvesterRegister() {
     setInvestordata({ ...investordata, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    const { name, files } = e.target;
-    setInvestordata({ ...investordata, [name]: files[0] });
-    console.log(files);
+
+  const [errorprofile , setErrorProfile]=useState(null)
+  const [errorid_doc , setErrorID_Doc]=useState(null)
+
+  const handleFileProfileChange = (profile) => {
+    if(!profile.name.match(/\.(jpg|jpeg|png|gif)$/)){
+      const error="Only upload JPG JPEG PNG GIF file type ";
+      setErrorProfile(error);
+      return
+    }
+    setErrorProfile(null)
+    setInvestordata({...investordata,profile});
+
   };
+  const handleFileIdDocChange = (identification_document) => {
+    if(!identification_document.name.match(/\.(jpg|jpeg|png|gif)$/)){
+      const error="Only upload JPG JPEG PNG GIF file type ";
+      setErrorID_Doc(error);
+      return
+    }
+    setErrorID_Doc(null)
+    setInvestordata({...investordata,identification_document});
+
+  };
+
+
+  
 
   console.log(investordata, "investor_data_1");
 
@@ -144,7 +166,13 @@ function InvesterRegister() {
 
       errors.address = "Address is required";
     }
+    if (!investordata.profile){
+      errors.profile="Upload a profile image"
+    }
 
+    if (!investordata.identification_document){
+      errors.identification_document="Upload a Identification document"
+    }
     
     setErrors(errors);
 
@@ -426,13 +454,16 @@ function InvesterRegister() {
                     id="file"
                     type="file"
                     name="profile"
-                    onChange={handleFileChange}
+                    onChange={(event)=>{handleFileProfileChange(event.target.files[0])}}
                   />
                 </label>
               </div>
               {errors.profile && (
                   <div className="text-danger errortext">{errors.profile}</div>
                 )}
+                {errorprofile && (<div className="text-danger errortext">{errorprofile}</div>)}
+
+
               <div className="inv_file_upload2">
                 <label className="pt-3 px-1" placeholder="">
                   Upload Identification Document
@@ -443,13 +474,15 @@ function InvesterRegister() {
                     id="file2"
                     type="file"
                     name="identification_document"
-                    onChange={handleFileChange}
+                    onChange={(event)=>{handleFileIdDocChange(event.target.files[0])}}
                   />
                 </label>
               </div>
               {errors.identification_document && (
                   <div className="text-danger errortext">{errors.identification_document}</div>
                 )}
+              {errorid_doc && (<div className="text-danger errortext">{errorid_doc}</div>)}
+
               <div class=" pt-4">
                 <button className="inv-reg-btn">Register</button>
               </div>

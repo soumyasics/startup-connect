@@ -59,9 +59,11 @@ import ViewTutorial from "./Entreprenuer/MentorTutorial/ViewTutorial/ViewTutoria
 import ViewBlogList from "./Entreprenuer/MentorBlog/ViewBlogList/ViewBlogList";
 import InvestorHomePage from "./components/Invester/HomePage/InvestorHomePage";
 import ViewEntreprenrueReqList from "./components/Invester/ViewEntrepreneurReqList/ViewEntreprenrueReqList";
-
-
-
+import Mentorforgotpswd from "./components/Mentor/Mentorforgotpswd";
+import InvestorForgot from "./components/Invester/Signup/Investorforgot";
+import EntrepreneurList from "./components/Admin/Entrepreneur/EntrepreneurList";
+import BlogList from "./components/Admin/Blogs/BlogList";
+import ViewAllInversetes from "./Entreprenuer/ViewInvestors/ViewAllInversetes";
 
 function App() {
   const url = "http://localhost:4040";
@@ -102,8 +104,14 @@ function App() {
           path="/entrepreneur/entprofile"
           element={<Entprofile url={url} />}
         />
-        <Route path="/entrepreneur/viewinvestors" element={<ViewInvestors url={url}/>} />
-        <Route path="/entrepreneur/viewrestatu/:role" element={<ViewInvestors url={url}/>} />
+        <Route
+          path="/entrepreneur/viewinvestors"
+          element={<ViewInvestors url={url} />}
+        />
+        <Route
+          path="/entrepreneur/viewrestatu/:role"
+          element={<ViewInvestors url={url} />}
+        />
         <Route
           path="/entrepreneur/investorsview/:id"
           element={<InvestorsView />}
@@ -117,27 +125,30 @@ function App() {
           element={<InvestorReqView />}
         />
 
-        <Route path='/entrepreneur/viewmentors' element={<ViewMentors/>}/>
-        <Route path='/entrepreneur/mentorsview/:id' element={<MentorsView/>}/>
-        <Route path='/entrepreneur/mentorsubscribedlist' element={<MentorSubscribedList/>}/>
-        <Route path='/entrepreneur/mentorviewsubscribed/:id' element={<MentorsViewSubscribed/>}/>
-        <Route path='/entrepreneur/viewtutoriallist' element={<ViewTutorialList/>}/>
-        <Route path='/entrepreneur/viewtutorial/:id' element={<ViewTutorial/>}/>
-        <Route path='/entrepreneur/viewbloglist' element={<ViewBlogList/>}/>
+        <Route path="/entrepreneur/viewmentors" element={<ViewMentors />} />
+        <Route path="/entrepreneur/mentorsview/:id" element={<MentorsView />} />
+        <Route
+          path="/entrepreneur/mentorsubscribedlist"
+          element={<MentorSubscribedList />}
+        />
+        <Route
+          path="/entrepreneur/mentorviewsubscribed/:id"
+          element={<MentorsViewSubscribed />}
+        />
+        <Route
+          path="/entrepreneur/viewtutoriallist"
+          element={<ViewTutorialList />}
+        />
+        <Route
+          path="/entrepreneur/viewtutorial/:id"
+          element={<ViewTutorial />}
+        />
+        <Route path="/entrepreneur/viewbloglist" element={<ViewBlogList />} />
 
-
-
-
-
-
-        <Route path='/entrepreneur/mentorsubscribedlist' element={<MentorSubscribedList/>}/>
-
-
-
-
-        
-
-
+        <Route
+          path="/entrepreneur/mentorsubscribedlist"
+          element={<MentorSubscribedList />}
+        />
 
         {/* Invester Routes */}
         <Route
@@ -165,6 +176,11 @@ function App() {
           element={<ViewEntrepreneurReq />}
         />
 
+        <Route
+          path="/investor/fogot-password"
+          element={[<CommonNavbar />, <InvestorForgot />]}
+        />
+
         {/* Mentor Routes */}
         <Route
           path="/mentor/signup"
@@ -173,6 +189,10 @@ function App() {
         <Route
           path="/mentor/login"
           element={[<CommonNavbar />, <MentorLogin />]}
+        />
+        <Route
+          path="/mentor/forgot"
+          element={[<CommonNavbar />, <Mentorforgotpswd />]}
         />
         <Route path="/mentor/updateprofile" element={<MentorUpdateProfile />} />
         <Route path="/mentor/homepage" element={<MentorHomePage />} />
@@ -225,8 +245,7 @@ function App() {
           path="/admin_dashboard/investorlist"
           element={<InvestorList />}
         />
-        <Route path="/admin_dashboard/mentorlist" 
-        element={<MentorList />} />
+        <Route path="/admin_dashboard/mentorlist" element={<MentorList />} />
         <Route
           path="/admin_dashboard/viewinvestor/:id"
           element={<InvestorView />}
@@ -234,6 +253,15 @@ function App() {
         <Route
           path="/admin_dashboard/viewmentor/:id"
           element={<MentorView />}
+        />
+        <Route
+          path="/admin_dashboard/viewentrepreneurlist"
+          element={<EntrepreneurList />}
+        />
+        <Route path="/admin_dashboard/viewbloglist" element={<BlogList />} />
+        <Route
+          path="/entrepreneur/viewallinvester"
+          element={<ViewAllInversetes />}
         />
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />

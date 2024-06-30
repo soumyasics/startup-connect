@@ -115,7 +115,7 @@ function AdminDashbord() {
               Events
               <div className="row mt-4">
                 <div className="col-6">
-                  <h3>123</h3>
+                  <h3>0</h3>
                 </div>
                 <div className="col-6 ">
                   <img className="w-25" src={home4}></img>

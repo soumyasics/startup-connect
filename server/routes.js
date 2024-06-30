@@ -68,7 +68,7 @@ router.post('/forgotPasswordMentors',mentors.forgotPassword)
 
 
 
-router.post('/mentorAddBlog',mentors.uploadblog,mentors.mentorAddBlog)
+router.post('/mentorAddBlog/:id',mentors.uploadblog,mentors.mentorAddBlog)
 router.post('/mentorViewBlog',mentors.viewBlogByMentorId)
 router.post('/mentorViewBlogById/:id',mentors.mentorViewBlogById)
 router.post('/mentorUpdateBlog/:id',mentors.uploadblog,mentors.mentorUpdateBlog)
@@ -76,7 +76,7 @@ router.post('/mentorRemoveBlog/:id',mentors.mentorRemoveBlog)
 router.post('/viewAllBlogs',mentors.viewAllBlogs)
 
 
-router.post('/mentorAddTutorial',mentors.uploadtutorial,mentors.mentorAddTutorial)
+router.post('/mentorAddTutorial/:id',mentors.uploadtutorial,mentors.mentorAddTutorial)
 router.post('/mentorViewTutorial',mentors.ViewAllTutorial)
 router.post('/mentorViewTutorialById/:id',mentors.mentorViewTutorialById)
 router.post('/mentorUpdateTutorial/:id',mentors.uploadtutorial,mentors.mentorUpdateTutorial)
