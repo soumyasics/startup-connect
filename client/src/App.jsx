@@ -59,6 +59,8 @@ import ViewTutorial from "./Entreprenuer/MentorTutorial/ViewTutorial/ViewTutoria
 import ViewBlogList from "./Entreprenuer/MentorBlog/ViewBlogList/ViewBlogList";
 import InvestorHomePage from "./components/Invester/HomePage/InvestorHomePage";
 import ViewEntreprenrueReqList from "./components/Invester/ViewEntrepreneurReqList/ViewEntreprenrueReqList";
+import Mentorforgotpswd from "./components/Mentor/Mentorforgotpswd";
+import InvestorForgot from "./components/Invester/Signup/Investorforgot";
 import EntrepreneurList from "./components/Admin/Entrepreneur/EntrepreneurList";
 import BlogList from "./components/Admin/Blogs/BlogList";
 
@@ -167,6 +169,11 @@ function App() {
           element={<ViewEntrepreneurReq />}
         />
 
+<Route
+          path="/investor/fogot-password"
+          element={[<CommonNavbar />, <InvestorForgot />]}
+        />
+
         {/* Mentor Routes */}
         <Route
           path="/mentor/signup"
@@ -175,6 +182,10 @@ function App() {
         <Route
           path="/mentor/login"
           element={[<CommonNavbar />, <MentorLogin />]}
+        />
+        <Route
+          path="/mentor/forgot"
+          element={[<CommonNavbar />, <Mentorforgotpswd />]}
         />
         <Route path="/mentor/updateprofile" element={<MentorUpdateProfile />} />
         <Route path="/mentor/homepage" element={<MentorHomePage />} />

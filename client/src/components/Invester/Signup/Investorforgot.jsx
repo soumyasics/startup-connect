@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import "./ForgotPassMain.css";
-import Forgotpasswordimage from "../../assets/ForgotPassword.png";
+import Forgotpasswordimage from "../../../assets/ForgotPassword.png";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../BaseAPIs/AxiosInstance";
-import Navbar_2 from "../../components/commonNavbar/Navbar_2";
-import Footer from "../../components/Footer/Footer";
-
-function ForgotPassMain() {
+import axiosInstance from "../../../BaseAPIs/AxiosInstance";
+import Navbar_2 from "../../../components/commonNavbar/Navbar_2";
+import Footer from "../../Footer/Footer";
+function InvestorForgot() {
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -19,7 +17,7 @@ function ForgotPassMain() {
     confirmpassword: "",
   });
 
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -30,11 +28,11 @@ function ForgotPassMain() {
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
 
-  const HandleCancel = () => {
-    Navigate("/entrepreneur/login");
+  const handleCancel = () => {
+    navigate("/investor/login");
   };
 
-  const HandleClick = (e) => {
+  const handleClick = (e) => {
     e.preventDefault();
     let validationErrors = {};
     let formValid = true;
@@ -66,11 +64,11 @@ function ForgotPassMain() {
 
     if (formValid) {
       axiosInstance
-        .post("/forgotPasswordEntrepreneur", data)
+        .post("/forgotPasswordInvestor", data)
         .then((result) => {
           console.log(result);
           alert(result.data.msg);
-          Navigate("/entrepreneur/login");
+          navigate("/investor/login");
         })
         .catch((err) => {
           console.log(err);
@@ -80,17 +78,21 @@ function ForgotPassMain() {
   };
 
   return (
-    <>
+    <div>
       <Navbar_2 />
-      <div className="container ">
-        <div className="text-center ">
+      <div className="container">
+        <div className="text-center">
           <h4 className="mt-3 ent_forgot_mainheading">FORGOT PASSWORD</h4>
-          <h3 className="ent_forgot_sub_h3">Recover Your Account </h3>
+          <h3 className="ent_forgot_sub_h3">Recover Your Account</h3>
           <div className="mb-5 ent_forgot_hr_line"></div>
         </div>
         <div className="row">
           <div className="col ent_forgot_img_div">
-            <img className="ent_forgot_img mb-4" src={Forgotpasswordimage} />
+            <img
+              className="ent_forgot_img mb-4"
+              src={Forgotpasswordimage}
+              alt="Forgot Password"
+            />
           </div>
           <div className="col mt-5 px-5">
             <form className="ent_forgot_form">
@@ -100,6 +102,7 @@ function ForgotPassMain() {
                 name="email"
                 onChange={handleInputChange}
                 className="ent_forgot_email"
+                value={data.email}
               />
               {errors.email && (
                 <div className="text-danger errortext">{errors.email}</div>
@@ -110,16 +113,20 @@ function ForgotPassMain() {
                 name="password"
                 onChange={handleInputChange}
                 className="ent_forgot_password"
+                value={data.password}
               />
               {errors.password && (
                 <div className="text-danger errortext">{errors.password}</div>
               )}
-              <label className="ent_forgot_cpassword_label">Confirm Password</label>
+              <label className="ent_forgot_cpassword_label">
+                Confirm Password
+              </label>
               <input
                 type="password"
                 name="confirmpassword"
                 onChange={handleInputChange}
                 className="ent_forgot_cpassword"
+                value={data.confirmpassword}
               />
               {errors.confirmpassword && (
                 <div className="text-danger errortext">
@@ -131,7 +138,7 @@ function ForgotPassMain() {
                   <button
                     className="ent_forgot_resetbtn"
                     type="submit"
-                    onClick={HandleClick}
+                    onClick={handleClick}
                   >
                     Reset Password
                   </button>
@@ -139,7 +146,7 @@ function ForgotPassMain() {
                 <div className="col">
                   <button
                     className="ent_forgot_canclebtn"
-                    onClick={HandleCancel}
+                    onClick={handleCancel}
                   >
                     Cancel
                   </button>
@@ -150,8 +157,8 @@ function ForgotPassMain() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
-export default ForgotPassMain;
+export default InvestorForgot;

@@ -60,15 +60,14 @@ function AdminLogin() {
     }
   };
 
-    
   return (
     <div className="Adminloginmain p-5">
       <div className="row container ">
         <div className="col">
           <div>
             <div className="text-center">
-          {/*<img className="nav_img" src={Frame} alt="Frame" />*/}
-          <h1 className='softution_logo'>Softution</h1>
+              {/*<img className="nav_img" src={Frame} alt="Frame" />*/}
+              <h1 className="softution_logo">Softution</h1>
             </div>
             <div className="adminloginform">
               <form
@@ -78,9 +77,7 @@ function AdminLogin() {
               >
                 <div className="mb-3">
                   <div className="text-center ">Login to your account</div>
-                  <label  className="form-label mt-5">
-                    Email
-                  </label>
+                  <label className="form-label mt-5">Email</label>
                   <input
                     name="email"
                     onChange={change}
@@ -89,17 +86,11 @@ function AdminLogin() {
                     id="adminlogininput"
                     aria-describedby="emailHelp"
                   ></input>
-                  {errors.email &&(<div className='text-danger errortext'>{errors.email}</div>)}
+                  {errors.email && (
+                    <div className="text-danger errortext">{errors.email}</div>
+                  )}
 
-                  <div className="text-end pt-2">
-                    <Link className="text-decoration-none " to="/admin_forgot">
-                      Forgot password
-                    </Link>
-                  </div>
-
-                  <label  className="form-label ">
-                    Password
-                  </label>
+                  <label className="form-label ">Password</label>
                   <input
                     type="password"
                     className="form-control "
@@ -108,8 +99,11 @@ function AdminLogin() {
                     name="password"
                     onChange={change}
                   ></input>
-                  {errors.password &&(<div className='text-danger errortext'>{errors.password}</div>)}
-
+                  {errors.password && (
+                    <div className="text-danger errortext">
+                      {errors.password}
+                    </div>
+                  )}
                 </div>
                 <div className="text-center">
                   {" "}
