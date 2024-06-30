@@ -20,7 +20,8 @@ function AdminNavbar() {
     <div>
       <div className="nav_sticky">
         <Navbar className="px-4">
-          <img className="nav_img" src={Frame} alt="Frame" />
+          {/*<img className="nav_img" src={Frame} alt="Frame" />*/}
+          <h1 className='softution_logo'>Softution</h1>
 
           <Navbar.Toggle />
         </Navbar>
@@ -42,7 +43,7 @@ function AdminNavbar() {
               <img src={home1}></img> Events
             </Link>
             <Link
-              to="/admin_dashboard"
+              to="/admin_dashboard/viewentrepreneur"
               className=" text-dark text-decoration-none mx-4"
             >
               <img src={home6}></img> Entrepreneurs
@@ -66,7 +67,7 @@ function AdminNavbar() {
               <img src={home4}></img> Complaints
             </Link>
             <Link
-              to="/admin_dashboard"
+              to="/admin_dashboard/viewbloglist"
               className=" text-dark text-decoration-none mx-4"
             >
               <img src={home2}></img> Blogs

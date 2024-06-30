@@ -301,10 +301,21 @@ function InvestorUpdateProfile({ url }) {
               {errors.address && (
                 <span className="text-danger">{errors.address}</span>
               )}
-
+              <input
+              className="mt-4"
+              type="text"
+              placeholder={investorDetails.description}
+              value={investorDetails.description}
+              name="description"
+              onChange={handleChange}
+            ></input>
+            {errors.description && (
+              <span className="text-danger">{errors.description}</span>
+            )}
               
               
             </div>
+            
             <div class="col-lg-6 profile-inputtag">
               <select
                 className="inv_update_profile_industry_sector"
@@ -339,6 +350,54 @@ function InvestorUpdateProfile({ url }) {
                   Fashion and Lifestyle
                 </option>
               </select>
+
+                        {errors.investing_category  && (
+                            <span className="text-danger">{errors.investing_category}</span>
+                          )}
+                        
+                        <input className='mt-4' 
+                        type='text' 
+                        placeholder={investorDetails.occupation}
+                        value={investorDetails.occupation}
+                        name="occupation"
+                        onChange={handleChange}
+                        
+                        ></input>
+                        {errors.occupation  && (
+                            <span className="text-danger">{errors.occupation}</span>
+                          )}
+                        <input className='mt-4' 
+                        type='text' 
+                        placeholder={investorDetails.description}
+                        value={investorDetails.description}
+                        name="description"
+                        onChange={handleChange}
+                        
+                        ></input>
+                        {errors.description  && (
+                            <span className="text-danger">{errors.description}</span>
+                          )}
+                        <input className='mt-4' 
+                        type='text' 
+                        placeholder={investorDetails.address}
+                        value={investorDetails.address}
+                        name="address"
+                        onChange={handleChange}
+                        
+                        ></input>
+                        {errors.address  && (
+                            <span className="text-danger">{errors.address}</span>
+                          )}
+                        
+                        {/* <div className='inv_updateid_div_upload'>
+            <label className='pt-3 inv_updateid_label' placeholder=''>Update Identification Document</label>
+            <label for="id_doc" class="inv_updateid_upload">
+                <div class="icon">Upload</div>
+                <input id="id_doc"  type="file"  name="identification_document" onChange={handleFileChange}  />
+              </label>
+             
+            </div> */}
+
               {errors.investing_category && (
                 <span className="text-danger">{errors.investing_category}</span>
               )}
@@ -366,26 +425,14 @@ function InvestorUpdateProfile({ url }) {
               {errors.occupation && (
                 <span className="text-danger">{errors.occupation}</span>
               )}
-              <input
-                className="mt-4"
-                type="text"
-                placeholder={investorDetails.description}
-                value={investorDetails.description}
-                name="description"
-                onChange={handleChange}
-              ></input>
-              {errors.description && (
-                <span className="text-danger">{errors.description}</span>
-              )}
+             
               
               <div className="mt-4">
             <button className="yourprofileupdate_btn">
                 Update Profile
               </button>
-              </div>
-              
             </div>
-            
+            </div>
           </div>
         </form>
       </div>

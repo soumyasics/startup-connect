@@ -1,41 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import axiosInstance from '../../../BaseAPIs/AxiosInstance';
+import React, { useEffect, useState }  from 'react'
 import AdminNavbar from '../AdminNavbar'
 import { toast } from "react-toastify";
 import { imageUrl } from '../../../ImageAPIs/Image_Urls';
-import { Link } from 'react-router-dom';
 import eye from "../../../assets/carbon_view-filled.png";
 import { useNavigate } from 'react-router-dom';
 import AdminFooter from '../AdminFooter';
+import axiosInstance from '../../../BaseAPIs/AxiosInstance';
 
-function MentorList() {
-
+function EntrepreneurList() {
     const navigate = useNavigate();
     const navigateToMentorView = (id)=>{
-        navigate(`/admin_dashboard/viewmentor/${id}`)
+        navigate(`/admin_dashboard/mentor_accept/${id}`)
       }
-    const [mentordata, setMentorData]= useState({});
+    const [entdata, setEntData]= useState({});
 
   useEffect(()=>{
-    axiosInstance.post('/viewMentors')
+    axiosInstance.post('/viewEntrepreneurs')
     .then((res)=>{
       console.log(res,"res");
       if(res.status === 200){
-        setMentorData(res.data.data)
+        setEntData(res.data.data)
       }
     })
     .catch((err)=>{
       toast.error("Failed to fetch user details")
   });
   },[])
-
   return (
     <>
-        <AdminNavbar/>
-    <div className='container' style={{minHeight:"80vh"}}>
+<AdminNavbar/>
+    <div className='container admin_entlist_con'>
     <div className="text-center ">
           <h4 className="  mt-3  inv_mainheading">View All</h4>
-          <h3 className="inv_sub_h3">New Mentors</h3>
+          <h3 className="inv_sub_h3">Entrepreneurs</h3>
           <div className="  mb-5  inv_hr_line "></div>
     </div>
     <table className="table">
@@ -44,28 +41,24 @@ function MentorList() {
     <tr  >
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Name</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">E-Mail ID</th>
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Expertise Category</th>
+      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Industry Sector</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Contact No</th>
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Subscription Amount</th>
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Action</th>
 
     </tr>
   </thead>
   <tbody>
   {
-        (mentordata.length)>0?((mentordata).map((data) => {
+        (entdata.length)>0?((entdata).map((data) => {
           return(
       
     <tr>
       <th scope="row">
-      <img src={`${imageUrl}/${data.profile.filename}`} 
+      <img src={`${imageUrl}/${data.image.filename}`} 
       class="invviewadmin_profile_pic" alt="..."/>
-        {data.name}</th>
+        {data.fname}{data.lname}</th>
       <td>{data.email}</td>
-      <td>{data.expertise_area}</td>
+      <td>{data.industry_sector}</td>
       <td>{data.contact}</td>
-      <td>{data.subscription_amount}</td>
-      <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> <a href="" onClick={()=>navigateToMentorView(data._id)}>View Details</a></td>
 
     </tr>
    )
@@ -81,9 +74,8 @@ function MentorList() {
   
       </div>
       <AdminFooter/>
-
     </>
   )
 }
 
-export default MentorList
+export default EntrepreneurList

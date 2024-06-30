@@ -59,6 +59,8 @@ import ViewTutorial from "./Entreprenuer/MentorTutorial/ViewTutorial/ViewTutoria
 import ViewBlogList from "./Entreprenuer/MentorBlog/ViewBlogList/ViewBlogList";
 import InvestorHomePage from "./components/Invester/HomePage/InvestorHomePage";
 import ViewEntreprenrueReqList from "./components/Invester/ViewEntrepreneurReqList/ViewEntreprenrueReqList";
+import EntrepreneurList from "./components/Admin/Entrepreneur/EntrepreneurList";
+import BlogList from "./components/Admin/Blogs/BlogList";
 
 
 
@@ -103,6 +105,7 @@ function App() {
           element={<Entprofile url={url} />}
         />
         <Route path="/entrepreneur/viewinvestors" element={<ViewInvestors url={url}/>} />
+        <Route path="/entrepreneur/viewrestatu/:role" element={<ViewInvestors url={url}/>} />
         <Route
           path="/entrepreneur/investorsview/:id"
           element={<InvestorsView />}
@@ -233,6 +236,14 @@ function App() {
         <Route
           path="/admin_dashboard/viewmentor/:id"
           element={<MentorView />}
+        />
+        <Route
+          path="/admin_dashboard/viewentrepreneurlist"
+          element={<EntrepreneurList />}
+        />
+        <Route
+          path="/admin_dashboard/viewbloglist"
+          element={<BlogList />}
         />
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />

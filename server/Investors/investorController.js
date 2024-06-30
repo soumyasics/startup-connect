@@ -131,6 +131,24 @@ const viewInvestorById = (req, res) => {
   };
   
 
+// View investor by ID
+const viewInvestorByCategory = (req, res) => {
+  Investor.findById({investing_category:req.params.category})
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data obtained successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "No Data obtained",
+        Error: err,
+      });
+    });
+};
 // View investorLessReqs for Admin
 const viewLessInvestorReqs = (req, res) => {
   Investor.find({adminApproved:false}).sort({_id: -1}).limit(5)
@@ -321,6 +339,34 @@ const editInvestorById = (req, res) => {
     
   };
 
+
+// Forgot Password for entrepreneur
+const forgotPassword = (req, res) => {
+  Investor.findOneAndUpdate(
+    { email: req.body.email },
+    {
+      password: req.body.password,
+    }
+  )
+    .exec()
+    .then((data) => {
+      if (data != null)
+        res.status(200).json({
+          msg: "Updated successfully",
+        });
+      else
+        res.status(500).json({
+          msg: "User Not Found",
+        });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        msg: "Data not Updated",
+        Error: err,
+      });
+    });
+};
+
 module.exports={
     registerInvestor,
     upload,
@@ -336,4 +382,6 @@ module.exports={
     approveInvestorReqsById,
     uploadSingle,
     viewLessInvestorReqs,
+    viewInvestorByCategory,
+    forgotPassword
 }

@@ -68,7 +68,7 @@ const deleteStartUpPlan=(id)=>{
     <>
     <CommonNavbar/>
     <HomePageNavbar/>
-    <div className='container mb-3'>
+    <div className='container mb-3' style={{minHeight:"80vh"}}>
     <div className="text-center ">
             <h4 className="  mt-3  ent_viewsplan_mainheading">CREATE YOUR STARTUP</h4>
             <h3 className="ent_viewsplan_sub_h3">Your big opportunity may be right</h3>

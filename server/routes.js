@@ -7,6 +7,7 @@ const admin=require('./Admin/adminController')
 
 
 const pitch_my_idea=require('./Entrepreneurs/PitchMyIdea/PitchMyIdeaController')
+const InvestorReqs=require('./EntInvestorReqs/entInvestorReqController')
 
 //entrepreneurs
 router.post('/registerEntrepreneur',entrepreneurs.upload,entrepreneurs.registerEntrepreneur)
@@ -15,6 +16,11 @@ router.post('/viewEntrepreneurs',entrepreneurs.viewEntrepreneurs)
 router.post('/viewEntrepreneurById/:id',entrepreneurs.viewEntrepreneurById)
 router.post('/editEntrepreneurById/:id',entrepreneurs.upload,entrepreneurs.editEntrepreneurById)
 router.post('/forgotPasswordEntrepreneur',entrepreneurs.forgotPassword)
+router.post('/viewEntrepreneurs',entrepreneurs.viewEntrepreneurs)
+router.post('/deleteEntrepreneurById/:id',entrepreneurs.deleteEntrepreneurById)
+
+
+
 router.post('/pitchMyIdeaAddCompany/:id',pitch_my_idea.addCompany)
 router.post('/pitchMyIdeaActiveCompany',pitch_my_idea.showActiveCompany)
 router.post('/pitchMyIdeaNotActiveCompany',pitch_my_idea.showNotActiveCompany)
@@ -41,6 +47,8 @@ router.post('/activateInvestorById/:id',investors.activateInvestorById)
 router.post('/removeInvestorById/:id',investors.removeInvestorById)
 router.post('/deActivateInvestorById/:id',investors.deActivateInvestorById)
 router.post('/viewlessinvestors',investors.viewLessInvestorReqs)
+router.post('/viewInvestorByCategory/:category',investors.viewInvestorByCategory)
+router.post('/forgotPasswordInvestor',investors.forgotPassword)
 
 
 
@@ -55,13 +63,20 @@ router.post('/viewMentorById/:id',mentors.viewMentorById)
 router.post('/approveMentorReqsById/:id',mentors.approveMentorReqsById)
 router.post('/removeMentorById/:id',mentors.removeMentorById)
 router.post('/editMentorById/:id',mentors.upload,mentors.editMentorById)
+router.post('/forgotPasswordMentors',mentors.forgotPassword)
+
+
+
 router.post('/mentorAddBlog',mentors.uploadblog,mentors.mentorAddBlog)
-router.post('/mentorViewBlog',mentors.mentorViewBlog)
+router.post('/mentorViewBlog',mentors.viewBlogByMentorId)
 router.post('/mentorViewBlogById/:id',mentors.mentorViewBlogById)
 router.post('/mentorUpdateBlog/:id',mentors.uploadblog,mentors.mentorUpdateBlog)
 router.post('/mentorRemoveBlog/:id',mentors.mentorRemoveBlog)
+router.post('/viewAllBlogs',mentors.viewAllBlogs)
+
+
 router.post('/mentorAddTutorial',mentors.uploadtutorial,mentors.mentorAddTutorial)
-router.post('/mentorViewTutorial',mentors.mentorViewTutorial)
+router.post('/mentorViewTutorial',mentors.ViewAllTutorial)
 router.post('/mentorViewTutorialById/:id',mentors.mentorViewTutorialById)
 router.post('/mentorUpdateTutorial/:id',mentors.uploadtutorial,mentors.mentorUpdateTutorial)
 router.post('/mentorRemoveTutorial/:id',mentors.mentorRemoveTutorial)
@@ -82,5 +97,17 @@ router.post('/mentorRemoveTutorial/:id',mentors.mentorRemoveTutorial)
 //Admin routes
 router.post('/loginAdmin',admin.loginAdmin)
 router.post('/forgotPassword',admin.forgotPassword)
+
+
+//investor Reqs
+router.post('/reqInvestorById',InvestorReqs.reqInvestorById)
+router.post('/viewInvestorReqById/:id',InvestorReqs.viewInvestorReqById)
+router.post('/deleteInvestorReqById/:id',InvestorReqs.deleteInvestorReqById)
+router.post('/viewInvestorReqByEntId/:id',InvestorReqs.viewInvestorReqByEntId)
+router.post('/viewAcceptedReqsByInvId/:id',InvestorReqs.viewAcceptedReqsByInvId)
+router.post('/viewInvestorReqByInvId/:id',InvestorReqs.viewInvestorReqByInvId)
+router.post('/viewAcceptedReqsByEntId/:id',InvestorReqs.viewAcceptedReqsByEntId)
+router.post('/acceptInvestorReqByInvId/:id',InvestorReqs.acceptInvestorReqByInvId)
+router.post('/rejectInvestorReqById/:id',InvestorReqs.rejectInvestorReqById)
 
 module.exports=router

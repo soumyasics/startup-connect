@@ -42,7 +42,7 @@ function ViewMentors() {
     <>
         <CommonNavbar/>
     <HomepageNavbar/>
-      <div className="container mb-4">
+      <div className="container mb-4" style={{minHeight:"80vh"}}>
         <div className="text-center ">
             <h4 className="  mt-3  ent_menview_mainheading">TOP MENTORS</h4>
             <h3 className="ent_menview_sub_h3">Shape Your Future</h3>

@@ -18,25 +18,14 @@ function InvestorNav() {
                         {/* <Navbar.Brand href="#home" className="text-light">
                             <img src={Frame} className="inv_home_nav_startup_logo" alt="StartupLogo" />
                         </Navbar.Brand> */}
+                        <h1 className='softution_logo'>Softution</h1>
                         <Navbar.Toggle/>
                         <Navbar.Collapse className="justify-content-end">
                             <Navbar.Text className="px-3" >
                             <Link to='/investor/homepage' className="text-decoration-none" ><p className="navbarstext">Home</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3" >
-                            <Link href="#Investors" className="text-decoration-none" ><p className="navbarstext">Startup Ideas</p></Link>
-                            </Navbar.Text>
-                            <Navbar.Text className="px-3" >
-                            <Link href="#Mentors" className="text-decoration-none" ><p className="navbarstext">Chat</p></Link>
-                            </Navbar.Text>
-                            <Navbar.Text className="px-3" >
-                            <Link href="#Mentors" className="text-decoration-none" ><p className="navbarstext">Investments</p></Link>
-                            </Navbar.Text>
-                            <Navbar.Text className="px-3" >
                             <Link to='/investor/updateprofile' className="text-decoration-none" ><p className="navbarstext">My Profile</p></Link>
-                            </Navbar.Text>
-                            <Navbar.Text className="px-3" >
-                            <Link href="#MyProfile" className="text-decoration-none" ><p className="navbarstext">Settings</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3" onClick={handleLogout} >
                             <Link href="#MyProfile" className="text-decoration-none" ><p className="navbarstext">Logout</p></Link>
@@ -51,4 +40,20 @@ function InvestorNav() {
   )
 }
 
+
+
 export default InvestorNav
+
+
+                            // <Navbar.Text className="px-3" >
+                            // <Link href="#Investors" className="text-decoration-none" ><p className="navbarstext">Startup Ideas</p></Link>
+                            // </Navbar.Text>
+                            // <Navbar.Text className="px-3" >
+                            // <Link href="#Mentors" className="text-decoration-none" ><p className="navbarstext">Chat</p></Link>
+                            // </Navbar.Text>
+                            // <Navbar.Text className="px-3" >
+                            // <Link href="#Mentors" className="text-decoration-none" ><p className="navbarstext">Investments</p></Link>
+                            // </Navbar.Text>
+                            // <Navbar.Text className="px-3" >
+                            // <Link href="#MyProfile" className="text-decoration-none" ><p className="navbarstext">Settings</p></Link>
+                            // </Navbar.Text>
