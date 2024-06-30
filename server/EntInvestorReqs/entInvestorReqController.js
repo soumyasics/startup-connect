@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 
 // Register a new Investor Request
 const reqInvestorById = async (req, res) => {
-    const { investorId, entId } = req.body;
+    const { investorId, entId,planId} = req.body;
     var response ={};
 
-  await InvestorReqs.find({investorId:investorId,entId:entId}).exec()
+  await InvestorReqs.find({investorId:investorId,entId:entId,planId}).exec()
   .then(data=>{
     if(data.length>0)
         {
@@ -22,7 +22,8 @@ const reqInvestorById = async (req, res) => {
             const newInvestorReq = new InvestorReqs({
                 date:new Date(),
                 investorId,
-                entId
+                entId,
+                planId
             });
     
             await newInvestorReq.save()
@@ -52,6 +53,7 @@ const viewInvestorReqById = (req, res) => {
     InvestorReqs.findById(req.params.id)
         .populate('investorId')
         .populate('entId')
+        .populate('planId')
         .exec()
         .then(data => {
             if (data) {
@@ -81,6 +83,7 @@ const viewInvestorReqByInvId = (req, res) => {
     InvestorReqs.find({investorId:req.params.id})
       
         .populate('entId')
+        .populate('planId')
         .exec()
         .then(data => {
             if (data) {
@@ -106,12 +109,42 @@ const viewInvestorReqByInvId = (req, res) => {
 };
 
 
+// View Investor Request by ID
+const viewInvestorReqByPlanId = (req, res) => {
+    InvestorReqs.find({investorId:req.params.id})
+      
+        .populate('entId')
+        .populate('planId')
+        .exec()
+        .then(data => {
+            if (data) {
+                res.json({
+                    status: 200,
+                    msg: "Data obtained successfully",
+                    data: data
+                });
+            } else {
+                res.json({
+                    status: 404,
+                    msg: "Request not found"
+                });
+            }
+        })
+        .catch(err => {
+            res.status(500).json({
+                status: 500,
+                msg: "Data not obtained",
+                Error: err
+            });
+        });
+};
 
 // View Investor Request by ID
 const viewInvestorReqByEntId = (req, res) => {
     InvestorReqs.find({entId:req.params.id})
       
-        .populate('entId')
+        .populate('invId')
+        .populate('planId')
         .exec()
         .then(data => {
             if (data) {
@@ -283,6 +316,6 @@ module.exports = {
     viewAcceptedReqsByInvId,
     acceptInvestorReqByInvId,
     rejectInvestorReqById,
-    
+    viewInvestorReqByPlanId
 
 };
