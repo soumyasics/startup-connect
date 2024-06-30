@@ -16,6 +16,11 @@ router.post('/viewEntrepreneurs',entrepreneurs.viewEntrepreneurs)
 router.post('/viewEntrepreneurById/:id',entrepreneurs.viewEntrepreneurById)
 router.post('/editEntrepreneurById/:id',entrepreneurs.upload,entrepreneurs.editEntrepreneurById)
 router.post('/forgotPasswordEntrepreneur',entrepreneurs.forgotPassword)
+router.post('/viewEntrepreneurs',entrepreneurs.viewEntrepreneurs)
+router.post('/deleteEntrepreneurById/:id',entrepreneurs.deleteEntrepreneurById)
+
+
+
 router.post('/pitchMyIdeaAddCompany/:id',pitch_my_idea.addCompany)
 router.post('/pitchMyIdeaActiveCompany',pitch_my_idea.showActiveCompany)
 router.post('/pitchMyIdeaNotActiveCompany',pitch_my_idea.showNotActiveCompany)
@@ -43,6 +48,7 @@ router.post('/removeInvestorById/:id',investors.removeInvestorById)
 router.post('/deActivateInvestorById/:id',investors.deActivateInvestorById)
 router.post('/viewlessinvestors',investors.viewLessInvestorReqs)
 router.post('/viewInvestorByCategory/:category',investors.viewInvestorByCategory)
+router.post('/forgotPasswordInvestor',investors.forgotPassword)
 
 
 
@@ -57,6 +63,10 @@ router.post('/viewMentorById/:id',mentors.viewMentorById)
 router.post('/approveMentorReqsById/:id',mentors.approveMentorReqsById)
 router.post('/removeMentorById/:id',mentors.removeMentorById)
 router.post('/editMentorById/:id',mentors.upload,mentors.editMentorById)
+router.post('/forgotPasswordMentors',mentors.forgotPassword)
+
+
+
 router.post('/mentorAddBlog',mentors.uploadblog,mentors.mentorAddBlog)
 router.post('/mentorViewBlog',mentors.mentorViewBlog)
 router.post('/mentorViewBlogById/:id',mentors.mentorViewBlogById)

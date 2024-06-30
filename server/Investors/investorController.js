@@ -339,6 +339,34 @@ const editInvestorById = (req, res) => {
     
   };
 
+
+// Forgot Password for entrepreneur
+const forgotPassword = (req, res) => {
+  Investor.findOneAndUpdate(
+    { email: req.body.email },
+    {
+      password: req.body.password,
+    }
+  )
+    .exec()
+    .then((data) => {
+      if (data != null)
+        res.status(200).json({
+          msg: "Updated successfully",
+        });
+      else
+        res.status(500).json({
+          msg: "User Not Found",
+        });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        msg: "Data not Updated",
+        Error: err,
+      });
+    });
+};
+
 module.exports={
     registerInvestor,
     upload,
@@ -354,5 +382,6 @@ module.exports={
     approveInvestorReqsById,
     uploadSingle,
     viewLessInvestorReqs,
-    viewInvestorByCategory
+    viewInvestorByCategory,
+    forgotPassword
 }

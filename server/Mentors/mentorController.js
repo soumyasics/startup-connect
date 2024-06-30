@@ -530,6 +530,32 @@ const mentorRemoveTutorial=(req,res)=>{
 }
 
 
+// Forgot Password for entrepreneur
+const forgotPassword = (req, res) => {
+  Mentor.mentors.findOneAndUpdate(
+    { email: req.body.email },
+    {
+      password: req.body.password,
+    }
+  )
+    .exec()
+    .then((data) => {
+      if (data != null)
+        res.status(200).json({
+          msg: "Updated successfully",
+        });
+      else
+        res.status(500).json({
+          msg: "User Not Found",
+        });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        msg: "Data not Updated",
+        Error: err,
+      });
+    });
+};
 module.exports={
   registerMentor,
   upload,
@@ -553,5 +579,6 @@ module.exports={
   mentorViewTutorial,
   mentorViewTutorialById,
   mentorUpdateTutorial,
-  mentorRemoveTutorial  
+  mentorRemoveTutorial,
+  forgotPassword
 }
