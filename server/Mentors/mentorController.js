@@ -326,28 +326,28 @@ const mentorAddBlog= async(req,res)=>{
 }
 
 
-// View All Blog
-
-const mentorViewBlog=(req,res)=>{
-  Mentor.mentorBlog.find()
-  .then(data => {
-    res.status(200).json({
-        msg: "Data fetched successfully",
-        data: data
-    });
-  })
-  .catch(err => {
+// View mentorViewBlog by ID
+const viewBlogByMentorId = (req, res) => {
+  Mentor.mentorBlog.find({mentorId:req.params.id}).populate('mentorId')
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data obtained successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
       console.log(err);
       res.status(500).json({
-          msg: "Data not obtained",
-          data: err
+        msg: "No Data obtained",
+        Error: err,
       });
-  });
-}
+    });
+};
 
 // View mentorViewBlog by ID
 const mentorViewBlogById = (req, res) => {
-  Mentor.mentorBlog.findById(req.params.id)
+  Mentor.mentorBlog.findById(req.params.id).populate('mentorId')
     .exec()
     .then((data) => {
       res.status(200).json({
@@ -412,6 +412,22 @@ const mentorRemoveBlog=(req,res)=>{
   })
 }
 
+const viewAllBlogs=(req,res)=>{
+  Mentor.mentorBlog.find({}).populate('mentorId')
+  .exec()
+  .then(data=>{
+    res.status(200).json({
+      msg:"Deleted Successfully",
+      data:data
+    })
+  })
+  .catch(err=>{
+    res.status(500).json({
+      msg:"Something went Wrong",
+      Error:err
+    })
+  })
+}
 // Add Tutorial
 
 const mentorAddTutorial= async(req,res)=>{
@@ -447,8 +463,8 @@ const mentorAddTutorial= async(req,res)=>{
 
 // View Tutorials
 
-const mentorViewTutorial=(req,res)=>{
-  Mentor.mentorTutorial.find()
+const ViewAllTutorial=(req,res)=>{
+  Mentor.mentorTutorial.find().populate('mentorId')
   .exec()
   .then(data=>{
     res.status(200).json({
@@ -466,7 +482,7 @@ const mentorViewTutorial=(req,res)=>{
 
 // View mentorViewTutorial by ID
 const mentorViewTutorialById = (req, res) => {
-  Mentor.mentorTutorial.findById(req.params.id)
+  Mentor.mentorTutorial.findById(req.params.id).populate('mentorId')
     .exec()
     .then((data) => {
       res.status(200).json({
@@ -483,6 +499,26 @@ const mentorViewTutorialById = (req, res) => {
     });
 };
 
+
+
+// View mentorViewTutorial by  mentor ID
+const ViewTutorialBymentorId = (req, res) => {
+  Mentor.mentorTutorial.findById({mentorId:req.params.id})
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data obtained successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "No Data obtained",
+        Error: err,
+      });
+    });
+};
 // Update Tutorial
 
 const mentorUpdateTutorial=(req,res)=>{
@@ -570,15 +606,18 @@ module.exports={
   editMentorById,
   mentorAddBlog,
   uploadblog,
-  mentorViewBlog,
+  viewAllBlogs,
   mentorViewBlogById,
   mentorUpdateBlog,
   mentorRemoveBlog,
   mentorAddTutorial,
   uploadtutorial,
-  mentorViewTutorial,
+  ViewTutorialBymentorId,
   mentorViewTutorialById,
   mentorUpdateTutorial,
   mentorRemoveTutorial,
-  forgotPassword
+  forgotPassword,
+  viewBlogByMentorId,
+  ViewAllTutorial
+  
 }

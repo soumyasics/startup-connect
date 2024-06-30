@@ -62,6 +62,11 @@ const mentorAddBlogSchema =mongoose.Schema({
     date:{
         type:Date,
         default:new Date()
+    },
+    mentorId:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:'mentors'
     }
     
 })
@@ -82,6 +87,11 @@ const mentorAddTutorialSchema =mongoose.Schema({
     date:{
         type:Date,
         default:new Date()
+    },
+    mentorId:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:'mentors'
     }
     
 })
