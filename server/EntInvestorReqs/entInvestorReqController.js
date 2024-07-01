@@ -112,10 +112,10 @@ const viewInvestorReqByInvId = (req, res) => {
 
 // View Investor Request by ID
 const viewInvestorReqByPlanId = (req, res) => {
-    InvestorReqs.find({investorId:req.params.id})
-      
+    InvestorReqs.findOne({ planId: req.params.id })
         .populate('entId')
         .populate('planId')
+        .populate('investorId')
         .exec()
         .then(data => {
             if (data) {
