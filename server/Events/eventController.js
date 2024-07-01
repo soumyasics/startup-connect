@@ -1,5 +1,3 @@
-const express=require("express")
-const router = express.Router();
 const Event = require("./eventSchema"); 
 const EventRegistration = require("./eventRegistrations");
 
@@ -86,6 +84,29 @@ const viewEventsById = (req, res) => {
         });
 };
 
+// Delete events
+const removeEventById = (req, res) => {
+    Event.findByIdAndDelete({_id:req.params.id})
+        .exec()
+        .then((data) => {
+            if (data) {
+                res.status(200).json({
+                    msg: "Data deleted successfully",
+                    data: data
+                });
+            } else {
+                res.status(200).json({
+                    msg: "Something went Wrong"
+                });
+            }
+        })
+        .catch((err) => {
+            res.status(500).json({
+                msg: "Data not obtained",
+                Error: err
+            });
+        });
+};
 
 
 
@@ -181,5 +202,6 @@ module.exports = {
     addEventRegistration,
     viewEventRegistrations,
     viewEventRegistrationsByEventId,
-    viewEventsById
+    viewEventsById,
+    removeEventById
 };

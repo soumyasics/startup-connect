@@ -53,7 +53,7 @@ console.log(mentorData,"p");
               </div>
               
               <Link to="/entrepreneur/viewtutoriallist" className="ms-5 mt-5 btn btn-primary">View Tutorials</Link>
-                      <div className="mt-5 ms-5 btn btn-primary">View Blogs</div>
+                      <Link to="/entrepreneur/viewtutoriallist" className="mt-5 ms-5 btn btn-primary">View Blogs</Link>
               <h3 className="ad_invaccept_fname">{mentorData.name}</h3>
             </div>
           </div>
