@@ -33,8 +33,8 @@ function HomepageNavbar() {
         <div className="home_navbar_white">
                 <Navbar className="px-4">
                         <Navbar.Brand href="#home" className="text-light">
-                            {/* <img src={Frame} className="home_nav_startup_logo" alt="StartupLogo" />*/}
-                            <h1 className='softution_logo'>Softution</h1>
+                            <img src={Frame} className="home_nav_startup_logo" alt="StartupLogo" />
+                            {/* <h1 className='softution_logo'>Softution</h1> */}
                         </Navbar.Brand>
                         <Navbar.Toggle />
                         <Navbar.Collapse className="justify-content-end">
@@ -57,7 +57,7 @@ function HomepageNavbar() {
                                     <li><Link to='/entrepreneur/pitch-my-idea' class="dropdown-item" >Add New Plans</Link></li>
                                     <li><Link to='/entrepreneur/viewstartup_plan' class="dropdown-item" >View Plans</Link></li>
                                     <li><Link to='/entrepreneur/requestinvestor' class="dropdown-item" >My Investors</Link></li>
-                                    <li><Link to='/entrepreneur/viewrestatu/status' class="dropdown-item" >Request Status</Link></li>
+                                    <li><Link to='/entrepreneur/viewstartup_plan/status' class="dropdown-item" >Request Status</Link></li>
                                 </ul>
                                 </div>
                             <Navbar.Text className="px-3" onClick={navigateToMyProfile}>

@@ -28,7 +28,7 @@ function ViewAllInversetes() {
   
     useEffect(() => {
       axiosInstance
-        .post("/viewInvestors")
+        .post(`/viewInvestorByCategory/${localStorage.getItem("EnterprenuerCategory")}`)
         .then((res) => {
           if (res.status === 200) {
             setInvestordata(res.data.data);
@@ -44,7 +44,7 @@ function ViewAllInversetes() {
     }, []);
   
     const navigateToInvestorView = (id) => {
-      navigate(`/entrepreneur/investorreqview/${id}`);
+      navigate(`/entrepreneur/investorsview//${id}`);
     };
   
   return (

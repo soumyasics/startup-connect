@@ -55,6 +55,7 @@ function Entsignup() {
   };
 
   
+const [profilename,setProfileName]=useState();
 
   const handleFileChange = (image) => {
     if(!image.name.match(/\.(jpg|jpeg|png|gif)$/)){
@@ -64,6 +65,8 @@ function Entsignup() {
     }
     setError(null)
     console.log(image,"image");
+    const name=image.name
+    setProfileName(name)
     setData({...data,image});
 
   };
@@ -278,6 +281,7 @@ function Entsignup() {
             </div>
             <label id="">Your Image</label>
             <div class="  pt-4 ent_reg_profile ">
+              {profilename && <p className="ent_profile_name_p">{profilename}</p>}
               <label for="file" class="ent_reg_file_upload">
                 <div class="icon">Upload</div>
                 <input id="file" type="file"  name="image" onChange={(event)=>{handleFileChange(event.target.files[0])}} />

@@ -15,7 +15,7 @@ function InvestorsView({ url }) {
   const [investorReq, setInvestorreq] = useState([]);
   const [request, setRequest] = useState({});
   const [isDisabled, setIsDisabled] = useState(false);
-  const { role } = useParams();
+  const { role, planID } = useParams();
 
   useEffect(() => {
     var disable = role == "status" ? true : false;
@@ -30,8 +30,8 @@ function InvestorsView({ url }) {
 
   useEffect(() => {
     axiosInstance
-      .post("/viewInvestors")
-      .then((res) => {
+    .post(`/viewInvestorByCategory/${localStorage.getItem("EnterprenuerCategory")}`)
+    .then((res) => {
         if (res.status === 200) {
           setInvestordata(res.data.data);
         }
@@ -48,20 +48,21 @@ function InvestorsView({ url }) {
         console.log(res, "ppa");
 
         for (var i in res.data.data) {
-          temp.push(res.data.data[i].investorId);
-          temp2[res.data.data[i].investorId] = res.data.data[i].status;
+          temp.push(res.data.data[i].investorId._id);
+          temp2[res.data.data[i].investorId._id] = res.data.data[i].status;
         }
         console.log(temp2, "temp2");
         setInvestorreq(temp);
         setRequest(temp2);
       })
       .catch((err) => {
+        console.log(err)
         toast.error("Failed to fetch user details");
       });
   }, []);
 
   const navigateToInvestorView = (id) => {
-    navigate(`/entrepreneur/investorreqview/${id}`);
+    navigate(`/entrepreneur/investorreqview/${id+','+planID}`);
   };
 
   return (
@@ -93,11 +94,7 @@ function InvestorsView({ url }) {
                         onClick={() => navigateToInvestorView(data._id)}
                         disabled={isDisabled}
                       >
-                        {role == "status"
-                          ? request[data._id]
-                          : investorReq.includes(data._id)
-                          ? "Requested"
-                          : "Send Request"}
+                        {"Send Request"}
                       </button>
                     </div>
                   </div>

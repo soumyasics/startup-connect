@@ -15,10 +15,10 @@ function InvestorNav() {
         <div className="inv_home_nav_sticky">
         <div className="inv_home_navbar_white">
                 <Navbar className="px-4">
-                        {/* <Navbar.Brand href="#home" className="text-light">
+                        <Navbar.Brand href="#home" className="text-light">
                             <img src={Frame} className="inv_home_nav_startup_logo" alt="StartupLogo" />
-                        </Navbar.Brand> */}
-                        <h1 className='softution_logo'>Softution</h1>
+                        </Navbar.Brand>
+                        {/* <h1 className='softution_logo'>Softution</h1> */}
                         <Navbar.Toggle/>
                         <Navbar.Collapse className="justify-content-end">
                             <Navbar.Text className="px-3" >
@@ -26,6 +26,9 @@ function InvestorNav() {
                             </Navbar.Text>
                             <Navbar.Text className="px-3" >
                             <Link to={"/investor/entrepreneur_reqlist"} className="text-decoration-none" ><p className="navbarstext">Startup Ideas</p></Link>
+                            </Navbar.Text>
+                            <Navbar.Text className="px-3" >
+                            <Link to={"/investor/entrepreneur_reqlist"} className="text-decoration-none" ><p className="navbarstext">Chat</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3" >
                             <Link to='/investor/updateprofile' className="text-decoration-none" ><p className="navbarstext">My Profile</p></Link>

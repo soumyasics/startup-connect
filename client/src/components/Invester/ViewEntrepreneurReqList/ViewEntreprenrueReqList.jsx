@@ -15,7 +15,9 @@ function ViewEntreprenrueReqList() {
       .then((res) => {
         console.log(res, "res");
         if (res.status === 200) {
-          setentData(res.data.data);
+          if(res.data.data.status=="pending"){
+            setentData(res.data.data);
+          }
         }
       })
       .catch((err) => {
@@ -23,8 +25,8 @@ function ViewEntreprenrueReqList() {
       });
   }, []);
 
-  const navigateToInvestorView = () => {
-    navigate("/investor/entrepreneur_req");
+  const navigateToInvestorView = (id) => {
+    navigate(`/investor/entrepreneur_req/${id}`);
   };
 
   return (
@@ -105,7 +107,7 @@ function ViewEntreprenrueReqList() {
                 );
               })
             ) : (
-              <h1>No Records</h1>
+              <h1 className="text-center">No pending request Available</h1>
             )}
           </tbody>
         </table>

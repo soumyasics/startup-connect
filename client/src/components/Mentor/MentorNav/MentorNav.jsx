@@ -32,8 +32,8 @@ function MentorNav() {
         <div className="men_home_navbar_white">
                 <Navbar className="px-4">
                         <Navbar.Brand href="#home" className="text-light">
-                           {/*<img src={Frame} className="men_home_nav_startup_logo" alt="StartupLogo" />*/}
-                           <h1 className='softution_logo'>Softution</h1>
+                           <img src={Frame} className="men_home_nav_startup_logo" alt="StartupLogo" />
+                           {/* <h1 className='softution_logo'>Softution</h1> */}
                         </Navbar.Brand>
                         <Navbar.Toggle />
                         <Navbar.Collapse className="justify-content-end">
