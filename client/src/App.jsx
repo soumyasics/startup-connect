@@ -65,6 +65,7 @@ import EntrepreneurList from "./components/Admin/Entrepreneur/EntrepreneurList";
 import BlogList from "./components/Admin/Blogs/BlogList";
 import ViewAllInversetes from "./Entreprenuer/ViewInvestors/ViewAllInversetes";
 import PropertiesList from "./components/Mentor/MentorChat";
+import InvestorChat from "./components/Invester/Chat/InvestorChat";
 
 function App() {
   const url = "http://localhost:4040";
@@ -171,6 +172,10 @@ function App() {
         <Route
           path="/investor/homepage"
           element={<InvestorHomePage url={url} />}
+        />
+        <Route
+          path="/investor/chat"
+          element={<InvestorChat url={url} />}
         />
         <Route
           path="/investor/entrepreneur_reqlist"

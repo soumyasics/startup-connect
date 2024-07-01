@@ -51,6 +51,10 @@ function MentorsView() {
       });
   }
 
+  const navigateToMentorPayment =()=>{
+    navigate("/mentor/payment")
+  }
+
   useEffect(() => {
     getData();
   }, [id]);
@@ -132,9 +136,9 @@ function MentorsView() {
                           type="video/mp4"
                         ></video>
                       )}
-                      <div className="test-center ms-5">
+                      <div className="test-center ms-5 mt-5">
                         {" "}
-                        <button className="btn btn-danger" >Subscribe</button>
+                        <button className="btn btn-danger" onClick={navigateToMentorPayment} >Subscribe</button>
                       </div>
                     </td>
                   </tr>
