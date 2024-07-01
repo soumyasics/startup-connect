@@ -23,7 +23,7 @@ function MentorViewBlogs() {
   const [blogdata, setBlogData]=useState("");
 
   useEffect(()=>{
-    axiosInstance.post('/mentorViewBlog')
+    axiosInstance.post('/mentorViewBlog/'+localStorage.getItem("Mentor"))
     .then((res)=>{
       console.log(res,"res");
       if(res.status === 200){
