@@ -5,6 +5,7 @@ const investors=require('./Investors/investorController')
 const mentors=require('./Mentors/mentorController')
 const admin=require('./Admin/adminController')
 const chat=require('./Chats/chatController')
+const Subscription=require('./Subscription/subscriptionController')
 
 
 const pitch_my_idea=require('./Entrepreneurs/PitchMyIdea/PitchMyIdeaController')
@@ -83,18 +84,6 @@ router.post('/mentorUpdateTutorial/:id',mentors.uploadtutorial,mentors.mentorUpd
 router.post('/mentorRemoveTutorial/:id',mentors.mentorRemoveTutorial)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 //Admin routes
 router.post('/loginAdmin',admin.loginAdmin)
 router.post('/forgotPassword',admin.forgotPassword)
@@ -116,5 +105,15 @@ router.post('/viewInvestorReqByPlanId/:id',InvestorReqs.viewInvestorReqByPlanId)
 //chat
 router.post('/chatting',chat.chatting)
 router.post('/viewChatMsgs',chat.viewChatMsgs)
+
+
+//subscription
+router.post('/addSubscription',Subscription.addSubscription)
+router.post('/viewSubscriptionById/:id',Subscription.viewSubscriptionById)
+router.post('/viewSubscriptions',Subscription.viewSubscriptions)
+router.post('/viewSubscriptionsByEntrepId/:id',Subscription.viewSubscriptionsByEntrepId)
+router.post('/viewSubscriptionsByMentorId/:id',Subscription.viewSubscriptionsByMentorId)
+router.post('/deleteSubscriptionById/:id',Subscription.deleteSubscriptionById)
+
 
 module.exports=router
