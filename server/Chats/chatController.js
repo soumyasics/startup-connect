@@ -7,8 +7,8 @@ const chatting = async (req, res) => {
     msg: req.body.msg,
     from:req.body.from,
     to: req.body.to,
-    entId: req.body.advId,
-    mentorId: req.body.userId,
+    entId: req.body.entId,
+    mentorId: req.body.mentorId,
        date:new Date()
   });
   await message
