@@ -61,6 +61,29 @@ const viewEvents = (req, res) => {
 
 
 
+// View all events
+const viewEventsById = (req, res) => {
+    Event.findById({_id:req.params.id})
+        .exec()
+        .then((data) => {
+            if (data) {
+                res.status(200).json({
+                    msg: "Data obtained successfully",
+                    data: data
+                });
+            } else {
+                res.status(200).json({
+                    msg: "No Data obtained"
+                });
+            }
+        })
+        .catch((err) => {
+            res.status(500).json({
+                msg: "Data not obtained",
+                Error: err
+            });
+        });
+};
 
 
 
@@ -156,5 +179,6 @@ module.exports = {
     viewEvents,
     addEventRegistration,
     viewEventRegistrations,
-    viewEventRegistrationsByEventId
+    viewEventRegistrationsByEventId,
+    viewEventsById
 };
