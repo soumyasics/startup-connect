@@ -1,0 +1,65 @@
+.inv_chat_con{
+    min-height: 100vh;
+}
+
+.inv_chat_box{
+    width: 1035px;
+    height: 934px;
+    /* border: 1px solid #00000080 */
+    background: #ffffff;
+
+}
+
+.inv_chat_nav{
+    width: 1034px;
+    height: 100px;
+    border-bottom: 1px solid #00000080;
+    display: grid;
+    flex-direction: row;
+    /* gap:10px; */
+    grid-template-columns: 0.2fr 1fr 0.1fr 0.1fr 0.1fr ;
+
+}
+
+.inv_chat_profile{
+    width: 82px;
+    height: 82px;
+    margin-left: 20px;
+    margin-top: 10px;
+
+
+}
+
+.inv_chat_name{
+    margin-top:38px ;
+}
+
+
+
+.inv_chat_nav_btn{
+    border: none;
+    background: #ffffff;
+
+    
+}
+
+.inv_chat_nav_icon{
+    width: 37px;
+    height: 34px;
+}
+
+.inv_chat_foot{
+    width: 1035px;
+    height: 124px;
+    top: 1068px;
+    left: 203px;
+    gap: 0px;
+    opacity: 0px;
+    background: #C7E0EA;
+    display: grid;
+    flex-direction: row;
+    /* gap:10px; */
+    grid-template-columns: 0.2fr 1fr 0.1fr 0.1fr 0.1fr ;
+
+    
+}

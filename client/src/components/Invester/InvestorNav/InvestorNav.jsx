@@ -28,6 +28,9 @@ function InvestorNav() {
                             <Link to={"/investor/entrepreneur_reqlist"} className="text-decoration-none" ><p className="navbarstext">Startup Ideas</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3" >
+                            <Link to={"/investor/entrepreneur_reqlist"} className="text-decoration-none" ><p className="navbarstext">Chat</p></Link>
+                            </Navbar.Text>
+                            <Navbar.Text className="px-3" >
                             <Link to='/investor/updateprofile' className="text-decoration-none" ><p className="navbarstext">My Profile</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3" onClick={handleLogout} >
