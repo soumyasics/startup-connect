@@ -10,6 +10,7 @@ const Subscription=require('./Subscription/subscriptionController')
 
 const pitch_my_idea=require('./Entrepreneurs/PitchMyIdea/PitchMyIdeaController')
 const InvestorReqs=require('./EntInvestorReqs/entInvestorReqController')
+const Events=require('./Events/eventController')
 
 //entrepreneurs
 router.post('/registerEntrepreneur',entrepreneurs.upload,entrepreneurs.registerEntrepreneur)
@@ -115,5 +116,8 @@ router.post('/viewSubscriptionsByEntrepId/:id',Subscription.viewSubscriptionsByE
 router.post('/viewSubscriptionsByMentorId/:id',Subscription.viewSubscriptionsByMentorId)
 router.post('/deleteSubscriptionById/:id',Subscription.deleteSubscriptionById)
 
+//Events
+router.post('/addEvent',Events.addEvent)
+router.post('/viewEvents',Events.viewEvents)
 
 module.exports=router

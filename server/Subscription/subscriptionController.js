@@ -38,8 +38,7 @@ if(flag==0){
         }
         else{
             res.status(409).json({
-                msg: "You Have Already Subscribed to this Mentor",
-                data: err
+                msg: "You Have Already Subscribed to this Mentor"
             });
         }
     } catch (error) {

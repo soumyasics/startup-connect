@@ -17,23 +17,14 @@ const messageSchema = new mongoose.Schema(
     },
    entId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "advocates"
+    ref: "entrepreneurs"
     },
     mentorId:{
       type: mongoose.Schema.Types.ObjectId,
-      ref: "users"
+      ref: "mentors"
     
     },
-    internId:{
-      type: mongoose.Schema.Types.ObjectId,
-     ref:'interns'
-      
-    },
-    jrId:{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "junioradvocates",
-     
-    },date:{
+    date:{
       type: Date,
       required: true,
     }
