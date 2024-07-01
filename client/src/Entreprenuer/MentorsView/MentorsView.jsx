@@ -51,8 +51,8 @@ function MentorsView() {
       });
   }
 
-  const navigateToMentorPayment =()=>{
-    navigate("/mentor/payment")
+  const navigateToMentorPayment =(id)=>{
+    navigate("/mentor/payment/"+id)
   }
 
   useEffect(() => {
@@ -138,7 +138,7 @@ function MentorsView() {
                       )}
                       <div className="test-center ms-5 mt-5">
                         {" "}
-                        <button className="btn btn-danger" onClick={navigateToMentorPayment} >Subscribe</button>
+                        <button className="btn btn-danger" onClick={()=>navigateToMentorPayment(mentordata._id)} >Subscribe</button>
                       </div>
                     </td>
                   </tr>

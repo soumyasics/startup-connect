@@ -5,6 +5,7 @@ import InvestorNav from "../InvestorNav/InvestorNav";
 import eye from "../../../assets/carbon_view-filled.png";
 import axiosInstance from "../../../BaseAPIs/AxiosInstance";
 import { useNavigate } from "react-router-dom";
+
 function ViewEntreprenrueReqList() {
   const [entData, setentData] = useState([]);
   const navigate = useNavigate();
@@ -15,9 +16,7 @@ function ViewEntreprenrueReqList() {
       .then((res) => {
         console.log(res, "res");
         if (res.status === 200) {
-          if(res.data.data.status=="pending"){
             setentData(res.data.data);
-          }
         }
       })
       .catch((err) => {
@@ -84,7 +83,7 @@ function ViewEntreprenrueReqList() {
             {entData.length > 0 ? (
               entData.map((data) => {
                 return (
-                  <tr>
+                  <tr className={data.status=="pending" ? "" : "d-none"} >
                     <th scope="row">
                       {/* <img src={`${imageUrl}/${data.profile.filename}`}  */}
                       {/* class="invviewadmin_profile_pic" alt="..."/> */}
