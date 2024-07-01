@@ -39,8 +39,8 @@ function Navbar_2() {
           <div className="nav_secondheader">
             <Navbar className="px-4">
               <Navbar.Brand href="#home" className="text-light">
-                {/* <img className='nav_img' src={Frame} alt="Frame" /> */}
-                <h1 className='softution_logo'>Softution</h1>
+                <img className='nav_img' src={Frame} alt="Frame" />
+                {/* <h1 className='softution_logo'>Softution</h1> */}
               </Navbar.Brand>
               <Navbar.Toggle />
               <Navbar.Collapse className="justify-content-end">

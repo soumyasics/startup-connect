@@ -20,8 +20,8 @@ function AdminNavbar() {
     <div>
       <div className="nav_sticky">
         <Navbar className="px-4">
-          {/*<img className="nav_img" src={Frame} alt="Frame" />*/}
-          <h1 className='softution_logo'>Softution</h1>
+          <img className="nav_img" src={Frame} alt="Frame" />
+          {/* <h1 className='softution_logo'>Softution</h1> */}
 
           <Navbar.Toggle />
         </Navbar>
