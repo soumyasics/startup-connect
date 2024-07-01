@@ -69,7 +69,7 @@ router.post('/forgotPasswordMentors',mentors.forgotPassword)
 
 
 router.post('/mentorAddBlog/:id',mentors.uploadblog,mentors.mentorAddBlog)
-router.post('/mentorViewBlog',mentors.viewBlogByMentorId)
+router.post('/mentorViewBlog/:id',mentors.viewBlogByMentorId)
 router.post('/mentorViewBlogById/:id',mentors.mentorViewBlogById)
 router.post('/mentorUpdateBlog/:id',mentors.uploadblog,mentors.mentorUpdateBlog)
 router.post('/mentorRemoveBlog/:id',mentors.mentorRemoveBlog)
