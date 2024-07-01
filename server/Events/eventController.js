@@ -1,3 +1,4 @@
+
 const Event = require("./eventSchema"); 
 const EventRegistration = require("./eventRegistrations");
 
