@@ -158,13 +158,8 @@ function App() {
         <Route path="/entrepreneur/viewbloglist" element={<ViewBlogList />} />
 
         <Route
-          path="/entrepreneur/mentorsubscribedlist"
-          element={<MentorSubscribedList />}
-        />
-
-        <Route
-          path="/entrepreneur/entrepreneurchat"
-          element={<EntrepreneurChat />}
+          path="/entrepreneur/entrepreneurchat/:id"
+          element={<EntrepreneurChat role={'ent'}/>}
         />
         <Route
           path="/entrepreneur/viewevents"
@@ -235,7 +230,7 @@ function App() {
           path="/mentor/edittutorials/:id"
           element={<MentorEditTutorials />}
         />
-        <Route path="/mentor/mentorchat" element={<MentorChat />} />
+        <Route path="/mentor/mentorchat/:id" element={<EntrepreneurChat role={'ment'} />} />
 
 
         {/* Common Routes */}

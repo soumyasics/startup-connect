@@ -32,12 +32,17 @@ function MentorsViewSubscribed() {
         "/viewSubscriptionById/" + id
       )
       .then((res) => {
+        console.log(res)
         setMentorData(res.data.data,"k");
       })
       .catch((err) => {
         toast.error("Failed to fetch user details");
       });
   }, []);
+
+  const chat = () => {
+    navigate(`/entrepreneur/entrepreneurchat/${mentorData.mentorId._id}`);
+  }
 
 console.log(mentorData,"p");
   return (
@@ -114,10 +119,11 @@ console.log(mentorData,"p");
                             autoPlay
                             src={`${imageUrl}/${mentorData.mentorId?.demo_videolink.filename}`}                            type="video/mp4"
                           ></video>
-
+                          
                       </td>
 
                     </tr>
+                    <div><button onClick={chat}>Chat</button></div>
                   </tbody>
                 </table>
               </div>
