@@ -69,6 +69,8 @@ import InvestorChat from "./components/Invester/Chat/InvestorChat";
 import EntrepreneurChat from "./Entreprenuer/Chat/EntrepreneurChat";
 import MentorChat from "./components/Mentor/Chat/MentorChat";
 import AdminAddEvents from "./components/Admin/Events/AdminAddEvents";
+import AdminViewEventList from "./components/Admin/Events/AdminViewEventList";
+import EntViewEvents from "./Entreprenuer/Events/EntViewEvents";
 
 function App() {
   const url = "http://localhost:4040";
@@ -162,6 +164,10 @@ function App() {
         <Route
           path="/entrepreneur/entrepreneurchat"
           element={<EntrepreneurChat />}
+        />
+        <Route
+          path="/entrepreneur/viewevents"
+          element={<EntViewEvents />}
         />
 
         {/* Invester Routes */}
@@ -284,6 +290,8 @@ function App() {
           element={<ViewAllInversetes />}
         />
         <Route path="/admin_dashboard/admin_addevent" element={<AdminAddEvents />} />
+        <Route path="/admin_dashboard/admin_vieweventlist" element={<AdminViewEventList />} />
+
 
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
