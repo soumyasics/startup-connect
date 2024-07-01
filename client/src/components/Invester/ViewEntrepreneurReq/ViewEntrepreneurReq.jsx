@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ViewEntrepreneurReq.css";
 import { CommonNavbar } from "../../commonNavbar/commonNavbar";
 import Footer_2 from "../../Footer/Footer_2";
 import InvestorNav from "../InvestorNav/InvestorNav";
+import { useParams, useNavigate } from "react-router-dom";
+import axiosInstance from '../../../BaseAPIs/AxiosInstance'
+
 
 function ViewEntrepreneurReq() {
-  const [entData, setentData] = useState([]);
+  const [plan, setPlan] = useState([]);
   const navigate = useNavigate();
+  const { id } = useParams()
 
   useEffect(() => {
     axiosInstance
-      .post("/viewInvestorReqByInvId/" + localStorage.getItem("Investor"))
+      .post("/viewInvestorReqById/" + id)
       .then((res) => {
         console.log(res, "res");
         if (res.status === 200) {
-          setentData(res.data.data);
+          setPlan(res.data.data);
         }
       })
       .catch((err) => {

@@ -3,7 +3,7 @@ import './ViewStartUpPlan.css'
 import { CommonNavbar } from '../../components/commonNavbar/commonNavbar'
 import HomePageNavbar from '../../components/commonNavbar/HomepageNavbar'
 import Footer from '../../components/Footer/Footer'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axiosInstance from '../../BaseAPIs/AxiosInstance'
 import { toast } from "react-toastify";
 import delbtn from '../../assets/del_btn.png'
@@ -14,14 +14,18 @@ function ViewStartUpPlan() {
 
     const navigate=useNavigate();
 
-    const navigateToRequestInvestor = () => {
-      navigate("/entrepreneur/viewinvestors");
+    const navigateToRequestInvestor = (id) => {
+      navigate(`/entrepreneur/viewinvestors/${id}`);
     }
     const navigateToEditStartUpPlan = (id) => {
       navigate(`/entrepreneur/editstartup_plan/${id}`);
     }
 
   const [data, setData]= useState({});
+  const [investorReq, setInvestorreq] = useState([]);
+  const [request, setRequest] = useState({});
+  const { role } = useParams();
+
 
   useEffect(()=>{
     if(localStorage.getItem("Enterprenuertoken")== null && localStorage.getItem("Enterprenuer") == null ){
@@ -40,6 +44,32 @@ function ViewStartUpPlan() {
     .catch((err)=>{
       toast.error("Failed to fetch user details")
   });
+
+  axiosInstance
+      .post(`/viewInvestorReqByEntId/${localStorage.getItem("Enterprenuer")}`)
+      .then((res) => {
+        var temp = [];
+        var temp2 = {};
+        console.log(res, "res-pp");
+        console.log(res.data.data[2].planId._id);
+
+        for (var i in res.data.data) {
+          if (res.data.data[i].planId) {
+            temp.push(res.data.data[i].planId._id);
+            temp2[res.data.data[i].planId._id] = res.data.data[i].status;
+  
+          }
+        }
+        console.log(temp, "temp");
+
+        console.log(temp2, "temp2");
+        setInvestorreq(temp);
+        setRequest(temp2);
+      })
+      .catch((err) => {
+        console.log(err)
+        toast.error("Failed to fetch user details");
+      });
   },[])
 
   
@@ -124,7 +154,7 @@ const deleteStartUpPlan=(id)=>{
                                 <tr className='ent_viewsplan_subhead'><th>In exchange for:</th></tr>
                                 <tr><td><input className='ent_viewsplan_value' type="text" value={data1.equityAmount}/></td></tr>
                                 <div className='ent_viewsplan_reqbtn_div'>
-                                    <button className='ent_viewsplan_reqbtn' onClick={navigateToRequestInvestor}>Request an Investor</button>
+                                    <button className='ent_viewsplan_reqbtn' onClick={()=>navigateToRequestInvestor(data1._id)} disabled={investorReq.includes(data1._id) ? true : false}>{role == 'status' ? request[data1._id] : (investorReq.includes(data1._id) ? 'Request submited' : 'Request an Investor')}</button>
                                     <button className='ent_viewsplan_editbtn'  > 
                                     <img src={editbtn} onClick={()=>navigateToEditStartUpPlan(data1._id)}/>
                                     </button>

@@ -23,8 +23,8 @@ function ViewEntreprenrueReqList() {
       });
   }, []);
 
-  const navigateToInvestorView = () => {
-    navigate("/investor/entrepreneur_req");
+  const navigateToInvestorView = (id) => {
+    navigate(`/investor/entrepreneur_req/${id}`);
   };
 
   return (

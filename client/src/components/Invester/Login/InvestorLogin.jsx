@@ -62,6 +62,7 @@ function InvestorLogin() {
           console.log("id",data._id);
           localStorage.setItem("Investor",data._id);
           localStorage.setItem("InvestorToken",token);
+          localStorage.setItem("InvestorCategory",data.investing_category);
           console.log(data);
           alert("Investor Login Successfully");
           navigate("/investor/homepage")
