@@ -66,6 +66,8 @@ import BlogList from "./components/Admin/Blogs/BlogList";
 import ViewAllInversetes from "./Entreprenuer/ViewInvestors/ViewAllInversetes";
 import PropertiesList from "./components/Mentor/MentorChat";
 import InvestorChat from "./components/Invester/Chat/InvestorChat";
+import EntrepreneurChat from "./Entreprenuer/Chat/EntrepreneurChat";
+import MentorChat from "./components/Mentor/Chat/MentorChat";
 
 function App() {
   const url = "http://localhost:4040";
@@ -156,6 +158,11 @@ function App() {
           element={<MentorSubscribedList />}
         />
 
+        <Route
+          path="/entrepreneur/entrepreneurchat"
+          element={<EntrepreneurChat />}
+        />
+
         {/* Invester Routes */}
         <Route
           path="/investor/signup"
@@ -218,6 +225,8 @@ function App() {
           path="/mentor/edittutorials/:id"
           element={<MentorEditTutorials />}
         />
+        <Route path="/mentor/mentorchat" element={<MentorChat />} />
+
 
         {/* Common Routes */}
         <Route path="commonnavbar" element={<CommonNavbar />} />
