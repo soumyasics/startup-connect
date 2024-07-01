@@ -18,6 +18,7 @@ function ViewStartUpPlan() {
       navigate(`/entrepreneur/viewinvestors/${id}`);
     }
     const navigateToEditStartUpPlan = (id) => {
+      console.log();
       navigate(`/entrepreneur/editstartup_plan/${id}`);
     }
 
@@ -51,10 +52,11 @@ function ViewStartUpPlan() {
         var temp = [];
         var temp2 = {};
         console.log(res, "res-pp");
-        console.log(res.data.data[2].planId._id);
+       
 
         for (var i in res.data.data) {
           if (res.data.data[i].planId) {
+           
             temp.push(res.data.data[i].planId._id);
             temp2[res.data.data[i].planId._id] = res.data.data[i].status;
   
@@ -65,6 +67,7 @@ function ViewStartUpPlan() {
         console.log(temp2, "temp2");
         setInvestorreq(temp);
         setRequest(temp2);
+
       })
       .catch((err) => {
         console.log(err)

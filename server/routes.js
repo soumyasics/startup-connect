@@ -5,10 +5,12 @@ const investors=require('./Investors/investorController')
 const mentors=require('./Mentors/mentorController')
 const admin=require('./Admin/adminController')
 const chat=require('./Chats/chatController')
+const Subscription=require('./Subscription/subscriptionController')
 
 
 const pitch_my_idea=require('./Entrepreneurs/PitchMyIdea/PitchMyIdeaController')
 const InvestorReqs=require('./EntInvestorReqs/entInvestorReqController')
+const Events=require('./Events/eventController')
 
 //entrepreneurs
 router.post('/registerEntrepreneur',entrepreneurs.upload,entrepreneurs.registerEntrepreneur)
@@ -69,7 +71,7 @@ router.post('/forgotPasswordMentors',mentors.forgotPassword)
 
 
 router.post('/mentorAddBlog/:id',mentors.uploadblog,mentors.mentorAddBlog)
-router.post('/mentorViewBlog',mentors.viewBlogByMentorId)
+router.post('/mentorViewBlog/:id',mentors.viewBlogByMentorId)
 router.post('/mentorViewBlogById/:id',mentors.mentorViewBlogById)
 router.post('/mentorUpdateBlog/:id',mentors.uploadblog,mentors.mentorUpdateBlog)
 router.post('/mentorRemoveBlog/:id',mentors.mentorRemoveBlog)
@@ -81,18 +83,6 @@ router.post('/mentorViewTutorial',mentors.ViewAllTutorial)
 router.post('/mentorViewTutorialById/:id',mentors.mentorViewTutorialById)
 router.post('/mentorUpdateTutorial/:id',mentors.uploadtutorial,mentors.mentorUpdateTutorial)
 router.post('/mentorRemoveTutorial/:id',mentors.mentorRemoveTutorial)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //Admin routes
@@ -116,5 +106,22 @@ router.post('/viewInvestorReqByPlanId/:id',InvestorReqs.viewInvestorReqByPlanId)
 //chat
 router.post('/chatting',chat.chatting)
 router.post('/viewChatMsgs',chat.viewChatMsgs)
+
+
+//subscription
+router.post('/addSubscription',Subscription.addSubscription)
+router.post('/viewSubscriptionById/:id',Subscription.viewSubscriptionById)
+router.post('/viewSubscriptions',Subscription.viewSubscriptions)
+router.post('/viewSubscriptionsByEntrepId/:id',Subscription.viewSubscriptionsByEntrepId)
+router.post('/viewSubscriptionsByMentorId/:id',Subscription.viewSubscriptionsByMentorId)
+router.post('/deleteSubscriptionById/:id',Subscription.deleteSubscriptionById)
+
+//Events
+router.post('/addEvent',Events.addEvent)
+router.post('/viewEvents',Events.viewEvents)
+router.post('/viewEventsById/:id',Events.viewEventsById)
+router.post('/addEventRegistration',Events.addEventRegistration)
+router.post('/viewEventRegistrations/:id',Events.viewEventRegistrations)
+router.post('/viewEventRegistrationsByEventId/:id',Events.viewEventRegistrationsByEventId)
 
 module.exports=router
