@@ -206,7 +206,7 @@ function App() {
         />
         <Route path="/mentor/updateprofile" element={<MentorUpdateProfile />} />
         <Route path="/mentor/homepage" element={<MentorHomePage />} />
-        <Route path="/mentor/payment" element={<MentorPayment />} />
+        <Route path="/mentor/payment/:id" element={<MentorPayment />} />
 
         <Route path="/mentor/addblogs" element={<MentorAddBlogs />} />
         <Route path="/mentor/viewblogs" element={<MentorViewBlogs />} />

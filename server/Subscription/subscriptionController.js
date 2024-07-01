@@ -5,13 +5,14 @@ const Subscription = require("./subscriptionSchema"); // Adjust the path to your
 // Add a new subscription
 const addSubscription = async (req, res) => {
     try {
-        const { entId, mentorId, amount } = req.body;
+        const { entId, mentorId, amount,paymentstatus } = req.body;
 let flag=0
         const newSubscription = new Subscription({
             entId,
             mentorId,
             date:new Date(),
-            amount
+            amount,
+            paymentstatus
         });
 await Subscription.find({entId,mentorId}).then(data=>{
     if(data.length>0)
@@ -38,7 +39,7 @@ if(flag==0){
         }
         else{
             res.status(409).json({
-                msg: "You Have Already Subscribed to this Mentor"
+                msg: "You Have Already Subscribed to this Mentor",
             });
         }
     } catch (error) {
