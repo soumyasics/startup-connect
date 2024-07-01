@@ -20,7 +20,7 @@ function MentorViewTutorials() {
 
 
   useEffect(()=>{
-    axiosInstance.post('/mentorViewTutorial')
+    axiosInstance.post('/ViewTutorialBymentorId/'+localStorage.getItem("Mentor"))
     .then((res)=>{
       console.log(res,"res");
       if(res.status === 200){
