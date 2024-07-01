@@ -1,31 +1,26 @@
-.inv_chat_con{
+.men_chat_con{
     min-height: 100vh;
 }
 
-.inv_chat_box{
+.men_chat_box{
     width: 1115px;
     height: 534px;
     background: #ffffff;
 }
 
-.inv_chat_message{
-    
-    overflow: auto;
 
-}
 
-.inv_chat_nav{
+.men_chat_nav{
     width: 1113px;
     height: 100px;
     border-bottom: 1px solid #00000080;
     display: grid;
     flex-direction: row;
-    /* gap:10px; */
     grid-template-columns: 0.2fr 1fr 0.1fr 0.1fr 0.1fr ;
 
 }
 
-.inv_chat_profile{
+.men_chat_profile{
     width: 82px;
     height: 82px;
     margin-left: 20px;
@@ -34,7 +29,7 @@
 
 }
 
-.inv_chat_name{
+.men_chat_name{
     margin-top:38px ;
     margin-left: -30px;
     
@@ -42,26 +37,26 @@
 
 
 
-.inv_chat_nav_btn{
+.men_chat_nav_btn{
     border: none;
     background: #ffffff;
 
     
 }
 
-.inv_chat_nav_icon{
+.men_chat_nav_icon{
     width: 37px;
     height: 34px;
 }
 
-.inv_chat_message_left{
+.men_chat_message_left{
     width: 550px;
     height: auto;
     background: #EEF9FF;
     border-radius:0px 32px 32px 32px;
 }
 
-.inv_chat_message_right{
+.men_chat_message_right{
     width: 550px;
     height: auto;
     background: #06A3DA;
@@ -70,7 +65,7 @@
 
 
 
-.inv_chat_foot{
+.men_chat_foot{
     width: 1115px;
     height: 104px;
     top: 1068px;
@@ -86,7 +81,7 @@
     
 }
 
-.inv_chat_foot_btn{
+.men_chat_foot_btn{
     border: none;
     background: #C7E0EA;
     width:90px;
@@ -97,7 +92,7 @@
 
 
 
-.inv_chat_foot_input_div{
+.men_chat_foot_input_div{
     width: 700px;
     height: 60px;
     background: #EEF9FF;
@@ -119,7 +114,7 @@ input {
     
 }
 
-.inv_chat_foot_mic{
+.men_chat_foot_mic{
     border: none;
     background: #EEF9FF;
     margin-left: -70px;

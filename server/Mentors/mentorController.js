@@ -365,6 +365,26 @@ const mentorViewBlogById = (req, res) => {
     });
 };
 
+
+// View mentorViewBlog by ID
+const mentorViewBlogByMentorId = (req, res) => {
+  Mentor.mentorBlog.find({mentorId:req.params.id})
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data obtained successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "No Data obtained",
+        Error: err,
+      });
+    });
+};
+
 // Update Blog
 
 const mentorUpdateBlog = async(req,res)=>{
@@ -502,6 +522,24 @@ const mentorViewTutorialById = (req, res) => {
     });
 };
 
+// View mentorViewTutorial by ID
+const mentorViewTutorialByMentorId = (req, res) => {
+  Mentor.mentorTutorial.findById({mentorId:req.params.id})
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data obtained successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "No Data obtained",
+        Error: err,
+      });
+    });
+};
 
 
 // View mentorViewTutorial by  mentor ID
