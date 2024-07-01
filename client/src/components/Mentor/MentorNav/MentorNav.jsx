@@ -19,6 +19,10 @@ function MentorNav() {
     navigate("/mentor/addtutorials");
   };
 
+  const navigateToSubscribers = () => {
+    navigate("/mentor/viewsubscribers");
+  };
+
   const handleLogout = () => {
     localStorage.clear();
     navigate("/");
@@ -70,8 +74,8 @@ function MentorNav() {
                 </ul>
               </div>
               <Navbar.Text className="px-3">
-                <Link href="#Investors" className="text-decoration-none">
-                  <p className="navbarstext">Subscriptions</p>
+                <Link to="/mentor/viewsubscribers" className="text-decoration-none">
+                  <p className="navbarstext">Subscribers</p>
                 </Link>
               </Navbar.Text>
               <Navbar.Text className="px-3">

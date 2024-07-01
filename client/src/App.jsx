@@ -66,6 +66,7 @@ import BlogList from "./components/Admin/Blogs/BlogList";
 import ViewAllInversetes from "./Entreprenuer/ViewInvestors/ViewAllInversetes";
 import PropertiesList from "./components/Mentor/MentorChat";
 import InvestorChat from "./components/Invester/Chat/InvestorChat";
+import MentorSubscribers from "./components/Mentor/MentorSubscription/MentorSubscribers";
 import EntrepreneurChat from "./Entreprenuer/Chat/EntrepreneurChat";
 import MentorChat from "./components/Mentor/Chat/MentorChat";
 import AdminAddEvents from "./components/Admin/Events/AdminAddEvents";
@@ -228,6 +229,8 @@ function App() {
 
         <Route path="/mentor/addtutorials" element={<MentorAddTutorials />} />
         <Route path="/mentor/viewtutorials" element={<MentorViewTutorials />} />
+        <Route path="/mentor/viewsubscribers" element={<MentorSubscribers />} />
+
         <Route
           path="/mentor/edittutorials/:id"
           element={<MentorEditTutorials />}
