@@ -64,6 +64,7 @@ import InvestorForgot from "./components/Invester/Signup/Investorforgot";
 import EntrepreneurList from "./components/Admin/Entrepreneur/EntrepreneurList";
 import BlogList from "./components/Admin/Blogs/BlogList";
 import ViewAllInversetes from "./Entreprenuer/ViewInvestors/ViewAllInversetes";
+import PropertiesList from "./components/Mentor/MentorChat";
 
 function App() {
   const url = "http://localhost:4040";
@@ -96,6 +97,10 @@ function App() {
           element={<ViewStartUpPlan />}
         />
         <Route
+          path="/entrepreneur/viewstartup_plan/:role"
+          element={<ViewStartUpPlan />}
+        />
+        <Route
           path="/entrepreneur/editstartup_plan/:id"
           element={<EditStartUpPlan />}
         />
@@ -105,7 +110,7 @@ function App() {
           element={<Entprofile url={url} />}
         />
         <Route
-          path="/entrepreneur/viewinvestors"
+          path="/entrepreneur/viewinvestors/:planID"
           element={<ViewInvestors url={url} />}
         />
         <Route
@@ -122,7 +127,7 @@ function App() {
         />
         <Route
           path="/entrepreneur/investorreqview/:id"
-          element={<InvestorReqView />}
+          element={<InvestorReqView role={'investorreqview'}/>}
         />
 
         <Route path="/entrepreneur/viewmentors" element={<ViewMentors />} />
@@ -172,7 +177,7 @@ function App() {
           element={<ViewEntreprenrueReqList />}
         />
         <Route
-          path="/investor/entrepreneur_req"
+          path="/investor/entrepreneur_req/:id"
           element={<ViewEntrepreneurReq />}
         />
 
@@ -265,6 +270,8 @@ function App() {
         />
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
+        <Route path="/l" element={PropertiesList} />
+
       </Routes>
     </BrowserRouter>
   );

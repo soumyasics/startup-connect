@@ -26,8 +26,11 @@ function InvestorReqView() {
         }
     }, [investorData.profile])
 
-    const { id } = useParams()
-    console.log('id', id);
+    var { id } = useParams()
+    var ids = id.split(',');
+    id = ids[0];
+    var planId = ids[1];
+    
 
     function getData() {
         axiosInstance.post(`/viewInvestorById/${id}`)
@@ -47,10 +50,10 @@ function InvestorReqView() {
     }, [id])
 
     const handleConfirm = () => {
-        axiosInstance.post(`/reqInvestorById`, {'investorId':id , 'entId': localStorage.getItem("Enterprenuer")})
+        axiosInstance.post(`/reqInvestorById`, {'investorId':id , 'entId': localStorage.getItem("Enterprenuer"), 'planId':planId})
             .then((res) => {
                     alert(res.data.msg);
-                    navigate("/entrepreneur/viewinvestors");  // Navigate to a success page or another appropriate page
+                    navigate("/entrepreneur/viewrestatu/status");  // Navigate to a success page or another appropriate page
             })
             .catch((err) => {
                 alert("Failed to approve investor request");

@@ -18,6 +18,10 @@ ref:'investors'
     status:{
         default:'pending',
         type:String
-    }
+    },planId:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:'pitch_my_idea_data'
+    },
 });
 module.exports=mongoose.model('investorreqs',reqSchema)

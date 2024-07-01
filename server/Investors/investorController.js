@@ -133,7 +133,9 @@ const viewInvestorById = (req, res) => {
 
 // View investor by ID
 const viewInvestorByCategory = (req, res) => {
-  Investor.findById({investing_category:req.params.category})
+  console.log(req.params.category)
+  try {
+    Investor.find({investing_category:req.params.category})
     .exec()
     .then((data) => {
       res.status(200).json({
@@ -142,12 +144,20 @@ const viewInvestorByCategory = (req, res) => {
       });
     })
     .catch((err) => {
-      console.log(err);
       res.status(500).json({
         msg: "No Data obtained",
         Error: err,
       });
     });
+  } catch(err) {
+    console.log(err);
+
+    res.status(500).json({
+      msg: "No Data obtained",
+      Error: err,
+    });
+  }
+  
 };
 // View investorLessReqs for Admin
 const viewLessInvestorReqs = (req, res) => {

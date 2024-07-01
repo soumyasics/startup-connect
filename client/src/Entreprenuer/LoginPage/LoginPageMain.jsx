@@ -68,6 +68,7 @@ function LoginPageMain() {
             console.log("data", data._id);
             localStorage.setItem("Enterprenuer", data._id);
             localStorage.setItem("Enterprenuertoken", token);
+            localStorage.setItem("EnterprenuerCategory",data.industry_sector);
             console.log(data);
             alert("Enterprenuer Login Successfuly");
             Navigate("/entrepreneur/enthomepage");

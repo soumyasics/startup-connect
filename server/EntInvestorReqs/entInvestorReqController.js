@@ -7,7 +7,7 @@ const reqInvestorById = async (req, res) => {
     const { investorId, entId,planId} = req.body;
     var response ={};
 
-  await InvestorReqs.find({investorId:investorId,entId:entId,planId}).exec()
+  await InvestorReqs.find({investorId:investorId,entId:entId,planId:planId}).exec()
   .then(data=>{
     if(data.length>0)
         {
@@ -50,6 +50,7 @@ const reqInvestorById = async (req, res) => {
 
 // View Investor Request by ID
 const viewInvestorReqById = (req, res) => {
+    console.log(req.params.id)
     InvestorReqs.findById(req.params.id)
         .populate('investorId')
         .populate('entId')
@@ -141,9 +142,11 @@ const viewInvestorReqByPlanId = (req, res) => {
 
 // View Investor Request by ID
 const viewInvestorReqByEntId = (req, res) => {
+    console.log(req.params.id)
     InvestorReqs.find({entId:req.params.id})
       
-        .populate('invId')
+        .populate('investorId')
+        .populate('entId')
         .populate('planId')
         .exec()
         .then(data => {

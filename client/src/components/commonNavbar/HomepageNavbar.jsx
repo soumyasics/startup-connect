@@ -57,7 +57,7 @@ function HomepageNavbar() {
                                     <li><Link to='/entrepreneur/pitch-my-idea' class="dropdown-item" >Add New Plans</Link></li>
                                     <li><Link to='/entrepreneur/viewstartup_plan' class="dropdown-item" >View Plans</Link></li>
                                     <li><Link to='/entrepreneur/requestinvestor' class="dropdown-item" >My Investors</Link></li>
-                                    <li><Link to='/entrepreneur/viewrestatu/status' class="dropdown-item" >Request Status</Link></li>
+                                    <li><Link to='/entrepreneur/viewstartup_plan/status' class="dropdown-item" >Request Status</Link></li>
                                 </ul>
                                 </div>
                             <Navbar.Text className="px-3" onClick={navigateToMyProfile}>
