@@ -42,10 +42,13 @@ function MentorPayment() {
           paymentstatus: true
         });
        alert("successfully subscribed ")
+       navigate("/entrepreneur/mentorsubscribedlist")
       } catch (err) {
         console.log("Error:", err);
         if(err.response.status==409){
           alert("already subscribed")
+          navigate("/entrepreneur/mentorsubscribedlist")
+
         }
       }
     }
@@ -79,7 +82,7 @@ function MentorPayment() {
                 <option value="ICICI Bank">ICICI Bank</option>
                 <option value="Canara Bank">Canara Bank</option>
               </select>
-              {errors.paymentType && <div className="error">{errors.paymentType}</div>}
+              {errors.paymentType && <div className="error text-danger">{errors.paymentType}</div>}
             </div>
             <div className="input_container">
               <label className="input_label">Card Number</label>
@@ -90,12 +93,12 @@ function MentorPayment() {
                 value={creditCardNumber}
                 onChange={(e) => setCreditCardNumber(e.target.value)}
               />
-              {errors.creditCardNumber && <div className="error">{errors.creditCardNumber}</div>}
+              {errors.creditCardNumber && <div className="error text-danger">{errors.creditCardNumber}</div>}
             </div>
             <div className="input_container">
               <div className="split_label">
                 <label className="input_label">Expiry Date </label>
-                <label className="input_label">CVV Code</label>
+                
               </div>
               <div className="split">
                 <input
@@ -112,8 +115,8 @@ function MentorPayment() {
                   onChange={(e) => setCVV(e.target.value)}
                 />
               </div>
-              {errors.expirationDate && <div className="error">{errors.expirationDate}</div>}
-              {errors.CVV && <div className="error">{errors.CVV}</div>}
+              {errors.expirationDate && <div className="error text-danger">{errors.expirationDate}</div>}
+              {errors.CVV && <div className="error text-danger">{errors.CVV}</div>}
             </div>
             <div className='input_container'>
               <div className="split_final_pay">
