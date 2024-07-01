@@ -21,7 +21,10 @@ function HomepageNavbar() {
     const navigateToMyProfile = () => {
         navigate("/entrepreneur/entprofile");
     };
-    
+
+       const navigateToSubscribed = () => {
+        navigate("/entrepreneur/mentorsubscribedlist");
+    };
 
     const handleLogout = () => {
         localStorage.clear();
@@ -62,6 +65,9 @@ function HomepageNavbar() {
                                 </div>
                             <Navbar.Text className="px-3" onClick={navigateToMyProfile}>
                             <Link href="#MyProfile" className="text-decoration-none" ><p className="navbarstext">My Profile</p></Link>
+                            </Navbar.Text>
+                            <Navbar.Text className="px-3" onClick={navigateToSubscribed}>
+                            <Link href="#MyProfile" className="text-decoration-none" ><p className="navbarstext">Subscribed</p></Link>
                             </Navbar.Text>
                             <Navbar.Text className="px-3">
                             <Link href="#Login" className="text-decoration-none" to={'/'} onClick={handleLogout} ><p className="navbarstext">Logout</p></Link>
