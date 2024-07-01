@@ -119,6 +119,7 @@ router.post('/deleteSubscriptionById/:id',Subscription.deleteSubscriptionById)
 //Events
 router.post('/addEvent',Events.addEvent)
 router.post('/viewEvents',Events.viewEvents)
+router.post('/removeEventById/:id',Events.removeEventById)
 router.post('/viewEventsById/:id',Events.viewEventsById)
 router.post('/addEventRegistration',Events.addEventRegistration)
 router.post('/viewEventRegistrations/:id',Events.viewEventRegistrations)

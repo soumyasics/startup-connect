@@ -67,6 +67,11 @@ import ViewAllInversetes from "./Entreprenuer/ViewInvestors/ViewAllInversetes";
 import PropertiesList from "./components/Mentor/MentorChat";
 import InvestorChat from "./components/Invester/Chat/InvestorChat";
 import MentorSubscribers from "./components/Mentor/MentorSubscription/MentorSubscribers";
+import EntrepreneurChat from "./Entreprenuer/Chat/EntrepreneurChat";
+import MentorChat from "./components/Mentor/Chat/MentorChat";
+import AdminAddEvents from "./components/Admin/Events/AdminAddEvents";
+import AdminViewEventList from "./components/Admin/Events/AdminViewEventList";
+import EntViewEvents from "./Entreprenuer/Events/EntViewEvents";
 
 function App() {
   const url = "http://localhost:4040";
@@ -157,6 +162,15 @@ function App() {
           element={<MentorSubscribedList />}
         />
 
+        <Route
+          path="/entrepreneur/entrepreneurchat"
+          element={<EntrepreneurChat />}
+        />
+        <Route
+          path="/entrepreneur/viewevents"
+          element={<EntViewEvents />}
+        />
+
         {/* Invester Routes */}
         <Route
           path="/investor/signup"
@@ -221,6 +235,8 @@ function App() {
           path="/mentor/edittutorials/:id"
           element={<MentorEditTutorials />}
         />
+        <Route path="/mentor/mentorchat" element={<MentorChat />} />
+
 
         {/* Common Routes */}
         <Route path="commonnavbar" element={<CommonNavbar />} />
@@ -276,6 +292,10 @@ function App() {
           path="/entrepreneur/viewallinvester"
           element={<ViewAllInversetes />}
         />
+        <Route path="/admin_dashboard/admin_addevent" element={<AdminAddEvents />} />
+        <Route path="/admin_dashboard/admin_vieweventlist" element={<AdminViewEventList />} />
+
+
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
         <Route path="/l" element={PropertiesList} />
