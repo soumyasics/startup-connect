@@ -69,47 +69,41 @@ function EntrepreneurChat({ role }) {
         <section className="ent_chat_box mt-5">
           <div className="col ent_chat_nav">
             <img src={profile} className="ent_chat_profile" />
-            <h3 className=" ent_chat_name">Entrepreneur Name </h3>
-            <button className="ent_chat_nav_btn">
-              <img className="ent_chat_nav_icon" src={inv_chat_search} />
-            </button>
-            <button className="ent_chat_nav_btn">
-              <img className="ent_chat_nav_icon" src={inv_chat_love} />
-            </button>
-            <button className="ent_chat_nav_btn">
-              <img className="ent_chat_nav_icon" src={inv_chat_bell} />
-            </button>
+            <h3 className=" ent_chat_name"> </h3>
+            {/* <button className="ent_chat_nav_btn">
+            //   <img className="ent_chat_nav_icon" src={inv_chat_search} />
+            // </button>
+            // <button className="ent_chat_nav_btn">
+            //   <img className="ent_chat_nav_icon" src={inv_chat_love} />
+            // </button>
+            // <button className="ent_chat_nav_btn">
+            //   <img className="ent_chat_nav_icon" src={inv_chat_bell} />
+            </button>*/}
           </div>
           <div className="container ">
-            <table className="mt-2 ">
-              {chat.map((message) => {
-                return (
-                  <tr>
-                  <h1>{role+ message.from}</h1>
-                    <td className={role == message.from ? "ent_chat_message_left" : "ent_chat_message_right"}>
-                      <p className="px-3 pt-2">{message.msg}</p>
-                    </td>
-                    <td></td>
-                  </tr>
-                );
-              })}
-            </table>
+          <div className="ent_chat_messages">
+          {chat.map((message, index) => (
+            <div key={index} className={`ent_chat_message ${role === message.from ? "ent_chat_message_left" : "ent_chat_message_right"}`}>
+              <p>{message.msg}</p>
+            </div>
+          ))}
+        </div>
           </div>
         </section>
 
         <section>
           <div className="ent_chat_foot">
-            <button className="ent_chat_foot_btn mx-2" onClick={importData}>
+           {/* <button className="ent_chat_foot_btn mx-2" onClick={importData}>
               <img className="ent_chat_nav_icon" src={inv_chat_attachment} />
             </button>
             <button className="ent_chat_foot_btn">
               <img className="ent_chat_nav_icon" src={inv_chat_emoji} />
-            </button>
-            <div className="ent_chat_foot_input_div">
+            </button>*/}
+            <div className="ent_chat_foot_input_div ms-5 ">
               <button className="ent_chat_foot_mic">
                 <img className="ent_chat_nav_icon" src={inv_chat_mic} />
               </button>
-              <input
+              <input className="text-center"
                 type="text"
                 placeholder="Write Something"
                 value={msg}
@@ -117,9 +111,7 @@ function EntrepreneurChat({ role }) {
               />
             </div>
 
-            <button className="ent_chat_foot_btn">
-              <img className="ent_chat_nav_icon" src={inv_chat_camera} />
-            </button>
+           
             <button className="ent_chat_foot_btn" onClick={send}>
               <img className="ent_chat_nav_icon" src={inv_chat_send} />
             </button>
