@@ -14,23 +14,38 @@ import profile from "../../assets/Ellipse 5.png";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
+import { TiArrowBack } from "react-icons/ti";
+import { imageUrl } from "../../ImageAPIs/Image_Urls";
 
 function EntrepreneurChat({ role }) {
   const [msg, setMsg] = useState("");
   const { id } = useParams();
   const [chat, setChat] = useState([]);
+  const [mentor, setMentor] = useState("");
+  const [ent, setEnt] = useState("");
 
   useEffect(() => {
     setInterval(() => {
       axiosInstance
         .post("/viewChatMsgs", {
-          entId: role == 'ent' ? localStorage.getItem("Enterprenuer") : id,
-          mentorId: role == 'ent' ? id : localStorage.getItem("Mentor"),
+          entId: role == "ent" ? localStorage.getItem("Enterprenuer") : id,
+          mentorId: role == "ent" ? id : localStorage.getItem("Mentor"),
         })
         .then((res) => {
           setChat(res.data.data);
         });
     }, 1000);
+    if (role == "ent") {
+      axiosInstance.post(`/viewMentorById/${id}`).then((res) => {
+        setEnt(res.data.data);
+        console.log(res.data.data);
+      });
+    } else {
+      //inside view mentot axios call
+      axiosInstance.post(`/viewEntrepreneurById/${id}`).then((res) => {
+        setMentor(res.data.data);
+      });
+    }
   }, []);
 
   function importData() {
@@ -53,9 +68,9 @@ function EntrepreneurChat({ role }) {
       .post("/chatting", {
         msg: msg,
         from: role,
-        to: role=='ent' ? "ment": 'ent',
-        entId: role=='ent' ? localStorage.getItem("Enterprenuer") : id,
-        mentorId: role == 'ent' ? id : localStorage.getItem("Mentor"),
+        to: role == "ent" ? "ment" : "ent",
+        entId: role == "ent" ? localStorage.getItem("Enterprenuer") : id,
+        mentorId: role == "ent" ? id : localStorage.getItem("Mentor"),
       })
       .then((res) => {
         setMsg("");
@@ -63,37 +78,32 @@ function EntrepreneurChat({ role }) {
   };
   return (
     <>
-      <CommonNavbar />
-      <HomepageNavbar />
-      <div className="container ent_chat_con mb-5">
-        <section className="ent_chat_box mt-5">
+      <div className="container ent_chat_main mb-5">
+        <section className="ent_chat_box mt-2 ">
           <div className="col ent_chat_nav">
-            <img src={profile} className="ent_chat_profile" />
-            <h3 className=" ent_chat_name"> </h3>
-            {/* <button className="ent_chat_nav_btn">
-            //   <img className="ent_chat_nav_icon" src={inv_chat_search} />
-            // </button>
-            // <button className="ent_chat_nav_btn">
-            //   <img className="ent_chat_nav_icon" src={inv_chat_love} />
-            // </button>
-            // <button className="ent_chat_nav_btn">
-            //   <img className="ent_chat_nav_icon" src={inv_chat_bell} />
-            </button>*/}
-          </div>
-          <div className="container ">
-          <div className="ent_chat_messages">
-          {chat.map((message, index) => (
-            <div key={index} className={`ent_chat_message ${role === message.from ? "ent_chat_message_left" : "ent_chat_message_right"}`}>
-              <p>{message.msg}</p>
+            <img  src={`${imageUrl}/${role == 'ent' ? ent.profile?.filename : mentor.profile?.filename}`} style={{width:"80px",height:"80px"}} className="rounded-pill "  />
+          </div><Link to="/entrepreneur/mentorsubscribedlist">Back<TiArrowBack/></Link>
+          <div className="ent_chat_container mt-3">
+            <div className="ent_chat_messages">
+              {chat.map((message, index) => (
+                <div
+                  key={index}
+                  className={`ent_chat_message ${
+                    role === message.from
+                      ? "ent_chat_message_right"
+                      : "ent_chat_message_left"
+                  }`}
+                >
+                  <p className="chat-msg">{message.msg}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
           </div>
         </section>
 
         <section>
           <div className="ent_chat_foot">
-           {/* <button className="ent_chat_foot_btn mx-2" onClick={importData}>
+            {/* <button className="ent_chat_foot_btn mx-2" onClick={importData}>
               <img className="ent_chat_nav_icon" src={inv_chat_attachment} />
             </button>
             <button className="ent_chat_foot_btn">
@@ -103,7 +113,8 @@ function EntrepreneurChat({ role }) {
               <button className="ent_chat_foot_mic">
                 <img className="ent_chat_nav_icon" src={inv_chat_mic} />
               </button>
-              <input className="text-center"
+              <input
+                className="text-center"
                 type="text"
                 placeholder="Write Something"
                 value={msg}
@@ -111,14 +122,12 @@ function EntrepreneurChat({ role }) {
               />
             </div>
 
-           
             <button className="ent_chat_foot_btn" onClick={send}>
               <img className="ent_chat_nav_icon" src={inv_chat_send} />
             </button>
           </div>
         </section>
       </div>
-      <Footer_2 />
     </>
   );
 }

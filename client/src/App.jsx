@@ -161,7 +161,7 @@ function App() {
 
         <Route
           path="/entrepreneur/entrepreneurchat/:id"
-          element={<EntrepreneurChat role={'ent'}/>}
+          element={<EntrepreneurChat  role={'ent'}/>}
         />
         <Route
           path="/entrepreneur/viewevents"
