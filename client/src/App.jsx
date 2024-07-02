@@ -72,6 +72,8 @@ import MentorChat from "./components/Mentor/Chat/MentorChat";
 import AdminAddEvents from "./components/Admin/Events/AdminAddEvents";
 import AdminViewEventList from "./components/Admin/Events/AdminViewEventList";
 import EntViewEvents from "./Entreprenuer/Events/EntViewEvents";
+import EntRegisterEvents from "./Entreprenuer/Events/EntRegisterEvents";
+import AdminViewEventRegList from "./components/Admin/Events/AdminViewEventRegList";
 
 function App() {
   const url = "http://localhost:4040";
@@ -148,14 +150,14 @@ function App() {
           element={<MentorsViewSubscribed />}
         />
         <Route
-          path="/entrepreneur/viewtutoriallist"
+          path="/entrepreneur/viewtutoriallist/:id"
           element={<ViewTutorialList />}
         />
         <Route
           path="/entrepreneur/viewtutorial/:id"
           element={<ViewTutorial />}
         />
-        <Route path="/entrepreneur/viewbloglist" element={<ViewBlogList />} />
+        <Route path="/entrepreneur/viewbloglist/:id" element={<ViewBlogList />} />
 
         <Route
           path="/entrepreneur/entrepreneurchat/:id"
@@ -164,6 +166,10 @@ function App() {
         <Route
           path="/entrepreneur/viewevents"
           element={<EntViewEvents />}
+        />
+        <Route
+          path="/entrepreneur/registerevents"
+          element={<EntRegisterEvents />}
         />
 
         {/* Invester Routes */}
@@ -289,6 +295,8 @@ function App() {
         />
         <Route path="/admin_dashboard/admin_addevent" element={<AdminAddEvents />} />
         <Route path="/admin_dashboard/admin_vieweventlist" element={<AdminViewEventList />} />
+        <Route path="/admin_dashboard/admin_vieweventreglist" element={<AdminViewEventRegList />} />
+
 
 
 

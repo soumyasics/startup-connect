@@ -40,8 +40,17 @@ function MentorsViewSubscribed() {
       });
   }, []);
 
+<<<<<<< HEAD
   const chat = () => {
     navigate(`/entrepreneur/entrepreneurchat/${mentorData.mentorId._id}`);
+=======
+  const navigateToTutorialListView =(id)=>{
+    navigate(`/entrepreneur/viewtutoriallist/${id}`)
+  }
+
+  const navigateToBlogListView =(id)=>{
+    navigate(`/entrepreneur/viewbloglist/${id}`)
+>>>>>>> 395eca9f667a12d8223243c267990229edc29010
   }
 
 console.log(mentorData,"p");
@@ -57,8 +66,8 @@ console.log(mentorData,"p");
                 <img  style={{borderRadius:"25px",padding:"5%",width:"300px",height:"300px"}} src={`${imageUrl}/${mentorData.mentorId?.profile.originalname}`}></img>
               </div>
               
-              <Link to="/entrepreneur/viewtutoriallist" className="ms-5 mt-5 btn btn-primary">View Tutorials</Link>
-                      <Link to="/entrepreneur/viewtutoriallist" className="mt-5 ms-5 btn btn-primary">View Blogs</Link>
+              <button onClick={()=>navigateToTutorialListView(mentorData.mentorId._id)} className="ms-5 mt-5 btn btn-primary">View Tutorials</button>
+              <button onClick={()=>navigateToBlogListView(mentorData.mentorId._id)} className="mt-5 ms-5 btn btn-primary">View Blogs</button>
               <h3 className="ad_invaccept_fname">{mentorData.name}</h3>
             </div>
           </div>

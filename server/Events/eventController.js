@@ -1,7 +1,8 @@
 
 const Event = require("./eventSchema"); 
 const EventRegistration = require("./eventRegistrations");
-
+const EntEventRegister=require('./entEventRegisterSchema');
+// const { default: EntRegisterEvents } = require("../../client/src/Entreprenuer/Events/EntRegisterEvents");
 // Add a new event
 const addEvent = async (req, res) => {
     try {
@@ -145,6 +146,8 @@ const addEventRegistration = async (req, res) => {
     }
 };
 
+
+
 // View all event registrations
 const viewEventRegistrations = (req, res) => {
     EventRegistration.find()
@@ -197,6 +200,68 @@ const viewEventRegistrationsByEventId = (req, res) => {
 };
 
 
+
+// Entreprneur Event Register
+
+const registerEventEntrepreneur=(req,res)=>{
+    const {
+        fname,
+        lname,
+        email,
+        contact,
+        location
+    }=req.body
+
+    const newEventReg =new EntEventRegister({
+        fname,
+        lname,
+        email,
+        contact,
+        location
+    })
+
+    newEventReg.save()
+    .then((data) => {
+        res.status(200).json({
+            msg: "Inserted successfully",
+            data: data
+        });
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json({
+            msg: "Data not Inserted",
+            data: err
+        });
+    });
+
+}
+
+// View All Event Registration
+
+const viewEventRegistration = (req, res) => {
+    EntEventRegister.find()
+        .exec()
+        .then((data) => {
+            if (data.length > 0) {
+                res.status(200).json({
+                    msg: "Data obtained successfully",
+                    data: data
+                });
+            } else {
+                res.status(200).json({
+                    msg: "No Data obtained"
+                });
+            }
+        })
+        .catch((err) => {
+            res.status(500).json({
+                msg: "Data not obtained",
+                Error: err
+            });
+        });
+};
+
 module.exports = {
     addEvent,
     viewEvents,
@@ -204,5 +269,7 @@ module.exports = {
     viewEventRegistrations,
     viewEventRegistrationsByEventId,
     viewEventsById,
-    removeEventById
+    removeEventById,
+    registerEventEntrepreneur,
+    viewEventRegistration,
 };

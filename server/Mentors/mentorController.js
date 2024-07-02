@@ -505,7 +505,7 @@ const ViewAllTutorial=(req,res)=>{
 
 // View mentorViewTutorial by ID
 const mentorViewTutorialById = (req, res) => {
-  Mentor.mentorTutorial.findById(req.params.id).populate('mentorId')
+  Mentor.mentorTutorial.findById({mentorId:req.params.id}).populate('mentorId')
     .exec()
     .then((data) => {
       res.status(200).json({
@@ -544,7 +544,7 @@ const mentorViewTutorialByMentorId = (req, res) => {
 
 // View mentorViewTutorial by  mentor ID
 const ViewTutorialBymentorId = (req, res) => {
-  Mentor.mentorTutorial.findById({mentorId:req.params.id})
+  Mentor.mentorTutorial.find({mentorId:req.params.id})
     .exec()
     .then((data) => {
       res.status(200).json({

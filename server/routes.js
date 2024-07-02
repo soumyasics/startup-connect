@@ -127,5 +127,8 @@ router.post('/viewEventsById/:id',Events.viewEventsById)
 router.post('/addEventRegistration',Events.addEventRegistration)
 router.post('/viewEventRegistrations/:id',Events.viewEventRegistrations)
 router.post('/viewEventRegistrationsByEventId/:id',Events.viewEventRegistrationsByEventId)
+router.post('/registerEventEntrepreneur',Events.registerEventEntrepreneur)
+router.post('/viewEventRegistration',Events.viewEventRegistration)
+
 
 module.exports=router
