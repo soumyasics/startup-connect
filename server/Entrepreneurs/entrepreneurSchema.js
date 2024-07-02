@@ -53,6 +53,10 @@ const entrepreneur_reg_Schema = mongoose.Schema({
     type: Object,
     required: true,
   },
+  isActive:{
+    type:Boolean,
+    default:true
+  }
   
 });
 module.exports = mongoose.model("entrepreneurs", entrepreneur_reg_Schema);

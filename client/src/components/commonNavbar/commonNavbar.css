@@ -8,8 +8,6 @@ nav.NavTopBg {
     height: 14.73px;
     top: 19.34px;
     margin-left: 34px;
-    gap: 0px;
-    opacity: 0px;
     color: #ffffff;
   }
   
@@ -18,8 +16,6 @@ nav.NavTopBg {
     height: 22px;
     top: 17px;
     margin-left: 5px;
-    gap: 0px;
-    opacity: 0px;
     font-family: Inter;
     font-size: 18px;
     font-weight: 400;
@@ -34,8 +30,6 @@ nav.NavTopBg {
     height: 19.12px;
     top: 2.25px;
     margin-left: 34px;
-    gap: 0px;
-    opacity: 0px;
   
     color: #ffffff;
   }
@@ -45,8 +39,6 @@ nav.NavTopBg {
     height: 22px;
     top: 17px;
     margin-left: 5px;
-    gap: 0px;
-    opacity: 0px;
     font-family: Inter;
     font-size: 18px;
     font-weight: 400;
@@ -61,8 +53,6 @@ nav.NavTopBg {
     height: 20.63px;
     top: 16.38px;
     margin-left: 34px;
-    gap: 0px;
-    opacity: 0px;
     color: #ffffff;
   }
   
@@ -71,8 +61,6 @@ nav.NavTopBg {
     height: 22px;
     top: 17px;
     margin-left: 5px;
-    gap: 0px;
-    opacity: 0px;
     font-family: Inter;
     font-size: 18px;
     font-weight: 400;
@@ -87,8 +75,6 @@ nav.NavTopBg {
     height: 31.43px;
     top: 10.8px;
     margin-left: 400px;
-    gap: 0px;
-    opacity: 0px;
     border: none;
     color: #ffffff;
   }
@@ -99,7 +85,7 @@ nav.NavTopBg {
     margin-left: 10px;
     gap: 0px;
     border: 1px 0px 0px 0px;
-    opacity: 0px;
+    
   
     color: #ffffff;
   }
@@ -110,7 +96,6 @@ nav.NavTopBg {
     margin-left: 10px;
     gap: 0px;
     border: 1px 0px 0px 0px;
-    opacity: 0px;
     color: #ffffff;
   }
   #Topnavinstalogo {
@@ -118,9 +103,7 @@ nav.NavTopBg {
     height: 32px;
     top: 11px;
     margin-left: 10px;
-    gap: 0px;
     border: 1px 0px 0px 0px;
-    opacity: 0px;
     color: #ffffff;
   }
   #Topnavyoutubelogo {
@@ -131,7 +114,6 @@ nav.NavTopBg {
     gap: 0px;
     border-radius: 5px 0px 0px 0px;
     border: 1px 0px 0px 0px;
-    opacity: 0px;
     color: #ffffff;
     background-color: #091e3e;
   }
