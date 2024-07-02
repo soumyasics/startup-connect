@@ -12,9 +12,11 @@ import { toast } from "react-toastify";
 
 function AdminDashbord() {
 
-  const [investordata , setInvetordata]=useState()
-  const [entrepreneurdata, setEntrepreneurdata]=useState()
-  const [mentordata, setMentordata]=useState()
+  const [investordata , setInvetordata]=useState("")
+  const [entrepreneurdata, setEntrepreneurdata]=useState("")
+  const [mentordata, setMentordata]=useState("")
+  const [eventdata, setEventdata]=useState("")
+
 
   useEffect(()=>{
     axiosInstance.post('/viewInvestors')
@@ -49,6 +51,19 @@ function AdminDashbord() {
       console.log(res);
       if (res.status == 200){
         setMentordata(res.data.data.length);
+      }
+  })
+  .catch((err)=>{
+      toast.error("Failed to fetch user details")
+  });
+  },[])
+
+  useEffect(()=>{
+    axiosInstance.post('/viewEvents')
+    .then((res)=>{
+      console.log(res);
+      if (res.status == 200){
+        setEventdata(res.data.data.length);
       }
   })
   .catch((err)=>{
@@ -115,7 +130,7 @@ function AdminDashbord() {
               Events
               <div className="row mt-4">
                 <div className="col-6">
-                  <h3>0</h3>
+                  <h3>{eventdata}</h3>
                 </div>
                 <div className="col-6 ">
                   <img className="w-25" src={home4}></img>

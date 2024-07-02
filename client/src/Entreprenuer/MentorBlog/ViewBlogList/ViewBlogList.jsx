@@ -7,12 +7,16 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { imageUrl } from '../../../ImageAPIs/Image_Urls';
 import axiosInstance from '../../../BaseAPIs/AxiosInstance';
 import profile from '../../../assets/mentor_tutorial_profile.png'
+import { useParams } from 'react-router-dom'
 
 function ViewBlogList() {
     const [blogdata, setBlogData]=useState("");
 
+    const {id}=useParams();
+    console.log(id,"id");
+
   useEffect(()=>{
-    axiosInstance.post('/mentorViewBlog')
+    axiosInstance.post(`/viewBlogByMentorId/${id}`)
     .then((res)=>{
       console.log(res,"res");
       if(res.status === 200){
@@ -24,20 +28,20 @@ function ViewBlogList() {
   });
   },[])
 
-  const removeMentorBlog=(id)=>{
-    axiosInstance.post(`/mentorRemoveBlog/${id}`)
-    .then((res)=>{
-      if(res.status === 200){
-        alert("Data deleted Successfully")
-        window.location.reload(false)
-        alert("One Data Deleted")
-      }
-    })
-    .catch((err)=>{
-      console.log(err);
-      alert(err)
-    })
-  }
+  // const removeMentorBlog=(id)=>{
+  //   axiosInstance.post(`/mentorRemoveBlog/${id}`)
+  //   .then((res)=>{
+  //     if(res.status === 200){
+  //       alert("Data deleted Successfully")
+  //       window.location.reload(false)
+  //       alert("One Data Deleted")
+  //     }
+  //   })
+  //   .catch((err)=>{
+  //     console.log(err);
+  //     alert(err)
+  //   })
+  // }
   return (
     <>
         <CommonNavbar/>
