@@ -7,6 +7,7 @@ import { CommonNavbar } from '../../components/commonNavbar/commonNavbar';
 import axiosInstance from '../../BaseAPIs/AxiosInstance';
 import profile from '../../assets/mentor_tutorial_profile.png'
 import ad_event_view from '../../assets/ad_event_view.jpg'
+import { useNavigate } from 'react-router-dom';
 
 function EntViewEvents() {
 
@@ -26,8 +27,11 @@ function EntViewEvents() {
   });
   },[])
 
-  
+const navigate =useNavigate();
 
+const navigateToEventRegister =(id)=>{
+    navigate()
+}
 
 
   return (
@@ -43,6 +47,7 @@ function EntViewEvents() {
        
        {
         (eventdata.length)>0?((eventdata).map((data) => {
+            
           return( 
           <div className='row mentor_viewtutorial_mainrow'>
             <div className='col-md-5 col-sm-12 mentor_viewtutorial_fir_col'>
@@ -56,7 +61,7 @@ function EntViewEvents() {
                 <div className='col-5'>
                   <FaRegCalendarAlt className='mentor-icon' /> {data.date}
                 </div>
-                <div className=''>
+                <div className='ent_viewevents_loc'>
                 <h5>{data.venue}</h5>
                 </div>
                 </div>
@@ -64,7 +69,9 @@ function EntViewEvents() {
               </div>
               
               <label>{data.description}</label>
-              
+              <div className="men_tutrl_view mb-5" >
+                <button className='ent_viewevent_register_btn' onClick={()=>navigateToEventRegister(data._id)}>Register  </button>
+            </div>
             </div>
             
           </div>

@@ -72,6 +72,7 @@ import MentorChat from "./components/Mentor/Chat/MentorChat";
 import AdminAddEvents from "./components/Admin/Events/AdminAddEvents";
 import AdminViewEventList from "./components/Admin/Events/AdminViewEventList";
 import EntViewEvents from "./Entreprenuer/Events/EntViewEvents";
+import EntRegisterEvents from "./Entreprenuer/Events/EntRegisterEvents";
 
 function App() {
   const url = "http://localhost:4040";
@@ -169,6 +170,10 @@ function App() {
         <Route
           path="/entrepreneur/viewevents"
           element={<EntViewEvents />}
+        />
+        <Route
+          path="/entrepreneur/registerevents"
+          element={<EntRegisterEvents />}
         />
 
         {/* Invester Routes */}
