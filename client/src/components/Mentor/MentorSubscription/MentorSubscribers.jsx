@@ -27,6 +27,10 @@ function MentorSubscribers() {
       });
   }, []);
 
+  const chat = (id) => {
+    navigate(`/mentor/mentorchat/${id}`)
+  }
+
   return (
     <div>
         <MentorNav/>
@@ -82,6 +86,7 @@ function MentorSubscribers() {
                     <td>{data.entId?.email}</td>
                     <td>{data.entId?.industry_sector}</td>
                     <td>{data.entId?.contact}</td>
+                    <button onClick={()=>chat(data.entId?._id)}>Chat</button>
                   </tr>
                 );
               })
