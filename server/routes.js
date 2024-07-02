@@ -11,6 +11,7 @@ const Subscription=require('./Subscription/subscriptionController')
 const pitch_my_idea=require('./Entrepreneurs/PitchMyIdea/PitchMyIdeaController')
 const InvestorReqs=require('./EntInvestorReqs/entInvestorReqController')
 const Events=require('./Events/eventController')
+const Complaints=require('./Complaints/ComplaintController')
 
 //entrepreneurs
 router.post('/registerEntrepreneur',entrepreneurs.upload,entrepreneurs.registerEntrepreneur)
@@ -21,6 +22,8 @@ router.post('/editEntrepreneurById/:id',entrepreneurs.upload,entrepreneurs.editE
 router.post('/forgotPasswordEntrepreneur',entrepreneurs.forgotPassword)
 router.post('/viewEntrepreneurs',entrepreneurs.viewEntrepreneurs)
 router.post('/deleteEntrepreneurById/:id',entrepreneurs.deleteEntrepreneurById)
+router.post('/entBanByAdmin/:id',entrepreneurs.entBanByAdmin)
+
 
 
 
@@ -52,6 +55,8 @@ router.post('/deActivateInvestorById/:id',investors.deActivateInvestorById)
 router.post('/viewlessinvestors',investors.viewLessInvestorReqs)
 router.post('/viewInvestorByCategory/:category',investors.viewInvestorByCategory)
 router.post('/forgotPasswordInvestor',investors.forgotPassword)
+router.post('/investorBanByAdmin/:id',investors.investorBanByAdmin)
+
 
 
 
@@ -129,6 +134,17 @@ router.post('/viewEventRegistrations/:id',Events.viewEventRegistrations)
 router.post('/viewEventRegistrationsByEventId/:id',Events.viewEventRegistrationsByEventId)
 router.post('/registerEventEntrepreneur',Events.registerEventEntrepreneur)
 router.post('/viewEventRegistration',Events.viewEventRegistration)
+
+//Complaints
+
+router.post('/entAddComplaints/:id',Complaints.entAddComplaints)
+router.post('/investorAddComplaints/:id',Complaints.investorAddComplaints)
+router.post('/viewEntComplaint',Complaints.viewEntComplaint)
+router.post('/viewInvestorComplaint',Complaints.viewInvestorComplaint)
+
+
+
+
 
 
 module.exports=router

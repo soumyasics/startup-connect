@@ -40,8 +40,6 @@
 .inv_login_email_label{
     width: 86px;
     height: 25px;
-    gap: 0px;
-    opacity: 0px;
     font-family: Nunito;
     font-size: 18px;
     font-weight: 400;
@@ -55,8 +53,6 @@
 .inv_login_email{
     width: 456px;
     height: 43px;
-    gap: 0px;
-    opacity: 0px;
     background: #EEF9FF;
     border: #EEF9FF;
 
@@ -65,8 +61,6 @@
 .inv_login_password_label{
     width: 80px;
     height: 25px;
-    gap: 0px;
-    opacity: 0px;
     font-family: Nunito;
     font-size: 18px;
     font-weight: 400;
@@ -80,8 +74,6 @@
 .inv_login_password{
     width: 456px;
     height: 43px;
-    gap: 0px;
-    opacity: 0px;
     background: #EEF9FF;
     border: #EEF9FF;
     
@@ -92,8 +84,6 @@
     top: 698px;
     left: 788px;
     margin-top: 10px;
-    gap: 0px;
-    opacity: 0px;
     border: #ffffff;
     color: #ffffff;
     background: #00B0F0;
