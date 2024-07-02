@@ -240,7 +240,7 @@ const registerEventEntrepreneur=(req,res)=>{
 // View All Event Registration
 
 const viewEventRegistration = (req, res) => {
-    EventRegistration.find()
+    EntEventRegister.find()
         .exec()
         .then((data) => {
             if (data.length > 0) {

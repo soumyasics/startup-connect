@@ -8,15 +8,18 @@ import { CommonNavbar } from '../../../components/commonNavbar/commonNavbar';
 import axiosInstance from '../../../BaseAPIs/AxiosInstance';
 import profile from '../../../assets/mentor_tutorial_profile.png'
 import arrow from '../../../assets/mentor_tutorial_viewarrow.png'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function ViewTutorialList() {
     const [tutorialdata, setTutorialData]=useState("");
   const [videoFile, setVideoFile] = useState("")
 
+const {id}=useParams();
+
+console.log(id,'id');
 
   useEffect(()=>{
-    axiosInstance.post('/mentorViewTutorial')
+    axiosInstance.post(`/ViewTutorialBymentorId/${id}`)
     .then((res)=>{
       console.log(res,"res");
       if(res.status === 200){

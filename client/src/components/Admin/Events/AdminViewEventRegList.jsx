@@ -1,17 +1,18 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import AdminFooter from '../AdminFooter'
 import AdminNavbar from '../AdminNavbar'
 import { toast } from "react-toastify";
 import eye from "../../../assets/carbon_view-filled.png";
 import { useNavigate } from 'react-router-dom';
 import { imageUrl } from '../../../ImageAPIs/Image_Urls';
+import axiosInstance from '../../../BaseAPIs/AxiosInstance';
 
 function AdminViewEventRegList() {
-    const navigate = useNavigate();
-    const navigateToInvestorView = (id)=>{
-        navigate(`/admin_dashboard/viewinvestor/${id}`)
-      }
-    const [eventregdata, setEventRegData]= useState({});
+    // const navigate = useNavigate();
+    // const navigateToInvestorView = (id)=>{
+    //     navigate(`/admin_dashboard/viewinvestor/${id}`)
+    //   }
+    const [eventregdata, setEventRegData]= useState("");
 
   useEffect(()=>{
     axiosInstance.post('/viewEventRegistration')
@@ -40,28 +41,23 @@ function AdminViewEventRegList() {
     <tr  >
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Name</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">E-Mail ID</th>
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Investing Category</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Contact No</th>
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Nationality</th>
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Action</th>
+      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Location</th>
 
     </tr>
   </thead>
   <tbody>
   {
-        (investorData.length)>0?((investorData).map((data) => {
+        (eventregdata.length)>0?((eventregdata).map((data) => {
           return(
       
     <tr>
       <th scope="row">
-      <img src={`${imageUrl}/${data.profile.filename}`} 
-      class="invviewadmin_profile_pic" alt="..."/>
-        {data.name}</th>
+        {data.fname} {data.lname}</th>
       <td>{data.email}</td>
-      <td>{data.investing_category}</td>
       <td>{data.contact}</td>
-      <td>{data.nationality}</td>
-      <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> <a href="" onClick={()=>navigateToInvestorView(data._id)}>View Details</a></td>
+      <td>{data.location}</td>
+      {/* <td style={{color:"rgba(52, 133, 208, 1)"}} ><img src={eye}></img> <a href="" onClick={()=>navigateToInvestorView(data._id)}>View Details</a></td> */}
 
     </tr>
    )
