@@ -74,6 +74,11 @@ import AdminViewEventList from "./components/Admin/Events/AdminViewEventList";
 import EntViewEvents from "./Entreprenuer/Events/EntViewEvents";
 import EntRegisterEvents from "./Entreprenuer/Events/EntRegisterEvents";
 import AdminViewEventRegList from "./components/Admin/Events/AdminViewEventRegList";
+import EntAddComplaint from "./Entreprenuer/Complaint/EntAddComplaint";
+import InvestorAddComplaint from "./components/Invester/Complaint/InvestorAddComplaint";
+import ViewEntComplaints from "./components/Admin/Complaints/ViewEntComplaints";
+import ViewInvComplaints from "./components/Admin/Complaints/ViewInvComplaints";
+import ViewAllCompaints from "./components/Admin/Complaints/ViewAllCompaints";
 
 function App() {
   const url = "http://localhost:4040";
@@ -171,6 +176,10 @@ function App() {
           path="/entrepreneur/registerevents"
           element={<EntRegisterEvents />}
         />
+        <Route
+          path="/entrepreneur/addcomplaint"
+          element={<EntAddComplaint />}
+        />
 
         {/* Invester Routes */}
         <Route
@@ -205,6 +214,11 @@ function App() {
         <Route
           path="/investor/fogot-password"
           element={[<CommonNavbar />, <InvestorForgot />]}
+        />
+
+        <Route
+          path="/investor/addcomplaint"
+          element={<InvestorAddComplaint />}
         />
 
         {/* Mentor Routes */}
@@ -296,7 +310,11 @@ function App() {
         <Route path="/admin_dashboard/admin_addevent" element={<AdminAddEvents />} />
         <Route path="/admin_dashboard/admin_vieweventlist" element={<AdminViewEventList />} />
         <Route path="/admin_dashboard/admin_vieweventreglist" element={<AdminViewEventRegList />} />
-
+        <Route
+          path="/admin_dashboard/viewallcomplaints"
+          element={<ViewAllCompaints />}
+        />
+        
 
 
 

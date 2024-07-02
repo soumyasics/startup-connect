@@ -276,6 +276,26 @@ const createToken = (user) =>{
     return jwt.sign({ userId: user.id }, secret, { expiresIn:'1hr' });
 }
 
+
+// approve investorReq by  Admin
+const investorBanByAdmin = (req, res) => {
+  Investor.findByIdAndUpdate({_id:req.params.id},{isActive:false})
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data updated successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "No Data updated",
+        Error: err,
+      });
+    });
+};
+
 // Login Investor 
 
 const loginInvestor=(req,res)=>{
@@ -393,5 +413,6 @@ module.exports={
     uploadSingle,
     viewLessInvestorReqs,
     viewInvestorByCategory,
-    forgotPassword
+    forgotPassword,
+    investorBanByAdmin
 }

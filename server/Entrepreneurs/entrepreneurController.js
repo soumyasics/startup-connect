@@ -204,6 +204,25 @@ const viewEntrepreneurById = (req, res) => {
     });
 };
 
+// Ban By admin 
+const entBanByAdmin = (req, res) => {
+  Entrepreneur.findByIdAndUpdate({_id:req.params.id},{isActive:false})
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data updated successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "No Data updated",
+        Error: err,
+      });
+    });
+};
+
 // Delete entrepreneur by ID
 const deleteEntrepreneurById = (req, res) => {
   Entrepreneur.findByIdAndDelete(req.params.id)
@@ -357,4 +376,5 @@ module.exports = {
   login,
   requireAuth,
   upload,
+  entBanByAdmin
 };
