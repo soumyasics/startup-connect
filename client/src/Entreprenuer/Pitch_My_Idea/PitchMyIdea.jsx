@@ -189,8 +189,10 @@ function PitchMyIdea() {
             handleSubmit(e);
           }}
         >
-          <div className="row">
-            <div className="col column1">
+          <div className="pmi_main_div">
+            <table>
+              <tr>
+                  <td>
               <label className="px-2">My Company Name</label>
               <input
                 class="pmi_input"
@@ -204,81 +206,9 @@ function PitchMyIdea() {
                   {errors.companyName}
                 </div>
               )}
-              <label className="mt-5 px-2">Audience</label>
-              <input
-                class="pmi_input"
-                name="audience"
-                placeholder="A defined audience"
-                type="text"
-                onChange={handleInputChange}
-              />
-              {errors.audience && (
-                <div className="text-danger errortext">{errors.audience}</div>
-              )}
-              <label className="mt-5 px-2">Domain</label>
-              <input
-                class="pmi_input"
-                name="domain"
-                placeholder="Secret sauce"
-                type="text"
-                onChange={handleInputChange}
-              />
-              {errors.domain && (
-                <div className="text-danger errortext">{errors.domain}</div>
-              )}
-              <label className="mt-5 px-2">Value</label>
-              <input
-                class="pmi_input "
-                name="value"
-                placeholder="Defined value"
-                type="text"
-                onChange={handleInputChange}
-              />
-              {errors.value && (
-                <div className="text-danger errortext">{errors.value}</div>
-              )}
-              <label className="mt-5 px-2">Competitor 2</label>
-              <input
-                class="pmi_input"
-                name="competitor2"
-                placeholder="Competitor 2"
-                type="text"
-                onChange={handleInputChange}
-              />
-              {errors.competitor2 && (
-                <div className="text-danger errortext">
-                  {errors.competitor2}
-                </div>
-              )}
-              <label className="mt-5 px-2">Current Status</label>
-              <input
-                class="pmi_input"
-                name="currentStatus"
-                placeholder="Current state of product/team"
-                type="text"
-                onChange={handleInputChange}
-              />
-              {errors.currentStatus && (
-                <div className="text-danger errortext">
-                  {errors.currentStatus}
-                </div>
-              )}
-              <label className="mt-5 px-2">Expected Help</label>
-              <input
-                class="pmi_input"
-                name="expectedHelp"
-                placeholder="What you would do with the ask"
-                type="text"
-                onChange={handleInputChange}
-              />
-              {errors.expectedHelp && (
-                <div className="text-danger errortext">
-                  {errors.expectedHelp}
-                </div>
-              )}
-            </div>
-            <div className="col column2">
-              <label className="px-2">Category</label>
+                  </td>
+                  <td>
+                  <label className="px-2">Category</label>
               <select
                 class="pmi_input"
                 name="category"
@@ -314,7 +244,24 @@ function PitchMyIdea() {
               {errors.category && (
                 <div className="text-danger errortext">{errors.category}</div>
               )}
-              <label className="mt-5 px-2">Working Area</label>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                  <label className="mt-5 px-2">Audience</label>
+              <input
+                class="pmi_input"
+                name="audience"
+                placeholder="A defined audience"
+                type="text"
+                onChange={handleInputChange}
+              />
+              {errors.audience && (
+                <div className="text-danger errortext">{errors.audience}</div>
+              )}
+                  </td>
+                  <td>
+                  <label className="mt-5 px-2">Working Area</label>
               <input
                 class="pmi_input"
                 name="workingArea"
@@ -327,7 +274,24 @@ function PitchMyIdea() {
                   {errors.workingArea}
                 </div>
               )}
-              <label className="mt-5 px-2">Market</label>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                  <label className="mt-5 px-2">Domain</label>
+              <input
+                class="pmi_input"
+                name="domain"
+                placeholder="Secret sauce"
+                type="text"
+                onChange={handleInputChange}
+              />
+              {errors.domain && (
+                <div className="text-danger errortext">{errors.domain}</div>
+              )}
+                  </td>
+                  <td>
+                  <label className="mt-5 px-2">Market</label>
               <input
                 class="pmi_input"
                 name="market"
@@ -338,7 +302,24 @@ function PitchMyIdea() {
               {errors.market && (
                 <div className="text-danger errortext">{errors.market}</div>
               )}
-              <label className="mt-5 px-2">Competitor 1</label>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                  <label className="mt-5 px-2">Value</label>
+              <input
+                class="pmi_input "
+                name="value"
+                placeholder="Defined value"
+                type="text"
+                onChange={handleInputChange}
+              />
+              {errors.value && (
+                <div className="text-danger errortext">{errors.value}</div>
+              )}
+                  </td>
+                  <td>
+                  <label className="mt-5 px-2">Competitor 1</label>
               <input
                 class="pmi_input"
                 name="competitor1"
@@ -351,7 +332,26 @@ function PitchMyIdea() {
                   {errors.competitor1}
                 </div>
               )}
-              <label className="mt-5 px-2">Differentiator</label>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                  <label className="mt-5 px-2">Competitor 2</label>
+              <input
+                class="pmi_input"
+                name="competitor2"
+                placeholder="Competitor 2"
+                type="text"
+                onChange={handleInputChange}
+              />
+              {errors.competitor2 && (
+                <div className="text-danger errortext">
+                  {errors.competitor2}
+                </div>
+              )}
+                  </td>
+                  <td>
+                  <label className="mt-5 px-2">Differentiator</label>
               <input
                 class="pmi_input"
                 name="differentiator"
@@ -364,7 +364,26 @@ function PitchMyIdea() {
                   {errors.differentiator}
                 </div>
               )}
-              <label className="mt-5 px-2">Expected Help Category</label>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                  <label className="mt-5 px-2">Current Status</label>
+              <input
+                class="pmi_input"
+                name="currentStatus"
+                placeholder="Current state of product/team"
+                type="text"
+                onChange={handleInputChange}
+              />
+              {errors.currentStatus && (
+                <div className="text-danger errortext">
+                  {errors.currentStatus}
+                </div>
+              )}
+                  </td>
+                  <td>
+                  <label className="mt-5 px-2">Expected Help Category</label>
               <input
                 class="pmi_input"
                 name="expectedHelpCategory"
@@ -377,7 +396,26 @@ function PitchMyIdea() {
                   {errors.expectedHelpCategory}
                 </div>
               )}
-              <label className="mt-5 px-2">Equity Amount</label>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                  <label className="mt-5 px-2">Expected Help</label>
+              <input
+                class="pmi_input"
+                name="expectedHelp"
+                placeholder="What you would do with the ask"
+                type="text"
+                onChange={handleInputChange}
+              />
+              {errors.expectedHelp && (
+                <div className="text-danger errortext">
+                  {errors.expectedHelp}
+                </div>
+              )}
+                  </td>
+                  <td>
+                  <label className="mt-5 px-2">Equity Amount</label>
               <input
                 class="pmi_input"
                 name="equityAmount"
@@ -390,7 +428,9 @@ function PitchMyIdea() {
                   {errors.equityAmount}
                 </div>
               )}
-            </div>
+                  </td>
+              </tr>
+            </table>
           </div>
 
           <div className="pmi_btn_div">

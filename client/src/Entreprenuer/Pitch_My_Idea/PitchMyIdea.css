@@ -32,7 +32,7 @@
     background: #EEF9FF;
     border: 1px solid  #ffffff;
     padding: 17px 10px 10px 17px;
-    width: 530px;
+    width: 465px;
   }
 
   .pmi_btn_div{
@@ -54,6 +54,17 @@
 
 
 }
+ 
+.pmi_main_div{
+  margin-left: 70px;
+}
+
+td {
+  width:505px;
+  
+}
+
+
 
 
 
