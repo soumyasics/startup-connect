@@ -66,7 +66,7 @@ function MentorViewBlogs() {
           return(
           <div className='row mentor_viewblog_mainrow'>
             <div className='col-md-5 col-sm-12 mentor_viewblogs_fir_col'>
-              <img src={`${imageUrl}/${data.coverImage.filename}`} className='img-fluid mentorviewblog_coverimage' alt='Blog' />
+              <img src={`${imageUrl}/${data.coverImage.filename}`} style={{width:"300px"}} className='img-fluid p-3 mentorviewblog_coverimage' alt='Blog' />
             </div>
             <div className='col-md-7 col-sm-12 mentor_viewblogs_sec_col'>
               <div className='row montor_row_viwblog'>

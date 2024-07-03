@@ -57,7 +57,7 @@ function Entprofile({url}) {
 
   useEffect(() => {
     if (userDetails.image?.filename) {
-      setImgFile(`${url}/${image.filename}`);
+      setImgFile(`${imageUrl}/${image.filename}`);
     }
   }, [userDetails.image]);
 

@@ -23,7 +23,7 @@ function EntrepreneurChat({ role }) {
   const [chat, setChat] = useState([]);
   const [mentor, setMentor] = useState("");
   const [ent, setEnt] = useState("");
-
+ const Navigate=useNavigate()
   useEffect(() => {
     setInterval(() => {
       axiosInstance
@@ -37,13 +37,14 @@ function EntrepreneurChat({ role }) {
     }, 1000);
     if (role == "ent") {
       axiosInstance.post(`/viewMentorById/${id}`).then((res) => {
-        setEnt(res.data.data);
-        console.log(res.data.data);
+        setMentor(res.data.data);
+        console.log(res.data.data,'men');
       });
     } else {
       //inside view mentot axios call
       axiosInstance.post(`/viewEntrepreneurById/${id}`).then((res) => {
-        setMentor(res.data.data);
+        setEnt(res.data.data);
+        console.log(res.data.data,'ent');
       });
     }
   }, []);
@@ -76,13 +77,16 @@ function EntrepreneurChat({ role }) {
         setMsg("");
       });
   };
+  const handleChat=()=>{
+    role == "ent" ? Navigate("/entrepreneur/mentorsubscribedlist") : Navigate("/mentor/viewsubscribers")
+  }
   return (
     <>
       <div className="container ent_chat_main mb-5">
         <section className="ent_chat_box mt-2 ">
           <div className="col ent_chat_nav">
-            <img  src={`${imageUrl}/${role == 'ent' ? ent.profile?.filename : mentor.profile?.filename}`} style={{width:"80px",height:"80px"}} className="rounded-pill "  />
-          </div><Link to="/entrepreneur/mentorsubscribedlist">Back<TiArrowBack/></Link>
+            <img  src={`${imageUrl}/${role == 'ent' ? mentor.profile?.filename : ent.image?.filename}`} style={{width:"80px",height:"80px"}} className="rounded-pill "  />
+          </div><div className=" border-light text-primary" onClick={handleChat}>Back<TiArrowBack/></div>
           <div className="ent_chat_container mt-3">
             <div className="ent_chat_messages">
               {chat.map((message, index) => (

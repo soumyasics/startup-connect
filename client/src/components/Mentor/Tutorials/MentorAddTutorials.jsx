@@ -151,7 +151,6 @@ function MentorAddTutorials() {
                 <div className='col-9'>
                     <button className='menter_addtutorials_btn' type="submit" >Add Tutorial</button>
                     <button className='menter_addtutorials_btn mentor_addtutorials_secbtn' type="submit" >Cancel</button> 
- 
                 </div>
             </div>
         </div>
