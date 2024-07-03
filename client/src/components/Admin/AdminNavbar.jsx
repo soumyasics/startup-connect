@@ -61,7 +61,7 @@ function AdminNavbar() {
               <img src={home5}></img> Mentors
             </Link>
             <Link
-              to="/admin_dashboard"
+              to="/admin_dashboard/viewallcomplaints"
               className=" text-dark text-decoration-none mx-4"
             >
               <img src={home4}></img> Complaints

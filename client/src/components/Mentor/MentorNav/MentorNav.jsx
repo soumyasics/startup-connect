@@ -79,7 +79,7 @@ function MentorNav() {
                 </Link>
               </Navbar.Text>
               <Navbar.Text className="px-3">
-                <Link to="/mentor/mentorchat" className="text-decoration-none">
+                <Link to="/mentor/viewsubscribers" className="text-decoration-none">
                   <p className="navbarstext">Chat</p>
                 </Link>
               </Navbar.Text>

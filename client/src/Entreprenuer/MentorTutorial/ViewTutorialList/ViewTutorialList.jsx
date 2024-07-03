@@ -80,7 +80,6 @@ const navigateToTutorialView=(id)=>{
               
               <label>{data.description}</label>
               <div className="men_tutrl_view" >
-                <a href='' onClick={()=>navigateToTutorialView(data._id)}><p>View  <img src={arrow}/> </p></a>
             </div>
             </div>
             
@@ -98,3 +97,6 @@ const navigateToTutorialView=(id)=>{
 }
 
 export default ViewTutorialList
+
+
+                //  <a href='' onClick={()=>navigateToTutorialView(data._id)}><p>View  <img src={arrow}/> </p></a>
