@@ -6,7 +6,8 @@ import eye from "../../assets/carbon_view-filled.png";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
 import { toast } from "react-toastify";
 import { imageUrl } from "../../ImageAPIs/Image_Urls";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
+import { TiArrowBack } from "react-icons/ti";
 
 function MentorSubscribedList() {
   const navigate = useNavigate();
@@ -14,6 +15,10 @@ function MentorSubscribedList() {
   const navigateToMentorView = (id) => {
     navigate(`/entrepreneur/mentorviewsubscribed/${id}`);
   };
+
+  const navigateTochat=(id)=>{
+    navigate(`/entrepreneur/entrepreneurchat/${id}`);
+  }
 
   const [mentorData, setMentorData] = useState([]);
 
@@ -65,6 +70,8 @@ function MentorSubscribedList() {
               <th style={{ backgroundColor: "rgba(140, 220, 249, 1)" }} scope="col">
                 Action
               </th>
+              <th style={{ backgroundColor: "rgba(140, 220, 249, 1)" }} scope="col">
+            </th>
             </tr>
           </thead>
           <tbody>
@@ -86,6 +93,7 @@ function MentorSubscribedList() {
                       View Details
                     </a>
                   </td>
+                  <div className="btn btn-primary m-2" onClick={()=>navigateTochat(data.mentorId._id)}>Chat <TiArrowBack/></div>    
                 </tr>
               ))
             ) : (
