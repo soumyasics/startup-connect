@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 function AdminLogin() {
   const navigate = useNavigate();
 
-  const [loginData, SetloginData] = useState({ email: "", password: "" });
+  const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({ email: "", password: "" });
 
   const Adminemail = "admin@gmail.com";
@@ -14,7 +14,7 @@ function AdminLogin() {
 
   const change = (e) => {
     const { name, value } = e.target;
-    SetloginData({ ...loginData, [name]: value });
+    setLoginData({ ...loginData, [name]: value });
   };
   console.log(loginData, "loginData");
   const formValidating = (fieldName, value) => {
@@ -27,7 +27,7 @@ function AdminLogin() {
     if (fieldName === "Password") {
       const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,}$/;
       if (!passwordRegex.test(value)) {
-        return "Password must contain at least one number,one special character, and one capital letter";
+        return "Password must contain at least one number, one special character, and one capital letter";
       }
     }
     return "";
@@ -47,15 +47,16 @@ function AdminLogin() {
     }
 
     if (!errors.email && !errors.password && formValid) {
-      if (loginData.email == Adminemail) {
-        if (loginData.password == Adminpassword) {
+      if (loginData.email === Adminemail) {
+        if (loginData.password === Adminpassword) {
+          localStorage.setItem("admin", "admin123");
           alert("Admin Login successfully ");
           navigate("/admin_dashboard");
         } else {
-          alert("password is incorrect");
+          alert("Password is incorrect");
         }
       } else {
-        alert("Incorrect Mail id");
+        alert("Incorrect Email ID");
       }
     }
   };
@@ -70,13 +71,9 @@ function AdminLogin() {
               {/* <h1 className="softution_logo">Softution</h1> */}
             </div>
             <div className="adminloginform">
-              <form
-                onSubmit={(e) => {
-                  handleSubmit(e);
-                }}
-              >
+              <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <div className="text-center ">Login to your account</div>
+                  <div className="text-center">Login to your account</div>
                   <label className="form-label mt-5">Email</label>
                   <input
                     name="email"
@@ -90,10 +87,10 @@ function AdminLogin() {
                     <div className="text-danger errortext">{errors.email}</div>
                   )}
 
-                  <label className="form-label ">Password</label>
+                  <label className="form-label">Password</label>
                   <input
                     type="password"
-                    className="form-control "
+                    className="form-control"
                     id="adminlogininput"
                     aria-describedby="emailHelp"
                     name="password"
@@ -106,7 +103,6 @@ function AdminLogin() {
                   )}
                 </div>
                 <div className="text-center">
-                  {" "}
                   <button type="submit" className="btn btn-primary px-5">
                     Submit
                   </button>
@@ -116,7 +112,7 @@ function AdminLogin() {
           </div>
         </div>
         <div className="col">
-          <img className="w-100 m-5" src={AdminLoginimg}></img>
+          <img className="w-100 m-5" src={AdminLoginimg} alt="Admin Login" />
         </div>
       </div>
     </div>

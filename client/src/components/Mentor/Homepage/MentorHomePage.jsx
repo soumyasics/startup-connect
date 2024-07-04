@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './MentorHomePage.css'
 import { CommonNavbar } from '../../commonNavbar/commonNavbar'
 import MentorNav from '../MentorNav/MentorNav'
@@ -10,9 +10,16 @@ import mentor_home_v3 from '../../../assets/mentor_home_v3.png'
 import mentor_home_v4 from '../../../assets/mentor_home_v4.png'
 import Footer from '../../Footer/Footer'
 import Footer_2 from '../../Footer/Footer_2'
+import { useNavigate } from 'react-router-dom'
 
 
 function MentorHomePage() {
+    const navigate =useNavigate()
+    useEffect(()=>{
+        if(localStorage.getItem("Mentor")== null ){
+          navigate("/");
+        }
+      },[navigate]);
   return (
     <>
         <CommonNavbar/>

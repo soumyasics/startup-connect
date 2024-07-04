@@ -23,7 +23,7 @@ function Entsignup() {
     email: "",
     location: "",
     contact: "",
-    username: "",
+    // username: "",
     address: "",
     password: "",
     image: "",
@@ -40,7 +40,7 @@ function Entsignup() {
     email: "",
     location: "",
     contact: "",
-    username: "",
+    // username: "",
     address: "",
     password: "",
     image: "",
@@ -122,10 +122,10 @@ const [profilename,setProfileName]=useState();
     } else if (data.contact.length < 10) {
       errors.contact = "Enter a valid 10-digit contact number";
     }
-    if (!data.username.trim()) {
-      formValid = false;
-      errors.username = "Username is required";
-    }
+    // if (!data.username.trim()) {
+    //   formValid = false;
+    //   errors.username = "Username is required";
+    // }
     if (!data.address.trim()) {
       formValid = false;
       errors.address = "Address is required";
@@ -168,7 +168,7 @@ const [profilename,setProfileName]=useState();
       data.email &&
       data.location &&
       data.contact &&
-      data.username &&
+      // data.username &&
       data.address &&
       data.password &&
       data.c_password &&
@@ -188,7 +188,7 @@ const [profilename,setProfileName]=useState();
       formData.append("email", data.email);
       formData.append("location", data.location);
       formData.append("contact", data.contact);
-      formData.append("username", data.username);
+      // formData.append("username", data.username);
       formData.append("address", data.address);      
       formData.append("password", data.password);
       formData.append("c_password", data.c_password);
@@ -312,11 +312,7 @@ const [profilename,setProfileName]=useState();
                <input class="input-cal input-base" id="ent_input" name="location" onChange={handleInputChange} placeholder="" type="text"/>
                {errors.location && (<div className="text-danger errortext">{errors.location}</div>)}
             </div>
-            <div class=" pt-2">
-            <label id="">Username</label>
-              <input class="input-cal input-base" id="ent_input" name="username" onChange={handleInputChange} placeholder="" type="text"/>
-              {errors.username && (<div className="text-danger errortext">{errors.username}</div>)}
-            </div>
+           
             <div class=" pt-2">
             <label id="">Password</label>
               <input class="input-cal input-base" id="ent_input" name="password" onChange={handleInputChange} placeholder="" type="password"/>
