@@ -87,7 +87,7 @@ const navigateToTutorialView=(id)=>{
          )
       })):(
       
-        <h1>No Investors Found</h1>
+        <h1>No tutorial Found</h1>
       )
       }  
       </div>

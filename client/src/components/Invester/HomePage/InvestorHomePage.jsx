@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './InvestorHomePage.css'
 import { CommonNavbar } from '../../commonNavbar/commonNavbar'
 import Footer_2 from '../../Footer/Footer_2'
@@ -9,8 +9,16 @@ import home_startpl_img from '../../../assets/inv_home_startpl.png'
 import home_req_img from '../../../assets/inv_home_req.png'
 import home_img2 from '../../../assets/investor_home_side_img.png'
 import Investor_Footer from '../Investor_Footer/Investor_Footer'
+import { useNavigate } from 'react-router-dom'
 
 function InvestorHomePage() {
+
+    const navigate =useNavigate()
+    useEffect(()=>{
+        if(localStorage.getItem("Investor") == null ){
+          navigate("/");
+        }
+      },[navigate]);
   return (
     <>
         <CommonNavbar/>

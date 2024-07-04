@@ -37,7 +37,7 @@ const registerEntrepreneur = async (req, res) => {
       email,
       location,
       contact,
-      username,
+      // username,
       address,
       password,
     } =
@@ -53,7 +53,7 @@ const registerEntrepreneur = async (req, res) => {
       email,
       location,
       contact,
-      username,
+      // username,
       address,
       password,
       image:req.file
@@ -123,7 +123,7 @@ const editEntrepreneurById = async (req, res) => {
     email,
     location,
     contact,
-    username,
+    // username,
     address,
     password,
   } =

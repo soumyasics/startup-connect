@@ -20,7 +20,7 @@ function Entprofile({url}) {
     email: "",
     location: "",
     contact: "",
-    username: "",
+    // username: "",
     address: "",
     password: "",
     image: { filename: "" },
@@ -36,7 +36,7 @@ function Entprofile({url}) {
     email: "",
     location: "",
     contact: "",
-    username: "",
+    // username: "",
     address: "",
     image: "",
   });
@@ -144,10 +144,7 @@ function Entprofile({url}) {
       formValid = false;
       errors.location = "Location is required";
     }
-    if (!userDetails.username.trim()) {
-      formValid = false;
-      errors.username = "Username is required";
-    }
+    
     if (!userDetails.address.trim()) {
       formValid = false;
       errors.address = "Address is required";
@@ -164,7 +161,7 @@ function Entprofile({url}) {
       userDetails.email &&
       userDetails.location &&
       userDetails.contact &&
-      userDetails.username &&
+      // userDetails.username &&
       userDetails.address &&
       userDetails.image
     ) {
@@ -359,7 +356,7 @@ console.log(imgFile,"l");
               {errors.location && (
                 <span className="text-danger">{errors.location}</span>
               )}
-              <input
+              {/* <input
                 className="mt-4"
                 type="text"
                 placeholder={userDetails.username}
@@ -369,7 +366,7 @@ console.log(imgFile,"l");
               ></input>
               {errors.username && (
                 <span className="text-danger">{errors.username}</span>
-              )}
+              )} */}
               <div className="ent_pro_file_upload1">
                 <label className="pt-3 px-1">Your image</label>
                 <label for="file" class="ent_pro_file_upload">

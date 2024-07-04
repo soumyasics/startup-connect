@@ -9,6 +9,7 @@ import RecentMentors from "./Mentor/RecentMentors";
 import AdminFooter from "./AdminFooter";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 function AdminDashbord() {
 
@@ -16,7 +17,12 @@ function AdminDashbord() {
   const [entrepreneurdata, setEntrepreneurdata]=useState("")
   const [mentordata, setMentordata]=useState("")
   const [eventdata, setEventdata]=useState("")
-
+const navigate=useNavigate()
+  useEffect(()=>{
+    if(localStorage.getItem("admin")== null){
+      navigate("/admin_login");
+    }
+  },[navigate]);
 
   useEffect(()=>{
     axiosInstance.post('/viewInvestors')

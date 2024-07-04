@@ -50,7 +50,7 @@ function InvestorsView() {
     <HomePageNavbar/>
     <div className='container mb-3'>
     <div className="text-center ">
-            <h4 className="  mt-3  ent_invreqview_mainheading">CREATE YOUR STARTUP</h4>
+            <h4 className="  mt-3  ent_invreqview_mainheading">Investor Details</h4>
             <h3 className="ent_invreqview_sub_h3">Your Ideas, Our Mission</h3>
             <div className="  mb-5  ent_invreqview_hr_line "></div>
     </div>
