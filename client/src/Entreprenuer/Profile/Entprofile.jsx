@@ -20,7 +20,6 @@ function Entprofile({url}) {
     email: "",
     location: "",
     contact: "",
-    // username: "",
     address: "",
     password: "",
     image: { filename: "" },

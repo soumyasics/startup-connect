@@ -156,7 +156,7 @@ const editEntrepreneurById = async (req, res) => {
       email,
       location,
       contact,
-      username,
+      // username,
       address,
       image:req.file,
 
