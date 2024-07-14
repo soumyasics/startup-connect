@@ -4,7 +4,7 @@ import { CommonNavbar } from '../../commonNavbar/commonNavbar'
 import MentorNav from '../MentorNav/MentorNav'
 import Footer_2 from '../../Footer/Footer_2'
 import editcover from '../../../assets/editblogcover.png'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axiosInstance from '../../../BaseAPIs/AxiosInstance'
 import axiosMultipartInstance from '../../../BaseAPIs/AxiosMultipartInstance'
 import { imageUrl } from '../../../ImageAPIs/Image_Urls'
@@ -25,6 +25,7 @@ function MentorEditBlog() {
         coverImage:""
     })
 
+    const navigate=useNavigate()
 
     const {id}=useParams();
     console.log(id,"id");
@@ -104,8 +105,7 @@ function MentorEditBlog() {
                 console.log("Response:", response); 
                 if(response.status==200){
                   alert(response.data.msg)
-                  window.location.reload(false)
-                //   navigate("/entrepreneur/viewstartup_plan")
+                  navigate("/mentor/viewblogs")
                 }
                 
               } catch (error) {
@@ -117,6 +117,9 @@ function MentorEditBlog() {
               console.log("Form is not valid", formValid);
               console.log("Data entered", startupdata);
             }
+    }
+    const handleCancel=()=>{
+        navigate("/mentor/viewblogs")
     }
   return (
     <>
@@ -187,7 +190,7 @@ function MentorEditBlog() {
                 </div>
                 <div className='col-9'>
                     <button className='menter_editblog_btn' >Update Blog</button>
-                    <button className='menter_editblog_btn mentor_addblog_secbtn' >Cancel</button> 
+                    <button className='menter_editblog_btn mentor_addblog_secbtn' onClick={handleCancel} >Cancel</button> 
  
                 </div>
             </div>

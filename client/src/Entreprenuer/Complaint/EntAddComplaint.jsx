@@ -65,7 +65,7 @@ function EntAddComplaint() {
             console.log("Response:", response); 
             if(response.status==200){
               alert(response.data.msg)
-              setInterval(()=>{
+              setTimeout(()=>{
                 navigateToHome()
               },1000)
               

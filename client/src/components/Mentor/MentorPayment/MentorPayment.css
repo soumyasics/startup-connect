@@ -92,12 +92,18 @@
   }
   .split .input_field_cvv {
     width: 70%;
-    margin-left: 63px;
+    margin-left: 150px;
     border: none;
     outline: none;
 
   }
 
+  .split .input_field_date  {
+    width: 300%;
+    border: none;
+    outline: none;
+
+  }
   .input_field_cvv:focus {
     border:#fff;
 }
@@ -116,6 +122,9 @@
     background-color: #ffffff;
     border: #ffffff00;
     transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  }
+  .input_field_date {
+    width: 100%;
   }
   
   .input_field:focus {

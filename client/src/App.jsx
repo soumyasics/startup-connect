@@ -81,9 +81,9 @@ import ViewInvComplaints from "./components/Admin/Complaints/ViewInvComplaints";
 import ViewAllCompaints from "./components/Admin/Complaints/ViewAllCompaints";
 
 function App() {
-  // const url = "http://localhost:4040";
+  const url = "http://localhost:4040";
 
-  const url= "http://hybrid.srishticampus.in:4040"
+  // const url= "http://hybrid.srishticampus.in:4040"
 
   return (
     <BrowserRouter basename="strartup">

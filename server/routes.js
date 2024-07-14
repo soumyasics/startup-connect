@@ -86,7 +86,7 @@ router.post('/viewBlogByMentorId/:id',mentors.viewBlogByMentorId)
 
 router.post('/mentorAddTutorial/:id',mentors.uploadtutorial,mentors.mentorAddTutorial)
 router.post('/mentorViewTutorial',mentors.ViewAllTutorial)
-router.post('/mentorViewTutorialById/:id',mentors.mentorViewTutorialById)
+router.post('/mentorViewTutorialById/:mentorId',mentors.mentorViewTutorialById)
 router.post('/mentorUpdateTutorial/:id',mentors.uploadtutorial,mentors.mentorUpdateTutorial)
 router.post('/mentorRemoveTutorial/:id',mentors.mentorRemoveTutorial)
 router.post('/mentorRemoveTutorial/:id',mentors.mentorRemoveTutorial)
