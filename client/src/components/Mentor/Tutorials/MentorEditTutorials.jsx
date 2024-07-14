@@ -58,7 +58,7 @@ function MentorEditTutorials() {
       }
     useEffect(()=>{
         getData()
-      },[id]);
+      },[]);
 
     const handleInputChange =(e)=>{
         const {name,value} = e.target;

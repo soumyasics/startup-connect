@@ -102,7 +102,7 @@ function MentorPayment() {
               </div>
               <div className="split">
                 <input
-                  className="input_field"
+                  className="input_field_date"
                   type="date"
                   value={expirationDate}
                   onChange={(e) => setExpirationDate(e.target.value)}
@@ -118,17 +118,7 @@ function MentorPayment() {
               {errors.expirationDate && <div className="error text-danger">{errors.expirationDate}</div>}
               {errors.CVV && <div className="error text-danger">{errors.CVV}</div>}
             </div>
-            <div className='input_container'>
-              <div className="split_final_pay">
-                <label className="input_label input_label_final_pay">Final Payment</label>
-                <input
-                  className="input_field_final_pay"
-                  type="text"
-                  placeholder="Rs. 600"
-                  disabled
-                />
-              </div>
-            </div>
+            
           </div>
           <button type="button" className="purchase--btn" onClick={handlePayment}>Pay</button>
         </form>

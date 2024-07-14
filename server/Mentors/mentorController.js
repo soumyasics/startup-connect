@@ -80,47 +80,52 @@ const registerMentor= async(req,res)=>{
 }
 
 // Update mentor by ID
-const editMentorById = (req, res) => {
+const editMentorById = async (req, res) => {
+  console.log(req.files);
   const { 
     name,
     email,
     contact,
-    password,
     expertise_area,
     description,
     subscription_amount,
   } = req.body;
 
-Mentor.mentors.findByIdAndUpdate(req.params.id,{
-  name,
-  email,
-  contact,
-  password,
-  expertise_area,
-  description,
-  subscription_amount,
-  demo_videolink:req.files[0],
-  profile:req.files[1],
-      })
-      .exec()
-      .then((data) => {
-        res.json({
-          status:200,
-          msg: "Updated successfully",
-          data:data
-        });
-      })
-      .catch((err) => {
-          console.log(err);
-        res.json({
-          status:502,
-          msg: "Data not Updated",
-          Error: err,
-        });
-      });
-  
-};
+  const updateData = {
+    name,
+    email,
+    contact,
+    expertise_area,
+    description,
+    subscription_amount,
+  };
 
+  if (req.files && req.files.length > 0) {
+    for (var i in req.files) {
+      if(req.files[i].mimetype.indexOf('video') > 0) {
+        updateData.demo_videolink = req.files[i];
+      } else {
+        updateData.profile = req.files[i];
+      }
+    }
+  }
+
+  try {
+    const data = await Mentor.mentors.findByIdAndUpdate(req.params.id, updateData, { new: true });
+    res.json({
+      status: 200,
+      msg: "Updated successfully",
+      data: data
+    });
+  } catch (err) {
+    console.error(err);
+    res.json({
+      status: 502,
+      msg: "Data not updated",
+      Error: err,
+    });
+  }
+};
 // View mentorReqs for Admin
 const viewMentorReqs = (req, res) => {
   Mentor.mentors.find({adminApproved:false})
@@ -505,7 +510,8 @@ const ViewAllTutorial=(req,res)=>{
 
 // View mentorViewTutorial by ID
 const mentorViewTutorialById = (req, res) => {
-  Mentor.mentorTutorial.findById({mentorId:req.params.id}).populate('mentorId')
+  const mentorid=req.params.mentorId
+  Mentor.mentorTutorial.findById(mentorid).populate('mentorId')
     .exec()
     .then((data) => {
       res.status(200).json({
