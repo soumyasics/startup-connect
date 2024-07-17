@@ -173,7 +173,7 @@ function App() {
           element={<EntViewEvents />}
         />
         <Route
-          path="/entrepreneur/registerevents"
+          path="/entrepreneur/registerevents/:eventid"
           element={<EntRegisterEvents />}
         />
         <Route

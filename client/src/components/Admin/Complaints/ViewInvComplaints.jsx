@@ -47,7 +47,6 @@ function ViewInvComplaints() {
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Complaint Description</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col" className=''>Company Name</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Complaint Date</th>
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Ban</th>
 
     </tr>
   </thead>
@@ -64,8 +63,6 @@ function ViewInvComplaints() {
       <td className='ad_compl_view_des'>{data.description}</td>
       <td>{data.investorId.organization}</td>
       <td>{data.date}</td>
-      <td style={{color:"rgba(52, 133, 208, 1)"}} > 
-      <button href="" onClick={()=>BanByAdmin(data.investorId._id)} className='ad_compl_ban_btn'>Ban User</button></td>
 
     </tr>
    )

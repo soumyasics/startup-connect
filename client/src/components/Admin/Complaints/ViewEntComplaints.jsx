@@ -54,7 +54,6 @@ function ViewEntComplaints() {
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Complaint Description</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Company Name</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Complaint Date</th>
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Ban</th>
 
     </tr>
   </thead>
@@ -71,8 +70,7 @@ function ViewEntComplaints() {
       <td className='ad_compl_view_des'>{data.description}</td>
       <td>{data.entId.company_name}</td>
       <td>{data.date}</td>
-      <td style={{color:"rgba(52, 133, 208, 1)"}} > 
-      <button  className='ad_compl_ban_btn' disabled={false} onClick={()=>BanByAdmin(data.entId._id)}>Ban User</button></td>
+      
 
     </tr>
    )

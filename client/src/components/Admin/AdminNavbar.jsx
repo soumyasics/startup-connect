@@ -36,12 +36,16 @@ function AdminNavbar() {
             >
               <img src={home}></img> Home
             </Link>
+            
             <Link
-              to="/admin_dashboard/admin_addevent"
+              to="/admin_dashboard/admin_vieweventlist"
               className=" text-dark text-decoration-none mx-4"
             >
               <img src={home1}></img> Events
+              
+              
             </Link>
+            
             <Link
               to="/admin_dashboard/viewentrepreneurlist"
               className=" text-dark text-decoration-none mx-4"
