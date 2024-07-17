@@ -29,6 +29,9 @@ function HomepageNavbar() {
     const navigateToComplaints = () => {
         navigate("/entrepreneur/addcomplaint");
     };
+    const navigateToEvents = () => {
+        navigate("/entrepreneur/viewevents");
+    };
 
     const handleLogout = () => {
         localStorage.clear();
@@ -67,6 +70,9 @@ function HomepageNavbar() {
                                     <li><Link to='/entrepreneur/viewstartup_plan/status' class="dropdown-item" >Request Status</Link></li>
                                 </ul>
                                 </div>
+                                <Navbar.Text className="px-3" onClick={navigateToEvents}>
+                            <Link href="#MyProfile" className="text-decoration-none" ><p className="navbarstext">Events</p></Link>
+                            </Navbar.Text>
                             <Navbar.Text className="px-3" onClick={navigateToComplaints}>
                             <Link href="#MyProfile" className="text-decoration-none" ><p className="navbarstext">Complaints</p></Link>
                             </Navbar.Text>

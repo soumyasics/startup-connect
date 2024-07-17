@@ -29,8 +29,8 @@ function EntViewEvents() {
 
 const navigate =useNavigate();
 
-const navigateToEventRegister =(id)=>{
-    navigate()
+const navigateToEventRegister =(eventid)=>{
+    navigate("/entrepreneur/registerevents/"+eventid)
 }
 
 
