@@ -24,9 +24,19 @@ function InvestorNav() {
                             <Navbar.Text className="px-3" >
                             <Link to='/investor/homepage' className="text-decoration-none" ><p className="navbarstext">Home</p></Link>
                             </Navbar.Text>
-                            <Navbar.Text className="px-3" >
-                            <Link to={"/investor/entrepreneur_reqlist"} className="text-decoration-none" ><p className="navbarstext">Startup Ideas</p></Link>
-                            </Navbar.Text>
+                            
+
+                            <div class="home_dropdown">
+                                <Navbar.Text className="px-3" id="dropdownMenuButton"
+                                    data-mdb-toggle="dropdown"
+                                    aria-expanded="false" >
+                                    <Link href="#Investors" className="text-decoration-none" ><p className="navbarstext">Startup Ideas</p></Link>
+                                </Navbar.Text>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><Link to='/investor/entrepreneur_reqlist' class="dropdown-item" >New Plan Requests</Link></li>
+                                    <li><Link to='/investor/accepted_entrepreneur' class="dropdown-item" >View my Entrepreneurs</Link></li>
+                                </ul>
+                                </div>
                             
                             <Navbar.Text className="px-3" >
                             <Link to={"/investor/addcomplaint"} className="text-decoration-none" ><p className="navbarstext">Complaints</p></Link>
