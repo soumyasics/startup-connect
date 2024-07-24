@@ -79,11 +79,13 @@ import InvestorAddComplaint from "./components/Invester/Complaint/InvestorAddCom
 import ViewEntComplaints from "./components/Admin/Complaints/ViewEntComplaints";
 import ViewInvComplaints from "./components/Admin/Complaints/ViewInvComplaints";
 import ViewAllCompaints from "./components/Admin/Complaints/ViewAllCompaints";
+import ViewAcceptedEntereprenuer from "./components/Invester/ViewAcceptedEntereprenuer";
+import ViewAcceptedPlanEnterprenuer from "./components/Invester/ViewEntrepreneurReqList/ViewAcceptedPlanEnterprenuer";
 
 function App() {
-  // const url = "http://localhost:4040";
+  const url = "http://localhost:4040";
 
-  const url= "http://hybrid.srishticampus.in:4040"
+  // const url= "http://hybrid.srishticampus.in:4040"
 
   return (
     <BrowserRouter basename="strartup">
@@ -212,8 +214,16 @@ function App() {
         />
 
         <Route
+        path="/investor/acceptedentrepreneur_req/:id"
+        element={<ViewAcceptedPlanEnterprenuer />}
+      />
+        <Route
           path="/investor/fogot-password"
           element={[<CommonNavbar />, <InvestorForgot />]}
+        />
+        <Route
+          path="/investor/accepted_entrepreneur"
+          element={<ViewAcceptedEntereprenuer />}
         />
 
         <Route

@@ -257,7 +257,7 @@ const rejectInvestorReqById = (req, res) => {
 
 // View Investor Request by ID
 const viewAcceptedReqsByInvId = (req, res) => {
-    InvestorReqs.find({investorId:req.params.id},{status:'accepted'}).populate('entId')
+    InvestorReqs.find({investorId:req.params.id}).populate('entId')
       
         .exec()
         .then(data => {
