@@ -83,9 +83,9 @@ import ViewAcceptedEntereprenuer from "./components/Invester/ViewAcceptedEnterep
 import ViewAcceptedPlanEnterprenuer from "./components/Invester/ViewEntrepreneurReqList/ViewAcceptedPlanEnterprenuer";
 
 function App() {
-  // const url = "http://localhost:4040";
+  const url = "http://localhost:4040";
 
-  const url= "http://hybrid.srishticampus.in:4040"
+  // const url= "http://hybrid.srishticampus.in:4040"
 
   return (
     <BrowserRouter basename="strartup">

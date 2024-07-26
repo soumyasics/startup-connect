@@ -8,13 +8,13 @@ import { IoLogoYoutube } from "react-icons/io";
 import { Link } from "react-router-dom";
 export const CommonNavbar = () => {
   return (
-    <nav class="navbar NavTopBg ">
+    <nav className="navbar NavTopBg ">
       <div className="positionTonav">
         <svg
           id="TopNavLocationLogo"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
-          class="bi bi-geo-alt-fill"
+          className="bi bi-geo-alt-fill"
           viewBox="0 0 16 16"
         >
           <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
@@ -26,7 +26,7 @@ export const CommonNavbar = () => {
           id="Topnavphonelogo"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
-          class="bi bi-telephone-fill"
+          className="bi bi-telephone-fill"
           viewBox="0 0 16 16"
         >
           <path
