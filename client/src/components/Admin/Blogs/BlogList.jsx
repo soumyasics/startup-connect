@@ -17,7 +17,7 @@ function BlogList() {
   const [blogdata, setBlogData]=useState("");
 
   useEffect(()=>{
-    axiosInstance.post('/mentorViewBlog')
+    axiosInstance.post('/viewAllBlogs')
     .then((res)=>{
       console.log(res,"res");
       if(res.status === 200){
@@ -25,7 +25,6 @@ function BlogList() {
       }
     })
     .catch((err)=>{
-      toast.error("Failed to fetch user details")
   });
   },[])
 

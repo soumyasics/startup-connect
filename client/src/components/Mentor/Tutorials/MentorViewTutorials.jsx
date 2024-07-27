@@ -6,7 +6,6 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 import { CommonNavbar } from '../../commonNavbar/commonNavbar';
 import MentorNav from '../MentorNav/MentorNav';
 import Footer_2 from '../../Footer/Footer_2';
-import tutorialvideo from '../../../assets/tutorial-1.mp4'
 import axiosInstance from '../../../BaseAPIs/AxiosInstance';
 import { imageUrl } from '../../../ImageAPIs/Image_Urls';
 import { useNavigate } from 'react-router-dom';

@@ -4,7 +4,6 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { CommonNavbar } from '../../../components/commonNavbar/commonNavbar'
 import HomepageNavbar from '../../../components/commonNavbar/HomepageNavbar'
 import Footer_2 from '../../../components/Footer/Footer_2'
-import demoVideo from '../../../assets/demo_video.mp4'
 import profile from '../../../assets/mentor_tutorial_profile.png'
 import axiosInstance from '../../../BaseAPIs/AxiosInstance';
 import { imageUrl } from '../../../ImageAPIs/Image_Urls';

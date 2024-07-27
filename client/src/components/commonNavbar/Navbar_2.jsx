@@ -39,8 +39,8 @@ function Navbar_2() {
           <div className="nav_secondheader">
             <Navbar className="px-4">
               <Navbar.Brand href="#home" className="text-light">
-                <img className='nav_img' src={Frame} alt="Frame" />
-                {/* <h1 className='softution_logo'>Softution</h1> */}
+                {/* <img className='nav_img' src={Frame} alt="Frame" />*/} 
+                 <h1 className='softution_logo'>Softution</h1> 
               </Navbar.Brand>
               <Navbar.Toggle />
               <Navbar.Collapse className="justify-content-end">
@@ -60,9 +60,9 @@ function Navbar_2() {
                   </Link>
                   </Navbar.Text>
                 <Navbar.Text className="px-5" >
-                <div class="dropdown">
-                  <button class="dropbtn">Sign In</button>
-                  <div class="dropdown-content">
+                <div className="dropdown">
+                  <button className="dropbtn">Sign In</button>
+                  <div className="dropdown-content">
                     <Navbar.Text  onClick={navigateToEntLogin}><Link>Entrepreneur</Link></Navbar.Text>
                     <Navbar.Text  onClick={navigateToInvLogin}><Link>Investor</Link></Navbar.Text>
                     <Navbar.Text  onClick={navigateToMenLogin}><Link>Mentor</Link></Navbar.Text>
