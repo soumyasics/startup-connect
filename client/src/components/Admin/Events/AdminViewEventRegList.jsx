@@ -39,7 +39,7 @@ function AdminViewEventRegList() {
       
   <thead >
     <tr  >
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Name</th>
+      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col-">Name</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">E-Mail ID</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Contact No</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Location</th>
