@@ -86,9 +86,9 @@ import Footer_3 from "./components/Footer/Footer_3";
 import Footer_4 from "./components/Footer/Footer_4";
 
 function App() {
-  const url = "http://localhost:4040";
+  // const url = "http://localhost:4040";
 
-  // const url= "http://hybrid.srishticampus.in:4040"
+  const url= "http://hybrid.srishticampus.in:4040"
 
   return (
     <BrowserRouter basename="strartup">
