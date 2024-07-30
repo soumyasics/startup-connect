@@ -43,7 +43,8 @@ function ViewInvComplaints() {
     <table className="table">
   <thead >
     <tr  >
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col" className='px-5'>Name</th>
+    <th style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col" className='px-5'></th>
+      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col" >Name</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Complaint Description</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col" className=''>Company Name</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Complaint Date</th>
@@ -58,11 +59,12 @@ function ViewInvComplaints() {
     <tr>
       <th scope="row">
       <img src={`${imageUrl}/${data.investorId.profile.filename}`} 
-      class="ad_invviewcompl_profile_pic" alt="..."/>  
-        {data.investorId.name}</th>
+      class="ad_invviewcompl_profile_pic" alt="..."/>  </th>
+        <td>{data.investorId.name}</td>
       <td className='ad_compl_view_des'>{data.description}</td>
       <td>{data.investorId.organization}</td>
-      <td>{data.date}</td>
+     
+      <td>{new Date(data.date).toDateString()}</td>
 
     </tr>
    )

@@ -10,6 +10,7 @@ import { imageUrl } from "../../../ImageAPIs/Image_Urls";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import MentorNav from "../MentorNav/MentorNav";
+import Footer_4 from "../../Footer/Footer_4";
 
 function MentorUpdateProfile() {
   const navigate = useNavigate();
@@ -318,7 +319,7 @@ function MentorUpdateProfile() {
           </div>
         </form>
       </div>
-      <Footer_2 />
+      <Footer_4/>
     </>
   );
 }

@@ -3,7 +3,7 @@ import AdminFooter from "../AdminFooter";
 import AdminNavbar from "../AdminNavbar";
 import { toast } from "react-toastify";
 import eye from "../../../assets/carbon_view-filled.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { imageUrl } from "../../../ImageAPIs/Image_Urls";
 import axiosInstance from "../../../BaseAPIs/AxiosInstance";
 
@@ -14,11 +14,13 @@ function AdminViewEventRegList() {
   //   }
   const [eventregdata, setEventRegData] = useState("");
 
+  const {eventid}=useParams()
+
   useEffect(() => {
     axiosInstance
-      .post("/viewEventRegistration")
+      .post("/viewEventRegistrationsByEventId/"+eventid)
       .then((res) => {
-        console.log(res, "res");
+        console.log(res, "test");
         if (res.status === 200) {
           setEventRegData(res.data.data);
         }
@@ -66,7 +68,7 @@ function AdminViewEventRegList() {
             </tr>
           </thead>
           <tbody>
-            {eventregdata.length > 0 ? (
+            {eventregdata?.length > 0 ? (
               eventregdata.map((data) => {
                 return (
                   <tr>

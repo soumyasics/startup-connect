@@ -18,11 +18,11 @@ function AdminDashbord() {
   const [mentordata, setMentordata]=useState("")
   const [eventdata, setEventdata]=useState("")
 const navigate=useNavigate()
-  useEffect(()=>{
-    if(localStorage.getItem("admin")== null){
-      navigate("/admin_login");
-    }
-  },[navigate]);
+  // useEffect(()=>{
+  //   if(localStorage.getItem("admin")== null){
+  //     navigate("/admin_login");
+  //   }
+  // },[navigate]);
 
   useEffect(()=>{
     axiosInstance.post('/viewInvestors')

@@ -11,15 +11,16 @@ import mentor_home_v4 from '../../../assets/mentor_home_v4.png'
 import Footer from '../../Footer/Footer'
 import Footer_2 from '../../Footer/Footer_2'
 import { useNavigate } from 'react-router-dom'
+import Footer_4 from '../../Footer/Footer_4'
 
 
 function MentorHomePage() {
     const navigate =useNavigate()
-    useEffect(()=>{
-        if(localStorage.getItem("Mentor")== null ){
-          navigate("/");
-        }
-      },[navigate]);
+    // useEffect(()=>{
+    //     if(localStorage.getItem("Mentor")== null ){
+    //       navigate("/");
+    //     }
+    //   },[navigate]);
   return (
     <>
         <CommonNavbar/>
@@ -103,7 +104,7 @@ function MentorHomePage() {
             </div>
 
 
-    <Footer_2/>
+    <Footer_4/>
     </>
   )
 }

@@ -5,6 +5,7 @@ import InvestorNav from "../InvestorNav/InvestorNav";
 import eye from "../../../assets/carbon_view-filled.png";
 import axiosInstance from "../../../BaseAPIs/AxiosInstance";
 import { useNavigate } from "react-router-dom";
+import Footer_3 from "../../Footer/Footer_3";
 
 function ViewEntreprenrueReqList() {
   const [entData, setentData] = useState([]);
@@ -111,7 +112,7 @@ function ViewEntreprenrueReqList() {
           </tbody>
         </table>
       </div>
-      <Footer_2 />
+      <Footer_3 />
     </>
   );
 }

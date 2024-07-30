@@ -4,6 +4,7 @@ import axiosInstance from "../../../BaseAPIs/AxiosInstance";
 import { imageUrl } from "../../../ImageAPIs/Image_Urls";
 import MentorNav from "../MentorNav/MentorNav";
 import Footer from "../../Footer/Footer";
+import Footer_4 from "../../Footer/Footer_4";
 
 function MentorSubscribers() {
   const navigate = useNavigate();
@@ -101,7 +102,7 @@ function MentorSubscribers() {
           </tbody>
         </table>
       </div>
-      <Footer />
+      <Footer_4/>
     </div>
   );
 }

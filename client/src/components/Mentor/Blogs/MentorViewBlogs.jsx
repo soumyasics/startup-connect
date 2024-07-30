@@ -9,6 +9,7 @@ import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import axiosInstance from '../../../BaseAPIs/AxiosInstance'
 import { useNavigate } from 'react-router-dom'
+import Footer_4 from '../../Footer/Footer_4'
 
 
 
@@ -74,7 +75,7 @@ function MentorViewBlogs() {
                   <p>{data.blogName}</p>
                 </div>
                 <div className='col-5'>
-                  <FaRegCalendarAlt className='mentor-icon' /> 01/01/2024
+                  <FaRegCalendarAlt className='mentor-icon' />{new Date(data.date).toDateString()}
                 </div>
               </div>
               <label>{data.description}</label>
@@ -90,7 +91,7 @@ function MentorViewBlogs() {
       })):(<h3>No Records Required</h3>)
       } 
       </div>
-      <Footer_2 />
+      <Footer_4 />
     </>
   )
 }

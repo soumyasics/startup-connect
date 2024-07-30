@@ -82,6 +82,7 @@ function EntrepreneurChat({ role }) {
   }
   return (
     <>
+    
       <div className="container ent_chat_main mb-5">
         <section className="ent_chat_box mt-2 ">
           <div className="col ent_chat_nav">
@@ -114,9 +115,7 @@ function EntrepreneurChat({ role }) {
               <img className="ent_chat_nav_icon" src={inv_chat_emoji} />
             </button>*/}
             <div className="ent_chat_foot_input_div ms-5 ">
-              <button className="ent_chat_foot_mic">
-                <img className="ent_chat_nav_icon" src={inv_chat_mic} />
-              </button>
+             
               <input
                 className="text-center"
                 type="text"

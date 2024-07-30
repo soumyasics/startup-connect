@@ -61,7 +61,7 @@ function BlogList() {
             <div className='col-md-7 col-sm-12 ad_mentor_viewblogs_sec_col'>
               <div className='row ad_montor_row_viwblog'>
               <div className='col-5'>
-                  <FaRegCalendarAlt className='ad_mentor-icon' /> {data.date}
+                  <FaRegCalendarAlt className='ad_mentor-icon' /> {new Date(data.date).toDateString()}
                 </div>
                 
                 

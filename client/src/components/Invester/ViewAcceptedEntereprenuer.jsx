@@ -5,6 +5,7 @@ import eye from "../../assets/carbon_view-filled.png";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
 import { useNavigate } from "react-router-dom";
 import InvestorNav from "./InvestorNav/InvestorNav";
+import Footer_3 from "../Footer/Footer_3";
 
 function ViewAcceptedEntereprenuer() {
   const [entData, setEntData] = useState([]);
@@ -73,7 +74,7 @@ function ViewAcceptedEntereprenuer() {
           </tbody>
         </table>
       </div>
-      <Footer_2 />
+      <Footer_3 />
     </>
   );
 }
