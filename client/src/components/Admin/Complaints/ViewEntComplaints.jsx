@@ -50,7 +50,8 @@ function ViewEntComplaints() {
     <table className="table">
   <thead >
     <tr  >
-      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col" className='px-5'>Name</th>
+    <th style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col" className='px-5'></th>
+      <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Name</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Complaint Description</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Company Name</th>
       <th  style={{backgroundColor:"rgba(140, 220, 249, 1)"}} scope="col">Complaint Date</th>
@@ -66,10 +67,11 @@ function ViewEntComplaints() {
       <th scope="row">
       <img src={`${imageUrl}/${data.entId.image.filename}`} 
       class="ad_invviewcompl_profile_pic" alt="..."/>  
-        {data.entId.fname} {data.entId.lname}</th>
+         </th>
+        <td>{data.entId.fname} {data.entId.lname}</td>
       <td className='ad_compl_view_des'>{data.description}</td>
       <td>{data.entId.company_name}</td>
-      <td>{data.date}</td>
+      <td>{new Date(data.date).toDateString()}</td>
       
 
     </tr>

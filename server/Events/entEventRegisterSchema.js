@@ -22,7 +22,16 @@ const eventregisterSchema = new mongoose.Schema(
             type: String,
             required:true
         },
-        
+        entId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'entrepreneurs',
+            required:true
+        },
+        eventId: {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'events',
+            required:true
+        },
 
     })
 const EntEventRegister = mongoose.model("EntrepreneurEventRegister", eventregisterSchema);

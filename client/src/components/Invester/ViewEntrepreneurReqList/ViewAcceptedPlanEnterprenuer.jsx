@@ -9,7 +9,8 @@ import { imageUrl } from "../../../ImageAPIs/Image_Urls";
 
 function ViewAcceptedPlanEnterprenuer() {
   const [plan, setPlan] = useState([]);
-//   const navigate = useNavigate();
+  const [isProcessed, setIsProcessed] = useState(false);
+  const navigate = useNavigate();
   const { id } = useParams();
 
   console.log(imageUrl);
@@ -33,7 +34,7 @@ function ViewAcceptedPlanEnterprenuer() {
     <>
       <CommonNavbar />
       <InvestorNav />
-      <div className="container mb-3 mt-4">
+      <div className="container mb-3 mt-4" style={{minHeight:"170vh"}}>
         <div className="row row-cols-1 row-cols-md-3 g-4 ">
           <div className="col">
             <div className="ad_invaccept_profile">
@@ -45,7 +46,7 @@ function ViewAcceptedPlanEnterprenuer() {
                 />
               </div>
               <h3 className="ad_invaccept_fname">
-                Name : {plan.investorId?.name}
+                Name : {plan.entId?.fname}
               </h3>
             </div>
           </div>
@@ -55,36 +56,30 @@ function ViewAcceptedPlanEnterprenuer() {
                 <table className="ad_invaccept_gfg">
                   <tr>
                     <th className="ad_invaccept_head">E-Mail</th>
-                    <td>{plan.investorId?.email}</td>
+                    <td>{plan.entId?.email}</td>
                   </tr>
                   <tr>
                     <td></td>
                   </tr>
                   <tr>
                     <th className="ad_invaccept_head">Investing Category</th>
-                    <td>{plan.investorId?.investing_category}</td>
+                    <td>{plan.entId?.industry_sector}</td>
                   </tr>
                   <tr>
                     <td></td>
                   </tr>
                   <tr>
                     <th className="ad_invaccept_head">Contact No</th>
-                    <td>{plan.investorId?.contact}</td>
+                    <td>{plan.entId?.contact}</td>
                   </tr>
                   <tr>
                     <td></td>
                   </tr>
-                  <tr>
-                    <th className="ad_invaccept_head">Occupation</th>
-                    <td>{plan.investorId?.occupation}</td>
-                  </tr>
+                  
                   <tr>
                     <td></td>
                   </tr>
-                  <tr>
-                    <th className="ad_invaccept_head">Nationality</th>
-                    <td>{plan.investorId?.nationality}</td>
-                  </tr>
+                  
                 </table>
               </div>
             </div>
@@ -94,22 +89,18 @@ function ViewAcceptedPlanEnterprenuer() {
               <div className="ad_invaccept_details2">
                 <table className="ad_invaccept_gfg">
                   <tr>
-                    <th className="ad_invaccept_head">Organization</th>
-                    <td>{plan.investorId?.organization}</td>
-                  </tr>
-                  <tr>
                     <td></td>
                   </tr>
                   <tr>
                     <th className="ad_invaccept_head">Description</th>
-                    <td>{plan.investorId?.description}</td>
+                    <td>{plan.entId?.company_description}</td>
                   </tr>
                   <tr>
                     <td></td>
                   </tr>
                   <tr>
                     <th className="ad_invaccept_head">Address</th>
-                    <td>{plan.investorId?.address}</td>
+                    <td>{plan.entId?.address}</td>
                   </tr>
                   <tr>
                     <td></td>
@@ -124,7 +115,7 @@ function ViewAcceptedPlanEnterprenuer() {
           <div className="col">
             <div className="invview_ent_viewsplan_profile">
               <tr className="invview_ent_viewsplan_subhead">
-                <th>Company Name : {plan.entId?.company_name}</th>
+                <th>Company Name : {plan.planId?.companyName}</th>
               </tr>
               <tr>
                 <td>
@@ -209,7 +200,7 @@ function ViewAcceptedPlanEnterprenuer() {
           <div className="col">
             <div className="invview_ent_viewsplan_profile">
               <tr className="invview_ent_viewsplan_subhead">
-                <th>Currently we have:</th>{plan.planId?.company_name}
+                <th>Currently we have:</th>{plan.planId?.currentStatus}
               </tr>
               <tr>
                 <td>
@@ -240,6 +231,7 @@ function ViewAcceptedPlanEnterprenuer() {
                   <input className="invview_ent_viewsplan_value" type="text" />
                 </td>
               </tr>
+              
             </div>
           </div>
         </div>

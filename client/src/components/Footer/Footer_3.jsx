@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+import "./Footer_2.css";
 import startuplog from "../../assets/startuplogo.png";
 import Adresslogo from "../../assets/adress.png";
 import Phonelogo from "../../assets/phone.png";
@@ -11,13 +11,13 @@ import Instalogo from "../../assets/Group 19 (1).png";
 import Emaillogo from "../../assets/Vector.png";
 import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer_3() {
   return (
     <div>
-      <div class="firstcolumn ">
-        {/* <img className="startuplogo" src={startuplog} />*/}
+      <div class="foot2_firstcolumn ">
+        {/*<img className='foot2_startuplogo' src={startuplog} />  */}
         <h1 className="foot_softution_logo ">Softution</h1>
-        <p className="firstcolumnpara ">
+        <p className="foot2_firstcolumnpara ">
           we combine technical expertise with creative thinking to deliver
           innovative solutions that exceed our clients' expectations. We take a
           collaborative approach to every project, working closely with our
@@ -25,18 +25,16 @@ function Footer() {
           solutions to meet their specific needs.
         </p>
       </div>
-      <div className="footerbg ">
-        <div className="foot">
+      <div className="footer2bg ">
+        <div className="foot_2">
           <div class="row  pt-4 ">
-            <div class="col-3 secondcolumn  ">
+            <div class="col-3 foot2_secondcolumn ">
               <div>
                 <div className="text-center">
-                  <h1 className="secondcolumncontent text-center">
-                    Get In Touch
-                  </h1>
+                  <h1 className="foot2_secondcolumncontent">Get In Touch</h1>
                   <div className=" mb-3 footer_hr_line1"></div>
                   <div>
-                    <div className="secondcolumnadress  ">
+                    <div className="foot2_secondcolumnadress  ">
                       <div>
                         <img className="px-1" src={Adresslogo} />
                         <span>123 Street, New York,USA</span>
@@ -87,33 +85,24 @@ function Footer() {
             <div class="col-2">
               <div>
                 <div>
-                  <h1 className="secondcolumncontent text-center">
+                  <h1 className="foot2_secondcolumncontent text-center">
                     Quick Links
                   </h1>
                   <div className=" mb-3 footer_hr_line2"></div>
                   <div>
-                    <div className="thirdcolumnadress">
-                      <ul className="footer-list">
+                    <div className="foot2_thirdcolumnadress">
+                      <ul className="footer2-list">
                         <li>
-                          <Link smooth to="/#Home">
-                            Home
+                          <Link to="/investor/homepage">Home</Link>
+                        </li>
+
+                        <li>
+                          <Link to="/investor/entrepreneur_reqlist">
+                            Startup idia
                           </Link>
                         </li>
                         <li>
-                          {" "}
-                          <Link smooth to="/#aboutsection">
-                            About Us
-                          </Link>
-                        </li>
-                        <li>
-                          <Link smooth to="/#Services">
-                            Services
-                          </Link>
-                        </li>
-                        <li>
-                          <Link smooth to="/#Home">
-                            Sign In
-                          </Link>
+                          <Link to="/investor/updateprofile">My Profile</Link>
                         </li>
                       </ul>
                     </div>
@@ -124,33 +113,24 @@ function Footer() {
             <div class="col-2">
               <div>
                 <div>
-                  <h1 className="secondcolumncontent text-center">
+                  <h1 className="foot2_secondcolumncontent text-center">
                     Popular Links
                   </h1>
                   <div className=" mb-3 footer_hr_line3"></div>
                   <div>
                     <div className="thirdcolumnadress">
-                      <ul className="footer-list">
+                      <ul className="footer2-list">
                         <li>
-                          <Link smooth to="/#Home">
-                            Home
+                          <Link to="/investor/homepage">Home</Link>
+                        </li>
+
+                        <li>
+                          <Link to="/investor/entrepreneur_reqlist">
+                            Startup idia
                           </Link>
                         </li>
                         <li>
-                          {" "}
-                          <Link smooth to="/#aboutsection">
-                            About Us
-                          </Link>
-                        </li>
-                        <li>
-                          <Link smooth to="/#Services">
-                            Services
-                          </Link>
-                        </li>
-                        <li>
-                          <Link smooth to="/#Home">
-                            Sign In
-                          </Link>
+                          <Link to="/investor/updateprofile">My Profile</Link>
                         </li>
                       </ul>
                     </div>
@@ -160,8 +140,8 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="footerbotomset">
-          <p className="botomcontent">
+        <div className="foor2_footerbotomset">
+          <p className="foot2_botomcontent">
             All Rights Reserved. Designed by Student
           </p>
         </div>
@@ -170,4 +150,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Footer_3;

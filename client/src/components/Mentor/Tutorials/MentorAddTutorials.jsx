@@ -5,6 +5,7 @@ import Footer_2 from '../../Footer/Footer_2'
 import './MentorAddTutorials.css'
 import { useNavigate } from 'react-router-dom'
 import axiosMultipartInstance from '../../../BaseAPIs/AxiosMultipartInstance'
+import Footer_4 from '../../Footer/Footer_4'
 
 function MentorAddTutorials() {
 
@@ -156,7 +157,7 @@ function MentorAddTutorials() {
         </div>
         </form>
         </div>
-        <Footer_2/>   
+        <Footer_4/>   
     </>
   )
 }

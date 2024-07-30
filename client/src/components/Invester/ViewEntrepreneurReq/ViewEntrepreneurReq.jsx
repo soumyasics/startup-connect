@@ -6,6 +6,7 @@ import InvestorNav from "../InvestorNav/InvestorNav";
 import { useParams, useNavigate } from "react-router-dom";
 import axiosInstance from "../../../BaseAPIs/AxiosInstance";
 import { imageUrl } from "../../../ImageAPIs/Image_Urls";
+import Footer_3 from "../../Footer/Footer_3";
 
 function ViewEntrepreneurReq() {
   const [plan, setPlan] = useState([]);
@@ -21,6 +22,7 @@ function ViewEntrepreneurReq() {
         console.log(res, "res");
         if (res.status === 200) {
           setPlan(res.data.data);
+        
         }
       })
       .catch((err) => {
@@ -34,6 +36,7 @@ function ViewEntrepreneurReq() {
       .then((res) => {
         alert("Request rejected");
         setIsProcessed(true);
+        navigate("/investor/accepted_entrepreneur")
       })
       .catch((err) => {
         alert("Failed to fetch user details");
@@ -46,6 +49,7 @@ function ViewEntrepreneurReq() {
       .then((res) => {
         alert("Request accepted");
         setIsProcessed(true);
+        navigate("/investor/accepted_entrepreneur")
       })
       .catch((err) => {
         alert("Failed to fetch user details");
@@ -56,7 +60,7 @@ function ViewEntrepreneurReq() {
     <>
       <CommonNavbar />
       <InvestorNav />
-      <div className="container mb-3 mt-4">
+      <div className="container mb-3 mt-4" style={{minHeight:"170vh"}}>
         <div className="row row-cols-1 row-cols-md-3 g-4 ">
           <div className="col">
             <div className="ad_invaccept_profile">
@@ -68,7 +72,7 @@ function ViewEntrepreneurReq() {
                 />
               </div>
               <h3 className="ad_invaccept_fname">
-                Name : {plan.investorId?.name}
+                Name : {plan.entId?.fname}
               </h3>
             </div>
           </div>
@@ -78,36 +82,30 @@ function ViewEntrepreneurReq() {
                 <table className="ad_invaccept_gfg">
                   <tr>
                     <th className="ad_invaccept_head">E-Mail</th>
-                    <td>{plan.investorId?.email}</td>
+                    <td>{plan.entId?.email}</td>
                   </tr>
                   <tr>
                     <td></td>
                   </tr>
                   <tr>
                     <th className="ad_invaccept_head">Investing Category</th>
-                    <td>{plan.investorId?.investing_category}</td>
+                    <td>{plan.entId?.industry_sector}</td>
                   </tr>
                   <tr>
                     <td></td>
                   </tr>
                   <tr>
                     <th className="ad_invaccept_head">Contact No</th>
-                    <td>{plan.investorId?.contact}</td>
+                    <td>{plan.entId?.contact}</td>
                   </tr>
                   <tr>
                     <td></td>
                   </tr>
-                  <tr>
-                    <th className="ad_invaccept_head">Occupation</th>
-                    <td>{plan.investorId?.occupation}</td>
-                  </tr>
+                  
                   <tr>
                     <td></td>
                   </tr>
-                  <tr>
-                    <th className="ad_invaccept_head">Nationality</th>
-                    <td>{plan.investorId?.nationality}</td>
-                  </tr>
+                  
                 </table>
               </div>
             </div>
@@ -117,22 +115,18 @@ function ViewEntrepreneurReq() {
               <div className="ad_invaccept_details2">
                 <table className="ad_invaccept_gfg">
                   <tr>
-                    <th className="ad_invaccept_head">Organization</th>
-                    <td>{plan.investorId?.organization}</td>
-                  </tr>
-                  <tr>
                     <td></td>
                   </tr>
                   <tr>
                     <th className="ad_invaccept_head">Description</th>
-                    <td>{plan.investorId?.description}</td>
+                    <td>{plan.entId?.company_description}</td>
                   </tr>
                   <tr>
                     <td></td>
                   </tr>
                   <tr>
                     <th className="ad_invaccept_head">Address</th>
-                    <td>{plan.investorId?.address}</td>
+                    <td>{plan.entId?.address}</td>
                   </tr>
                   <tr>
                     <td></td>
@@ -147,7 +141,7 @@ function ViewEntrepreneurReq() {
           <div className="col">
             <div className="invview_ent_viewsplan_profile">
               <tr className="invview_ent_viewsplan_subhead">
-                <th>Company Name : {plan.entId?.company_name}</th>
+                <th>Company Name : {plan.planId?.companyName}</th>
               </tr>
               <tr>
                 <td>
@@ -232,7 +226,7 @@ function ViewEntrepreneurReq() {
           <div className="col">
             <div className="invview_ent_viewsplan_profile">
               <tr className="invview_ent_viewsplan_subhead">
-                <th>Currently we have:</th>{plan.planId?.company_name}
+                <th>Currently we have:</th>{plan.planId?.currentStatus}
               </tr>
               <tr>
                 <td>
@@ -283,7 +277,7 @@ function ViewEntrepreneurReq() {
           </div>
         </div>
       </div>
-      <Footer_2 />
+      <Footer_3/>
     </>
   );
 }

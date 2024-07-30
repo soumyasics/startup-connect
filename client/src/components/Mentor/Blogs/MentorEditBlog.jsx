@@ -9,6 +9,7 @@ import axiosInstance from '../../../BaseAPIs/AxiosInstance'
 import axiosMultipartInstance from '../../../BaseAPIs/AxiosMultipartInstance'
 import { imageUrl } from '../../../ImageAPIs/Image_Urls'
 import camera_img from '../../../assets/Mentor_blog_edit_camera.png'
+import Footer_4 from '../../Footer/Footer_4'
 
 function MentorEditBlog() {
 
@@ -198,7 +199,7 @@ function MentorEditBlog() {
         </div>
         </form>
     </div>
-    <Footer_2 />
+    <Footer_4/>
     </>
   )
 }

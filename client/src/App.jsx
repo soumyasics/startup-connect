@@ -81,11 +81,14 @@ import ViewInvComplaints from "./components/Admin/Complaints/ViewInvComplaints";
 import ViewAllCompaints from "./components/Admin/Complaints/ViewAllCompaints";
 import ViewAcceptedEntereprenuer from "./components/Invester/ViewAcceptedEntereprenuer";
 import ViewAcceptedPlanEnterprenuer from "./components/Invester/ViewEntrepreneurReqList/ViewAcceptedPlanEnterprenuer";
+import Footer from "./components/Footer/Footer";
+import Footer_3 from "./components/Footer/Footer_3";
+import Footer_4 from "./components/Footer/Footer_4";
 
 function App() {
-  // const url = "http://localhost:4040";
+  const url = "http://localhost:4040";
 
-  const url= "http://hybrid.srishticampus.in:4040"
+  // const url= "http://hybrid.srishticampus.in:4040"
 
   return (
     <BrowserRouter basename="strartup">
@@ -143,7 +146,7 @@ function App() {
         />
         <Route
           path="/entrepreneur/investorreqview/:id"
-          element={<InvestorReqView role={'investorreqview'}/>}
+          element={<InvestorReqView role={"investorreqview"} />}
         />
 
         <Route path="/entrepreneur/viewmentors" element={<ViewMentors />} />
@@ -164,18 +167,22 @@ function App() {
           path="/entrepreneur/viewtutorial/:id"
           element={<ViewTutorial />}
         />
-        <Route path="/entrepreneur/viewbloglist/:id" element={<ViewBlogList />} />
+        <Route
+          path="/entrepreneur/viewbloglist/:id"
+          element={<ViewBlogList />}
+        />
 
         <Route
           path="/entrepreneur/entrepreneurchat/:id"
-          element={<EntrepreneurChat  role={'ent'}/>}
+          element={[
+            <HomepageNavbar />,
+            <EntrepreneurChat role={"ent"} />,
+            <Footer />,
+          ]}
         />
+        <Route path="/entrepreneur/viewevents" element={<EntViewEvents />} />
         <Route
-          path="/entrepreneur/viewevents"
-          element={<EntViewEvents />}
-        />
-        <Route
-          path="/entrepreneur/registerevents/:eventid"
+          path="/entrepreneur/registerevents/:eventId"
           element={<EntRegisterEvents />}
         />
         <Route
@@ -198,12 +205,9 @@ function App() {
         />
         <Route
           path="/investor/homepage"
-          element={<InvestorHomePage url={url} />}
+          element={[<InvestorHomePage url={url} />,<Footer_3/>]}
         />
-        <Route
-          path="/investor/chat"
-          element={<InvestorChat url={url} />}
-        />
+        <Route path="/investor/chat" element={<InvestorChat url={url} />} />
         <Route
           path="/investor/entrepreneur_reqlist"
           element={<ViewEntreprenrueReqList />}
@@ -214,9 +218,9 @@ function App() {
         />
 
         <Route
-        path="/investor/acceptedentrepreneur_req/:id"
-        element={<ViewAcceptedPlanEnterprenuer />}
-      />
+          path="/investor/acceptedentrepreneur_req/:id"
+          element={<ViewAcceptedPlanEnterprenuer />}
+        />
         <Route
           path="/investor/fogot-password"
           element={[<CommonNavbar />, <InvestorForgot />]}
@@ -260,8 +264,14 @@ function App() {
           path="/mentor/edittutorials/:id"
           element={<MentorEditTutorials />}
         />
-        <Route path="/mentor/mentorchat/:id" element={<EntrepreneurChat role={'ment'} />} />
-
+        <Route
+          path="/mentor/mentorchat/:id"
+          element={[
+            <MentorNav />,
+            <EntrepreneurChat role={"ment"} />,
+            <Footer_4 />,
+          ]}
+        />
 
         {/* Common Routes */}
         <Route path="commonnavbar" element={<CommonNavbar />} />
@@ -317,20 +327,25 @@ function App() {
           path="/entrepreneur/viewallinvester"
           element={<ViewAllInversetes />}
         />
-        <Route path="/admin_dashboard/admin_addevent" element={<AdminAddEvents />} />
-        <Route path="/admin_dashboard/admin_vieweventlist" element={<AdminViewEventList />} />
-        <Route path="/admin_dashboard/admin_vieweventreglist" element={<AdminViewEventRegList />} />
+        <Route
+          path="/admin_dashboard/admin_addevent"
+          element={<AdminAddEvents />}
+        />
+        <Route
+          path="/admin_dashboard/admin_vieweventlist"
+          element={<AdminViewEventList />}
+        />
+        <Route
+          path="/admin_dashboard/admin_vieweventreglist/:eventid"
+          element={<AdminViewEventRegList />}
+        />
         <Route
           path="/admin_dashboard/viewallcomplaints"
           element={<ViewAllCompaints />}
         />
-        
-
-
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />
         <Route path="/l" element={PropertiesList} />
-
       </Routes>
     </BrowserRouter>
   );

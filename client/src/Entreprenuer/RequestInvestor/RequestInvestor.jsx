@@ -6,6 +6,7 @@ import Footer from '../../components/Footer/Footer'
 import { useNavigate } from 'react-router-dom'
 import axiosInstance from '../../BaseAPIs/AxiosInstance'
 import { imageUrl } from '../../ImageAPIs/Image_Urls'
+import Footer_2 from '../../components/Footer/Footer_2'
 function RequestInvestor() {
 
 
@@ -74,8 +75,9 @@ function RequestInvestor() {
           
         </div>
       </div>
-      <Footer/>
+      <Footer_2/>
     </>
+    
   )
 }
 

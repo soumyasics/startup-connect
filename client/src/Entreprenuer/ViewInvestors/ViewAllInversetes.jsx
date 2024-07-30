@@ -7,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../../BaseAPIs/AxiosInstance";
 import { imageUrl } from "../../ImageAPIs/Image_Urls";
 import { toast } from "react-toastify";
+import Footer_2 from "../../components/Footer/Footer_2";
 
 function ViewAllInversetes() {
     const navigate = useNavigate();
@@ -81,7 +82,7 @@ function ViewAllInversetes() {
         )}
       </div>
     </div>
-    <Footer />
+    <Footer_2 />
   </>
 </div>
   )

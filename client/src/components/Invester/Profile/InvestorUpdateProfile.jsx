@@ -10,6 +10,7 @@ import { imageUrl } from "../../../ImageAPIs/Image_Urls";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import InvestorNav from "../InvestorNav/InvestorNav";
+import Footer_3 from "../../Footer/Footer_3";
 
 function InvestorUpdateProfile({ url }) {
 
@@ -436,7 +437,7 @@ function InvestorUpdateProfile({ url }) {
           </div>
         </form>
       </div>
-      <Footer_2 />
+      <Footer_3 />
     </>
   );
 }

@@ -4,6 +4,7 @@ import Footer_2 from '../../Footer/Footer_2'
 import InvestorNav from '../InvestorNav/InvestorNav'
 import { useNavigate } from 'react-router-dom'
 import axiosInstance from '../../../BaseAPIs/AxiosInstance'
+import Footer_3 from '../../Footer/Footer_3'
 
 function InvestorAddComplaint() {
     
@@ -103,7 +104,7 @@ const navigate=useNavigate();
             </div>
             </form>
         </section>
-        <Footer_2/>
+        <Footer_3/>
     </>
   )
 }

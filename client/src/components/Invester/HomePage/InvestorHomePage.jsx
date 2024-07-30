@@ -104,7 +104,6 @@ function InvestorHomePage() {
                 </div>
             </div>
         </section>
-        <Investor_Footer/>
 
     </>
   )

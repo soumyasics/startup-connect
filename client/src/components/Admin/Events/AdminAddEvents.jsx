@@ -3,6 +3,7 @@ import './AdminAddEvents.css'
 import AdminFooter from '../AdminFooter'
 import AdminNavbar from '../AdminNavbar'
 import axiosInstance from '../../../BaseAPIs/AxiosInstance';
+import { useNavigate } from 'react-router-dom';
 
 function AdminAddEvents() {
     const [eventdata, setEventdata] = useState({
@@ -12,6 +13,7 @@ function AdminAddEvents() {
             date:"",
             venue:"",
       });
+      const navigate=useNavigate()
     
       const [errors, setErrors] = useState({
             title:"",
@@ -100,6 +102,7 @@ function AdminAddEvents() {
             console.log("Response:", response);
             if (response.status == 200) {
               alert(response.data.msg);
+              navigate("/admin_dashboard/admin_vieweventlist")
             }
           } catch (error) {
             console.error("Error:", error);

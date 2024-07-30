@@ -86,7 +86,7 @@ function MentorSubscribedList() {
                   <td>{data.mentorId.email}</td>
                   <td>{data.mentorId.expertise_area}</td>
                   <td>{data.mentorId.contact}</td>
-                  <td>{data.amount}</td>
+                  <td>{data.mentorId.subscription_amount}</td>
                   <td style={{ color: "rgba(52, 133, 208, 1)" }}>
                     <img src={eye} alt="View Icon" />
                     <a href="#" onClick={() => navigateToMentorView(data._id)}>

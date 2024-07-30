@@ -66,13 +66,13 @@ function MentorView() {
                     <tr ><th className='ad_menaccept_head'>E-Mail</th></tr>
                     <tr><td>{mentordata.email}</td></tr>
                     <tr><th className='ad_menaccept_head'>Expertise Category</th></tr>
-                    <tr><td>{mentordata.investing_category}</td></tr>
+                    <tr><td>{mentordata.expertise_area}</td></tr>
                     <tr><th className='ad_menaccept_head'>Contact No</th></tr>
                     <tr><td>{mentordata.contact}</td></tr>
                     <tr><th className='ad_menaccept_head'>Subscription Amount</th></tr>
-                    <tr><td>{mentordata.occupation}</td></tr>
+                    <tr><td>{mentordata.subscription_amount}</td></tr>
                     <tr><th className='ad_menaccept_head'>Description</th></tr>
-                    <tr><td>{mentordata.nationality}</td></tr>
+                    <tr><td>{mentordata.description}</td></tr>
                     </table>
                 </div>
             </div>
