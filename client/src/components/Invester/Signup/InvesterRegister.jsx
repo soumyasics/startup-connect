@@ -100,10 +100,9 @@ function InvesterRegister() {
     }
     if (!investordata.contact.trim()) {
       formValid = false;
-      console.log("t",formValid);
-
       errors.contact = "Contact number is required";
-    } else if (investordata.contact.length <= 9) {
+    } else if (!/^\d{10}$/.test(investordata.contact)) {
+      formValid = false;
       errors.contact = "Enter a valid 10-digit contact number";
     }
     if (!investordata.organization.trim()) {
@@ -138,7 +137,7 @@ function InvesterRegister() {
       formValid = false;
       console.log("z2",formValid);
 
-      errors.confirm_password = "Company description is required";
+      errors.confirm_password = "Confirm password is required";
     } else if (investordata.password !== investordata.confirm_password) {
       errors.confirm_password = "Passwords must match";
     }

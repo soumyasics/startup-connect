@@ -119,7 +119,8 @@ const [profilename,setProfileName]=useState();
     if (!data.contact.trim()) {
       formValid = false;
       errors.contact = "Contact number is required";
-    } else if (data.contact.length < 10) {
+    } else if (!/^\d{10}$/.test(data.contact)) {
+      formValid = false;
       errors.contact = "Enter a valid 10-digit contact number";
     }
     // if (!data.username.trim()) {
@@ -144,7 +145,7 @@ const [profilename,setProfileName]=useState();
     }
     if (!data.c_password.trim()) {
       formValid = false;
-      errors.c_password = "Company description is required";
+      errors.c_password = "Confirm Passwords is required";
     }else if(data.password!==data.c_password){
       errors.c_password="Passwords must match"
     }

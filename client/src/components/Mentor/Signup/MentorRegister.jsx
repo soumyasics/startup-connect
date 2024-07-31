@@ -101,7 +101,8 @@ function MentorRegister() {
     if (!mentordata.contact.trim()) {
       formValid = false;
       errors.contact = "Contact number is required";
-    } else if (mentordata.contact.length <=9) {
+    } else if (!/^\d{10}$/.test(mentordata.contact)) {
+      formValid = false;
       errors.contact = "Enter a valid 10-digit contact number";
     }
     if (!mentordata.password.trim()) {
@@ -247,7 +248,7 @@ function MentorRegister() {
                 id="mentor_input" 
                 name="contact" 
                 placeholder="" 
-                type="text"
+                type="number"
                 onChange={handleInputChange}/>
                 {errors.contact && (<div className="text-danger errortext">{errors.contact}</div>)}
 
