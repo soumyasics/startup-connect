@@ -84,6 +84,7 @@ import ViewAcceptedPlanEnterprenuer from "./components/Invester/ViewEntrepreneur
 import Footer from "./components/Footer/Footer";
 import Footer_3 from "./components/Footer/Footer_3";
 import Footer_4 from "./components/Footer/Footer_4";
+import ChatBot from "./Entreprenuer/ChatBot/ChatBot";
 
 function App() {
   const url = "http://localhost:4040";
@@ -124,6 +125,7 @@ function App() {
           element={<EditStartUpPlan />}
         />
         <Route path="/entrepreneur/enthomepage" element={<Enthomepage />} />
+        <Route path="/entrepreneur/chat" element={<ChatBot />} />
         <Route
           path="/entrepreneur/entprofile"
           element={<Entprofile url={url} />}
