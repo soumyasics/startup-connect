@@ -87,9 +87,9 @@ import Footer_4 from "./components/Footer/Footer_4";
 import ChatBot from "./Entreprenuer/ChatBot/ChatBot";
 
 function App() {
-  const url = "http://localhost:4040";
+  // const url = "http://localhost:4040";
 
-  // const url= "http://hybrid.srishticampus.in:4040"
+  const url= "http://hybrid.srishticampus.in:4040"
 
   return (
     <BrowserRouter basename="strartup">
