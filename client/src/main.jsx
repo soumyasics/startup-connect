@@ -5,6 +5,7 @@ import "./index.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 import { store } from "./redux/store.js";
 import { Provider } from "react-redux";
 ReactDOM.createRoot(document.getElementById("root")).render(

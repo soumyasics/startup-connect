@@ -4,7 +4,7 @@ import MentorRegImg from '../../../assets/mentor_register_img.png'
 import Footer from '../../Footer/Footer'
 import Navbar_2 from '../../commonNavbar/Navbar_2'
 import axiosMultipartInstance from '../../../BaseAPIs/AxiosMultipartInstance';
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Link} from "react-router-dom";
 
 
 
@@ -342,10 +342,14 @@ function MentorRegister() {
               {errors.profile && (<div className="text-danger errortext">{errors.profile}</div>)}
               {error && (<div className="text-danger errortext">{error}</div>)}
 
-              
+              <p className="mt-3 "> 
+              Already registered please login <Link  to="/mentor/login">Login</Link>
+            </p>
             </div>
+            
             <div class=" pt-2">
               <button className='mentor_reg_btn mb-5'>Register</button> 
+            
               </div>
           </div>
           </form>

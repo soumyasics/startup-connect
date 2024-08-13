@@ -3,7 +3,7 @@ import './AdminAddEvents.css'
 import AdminFooter from '../AdminFooter'
 import AdminNavbar from '../AdminNavbar'
 import axiosInstance from '../../../BaseAPIs/AxiosInstance';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate ,Link} from 'react-router-dom';
 
 function AdminAddEvents() {
     const [eventdata, setEventdata] = useState({
@@ -201,7 +201,7 @@ function AdminAddEvents() {
                     
                 </div>
                 <button className='ad_addevent_addbtn'>Add Events</button>
-                <button className='ad_addevent_cancelbtn'>Cancel</button>
+                <button className='ad_addevent_cancelbtn' ><Link className='text-light text-decoration-none' to="/admin_dashboard">Cancel</Link></button>
 
             </form>
         </div>

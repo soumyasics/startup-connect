@@ -3,7 +3,7 @@ import { CommonNavbar } from '../../commonNavbar/commonNavbar'
 import MentorNav from '../MentorNav/MentorNav'
 import Footer_2 from '../../Footer/Footer_2'
 import './MentorAddTutorials.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 import axiosMultipartInstance from '../../../BaseAPIs/AxiosMultipartInstance'
 import Footer_4 from '../../Footer/Footer_4'
 
@@ -151,7 +151,7 @@ function MentorAddTutorials() {
                 </div>
                 <div className='col-9'>
                     <button className='menter_addtutorials_btn' type="submit" >Add Tutorial</button>
-                    <button className='menter_addtutorials_btn mentor_addtutorials_secbtn' type="submit" >Cancel</button> 
+                    <button className='menter_addtutorials_btn mentor_addtutorials_secbtn' type="submit" ><Link className='text-light text-decoration-none' to="/mentor/homepage">Cancel</Link></button> 
                 </div>
             </div>
         </div>

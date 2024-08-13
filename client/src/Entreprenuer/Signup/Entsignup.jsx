@@ -323,7 +323,10 @@ const [profilename,setProfileName]=useState();
             <label id="">Confirm Password</label>
               <input class="input-cal input-base" id="ent_input" name="c_password" onChange={handleInputChange} placeholder="" type="password"/>
               {errors.c_password && (<div className="text-danger errortext">{errors.c_password}</div>)}
-            </div>
+              <p className="mt-3 "> 
+              already registered please login <Link  to="/entrepreneur/login">Login</Link>
+            </p>
+              </div>
             <div class=" pt-2 mx-5 mb-3">
               <button className='ent_reg_btn' type="submit" >Register</button> 
               </div>

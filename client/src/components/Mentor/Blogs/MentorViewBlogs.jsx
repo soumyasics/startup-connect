@@ -55,7 +55,7 @@ function MentorViewBlogs() {
     <>
       <CommonNavbar />
       <MentorNav />
-      <div className="text-center headr">
+      <div className="text-center headr" style={{minHeight:"70vh"}}>
         <h4 className="mt-3 mentor_viewblog_mainheading">OUR BLOGS</h4>
         <h3 className="mentor_viewblog_sub_h3">Share Your Ideas</h3>
         <div className="mb-5 mentor_viewblog_hr_line"></div>

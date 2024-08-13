@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./InvesterRegister.css";
 import InvestorRegImg from "../../../assets/investor_register.png";
 import Footer from "../../Footer/Footer";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import Navbar_2 from "../../commonNavbar/Navbar_2";
 import axiosMultipartInstance from "../../../BaseAPIs/AxiosMultipartInstance";
 
@@ -481,7 +481,9 @@ function InvesterRegister() {
                   <div className="text-danger errortext">{errors.identification_document}</div>
                 )}
               {errorid_doc && (<div className="text-danger errortext">{errorid_doc}</div>)}
-
+              <p className="mt-3 "> 
+              Already registered please login <Link  to="/investor/login">Login</Link>
+            </p>
               <div class=" pt-4">
                 <button className="inv-reg-btn">Register</button>
               </div>
