@@ -241,7 +241,7 @@ const activateInvestorById = (req, res) => {
       .exec()
       .then((data) => {
         res.status(200).json({
-          msg: "Data updated successfully",
+          msg: "Activated successfully",
           data: data,
         });
       })
@@ -260,7 +260,7 @@ const deActivateInvestorById = (req, res) => {
       .exec()
       .then((data) => {
         res.status(200).json({
-          msg: "Data updated successfully",
+          msg: "DeActivated successfully",
           data: data,
         });
       })

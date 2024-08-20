@@ -22,9 +22,9 @@ router.post('/editEntrepreneurById/:id',entrepreneurs.upload,entrepreneurs.editE
 router.post('/forgotPasswordEntrepreneur',entrepreneurs.forgotPassword)
 router.post('/viewEntrepreneurs',entrepreneurs.viewEntrepreneurs)
 router.post('/deleteEntrepreneurById/:id',entrepreneurs.deleteEntrepreneurById)
+
 router.post('/entBanByAdmin/:id',entrepreneurs.entBanByAdmin)
-
-
+router.post('/entBanByAdminactivate/:id',entrepreneurs.entBanByAdminActivate)
 
 
 router.post('/pitchMyIdeaAddCompany/:id',pitch_my_idea.addCompany)
@@ -49,8 +49,8 @@ router.post('/viewInvestorById/:id',investors.viewInvestorById)
 router.post('/editInvestorById/:id',investors.uploadSingle,investors.editInvestorById)
 router.post('/viewInvestorReqs',investors.viewInvestorReqs)
 router.post('/approveInvestorReqsById/:id',investors.approveInvestorReqsById)
-router.post('/activateInvestorById/:id',investors.activateInvestorById)
 router.post('/removeInvestorById/:id',investors.removeInvestorById)
+router.post('/activateInvestorById/:id',investors.activateInvestorById)
 router.post('/deActivateInvestorById/:id',investors.deActivateInvestorById)
 router.post('/viewlessinvestors',investors.viewLessInvestorReqs)
 router.post('/viewInvestorByCategory/:category',investors.viewInvestorByCategory)

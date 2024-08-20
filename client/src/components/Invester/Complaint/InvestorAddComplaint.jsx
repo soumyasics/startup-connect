@@ -97,9 +97,8 @@ const navigate=useNavigate();
                 </div>
                 {errors.description && <p className='text-danger ent_compl_err_text'>{errors.description}</p>}
 
-            <div className='inv_compl_btn_div'>
+            <div className='inv_compl_btn_div '>
                 <button className='inv_compl_btn'>Send</button>
-                <button className='inv_compl_btn' onChange={navigateToHome}>Cancel</button>
             </div>
             </div>
             </form>
@@ -110,3 +109,5 @@ const navigate=useNavigate();
 }
 
 export default InvestorAddComplaint
+
+/*<button className='inv_compl_btn' onChange={navigateToHome}>Cancel</button>*/
