@@ -12,7 +12,7 @@ function MentorAddBlogs() {
     const navigate = useNavigate();
 
     const navigateToBack =()=>{
-        navigate("/mentor")
+        navigate("/mentor/homepage")
     }
 
     const [blogdata, setBlogData]=useState({

@@ -9,20 +9,15 @@ import Navbar_2 from "../../components/commonNavbar/Navbar_2";
 function LoginPageMain() {
   const navigate = useNavigate();
 
-  const navigateToLogin = () => {
-    navigate("/entrepreneur/signup");
-  };
-
   let formvalid = true;
 
-  const [data, SetData] = useState({ email: "", password: "" });
+  const [data, setData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({ email: "", password: "" });
 
   const change = (e) => {
     const { name, value } = e.target;
-    SetData({ ...data, [name]: value });
+    setData({ ...data, [name]: value });
   };
-  console.log(data, "first");
 
   const Navigate = useNavigate();
 
@@ -44,6 +39,7 @@ function LoginPageMain() {
 
     return "";
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let errors = {};
@@ -58,20 +54,20 @@ function LoginPageMain() {
     }
 
     if (!errors.email && !errors.password && formValid) {
-      console.log(data, "second");
       axiosInstance
         .post("/loginEntrepreneur", data)
-
         .then((result) => {
-          if (result.data.status == 200) {
+          if (result.data.status === 200) {
             const { data, token } = result.data;
-            console.log("data", data._id);
-            localStorage.setItem("Enterprenuer", data._id);
-            localStorage.setItem("Enterprenuertoken", token);
-            localStorage.setItem("EnterprenuerCategory",data.industry_sector);
-            console.log(data);
-            alert("Enterprenuer Login Successfuly");
-            Navigate("/entrepreneur/enthomepage");
+            if (data.isActive) {
+              localStorage.setItem("Enterprenuer", data._id);
+              localStorage.setItem("Enterprenuertoken", token);
+              localStorage.setItem("EnterprenuerCategory", data.industry_sector);
+              alert("Entrepreneur Login Successfully");
+              Navigate("/entrepreneur/enthomepage");
+            } else {
+              alert("Admin Deactivated. Please contact Admin.");
+            }
           } else {
             alert(result.data.msg);
           }
@@ -87,22 +83,17 @@ function LoginPageMain() {
       <Navbar_2 />
       <div className="container">
         <div className="text-center">
-          <h4 className="  mt-3  ent_mainheading">LOGIN HERE</h4>
+          <h4 className="mt-3 ent_mainheading">LOGIN HERE</h4>
           <h3 className="ent_sub_h3">Your Journey to Success </h3>
           <h3 className="ent_sub_h3">Starts Here</h3>
-          <div className="  mb-5  login_hr_line "></div>
+          <div className="mb-5 login_hr_line"></div>
         </div>
         <div className="row px-4">
           <div className="col ent_loginpage_img_div">
             <img className="ent_loginpage_img mb-4" src={Loginimage} />
           </div>
           <div className="col mt-5 px-5">
-            <form
-              className="ent_loginform"
-              onSubmit={(e) => {
-                handleSubmit(e);
-              }}
-            >
+            <form className="ent_loginform" onSubmit={handleSubmit}>
               <label className="ent_loginpage_email_label">Your Email</label>
               <input
                 type="email"
@@ -125,14 +116,14 @@ function LoginPageMain() {
                 <div className="text-danger errortext">{errors.password}</div>
               )}
               <p className="text mt-2">
-                <Link to="/entrepreneur/fogot-password">Forgot password</Link>
+                <Link to="/entrepreneur/forgot-password">Forgot password</Link>
               </p>
 
               <button className="ent_login_loginbtn" type="submit">
                 Log In
               </button>
-              <p className="mt-3 ">
-                please register first{" "}
+              <p className="mt-3">
+                Please register first{" "}
                 <Link to="/entrepreneur/signup">Register</Link>
               </p>
             </form>

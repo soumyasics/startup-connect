@@ -27,7 +27,7 @@ const upload = multer({ storage: storage }).single("image");
 // Register Entrepreneur
 const registerEntrepreneur = async (req, res) => {
   try {
-    const { 
+    const {
       fname,
       lname,
       company_name,
@@ -40,8 +40,7 @@ const registerEntrepreneur = async (req, res) => {
       // username,
       address,
       password,
-    } =
-      req.body;
+    } = req.body;
 
     const newEntrepreneur = new Entrepreneur({
       fname,
@@ -56,8 +55,7 @@ const registerEntrepreneur = async (req, res) => {
       // username,
       address,
       password,
-      image:req.file
-      
+      image: req.file,
     });
 
     let existingEntrepreneur = await Entrepreneur.findOne({ email });
@@ -113,7 +111,7 @@ const viewEntrepreneurs = (req, res) => {
 
 // Update entrepreneur by ID
 const editEntrepreneurById = async (req, res) => {
-  const { 
+  const {
     fname,
     lname,
     company_name,
@@ -126,69 +124,72 @@ const editEntrepreneurById = async (req, res) => {
     // username,
     address,
     password,
-  } =
-    req.body;
+  } = req.body;
 
   const entrepreneur = req.body;
 
   try {
     let existingEntrepreneur = await Entrepreneur.findOne({ contact });
-    let entrepreneurData = await Entrepreneur.findById({_id:req.params.id});
-    
-    if(entrepreneurData.contact!=req.body.contact){
-    if (existingEntrepreneur&&
-      existingEntrepreneur.contact !== req.body.contact
-    ) {
-      return res.status(409).json({
-        msg: "Contact Number Already Registered With Us !!",
-        data: null,
-      });
+    let entrepreneurData = await Entrepreneur.findById({ _id: req.params.id });
+
+    if (entrepreneurData.contact != req.body.contact) {
+      if (
+        existingEntrepreneur &&
+        existingEntrepreneur.contact !== req.body.contact
+      ) {
+        return res.status(409).json({
+          msg: "Contact Number Already Registered With Us !!",
+          data: null,
+        });
+      }
     }
-  }
 
-    await Entrepreneur.findByIdAndUpdate({ _id: req.params.id },{
-      fname,
-      lname,
-      company_name,
-      corporate_id_no,
-      industry_sector,
-      company_description,
-      email,
-      location,
-      contact,
-      // username,
-      address,
-      image:req.file,
-
-    })
+    await Entrepreneur.findByIdAndUpdate(
+      { _id: req.params.id },
+      {
+        fname,
+        lname,
+        company_name,
+        corporate_id_no,
+        industry_sector,
+        company_description,
+        email,
+        location,
+        contact,
+        // username,
+        address,
+        image: req.file,
+      }
+    )
       .exec()
       .then((data) => {
         res.json({
-          status:200,
+          status: 200,
           msg: "Updated successfully",
-          data:data
+          data: data,
         });
       })
       .catch((err) => {
         res.json({
-          status:502,
+          status: 502,
           msg: "Data not Updated",
           Error: err,
         });
       });
   } catch (error) {
     console.log(error);
-    res.json({ 
-      status:500,
+    res.json({
+      status: 500,
 
-      message: error.message });
+      message: error.message,
+    });
   }
 };
 
 // View entrepreneur by ID
 const viewEntrepreneurById = (req, res) => {
-  const ent_id=req.params.id
-  Entrepreneur.findById({_id:ent_id})
+  const ent_id = req.params.id;
+  Entrepreneur.findById({ _id: ent_id })
     .exec()
     .then((data) => {
       res.status(200).json({
@@ -204,9 +205,27 @@ const viewEntrepreneurById = (req, res) => {
     });
 };
 
-// Ban By admin 
+// Ban By admin
 const entBanByAdmin = (req, res) => {
-  Entrepreneur.findByIdAndUpdate({_id:req.params.id},{isActive:false})
+  Entrepreneur.findByIdAndUpdate({ _id: req.params.id }, { isActive: false })
+    .exec()
+    .then((data) => {
+      res.status(200).json({
+        msg: "Data updated successfully",
+        data: data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        msg: "No Data updated",
+        Error: err,
+      });
+    });
+};
+
+const entBanByAdminActivate = (req, res) => {
+  Entrepreneur.findByIdAndUpdate({ _id: req.params.id }, { isActive: true })
     .exec()
     .then((data) => {
       res.status(200).json({
@@ -320,24 +339,24 @@ const createToken = (user) => {
 const login = (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    return res.status(400).json({msg: "Email and password is required"})
+    return res.status(400).json({ msg: "Email and password is required" });
   }
 
   Entrepreneur.findOne({ email })
     .then((user) => {
       if (!user) {
-        return res.json({ status:405,msg: "User not found" });
+        return res.json({ status: 405, msg: "User not found" });
       }
 
       if (user.password !== password) {
-        return res.json({ status:405,msg: "Password Mismatch !!" });
+        return res.json({ status: 405, msg: "Password Mismatch !!" });
       }
 
       const token = createToken(user);
 
       res.json({
         data: user,
-        status:200,
+        status: 200,
         token: token,
       });
     })
@@ -376,5 +395,6 @@ module.exports = {
   login,
   requireAuth,
   upload,
-  entBanByAdmin
+  entBanByAdmin,
+  entBanByAdminActivate,
 };

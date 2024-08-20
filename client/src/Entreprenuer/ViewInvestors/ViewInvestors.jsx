@@ -30,14 +30,15 @@ function InvestorsView({ url }) {
 
   useEffect(() => {
     axiosInstance
-    .post(`/viewInvestorByCategory/${localStorage.getItem("EnterprenuerCategory")}`)
-    .then((res) => {
+      .post(`/viewInvestorByCategory/${localStorage.getItem("EnterprenuerCategory")}`)
+      .then((res) => {
         if (res.status === 200) {
-          setInvestordata(res.data.data);
+          const activeInvestors = res.data.data.filter(investor => investor.isActive);
+          setInvestordata(activeInvestors);
         }
       })
       .catch((err) => {
-        toast.error("Failed to fetch user details");
+        toast.error("Failed to fetch investor details");
       });
       
     axiosInstance
