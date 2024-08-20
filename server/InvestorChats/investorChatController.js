@@ -1,4 +1,4 @@
-const chat = require("./chatSchema");
+const chat = require("./investorChat");
 
 const chatting = async (req, res) => {
 
@@ -8,7 +8,7 @@ const chatting = async (req, res) => {
     from:req.body.from,
     to: req.body.to,
     entId: req.body.entId,
-    mentorId: req.body.mentorId,
+    investorId: req.body.investorId,
        date:new Date()
   });
   await message
@@ -32,16 +32,16 @@ const chatting = async (req, res) => {
 
 const viewChatMsgs = (req, res) => {
   let entId = req.body.entId;
-  let mentorId = req.body.mentorId;
+  let investorId = req.body.investorId;
   chat
     .find({
       // $or: [{
-        mentorId: mentorId, entId: entId },
+        investorId: investorId, entId: entId },
         // { rpid: parentid, parentid: rpid },
       // ],}
     )
     .sort({ date: 1 })
-    .populate('mentorId')
+    .populate('investorId')
     .populate('entId')
     .exec()
     
