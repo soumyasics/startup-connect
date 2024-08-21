@@ -89,9 +89,9 @@ import EntchatwithInvestor from "./Entreprenuer/ChatWithInvestor/EntchatwithInve
 import Footer_2 from "./components/Footer/Footer_2";
 
 function App() {
-  // const url = "http://localhost:4040";
+  const url = "http://localhost:4040";
 
-  const url = "http://hybrid.srishticampus.in:4040";
+  // const url = "http://hybrid.srishticampus.in:4040";
 
   return (
     <BrowserRouter basename="strartup">
