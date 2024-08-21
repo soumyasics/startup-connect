@@ -86,6 +86,7 @@ import Footer_3 from "./components/Footer/Footer_3";
 import Footer_4 from "./components/Footer/Footer_4";
 import ChatBot from "./Entreprenuer/ChatBot/ChatBot";
 import EntchatwithInvestor from "./Entreprenuer/ChatWithInvestor/EntchatwithInvestor";
+import Footer_2 from "./components/Footer/Footer_2";
 
 function App() {
   // const url = "http://localhost:4040";
@@ -354,9 +355,17 @@ function App() {
           element={[
             <HomepageNavbar />,
             <EntchatwithInvestor role={"ent"} />,
-            <Footer />,
+            <Footer_2 />,
           ]}
         />
+        <Route
+        path="/investor/investorchatwithent/:id"
+        element={[
+          <InvestorNav />,
+          <EntchatwithInvestor role={"invest"} />,
+          <Footer_3/>,
+        ]}
+      />
 
         <Route
           path="/investor/accepted_entrepreneur"

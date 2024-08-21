@@ -44,6 +44,9 @@ function InvestorsView() {
         toast.error("Failed to fetch user details");
       });
   }
+  const navigateToInvestorChat=(id)=>{
+    navigate(`/entrepreneur/entchatwithinvestor/${id}`)
+  }
 
   useEffect(() => {
     getData();
@@ -75,7 +78,7 @@ function InvestorsView() {
               <h3 className="ent_invreqview_fname">{investorData.name}</h3>
               <div className="text-center mt-5 ms-5">
                 {" "}
-                <button className="btn btn-primary">Chat</button>
+                <button className="btn btn-primary" onClick={()=>{navigateToInvestorChat(investorData._id)}}>Chat</button>
               </div>
             </div>
           </div>

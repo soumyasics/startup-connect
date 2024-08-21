@@ -17,6 +17,12 @@ function RequestInvestor() {
     navigate(`/entrepreneur/investorsview/${id}`)
   }
 
+
+  const navigateToInvestorChat=(id)=>{
+    navigate(`/entrepreneur/entchatwithinvestor/${id}`)
+  }
+
+
   const [investorData, setInvestordata]= useState([]);
   const [id, setId]= useState(localStorage.getItem("Enterprenuer"));
 
@@ -62,8 +68,12 @@ function RequestInvestor() {
               <div class="">
                 <h5 class="ent_invview_fname" >{data.name}</h5>
                 <h3 className='ent_invview_name'>INVESTOR</h3>
+                
               </div>
             </div>
+            <div className='p-2 text-center' style={{backgroundColor:"#EEF9FF" , marginRight:"24%"}}>
+                <button onClick={()=>navigateToInvestorChat(data._id)} className='btn btn-primary'>Chat</button>
+                </div>
           </div>
             
           )

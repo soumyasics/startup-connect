@@ -21,23 +21,23 @@ function EntchatwithInvestor({ role }) {
   const [msg, setMsg] = useState("");
   const { id } = useParams();
   const [chat, setChat] = useState([]);
-  const [mentor, setMentor] = useState("");
+  const [investor, setInvestor] = useState("");
   const [ent, setEnt] = useState("");
  const Navigate=useNavigate()
   useEffect(() => {
     setInterval(() => {
       axiosInstance
-        .post("/viewChatMsgs", {
+        .post("/viewChatMsgsWithInvestor", {
           entId: role == "ent" ? localStorage.getItem("Enterprenuer") : id,
-          mentorId: role == "ent" ? id : localStorage.getItem("Mentor"),
+          investorId: role == "ent" ? id : localStorage.getItem("Investor"),
         })
         .then((res) => {
           setChat(res.data.data);
         });
     }, 1000);
     if (role == "ent") {
-      axiosInstance.post(`/viewMentorById/${id}`).then((res) => {
-        setMentor(res.data.data);
+      axiosInstance.post(`/viewInvestorById/${id}`).then((res) => {
+        setInvestor(res.data.data);
         console.log(res.data.data,'men');
       });
     } else {
@@ -66,19 +66,19 @@ function EntchatwithInvestor({ role }) {
   const send = (e) => {
     e.preventDefault();
     axiosInstance
-      .post("/chatting", {
+      .post("/chattingWithInvestor", {
         msg: msg,
         from: role,
-        to: role == "ent" ? "ment" : "ent",
+        to: role == "ent" ? "invest" : "ent",
         entId: role == "ent" ? localStorage.getItem("Enterprenuer") : id,
-        mentorId: role == "ent" ? id : localStorage.getItem("Mentor"),
+        investorId: role == "ent" ? id : localStorage.getItem("Investor"),
       })
       .then((res) => {
         setMsg("");
       });
   };
   const handleChat=()=>{
-    role == "ent" ? Navigate("/entrepreneur/mentorsubscribedlist") : Navigate("/mentor/viewsubscribers")
+    role == "ent" ? Navigate("/entrepreneur/requestinvestor") : Navigate("/investor/accepted_entrepreneur")
   }
   return (
     <>
@@ -86,7 +86,7 @@ function EntchatwithInvestor({ role }) {
       <div className="container ent_chat_main mb-5">
         <section className="ent_chat_box mt-2 ">
           <div className="col ent_chat_nav">
-            <img  src={`${imageUrl}/${role == 'ent' ? mentor?.profile?.filename : ent?.image?.filename}`} style={{width:"80px",height:"80px"}} className="rounded-pill "  />
+            <img  src={`${imageUrl}/${role == 'ent' ? investor?.profile?.filename : ent?.image?.filename}`} style={{width:"80px",height:"80px"}} className="rounded-pill "  />
           </div><div className=" border-light text-primary" onClick={handleChat}>Back<TiArrowBack/></div>
           <div className="ent_chat_container mt-3">
             <div className="ent_chat_messages">
