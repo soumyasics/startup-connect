@@ -6,6 +6,7 @@ const mentors=require('./Mentors/mentorController')
 const admin=require('./Admin/adminController')
 const chat=require('./Chats/chatController')
 const Subscription=require('./Subscription/subscriptionController')
+const investorChat=require('./InvestorChats/investorChatController')
 
 
 const pitch_my_idea=require('./Entrepreneurs/PitchMyIdea/PitchMyIdeaController')
@@ -144,7 +145,9 @@ router.post('/viewInvestorComplaint',Complaints.viewInvestorComplaint)
 
 
 
-
+//investor chat
+router.post('/chattingWithInvestor',investorChat.chatting)
+router.post('/viewChatMsgsWithInvestor',investorChat.viewChatMsgs)
 
 
 module.exports=router
