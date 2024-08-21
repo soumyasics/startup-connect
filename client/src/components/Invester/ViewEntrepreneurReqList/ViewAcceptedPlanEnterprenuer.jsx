@@ -28,13 +28,11 @@ function ViewAcceptedPlanEnterprenuer() {
       });
   }, [id]);
 
- 
-
   return (
     <>
       <CommonNavbar />
       <InvestorNav />
-      <div className="container mb-3 mt-4" style={{minHeight:"170vh"}}>
+      <div className="container mb-3 mt-4" style={{ minHeight: "170vh" }}>
         <div className="row row-cols-1 row-cols-md-3 g-4 ">
           <div className="col">
             <div className="ad_invaccept_profile">
@@ -44,10 +42,9 @@ function ViewAcceptedPlanEnterprenuer() {
                   className="ad_invaccept_profile_pic "
                   alt="profile_image"
                 />
+               
               </div>
-              <h3 className="ad_invaccept_fname">
-                Name : {plan.entId?.fname}
-              </h3>
+              <h3 className="ad_invaccept_fname">Name : {plan.entId?.fname}</h3>
             </div>
           </div>
           <div className="col">
@@ -75,11 +72,10 @@ function ViewAcceptedPlanEnterprenuer() {
                   <tr>
                     <td></td>
                   </tr>
-                  
+
                   <tr>
                     <td></td>
                   </tr>
-                  
                 </table>
               </div>
             </div>
@@ -131,7 +127,8 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>To help:</th>{plan.planId?.expectedHelp}
+                <th>To help:</th>
+                {plan.planId?.expectedHelp}
               </tr>
               <tr>
                 <td>
@@ -139,7 +136,8 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>To solve:</th>{plan.planId?.market}
+                <th>To solve:</th>
+                {plan.planId?.market}
               </tr>
               <tr>
                 <td>
@@ -147,7 +145,8 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>With:</th>{plan.planId?.domain}
+                <th>With:</th>
+                {plan.planId?.domain}
               </tr>
               <tr>
                 <td>
@@ -159,7 +158,8 @@ function ViewAcceptedPlanEnterprenuer() {
           <div className="col">
             <div className="invview_ent_viewsplan_profile">
               <tr className="invview_ent_viewsplan_subhead">
-                <th>We compete in the growing:</th>{plan.planId?.workingArea}
+                <th>We compete in the growing:</th>
+                {plan.planId?.workingArea}
               </tr>
               <tr>
                 <td>
@@ -172,7 +172,8 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>We are similar to competitor 1:</th>{plan.planId?.competitor1}
+                <th>We are similar to competitor 1:</th>
+                {plan.planId?.competitor1}
               </tr>
               <tr>
                 <td>
@@ -180,7 +181,8 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>Competitor 2:</th>{plan.planId?.competitor2}
+                <th>Competitor 2:</th>
+                {plan.planId?.competitor2}
               </tr>
               <tr>
                 <td>
@@ -188,7 +190,8 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>But we:</th>{plan.planId?.differentiator}
+                <th>But we:</th>
+                {plan.planId?.differentiator}
               </tr>
               <tr>
                 <td>
@@ -200,7 +203,8 @@ function ViewAcceptedPlanEnterprenuer() {
           <div className="col">
             <div className="invview_ent_viewsplan_profile">
               <tr className="invview_ent_viewsplan_subhead">
-                <th>Currently we have:</th>{plan.planId?.currentStatus}
+                <th>Currently we have:</th>
+                {plan.planId?.currentStatus}
               </tr>
               <tr>
                 <td>
@@ -208,7 +212,8 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>We are looking for:</th>{plan.planId?.expectedHelpCategory}
+                <th>We are looking for:</th>
+                {plan.planId?.expectedHelpCategory}
               </tr>
               <tr>
                 <td>
@@ -216,7 +221,8 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>To help us:</th>{plan.planId?.expectedHelpCategory}
+                <th>To help us:</th>
+                {plan.planId?.expectedHelpCategory}
               </tr>
               <tr>
                 <td>
@@ -224,14 +230,14 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>In exchange for:</th>{plan.planId?.equityAmount}
+                <th>In exchange for:</th>
+                {plan.planId?.equityAmount}
               </tr>
               <tr>
                 <td>
                   <input className="invview_ent_viewsplan_value" type="text" />
                 </td>
               </tr>
-              
             </div>
           </div>
         </div>

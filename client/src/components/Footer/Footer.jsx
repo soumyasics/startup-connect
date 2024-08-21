@@ -16,7 +16,7 @@ function Footer() {
     <div>
       <div class="firstcolumn ">
         {/* <img className="startuplogo" src={startuplog} />*/}
-        <h1 className="foot_softution_logo ">Softution</h1>
+        <h1 className="foot_softution_logo ">Softution</h1>*/} 
         <p className="firstcolumnpara ">
           we combine technical expertise with creative thinking to deliver
           innovative solutions that exceed our clients' expectations. We take a

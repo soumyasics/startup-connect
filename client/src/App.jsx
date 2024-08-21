@@ -85,11 +85,13 @@ import Footer from "./components/Footer/Footer";
 import Footer_3 from "./components/Footer/Footer_3";
 import Footer_4 from "./components/Footer/Footer_4";
 import ChatBot from "./Entreprenuer/ChatBot/ChatBot";
+import EntchatwithInvestor from "./Entreprenuer/ChatWithInvestor/EntchatwithInvestor";
+import Footer_2 from "./components/Footer/Footer_2";
 
 function App() {
   // const url = "http://localhost:4040";
 
-  const url= "http://hybrid.srishticampus.in:4040"
+  const url = "http://hybrid.srishticampus.in:4040";
 
   return (
     <BrowserRouter basename="strartup">
@@ -207,7 +209,7 @@ function App() {
         />
         <Route
           path="/investor/homepage"
-          element={[<InvestorHomePage url={url} />,<Footer_3/>]}
+          element={[<InvestorHomePage url={url} />, <Footer_3 />]}
         />
         <Route path="/investor/chat" element={<InvestorChat url={url} />} />
         <Route
@@ -344,6 +346,30 @@ function App() {
         <Route
           path="/admin_dashboard/viewallcomplaints"
           element={<ViewAllCompaints />}
+        />
+
+        {/* chat*/}
+
+        <Route
+          path="/entrepreneur/entchatwithinvestor/:id"
+          element={[
+            <HomepageNavbar />,
+            <EntchatwithInvestor role={"ent"} />,
+            <Footer_2 />,
+          ]}
+        />
+        <Route
+        path="/investor/investorchatwithent/:id"
+        element={[
+          <InvestorNav />,
+          <EntchatwithInvestor role={"invest"} />,
+          <Footer_3/>,
+        ]}
+      />
+
+        <Route
+          path="/investor/accepted_entrepreneur"
+          element={<ViewAcceptedEntereprenuer />}
         />
 
         <Route path="/*" element={<h1> 404 Page Not Found</h1>} />

@@ -37,7 +37,9 @@ function InvestorNav() {
                                     <li><Link to='/investor/accepted_entrepreneur' class="dropdown-item" >View my Entrepreneurs</Link></li>
                                 </ul>
                                 </div>
-                            
+                                <Navbar.Text className="px-3" >
+                                <Link to={"/investor/accepted_entrepreneur"} className="text-decoration-none" ><p className="navbarstext">Chat</p></Link>
+                                </Navbar.Text>
                             <Navbar.Text className="px-3" >
                             <Link to={"/investor/addcomplaint"} className="text-decoration-none" ><p className="navbarstext">Complaints</p></Link>
                             </Navbar.Text>

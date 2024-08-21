@@ -30,6 +30,9 @@ function ViewAcceptedEntereprenuer() {
     navigate(`/investor/acceptedentrepreneur_req/${id}`);
   };
 
+  const navigateToInvestorChat = (id) => {
+    navigate(`/investor/investorchatwithent/${id}`);
+  };
   return (
     <>
       <CommonNavbar />
@@ -49,6 +52,8 @@ function ViewAcceptedEntereprenuer() {
               <th style={{ backgroundColor: "rgba(140, 220, 249, 1)" }} scope="col">Contact No</th>
               <th style={{ backgroundColor: "rgba(140, 220, 249, 1)" }} scope="col">Corporate Identification Number</th>
               <th style={{ backgroundColor: "rgba(140, 220, 249, 1)" }} scope="col">Action</th>
+              <th style={{ backgroundColor: "rgba(140, 220, 249, 1)" }} scope="col"></th>
+
             </tr>
           </thead>
           <tbody>
@@ -64,6 +69,8 @@ function ViewAcceptedEntereprenuer() {
                     <img src={eye} alt="view-icon" />{" "}
                     <a href="#" onClick={() => navigateToInvestorView(data._id)}>View Details</a>
                   </td>
+                  <td className="btn btn-primary w-100 m-2" onClick={() => navigateToInvestorChat(data.entId._id)}>Chat</td>
+
                 </tr>
               ))
             ) : (
