@@ -215,7 +215,7 @@ function PitchMyIdea() {
                 </tr>
                 <tr>
                   <td>
-                    <label className="mt-5 px-2">Domain</label>
+                    <label className="mt-5 px-2">Our Formula</label>
                     <input
                       className="pmi_input"
                       name="domain"
@@ -326,7 +326,7 @@ function PitchMyIdea() {
                     )}
                   </td>
                   <td>
-                    <label className="mt-5 px-2">Expected Help Category</label>
+                    <label className="mt-5 px-2">Expected Help</label>
                     <input
                       className="pmi_input"
                       name="expectedHelpCategory"
@@ -343,7 +343,7 @@ function PitchMyIdea() {
                 </tr>
                 <tr>
                   <td>
-                    <label className="mt-5 px-2">Expected Help</label>
+                    <label className="mt-5 px-2">To Do</label>
                     <input
                       className="pmi_input"
                       name="expectedHelp"
@@ -358,7 +358,7 @@ function PitchMyIdea() {
                     )}
                   </td>
                   <td>
-                    <label className="mt-5 px-2">Equity Amount</label>
+                    <label className="mt-5 px-2">Equity Percentage</label>
                     <input
                       className="pmi_input"
                       name="equityAmount"
