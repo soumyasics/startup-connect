@@ -76,9 +76,7 @@ function LandingPageTopNav() {
         <div className="hero_text">
           "Turning Vision into Reality: Where Innovative Ideas Meet Relentless
           Execution"
-          <div>
-            <button className="hero_contact_btn">Contact Us</button>
-          </div>
+          
         </div>
       </div>
       <div className="container landingpagemainseconddiv">

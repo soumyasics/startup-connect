@@ -107,7 +107,7 @@ function App() {
           element={[<CommonNavbar />, <LoginPageMain />]}
         />
         <Route
-          path="/entrepreneur/fogot-password"
+          path="/entrepreneur/forgot-password"
           element={[<CommonNavbar />, <ForgotPassMain />]}
         />
         <Route
@@ -226,7 +226,7 @@ function App() {
           element={<ViewAcceptedPlanEnterprenuer />}
         />
         <Route
-          path="/investor/fogot-password"
+          path="/investor/forgot-password"
           element={[<CommonNavbar />, <InvestorForgot />]}
         />
         <Route
