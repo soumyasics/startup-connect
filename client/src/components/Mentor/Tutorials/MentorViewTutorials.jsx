@@ -61,13 +61,13 @@ function MentorViewTutorials() {
     <>
       <CommonNavbar />
       <MentorNav />
-      <div className="text-center headr" style={{minHeight:"70vh"}}>
+      <div className="text-center headr" >
         <h4 className="mt-3 mentor_viewtutorial_mainheading">VIEW TUTORIAL</h4>
         <h3 className="mentor_viewtutorial_sub_h3">Share Your Ideas</h3>
         <div className="mb-5 mentor_viewtutorial_hr_line"></div>
       </div>
 
-      <div className='container'>
+      <div className='container' style={{minHeight:"70vh"}}>
       {console.log("datas",tutorialdata)}
          {
         (tutorialdata.length)>0?((tutorialdata).map((data) => {
