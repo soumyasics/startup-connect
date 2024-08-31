@@ -89,7 +89,6 @@ function MentorView() {
                     </video>
                     }
                     </td></tr>
-                    <tr><button className='btn btn-primary '> Activate</button></tr>
                     <tr></tr>
                     <tr></tr>
                     <tr></tr>

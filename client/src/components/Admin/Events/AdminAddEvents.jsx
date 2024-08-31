@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import './AdminAddEvents.css';
-import AdminFooter from '../AdminFooter';
-import AdminNavbar from '../AdminNavbar';
-import axiosInstance from '../../../BaseAPIs/AxiosInstance';
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState } from "react";
+import "./AdminAddEvents.css";
+import AdminFooter from "../AdminFooter";
+import AdminNavbar from "../AdminNavbar";
+import axiosInstance from "../../../BaseAPIs/AxiosInstance";
+import { useNavigate, Link } from "react-router-dom";
 
 function AdminAddEvents() {
   const [eventdata, setEventdata] = useState({
@@ -128,7 +128,9 @@ function AdminAddEvents() {
                         name="title"
                       />
                       {errors.title && (
-                        <div className="text-danger errortext">{errors.title}</div>
+                        <div className="text-danger errortext">
+                          {errors.title}
+                        </div>
                       )}
                     </td>
                   </tr>
@@ -142,7 +144,9 @@ function AdminAddEvents() {
                         name="date"
                       />
                       {errors.date && (
-                        <div className="text-danger errortext">{errors.date}</div>
+                        <div className="text-danger errortext">
+                          {errors.date}
+                        </div>
                       )}
                     </td>
                   </tr>
@@ -156,7 +160,9 @@ function AdminAddEvents() {
                         name="time"
                       />
                       {errors.time && (
-                        <div className="text-danger errortext">{errors.time}</div>
+                        <div className="text-danger errortext">
+                          {errors.time}
+                        </div>
                       )}
                     </td>
                   </tr>
@@ -173,7 +179,9 @@ function AdminAddEvents() {
                       name="venue"
                     />
                     {errors.venue && (
-                      <div className="text-danger errortext">{errors.venue}</div>
+                      <div className="text-danger errortext">
+                        {errors.venue}
+                      </div>
                     )}
                   </td>
                 </tr>
@@ -186,19 +194,17 @@ function AdminAddEvents() {
                       name="description"
                     />
                     {errors.description && (
-                      <div className="text-danger errortext">{errors.description}</div>
+                      <div className="text-danger errortext">
+                        {errors.description}
+                      </div>
                     )}
                   </td>
                 </tr>
               </div>
             </div>
-            <button className="ad_addevent_addbtn">Add Events</button>
-            <button className="ad_addevent_cancelbtn">
-              <Link className="text-light text-decoration-none" to="/admin_dashboard">
-                Cancel
-              </Link>
-            </button>
+            <button className="ad_addevent_addbtn ms-5">Add Events</button>
           </form>
+          
         </div>
       </section>
       <AdminFooter />
