@@ -56,12 +56,12 @@ function EntViewEvents() {
     <>
       <CommonNavbar />
       <HomepageNavbar />
-      <div className="text-center headr" style={{minHeight:"100vh"}}>
+      <div className="text-center headr">
         <h4 className="mt-3 mentor_viewtutorial_mainheading">OUR EVENTS</h4>
         <h3 className="mentor_viewtutorial_sub_h3">Share Your Future</h3>
         <div className="mb-5 mentor_viewtutorial_hr_line"></div>
       </div>
-      <div className="container">
+      <div className="container" style={{minHeight:"100vh"}}>
         {eventdata?.length > 0 ? (
           eventdata.map((data) => {
             return (

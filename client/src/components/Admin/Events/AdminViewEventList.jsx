@@ -84,7 +84,7 @@ function AdminViewEventList() {
                       to={`/admin_dashboard/admin_vieweventreglist/${data?._id}`}
                       className="btn btn-primary px-5 m-3"
                     >
-                      <FaEye />ViewRgistrations
+                      <FaEye/>ViewRegistrations
                     </Link>
                   </div>
                 </div>

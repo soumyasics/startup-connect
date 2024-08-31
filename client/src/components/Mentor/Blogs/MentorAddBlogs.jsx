@@ -146,7 +146,6 @@ function MentorAddBlogs() {
                 </div>
                 <div className='col-9'>
                     <button className='menter_addblog_btn' type="submit" >Add Blog</button>
-                    <button className='menter_addblog_btn mentor_addblog_secbtn' type="reset" onClick={navigateToBack} >Cancel</button> 
                 </div>
             </div>
         </div>
