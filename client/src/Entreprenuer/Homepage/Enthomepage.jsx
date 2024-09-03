@@ -11,7 +11,7 @@ import homepage_img from '../../assets/home_hero_img.png'
 import HomepageNavbar from '../../components/commonNavbar/HomepageNavbar'
 import { CommonNavbar } from '../../components/commonNavbar/commonNavbar'
 import Footer_2 from '../../components/Footer/Footer_2'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate ,Link} from 'react-router-dom'
 
 function Enthomepage() {
     const navigate =useNavigate()
@@ -85,9 +85,9 @@ function Enthomepage() {
                                 </div>
                             </div>
                             <div>
-                                <a href="">
+                                <Link to="/entrepreneur/viewmentors">
                                     <span>View Top Mentors  <img src={arrow} alt="" /></span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

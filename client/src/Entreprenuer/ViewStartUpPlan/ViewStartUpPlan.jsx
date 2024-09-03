@@ -278,7 +278,7 @@ function ViewStartUpPlan() {
                             : "Request an Investor"}
                         </button>
                         {role == "status"
-                          && request[data1._id] == "accepted" ? '' : <><button className="ent_viewsplan_editbtn">
+                          && request[data1._id] == "accepted" || request[data1._id] == "rejected" ? '' : <><button className="ent_viewsplan_editbtn">
                           <img
                             src={editbtn}
                             onClick={() => navigateToEditStartUpPlan(data1._id)}
