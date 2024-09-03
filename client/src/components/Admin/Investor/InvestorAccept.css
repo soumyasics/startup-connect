@@ -2,13 +2,15 @@
 
 .ad_invaccept_profile{
     width: 380px;
-    height: 540px;
+    min-height: 540px;
+    height: fit-content;
     background: #EEF9FF;
 }
 
 .ad_invaccept_profile_pic_div{
     width: 320px;
-    height: 328.08px;
+    height: fit-content;
+    min-height: 328.08px;
 }
 
 .ad_invaccept_profile_pic{
@@ -16,6 +18,7 @@
     height: 234px;
     margin-top: 150px;
     margin-left: 90px;
+
     border-radius: 117px;
 
 }
