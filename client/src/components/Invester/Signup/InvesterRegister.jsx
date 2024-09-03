@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./InvesterRegister.css";
 import InvestorRegImg from "../../../assets/investor_register.png";
 import Footer from "../../Footer/Footer";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Navbar_2 from "../../commonNavbar/Navbar_2";
 import axiosMultipartInstance from "../../../BaseAPIs/AxiosMultipartInstance";
 
@@ -24,6 +24,8 @@ function InvesterRegister() {
     profile: "",
     identification_document: "",
   });
+  const [profile, setProfileName] = useState(""); // To store profile image name
+  const [identification_document, setIdentificationDocument] = useState("");
 
   const [errors, setErrors] = useState({
     name: "",
@@ -46,33 +48,30 @@ function InvesterRegister() {
     setInvestordata({ ...investordata, [name]: value });
   };
 
+  const [errorprofile, setErrorProfile] = useState(null);
+  const [errorid_doc, setErrorID_Doc] = useState(null);
 
-  const [errorprofile , setErrorProfile]=useState(null)
-  const [errorid_doc , setErrorID_Doc]=useState(null)
-
-  const handleFileProfileChange = (profile) => {
-    if(!profile.name.match(/\.(jpg|jpeg|png|gif)$/)){
-      const error="Only upload JPG JPEG PNG GIF file type ";
+  const handleFileProfileChange = (file) => {
+    if (!file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+      const error = "Only upload JPG JPEG PNG GIF file type ";
       setErrorProfile(error);
-      return
+      return;
     }
-    setErrorProfile(null)
-    setInvestordata({...investordata,profile});
-
+    setErrorProfile(null);
+    setInvestordata({ ...investordata, profile: file });
+    setProfileName(file.name); // Set the name of the profile image
   };
-  const handleFileIdDocChange = (identification_document) => {
-    if(!identification_document.name.match(/\.(jpg|jpeg|png|gif)$/)){
-      const error="Only upload JPG JPEG PNG GIF file type ";
+
+  const handleFileIdDocChange = (file) => {
+    if (!file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+      const error = "Only upload JPG JPEG PNG GIF file type ";
       setErrorID_Doc(error);
-      return
+      return;
     }
-    setErrorID_Doc(null)
-    setInvestordata({...investordata,identification_document});
-
+    setErrorID_Doc(null);
+    setInvestordata({ ...investordata, identification_document: file });
+    setIdentificationDocument(file.name); // Set the name of the identification document
   };
-
-
-  
 
   console.log(investordata, "investor_data_1");
 
@@ -86,17 +85,15 @@ function InvesterRegister() {
     if (!investordata.name.trim()) {
       formValid = false;
       errors.name = "Name is required";
-
     }
     if (!investordata.email.trim()) {
       formValid = false;
       errors.email = "Email is required";
-      console.log("p",formValid);
+      console.log("p", formValid);
     } else if (!investordata.email.endsWith("@gmail.com")) {
       formValid = false;
       errors.email = "Email must be a valid Gmail address";
-      console.log("i",formValid);
-
+      console.log("i", formValid);
     }
     if (!investordata.contact.trim()) {
       formValid = false;
@@ -107,19 +104,19 @@ function InvesterRegister() {
     }
     if (!investordata.organization.trim()) {
       formValid = false;
-      console.log("tx",formValid);
+      console.log("tx", formValid);
 
       errors.organization = "Organization is required";
     }
     if (!investordata.nationality.trim()) {
       formValid = false;
-      console.log("ty",formValid);
+      console.log("ty", formValid);
 
       errors.nationality = "Nationality name is required";
     }
     if (!investordata.password.trim()) {
       formValid = false;
-      console.log("z",formValid);
+      console.log("z", formValid);
 
       errors.password = "Password is required";
     } else if (
@@ -128,51 +125,51 @@ function InvesterRegister() {
       )
     ) {
       formValid = false;
-      console.log("z1",formValid);
+      console.log("z1", formValid);
 
       errors.password =
         "Password should be at least 6 characters long and contain at least one lowercase letter, one uppercase letter, one number, and one special character";
     }
     if (!investordata.confirm_password.trim()) {
       formValid = false;
-      console.log("z2",formValid);
+      console.log("z2", formValid);
 
       errors.confirm_password = "Confirm password is required";
     } else if (investordata.password !== investordata.confirm_password) {
       errors.confirm_password = "Passwords must match";
     }
-    if (!investordata.investing_category==null) {
+    if (!investordata.investing_category == null) {
       formValid = false;
-      console.log("3",formValid);
+      console.log("3", formValid);
 
       errors.Investing_category = "Investing Category is required";
     }
     if (!investordata.occupation.trim()) {
       formValid = false;
-      console.log("z4",formValid);
+      console.log("z4", formValid);
 
       errors.occupation = "Occupation is required";
     }
     if (!investordata.description.trim()) {
       formValid = false;
-      console.log("z5",formValid);
+      console.log("z5", formValid);
 
       errors.description = "Description is required";
     }
     if (!investordata.address.trim()) {
       formValid = false;
-      console.log("z6",formValid);
+      console.log("z6", formValid);
 
       errors.address = "Address is required";
     }
-    if (!investordata.profile){
-      errors.profile="Upload a profile image"
+    if (!investordata.profile) {
+      errors.profile = "Upload a profile image";
     }
 
-    if (!investordata.identification_document){
-      errors.identification_document="Upload a Identification document"
+    if (!investordata.identification_document) {
+      errors.identification_document = "Upload a Identification document";
     }
-    
+
     setErrors(errors);
 
     if (
@@ -453,15 +450,26 @@ function InvesterRegister() {
                     id="file"
                     type="file"
                     name="profile"
-                    onChange={(event)=>{handleFileProfileChange(event.target.files[0])}}
+                    onChange={(event) => {
+                      handleFileProfileChange(event.target.files[0]);
+                    }}
                   />
                 </label>
+                <label>
+                {" "}
+                {profile && (
+                  <label className="ent_profile_name_p">
+                    {profile}
+                  </label>
+                )}
+              </label>
               </div>
               {errors.profile && (
-                  <div className="text-danger errortext">{errors.profile}</div>
-                )}
-                {errorprofile && (<div className="text-danger errortext">{errorprofile}</div>)}
-
+                <div className="text-danger errortext">{errors.profile}</div>
+              )}
+              {errorprofile && (
+                <div className="text-danger errortext">{errorprofile}</div>
+              )}
 
               <div className="inv_file_upload2">
                 <label className="pt-3 px-1" placeholder="">
@@ -473,17 +481,32 @@ function InvesterRegister() {
                     id="file2"
                     type="file"
                     name="identification_document"
-                    onChange={(event)=>{handleFileIdDocChange(event.target.files[0])}}
+                    onChange={(event) => {
+                      handleFileIdDocChange(event.target.files[0]);
+                    }}
                   />
                 </label>
               </div>
-              {errors.identification_document && (
-                  <div className="text-danger errortext">{errors.identification_document}</div>
+              <label>
+                {" "}
+                {identification_document && (
+                  <label className="ent_profile_name_p">
+                    {identification_document}
+                  </label>
                 )}
-              {errorid_doc && (<div className="text-danger errortext">{errorid_doc}</div>)}
-              <p className="mt-3 "> 
-              Already registered please login <Link  to="/investor/login">Login</Link>
-            </p>
+              </label>
+              {errors.identification_document && (
+                <div className="text-danger errortext">
+                  {errors.identification_document}
+                </div>
+              )}
+              {errorid_doc && (
+                <div className="text-danger errortext">{errorid_doc}</div>
+              )}
+              <p className="mt-3 ">
+                Already registered please login{" "}
+                <Link to="/investor/login">Login</Link>
+              </p>
               <div class=" pt-4">
                 <button className="inv-reg-btn">Register</button>
               </div>

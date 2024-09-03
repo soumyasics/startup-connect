@@ -45,7 +45,9 @@ function MentorRegister() {
     setMentorData({ ...mentordata, [name]: value });
   };
 
-  
+  const [profile , setprofile]=useState("")
+  const [demo_videolink , setdemo_videolink]=useState(null)
+
 
   const [error , setError]=useState(null)
   const [errorVideo , setErrorVideo]=useState(null)
@@ -60,7 +62,7 @@ function MentorRegister() {
     }
     setError(null)
     setMentorData({...mentordata,profile});
-
+    setprofile(profile.name)
   };
 
   const handleFileVideoChange = (demo_videolink) => {
@@ -71,6 +73,7 @@ function MentorRegister() {
     }
     setErrorVideo(null)
     setMentorData({...mentordata,demo_videolink});
+    setdemo_videolink(demo_videolink.name)
 
   };
 
@@ -321,6 +324,7 @@ function MentorRegister() {
 
               </div>
               <div class="men_file_upload1">
+              {demo_videolink && <div>{demo_videolink}</div>} {/* Display profile image name */}
               <label className='pt-3 px-1' id="">Demo Video </label>
               <label for="demo_video" class="men_reg_file_upload">
                   <div class="icon">Upload</div>
@@ -333,6 +337,7 @@ function MentorRegister() {
 
               <div class="men_file_upload1">
               <label className='pt-3 px-1' id="">Profile</label>
+              {profile && <div>{profile}</div>} {/* Display profile image name */}
               <label for="profile" class="men_reg_file_upload">
                   <div class="icon">Upload</div>
                   <input id="profile" type="file"  name="profile" onChange={(event)=>{handleFileChange(event.target.files[0])}}  />
