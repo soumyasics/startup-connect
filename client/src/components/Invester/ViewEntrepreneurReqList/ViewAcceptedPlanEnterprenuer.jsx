@@ -47,7 +47,7 @@ function ViewAcceptedPlanEnterprenuer() {
               <h3 className="ad_invaccept_fname">Name : {plan.entId?.fname}</h3>
             </div>
           </div>
-          <div className="col">
+          <div className="col-2">
             <div className="ad_invaccept_profile">
               <div className="ad_invaccept_details1">
                 <table className="ad_invaccept_gfg">
