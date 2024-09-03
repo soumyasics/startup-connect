@@ -12,10 +12,12 @@ const entrepreneur_reg_Schema = mongoose.Schema({
   company_name: {
     type: String,
     required: true,
+    
   },
   corporate_id_no: {
     type: String,
     required: true,
+    unique: true,
   },
   industry_sector: {
     type: String,
@@ -28,6 +30,7 @@ const entrepreneur_reg_Schema = mongoose.Schema({
   email: {
     type: String,
     required: true,
+    unique: true,
   },
   location: {
     type: String,
@@ -60,3 +63,4 @@ const entrepreneur_reg_Schema = mongoose.Schema({
   
 });
 module.exports = mongoose.model("entrepreneurs", entrepreneur_reg_Schema);
+

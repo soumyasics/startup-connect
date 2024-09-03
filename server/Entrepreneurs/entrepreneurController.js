@@ -25,6 +25,67 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }).single("image");
 
 // Register Entrepreneur
+// const registerEntrepreneur = async (req, res) => {
+//   try {
+//     const {
+//       fname,
+//       lname,
+//       company_name,
+//       corporate_id_no,
+//       industry_sector,
+//       company_description,
+//       email,
+//       location,
+//       contact,
+//       // username,
+//       address,
+//       password,
+//     } = req.body;
+
+//     const newEntrepreneur = new Entrepreneur({
+//       fname,
+//       lname,
+//       company_name,
+//       corporate_id_no,
+//       industry_sector,
+//       company_description,
+//       email,
+//       location,
+//       contact,
+//       // username,
+//       address,
+//       password,
+//       image: req.file,
+//     });
+
+//     let existingEntrepreneur = await Entrepreneur.findOne({ email });
+//     if (existingEntrepreneur) {
+//       return res.status(409).json({
+//         msg: "Email Already Registered With Us !!",
+//         data: null,
+//       });
+//     }
+
+//     await newEntrepreneur
+//       .save()
+//       .then((data) => {
+//         res.status(200).json({
+//           msg: "Inserted successfully",
+//           data: data,
+//         });
+//       })
+//       .catch((err) => {
+//         res.status(500).json({
+//           msg: "Data not Inserted",
+//           data: err,
+//         });
+//       });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
+
+
 const registerEntrepreneur = async (req, res) => {
   try {
     const {
@@ -37,11 +98,29 @@ const registerEntrepreneur = async (req, res) => {
       email,
       location,
       contact,
-      // username,
       address,
       password,
     } = req.body;
 
+    // Check if the email is already registered
+    let existingEntrepreneurByEmail = await Entrepreneur.findOne({ email });
+    if (existingEntrepreneurByEmail) {
+      return res.status(409).json({
+        msg: "Email Already Registered With Us !!",
+        data: null,
+      });
+    }
+
+    // Check if the corporate_id_no is already registered
+    let existingEntrepreneurByCorporateId = await Entrepreneur.findOne({ corporate_id_no });
+    if (existingEntrepreneurByCorporateId) {
+      return res.status(409).json({
+        msg: "Corporate ID Already Registered With Us !!",
+        data: null,
+      });
+    }
+
+    // Create a new entrepreneur instance
     const newEntrepreneur = new Entrepreneur({
       fname,
       lname,
@@ -52,20 +131,12 @@ const registerEntrepreneur = async (req, res) => {
       email,
       location,
       contact,
-      // username,
       address,
       password,
       image: req.file,
     });
 
-    let existingEntrepreneur = await Entrepreneur.findOne({ email });
-    if (existingEntrepreneur) {
-      return res.status(409).json({
-        msg: "Email Already Registered With Us !!",
-        data: null,
-      });
-    }
-
+    // Save the new entrepreneur to the database
     await newEntrepreneur
       .save()
       .then((data) => {
@@ -84,6 +155,7 @@ const registerEntrepreneur = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
 
 // View all entrepreneurs
 const viewEntrepreneurs = (req, res) => {

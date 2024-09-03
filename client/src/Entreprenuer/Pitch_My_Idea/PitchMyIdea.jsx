@@ -148,6 +148,7 @@ function PitchMyIdea() {
                       name="category"
                       value={userDetails.industry_sector}
                       readOnly
+                      disabled
                     >
                       <option value="">Select Industry Sector</option>
                       <option value="Technology">Technology</option>

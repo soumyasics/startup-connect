@@ -66,7 +66,7 @@ function ViewEntrepreneurReq() {
             <div className="ad_invaccept_profile">
               <div className="ad_invaccept_profile_pic_div">
                 <img
-                  src={`${imageUrl}/${plan.entId?.image.originalname}`}
+                  src={`${imageUrl}/${plan.entId?.image.filename}`}
                   className="ad_invaccept_profile_pic "
                   alt="profile_image"
                 />
