@@ -32,7 +32,7 @@ function ViewAcceptedPlanEnterprenuer() {
     <>
       <CommonNavbar />
       <InvestorNav />
-      <div className="container mb-3 mt-4" style={{ minHeight: "170vh" }}>
+      <div className="container mb-3 mt-4" style={{minHeight:"170vh"}}>
         <div className="row row-cols-1 row-cols-md-3 g-4 ">
           <div className="col">
             <div className="ad_invaccept_profile">
@@ -42,12 +42,13 @@ function ViewAcceptedPlanEnterprenuer() {
                   className="ad_invaccept_profile_pic "
                   alt="profile_image"
                 />
-               
               </div>
-              <h3 className="ad_invaccept_fname">Name : {plan.entId?.fname}</h3>
+              <h3 className="ad_invaccept_fname">
+                Name : {plan.entId?.fname}
+              </h3>
             </div>
           </div>
-          <div className="col-2">
+          <div className="col">
             <div className="ad_invaccept_profile">
               <div className="ad_invaccept_details1">
                 <table className="ad_invaccept_gfg">
@@ -59,7 +60,7 @@ function ViewAcceptedPlanEnterprenuer() {
                     <td></td>
                   </tr>
                   <tr>
-                    <th className="ad_invaccept_head">Investing Category</th>
+                    <td className="ad_invaccept_head">Investing Category</td>
                     <td>{plan.entId?.industry_sector}</td>
                   </tr>
                   <tr>
@@ -72,10 +73,11 @@ function ViewAcceptedPlanEnterprenuer() {
                   <tr>
                     <td></td>
                   </tr>
-
+                  
                   <tr>
                     <td></td>
                   </tr>
+                  
                 </table>
               </div>
             </div>
@@ -110,8 +112,8 @@ function ViewAcceptedPlanEnterprenuer() {
         <div className="row row-cols-1 row-cols-md-3 g-4 mb-5">
           <div className="col">
             <div className="invview_ent_viewsplan_profile">
-              <tr className="invview_ent_viewsplan_subhead">
-                <th>Company Name : {plan.planId?.companyName}</th>
+              <tr className="invview_ent_viewsplan_subhead mt-5 mb-5">
+                <th>Company Name : {plan.planId?.companyName} </th>
               </tr>
               <tr>
                 <td>
@@ -119,7 +121,15 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>Is developing : {plan.planId?.currentStatus}</th>
+                <td className="g"><b>Is developing :</b> {plan.planId?.currentStatus}</td>
+              </tr>
+             <tr>
+                <td>
+                  <input className="invview_ent_viewsplan_value" type="text" />
+                </td>
+              </tr>
+              <tr className="invview_ent_viewsplan_subhead mt-5 pt-5">
+                <td><b>To help:</b>{plan.planId?.expectedHelp}</td>
               </tr>
               <tr>
                 <td>
@@ -127,8 +137,7 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>To help:</th>
-                {plan.planId?.expectedHelp}
+                <td><b> To solve : </b>{plan.planId?.market}</td>
               </tr>
               <tr>
                 <td>
@@ -136,8 +145,19 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>To solve:</th>
-                {plan.planId?.market}
+                <td> <b> With: </b>{plan.planId?.domain}</td>
+              </tr>
+              <tr>
+                <td>
+                  <input className="invview_ent_viewsplan_value" type="text" />
+                </td>
+              </tr>
+            </div>
+          </div>
+          <div className="col">
+            <div className="invview_ent_viewsplan_profile">
+              <tr className="invview_ent_viewsplan_subhead mt-2">
+                <td><b>We compete in the growing : </b>{plan.planId?.workingArea}</td>
               </tr>
               <tr>
                 <td>
@@ -145,8 +165,23 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>With:</th>
-                {plan.planId?.domain}
+                <td><b> We are similar to competitor 1: </b>{plan.planId?.competitor1}</td>
+              </tr>
+             <tr>
+                <td>
+                  <input className="invview_ent_viewsplan_value" type="text" />
+                </td>
+              </tr>
+              <tr className="invview_ent_viewsplan_subhead mt-2">
+                <td><b>Competitor 2 : </b> {plan.planId?.competitor2}</td>
+              </tr>
+              <tr>
+                <td>
+                  <input className="invview_ent_viewsplan_value" type="text" />
+                </td>
+              </tr>
+              <tr className="invview_ent_viewsplan_subhead">
+                <td><b>But we : </b>{plan.planId?.differentiator}</td>
               </tr>
               <tr>
                 <td>
@@ -158,22 +193,7 @@ function ViewAcceptedPlanEnterprenuer() {
           <div className="col">
             <div className="invview_ent_viewsplan_profile">
               <tr className="invview_ent_viewsplan_subhead">
-                <th>We compete in the growing:</th>
-                {plan.planId?.workingArea}
-              </tr>
-              <tr>
-                <td>
-                  <input className="invview_ent_viewsplan_value" type="text" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input className="invview_ent_viewsplan_value" type="text" />
-                </td>
-              </tr>
-              <tr className="invview_ent_viewsplan_subhead">
-                <th>We are similar to competitor 1:</th>
-                {plan.planId?.competitor1}
+                <td><b>Currently we have : </b>{plan.planId?.currentStatus}:</td>
               </tr>
               <tr>
                 <td>
@@ -181,8 +201,7 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>Competitor 2:</th>
-                {plan.planId?.competitor2}
+                <td><b>We are looking for:</b>{plan.planId?.expectedHelpCategory}:</td>
               </tr>
               <tr>
                 <td>
@@ -190,21 +209,7 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>But we:</th>
-                {plan.planId?.differentiator}
-              </tr>
-              <tr>
-                <td>
-                  <input className="invview_ent_viewsplan_value" type="text" />
-                </td>
-              </tr>
-            </div>
-          </div>
-          <div className="col">
-            <div className="invview_ent_viewsplan_profile">
-              <tr className="invview_ent_viewsplan_subhead">
-                <th>Currently we have:</th>
-                {plan.planId?.currentStatus}
+                <td><b>To help us : </b>{plan.planId?.expectedHelpCategory}:</td>
               </tr>
               <tr>
                 <td>
@@ -212,26 +217,7 @@ function ViewAcceptedPlanEnterprenuer() {
                 </td>
               </tr>
               <tr className="invview_ent_viewsplan_subhead">
-                <th>We are looking for:</th>
-                {plan.planId?.expectedHelpCategory}
-              </tr>
-              <tr>
-                <td>
-                  <input className="invview_ent_viewsplan_value" type="text" />
-                </td>
-              </tr>
-              <tr className="invview_ent_viewsplan_subhead">
-                <th>To help us:</th>
-                {plan.planId?.expectedHelpCategory}
-              </tr>
-              <tr>
-                <td>
-                  <input className="invview_ent_viewsplan_value" type="text" />
-                </td>
-              </tr>
-              <tr className="invview_ent_viewsplan_subhead">
-                <th>In exchange for:</th>
-                {plan.planId?.equityAmount}
+                <td><b> In exchange for : </b>{plan.planId?.equityAmount}</td>
               </tr>
               <tr>
                 <td>

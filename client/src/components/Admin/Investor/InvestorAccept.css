@@ -1,7 +1,7 @@
 
 
 .ad_invaccept_profile{
-    width: 380px;
+    /* width: 380px; */
     min-height: 540px;
     height: fit-content;
     background: #EEF9FF;
@@ -16,14 +16,13 @@
 .ad_invaccept_profile_pic{
     width: 234px;
     height: 234px;
-    margin-top: 150px;
+    margin-top: 50px;
     margin-left: 90px;
-
     border-radius: 117px;
 
 }
 .ad_invaccept_fname{
-    margin-top: 70px;
+    margin-top: 10px;
     margin-left: 30px;
     font-family: Nunito;
     font-size: 23px;
@@ -33,11 +32,11 @@
 
 }
 .ad_invaccept_details1{
-    padding-top: 50px;
+    padding-top: 10px;
     padding-left: 80px;
 }
 .ad_invaccept_details2{
-    padding-top: 50px;
+    padding-top: 10px;
     padding-left: 20px;
 }
 
