@@ -14,8 +14,8 @@ function Investor_Footer() {
   return (
     <>
         <div class="foot2_firstcolumn ">
-                       {/* <img className='foot2_startuplogo' src={startuplog} />*/} 
-                       <h1 className="foot_softution_logo ">Softution</h1>
+                       <img className='foot2_startuplogo' src={startuplog} /> 
+                       {/* <h1 className="foot_softution_logo ">Softution</h1> */}
                         <p className='foot2_firstcolumnpara '>we combine technical expertise with creative thinking to deliver innovative solutions that exceed our clients' expectations. We take a collaborative approach to every project, working closely with our clients to understand their unique goals and challenges and tailor our solutions to meet their specific needs.</p>
             </div>
             <div className='footer2bg '>
