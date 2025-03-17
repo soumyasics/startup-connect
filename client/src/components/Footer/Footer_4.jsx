@@ -15,8 +15,8 @@ function Footer_4() {
   return (
     <div>
       <div class="foot2_firstcolumn ">
-        {/*<img className='foot2_startuplogo' src={startuplog} />  */}
-        <h1 className="foot_softution_logo ">Softution</h1>
+        <img className='foot2_startuplogo' src={startuplog} /> 
+        {/* <h1 className="foot_softution_logo ">Softution</h1> */}
         <p className="foot2_firstcolumnpara ">
           we combine technical expertise with creative thinking to deliver
           innovative solutions that exceed our clients' expectations. We take a

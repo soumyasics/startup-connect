@@ -16,9 +16,9 @@ function InvestorNav() {
         <div className="inv_home_navbar_white">
                 <Navbar className="px-4">
                         <Navbar.Brand href="#home" className="text-light">
-                             {/*<img src={Frame} className="inv_home_nav_startup_logo" alt="StartupLogo" />*/}
+                             <img src={Frame} className="inv_home_nav_startup_logo" alt="StartupLogo" />
                         </Navbar.Brand>
-                        <h1 className='softution_logo'>Softution</h1> 
+                        {/* <h1 className='softution_logo'>Softution</h1>  */}
                         <Navbar.Toggle/>
                         <Navbar.Collapse className="justify-content-end">
                             <Navbar.Text className="px-3" >
